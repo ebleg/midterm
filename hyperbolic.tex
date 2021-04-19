@@ -43,6 +43,20 @@ These definitions are based on the \textit{rectangular hyperbola}, which is defi
 
 As such, a position vector of any point along the unit hyperbola can be decomposed along the rectangular axes using the hyperbolic functions in the same fashion as one would do for the unit circle with the `regular' trigonometric functions $\cos$ and $\sin$.
 
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=2]
+        \draw[->] (-0.5, 0) -- (2, 0) node[right] {$x$};
+        \draw[->] (0, -0.5) -- (0, 2) node[above] {$y$};
+        \filldraw[fill=gray!50] (0, 0) -- (1, 0) -- (1.54308, 1.1752) -- cycle;
+        \filldraw[domain=-0.5:1.32, smooth, variable=\x, thick, fill=white] plot ({cosh(\x)}, {sinh(\x)});
+        \draw[dashed] (-0.5, -0.5) -- (1.85, 1.85);
+        \draw[->] (-0.5, 0) -- (2, 0) node[right] {$x$};
+        \draw[->] (0, -0.5) -- (0, 2) node[above] {$y$};
+        \draw (0.65, 0.2) node[right] {$\frac{\han}{2}$};
+    \end{tikzpicture}
+    \caption{Hyperbolic angle}
+\end{figure}
 
 If one considers a two-dimensional space where both axes have the units of money (\si{\money}), the accumulation of a unit sum of money as a result of compound interest over time is bound by the unit hyperbola, and the total amount of money outstanding is equal to the sum of the components of the abcissa and ordinate. Likewise, for an arbitrary initial sum \ininv the corresponding hyperbola is described by the equation $x^2 - y^2 = \ininv^2$. The resulting decomposition is given exactly by \cref{eq:sinhcosh}.
 
