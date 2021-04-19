@@ -31,7 +31,32 @@
 %PH Toegevoegd 24-10-2011
 %allow (matlab) listing max 1pt flexibility between lines
 \lstset{lineskip=0pt plus 1pt minus 0pt}
-%
+
+%% -------------------------- MIELKE --------------------------------
+
+%% CUSTOM PACKAGES
+\usepackage{cleveref}
+\usepackage{siunitx}
+\usepackage[official]{eurosym}
+\usepackage{xspace}
+% \usepackage[framemethod=TikZ]{mdframed}
+
+%% CUSTOM OPIONS
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+% SiUnitx
+\DeclareSIUnit\money{\$}
+\DeclareSIUnit\year{yr}
+
+%% MATH MACRO's
+\newcommand{\han}{\ensuremath{\xi}\xspace} % Hyperbolic angle
+\newcommand{\hanv}{\ensuremath{\rho}\xspace} % Hyperbolic angular velocity
+\newcommand{\amnt}{\ensuremath{A}\xspace} % Amount function
+\newcommand{\ininv}{\ensuremath{K}\xspace} % Initial investment; arm
+\newcommand{\real}{\ensuremath{\mathbb{R}}\xspace} % Initial investment; arm
+\newcommand{\complex}{\ensuremath{\mathbb{C}}\xspace} % Initial investment; arm
+
 \begin{document}
 %
 %========================== Front matter ======================================
