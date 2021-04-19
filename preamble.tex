@@ -1,0 +1,87 @@
+%      _______   _____ ______   ___  _______   ___                        
+%     |\  ___ \ |\   _ \  _   \|\  \|\  ___ \ |\  \                       
+%     \ \   __/|\ \  \\\__\ \  \ \  \ \   __/|\ \  \                      
+%      \ \  \_|/_\ \  \\|__| \  \ \  \ \  \_|/_\ \  \                     
+%       \ \  \_|\ \ \  \    \ \  \ \  \ \  \_|\ \ \  \____                
+%        \ \_______\ \__\    \ \__\ \__\ \_______\ \_______\              
+%         \|_______|\|__|     \|__|\|__|\|_______|\|_______|              
+%                                                                         
+%                                                                         
+%                                                                         
+%  ________  ________  _________  ___  ________  ________   ________      
+% |\   __  \|\   __  \|\___   ___\\  \|\   __  \|\   ___  \|\   ____\     
+% \ \  \|\  \ \  \|\  \|___ \  \_\ \  \ \  \|\  \ \  \\ \  \ \  \___|_    
+%  \ \  \\\  \ \   ____\   \ \  \ \ \  \ \  \\\  \ \  \\ \  \ \_____  \   
+%   \ \  \\\  \ \  \___|    \ \  \ \ \  \ \  \\\  \ \  \\ \  \|____|\  \  
+%    \ \_______\ \__\        \ \__\ \ \__\ \_______\ \__\\ \__\____\_\  \ 
+%     \|_______|\|__|         \|__|  \|__|\|_______|\|__| \|__|\_________\
+%                                                             \|_________|
+%                                                                         
+
+% --------------------------------------------------------------------
+%% CUSTOM PACKAGES
+% --------------------------------------------------------------------
+\usepackage{cleveref}
+\usepackage{siunitx}
+\usepackage[official]{eurosym}
+\usepackage{xspace}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+% --------------------------------------------------------------------
+%% COLORS
+% --------------------------------------------------------------------
+
+\definecolor{accent1}{RGB}{61,152,222}
+\definecolor{accent2}{RGB}{216,74,59}
+\definecolor{accent3}{RGB}{46,204,113}
+\definecolor{accent4}{RGB}{241,196,15}
+% \definecolor{gray_custom}{}{}
+
+% TUD COLORS
+% ----------------------------------
+
+\definecolor{tudCyan}{RGB}{61,152,222}
+\definecolor{tudBlack}{RGB}{0,0,0}
+\definecolor{tudWhite}{RGB}{255,255,255}
+
+% Basic colors
+\definecolor{tudSeaGreen}{RGB}{111,189,165}
+\definecolor{tudGreen}{RGB}{39,131,142}
+\definecolor{tudDarkBlue}{RGB}{34,70,122}
+\definecolor{tudPurple}{RGB}{36,46,131}
+\definecolor{tudTurquoise}{RGB}{50,154,179}
+\definecolor{tudSkyBlue}{RGB}{130,187,206}
+
+% Accent colors
+\definecolor{tudLavender}{RGB}{121,150,180}
+\definecolor{tudOrange}{RGB}{216,130,62}
+\definecolor{tudWarmPurple}{RGB}{110,50,122}
+\definecolor{tudFuchsia}{RGB}{178,72,146}
+\definecolor{tudBrightGreen}{RGB}{183,200,34}
+\definecolor{tudYellow}{RGB}{247,234,151}
+
+\definecolor{customBlockColor}{RGB}{200,228,250}
+\definecolor{customAlertColor}{RGB}{31,112,173}
+
+% --------------------------------------------------------------------
+%% CUSTOM OPTIONS
+% --------------------------------------------------------------------
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+% SiUnitx
+
+\DeclareSIUnit\money{\$}
+\DeclareSIUnit\year{yr}
+
+% --------------------------------------------------------------------
+%% MATH MACRO's
+% --------------------------------------------------------------------
+\newcommand{\han}{\ensuremath{\xi}\xspace} % Hyperbolic angle
+\newcommand{\hanv}{\ensuremath{\rho}\xspace} % Hyperbolic angular velocity
+\newcommand{\amnt}{\ensuremath{A}\xspace} % Amount function
+\newcommand{\ininv}{\ensuremath{K}\xspace} % Initial investment; arm
+\renewcommand{\real}{\ensuremath{\mathbb{R}}\xspace}
