@@ -44,38 +44,44 @@
 % Make the cover page and hell of a lot of title pages
 \maketitle
 %
-\include{abstract}
+\include{formalities/abstract}
 %
 % table of contents, (\toc of \toclof of \tocloflot )
 \tocloflot
 %
 %
-\include{preface}
-\include{acknowledgements}
-\include{dedication}
+%\include{formalities/preface}
+\include{formalities/acknowledgements}
+%\include{formalities/dedication}
 %
 %========================== Main matter ======================================
 \mainmatter
-%
-\include{introduction}
-\include{hyperbolic}
-\include{ee}
-%
-%
+
+\include{notes/structure}
+\include{notes/questions}
+
+\include{main/introduction}
+\include{main/finance}
+\include{main/lorentz_plane}
+\include{main/hyperbolic_geometry}
+\include{main/ee}
+\include{main/analytical_mechanics}
+
+
 %========================== Appendices =======================================
 \appendix
 %
-\include{app_back}
-\include{app_another}
+\include{appendices/app_math}
+\include{appendices/app_another}
 
 %========================== Back matter ======================================
+
 \backmatter
 %
 % Bibliography
-\bibliographystyle{ieeetr}
-\printbib{bibliography}
+\printbib{references}
 %
-\include{glossary}
+\include{formalities/glossary}
 %
 % Index
 \cleardoublepage
