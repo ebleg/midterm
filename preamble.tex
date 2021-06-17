@@ -21,13 +21,34 @@
 % --------------------------------------------------------------------
 %% CUSTOM PACKAGES
 % --------------------------------------------------------------------
+
+% References
+\usepackage[square,numbers]{natbib}
+%\usepackage{ieeetran}
 \usepackage{cleveref}
+
+% Notation
 \usepackage{siunitx}
 \usepackage[official]{eurosym}
 \usepackage{xspace}
 \usepackage{physics}
+\usepackage[mathscr]{euscript}
+\usepackage{alphabeta}
+
+% Tikz
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{lipsum}
+
+% Style
+\usepackage{framed}
+\usepackage{enumitem}
+
+% --------------------------------------------------------------------
+%% TIKZ / PGF
+% --------------------------------------------------------------------
+
+\pgfplotsset{compat=1.17} 
 
 % --------------------------------------------------------------------
 %% COLORS
@@ -71,17 +92,44 @@
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+\newtheorem*{definition_inf}{Definition}
 
+\theoremstyle{plain}
+\newtheorem*{question}{Question}
 % SiUnitx
 
 \DeclareSIUnit\money{\$}
 \DeclareSIUnit\year{yr}
 
+% Citations
+\bibliographystyle{IEEEtranN}
+%\bibliographystyle{IEEEtran}
+
 % --------------------------------------------------------------------
 %% MATH MACRO's
 % --------------------------------------------------------------------
-\newcommand{\han}{\ensuremath{\xi}\xspace} % Hyperbolic angle
-\newcommand{\hanv}{\ensuremath{\rho}\xspace} % Hyperbolic angular velocity
+
+% \DeclareSymbolFont{vectors}{OML}{cmm}{b}{it}
+\DeclareSymbolFont{tensors}{OT1}{cmss}{bx}{it}
+% \DeclareSymbolFontAlphabet{\mathvec}{vectors}
+\DeclareSymbolFontAlphabet{\mathtens}{tensors}
+
+\newcommand{\pic}{\ensuremath{\textnormal{\pi}}}   
+\newcommand{\ec}{\ensuremath{\mathrm{e}}}          % Euler's constant
+\newcommand{\ii}{\ensuremath{\mathrm{i}}}          % Imaginary unit
+\newcommand{\jj}{\ensuremath{\mathrm{j}}}          % Split-complex unit
+\newcommand{\cc}{\ensuremath{\mathrm{c}}}           % Speed of light
+
+\newcommand{\han}{\ensuremath{\zeta}\xspace} % Hyperbolic angle
+\newcommand{\hanv}{\ensuremath{\delta}\xspace} % Hyperbolic angular velocity
 \newcommand{\amnt}{\ensuremath{A}\xspace} % Amount function
 \newcommand{\ininv}{\ensuremath{K}\xspace} % Initial investment; arm
 \renewcommand{\real}{\ensuremath{\mathbb{R}}\xspace}
+
+
+% Vectors, Tensors, Matrices
+% Vector notation: bold italic
+\renewcommand{\vec}[1]{\vb*{#1}}
+\newcommand{\tens}[1]{{\mathtens{#1}}}
+
+\newcommand{\towrite}[1]{{\centering (\texttt{... #1 ...})}\\}

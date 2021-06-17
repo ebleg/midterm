@@ -1,0 +1,18 @@
+%
+% An Appendix
+\chapter{Some math}
+A topology is a collection of elements from the power set of a given set. Roughly speaking, a topology gives rise to a notion of `neighborhoods', which further allows for the concepts of convergence and continuity to be properly defined on a set.
+
+Definitions from \cite{Lee2000}
+
+\begin{definition}[Topology]
+    A \emph{topology} on a set $X$ is a collection $\mathscr{T}$ of subsets of $X$ called \emph{open sets}, satisfying the following properties:
+    \begin{enumerate}[label=\roman*]
+        \item $X$ and $\varnothing$ are elements of $\mathscr{T}$.
+        \item $\mathscr{T}$ is closed under finite intersections; if $U_1,\ldots,U_n \in \mathscr{T}$, then their intersection $U_1 \cap \ldots \cap U_n$ is in $\mathscr{T}$.
+            \item $\mathscr{T}$ is closed under arbitrary unions: if $U_{\alpha \in A}$ is any (finite or infinite) collection of elements of $\mathscr{T}$, then their union $\displaystyle\bigcup_{\alpha \in A}  U_\alpha$ is in $\mathscr{T}$.
+    \end{enumerate}
+\end{definition}
+\begin{definition}[Homeomorphism]
+    If $X$ and $Y$ are topological spaces, a \emph{homeomorphism} from $X$ to $Y$ is defined to be a continuous bijective map $\varphi: X\to Y$ with continuous inverse. If there exists a homeomorphism between $X$ and $Y$, they are called homeomorphic or topologically equivalent.
+\end{definition}
