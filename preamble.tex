@@ -27,6 +27,13 @@
 %\usepackage{ieeetran}
 \usepackage{cleveref}
 
+% Font shapes
+%\usepackage{cmbright}
+\usepackage[T1]{fontenc}
+%\usepackage{textcomp}
+%\usepackage{anyfontsize}
+%\usepackage{lmodern}
+
 % Notation
 \usepackage{siunitx}
 \usepackage[official]{eurosym}
@@ -109,9 +116,10 @@
 %% MATH MACRO's
 % --------------------------------------------------------------------
 
+%\renewcommand{\sfdefault}{cmbr}
+
 % \DeclareSymbolFont{vectors}{OML}{cmm}{b}{it}
-\DeclareSymbolFont{tensors}{OT1}{cmss}{bx}{it}
-% \DeclareSymbolFontAlphabet{\mathvec}{vectors}
+\DeclareSymbolFont{tensors}{OML}{cmbrm}{b}{it}
 \DeclareSymbolFontAlphabet{\mathtens}{tensors}
 
 \newcommand{\pic}{\ensuremath{\textnormal{\pi}}}   
@@ -124,7 +132,8 @@
 \newcommand{\hanv}{\ensuremath{\delta}\xspace} % Hyperbolic angular velocity
 \newcommand{\amnt}{\ensuremath{A}\xspace} % Amount function
 \newcommand{\ininv}{\ensuremath{K}\xspace} % Initial investment; arm
-\renewcommand{\real}{\ensuremath{\mathbb{R}}\xspace}
+\renewcommand{\real}[1]{\ensuremath{\mathbb{R}^{#1}}\xspace}
+\newcommand{\hyperbolic}[1]{\ensuremath{\mathbb{H}^{#1}}\xspace}
 
 
 % Vectors, Tensors, Matrices
@@ -132,4 +141,4 @@
 \renewcommand{\vec}[1]{\vb*{#1}}
 \newcommand{\tens}[1]{{\mathtens{#1}}}
 
-\newcommand{\towrite}[1]{{\centering (\texttt{... #1 ...})}\\}
+\newcommand{\towrite}[1]{{\centering (\texttt{... #1 ...})}}

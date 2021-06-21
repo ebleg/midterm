@@ -10,13 +10,15 @@
     \end{enumerate}
 \end{framed}
 
-It has now been established that for continuous compounding can, from the right perspective, be viewed as a hyperbolic process. Of course, this is the as much the case for compound interest as for other exponential processes, such as radioactive decay, population growth, the spreading of disease etc. However, one might argue that in the case of compound interest, the analogy is particularly useful for a few reasons:
+It has now been established that for continuous compounding can, from the right perspective, be viewed as a `hyperbolic process'. Of course, this is the as much the case for compound interest as for other exponential processes, such as radioactive decay, population growth, the spreading of disease etc. However, one might argue that in the case of compound interest, the analogy is particularly useful for two reasons:
 \begin{itemize}
     \item The decomposition into `capital' and `yield' has a direct financial interpretation.
     \item The complete hyperbola consists of two different `sheets': one positive and one negative. These two sheets can be interpreted as the difference between `debit' and `credit'.
 \end{itemize}
-One sheet (the positive one) of the hyperbola can be seen as a model of the one-dimensional hyperbolic space $\mathbb{H}^1$. More generally, the hyperbolic $n$-space can be seen as a circle with imaginary radius, i.e. $$\mathbb{H}^n = \qty{
-x \in \mathbb{R}^{n+1},\ r \in \mathbb{R}^{+}_{*} : \norm{x}^2 = -r}$$. As such, hyperbolic spaces have a constant negative curvature.
+One sheet (the positive one) of the hyperbola can be seen as a model of the one-dimensional hyperbolic space $\mathbb{H}^1$. More generally, the hyperbolic $n$-space can be seen as a circle with imaginary radius, i.e. $$\mathbb{H}^n = \qty{x \in \mathbb{R}^{n+1},\ r \in \mathbb{R}^{+}_{*} : \norm{x}^2 = -r}$$. 
+As such, hyperbolic spaces have a \emph{constant negative curvature} of $-1/r^2$, which makes them dual to a
+spherical $n$-space (called the $n$-sphere) with a constant positive curvature of $1/r^2$. \cite{Ratcliffe2019}.
+Hyperbolic spaces are characterised by so-called \emph{hyperbolic geometry} that encapsulates generalizations of triangles, parallellism etc. \cref{chap:hyperbolic_geometry} will highlight some important features of hyperbolic geometry. 
 
 \begin{figure}
     \centering
@@ -34,4 +36,9 @@ x \in \mathbb{R}^{n+1},\ r \in \mathbb{R}^{+}_{*} : \norm{x}^2 = -r}$$. As such,
     \end{tikzpicture}
     \label{fig:credit_debit}
     \caption{Different parts of the complete hyperbola $x^2  - y^2 = K$ each have their distinct financial interpretation.}
+
+Of course, the hyperbolic $n$-space cannot simply be represented on a sheet of paper due to its inherent curvature. However, it is diffeomorphic to $\real{n}$ which makes for example possible to project the hyperbolic plane (two-dimensional hyperbolic space) to a flat space. Another approach, motivated by the aforementioned defintion, which is often called the hyperboloid model, is to embed the hyperbolic space of dimension $n$ into a vector space of dimension $n+1$. Obviously, this is only meaningful for $\hyperbolic{1}$ and $\hyperbolic{2}$. 
+
+
+
 \end{figure}
