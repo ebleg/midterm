@@ -12,7 +12,7 @@
 \mscTitle{Finance in the Frequency Domain}%
 \mscSubTitle{Lorem ipsum dolor sit amet}%
 \mscKeyWords{thesis, msc, subject}% only used in PDF properties
-\mscCoverPicture{STYLESTUFF/COVER}% to place a picture ( here the example COVER.eps) on the back of the cover page
+%\mscCoverPicture{STYLESTUFF/COVER}% to place a picture ( here the example COVER.eps) on the back of the cover page
 %
 %
 % Third party options (create text/logo on the copywrite page)
@@ -36,6 +36,9 @@
 
 \input{preamble}
 
+% TikZ externalization - must be in main file!
+\tikzexternalize[prefix=media/cache/]
+
 \begin{document}
 %
 %========================== Front matter ======================================
@@ -58,7 +61,7 @@
 \mainmatter
 
 \include{notes/structure}
-\include{notes/questions}
+% \include{notes/questions}
 
 \include{main/introduction}
 \include{main/finance}

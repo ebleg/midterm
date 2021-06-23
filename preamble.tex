@@ -41,10 +41,12 @@
 \usepackage{physics}
 \usepackage[mathscr]{euscript}
 \usepackage{alphabeta}
+\usepackage{xfrac}
 
 % Tikz
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usetikzlibrary{external}
 \usepackage{lipsum}
 
 % Style
@@ -132,9 +134,11 @@
 \newcommand{\hanv}{\ensuremath{\delta}\xspace} % Hyperbolic angular velocity
 \newcommand{\amnt}{\ensuremath{A}\xspace} % Amount function
 \newcommand{\ininv}{\ensuremath{K}\xspace} % Initial investment; arm
-\renewcommand{\real}[1]{\ensuremath{\mathbb{R}^{#1}}\xspace}
-\newcommand{\hyperbolic}[1]{\ensuremath{\mathbb{H}^{#1}}\xspace}
+\renewcommand{\real}{\ensuremath{\mathbb{R}}\xspace}
+\newcommand{\hyperbolic}{\ensuremath{\mathbb{H}}\xspace}
+\newcommand{\complex}{\ensuremath{\mathbb{C}}\xspace}
 
+\DeclareMathOperator{\sgn}{sgn}
 
 % Vectors, Tensors, Matrices
 % Vector notation: bold italic

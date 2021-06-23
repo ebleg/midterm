@@ -1,0 +1,1 @@
+The only reason why this file exists is to make the externalization of TikZ figures possible in Overleaf!

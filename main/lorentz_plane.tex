@@ -1,44 +1,119 @@
 \chapter{The Lorentz-Minkowski Plane}
 
-\begin{framed}
-    \textbf{Chapter structure}
-    \begin{enumerate}
-        \item Definition
-        \item Hyperbolic numbers
-        \item Connection with Special relativity
-        \item Smith chart
-    \end{enumerate}
-\end{framed}
+In the previous chapter, it has been established that interest processes can be represented on hyperbolic curves by disregarding the time dimension and `decomposing' the exponential in a specific way. This result is almost trivially encapsulated in the identity
+\begin{equation}
+    \exp(\zeta) = \cosh(\zeta) + \sinh(\zeta)
+    \label{eq:hyperbolic_identity}
+\end{equation}
+The most intuitive way to interpret this identity is by inspection of the Taylor series of the functions appearing in \cref{eq:hyperbolic_identity}:
+\begin{equation}
+    \begin{split}
+        \exp(x) &= \sum_{k = 0}^\infty \frac{x^k}{k!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots\\
+        \cosh(x) &= \sum_{k = 0}^\infty \frac{x^{2k}}{(2k)!} = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \ldots\\
+        \sinh(x) &= \sum_{k = 0}^\infty \frac{x^{2k + 1}}{(2k + 1)!} = x + \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots\\
+    \end{split}
+\end{equation}
+Or, alternatively, via the definition of the hyperbolic functions
+\begin{equation}
+    \begin{split}
+        \cosh(x) &\triangleq \frac{\exp(x) + \exp(-x)}{2}\\
+        \sinh(x) &\triangleq \frac{\exp(x) - \exp(-x)}{2}
+    \end{split}
+\end{equation}
+Clearly, the $\cosh$ and $\sinh$ functions are constructed by isolating the even or the odd powers respectively from the Taylor expansion of the exponential. The astute reader may notice that \cref{eq:effective_interest} bears some resemblance to Euler's formula $\exp(\ii x) = \cos(x) + \ii \sin(x)$. As described by \citet{Needham1997}, this connection can be generalized by recognizing that
+$$ \cos(\ii x) = \cosh(x) \qquad \sin(\ii x) = \ii\sinh(x) $$
+As such, both the hyperbolic functions $\sinh$, $\cosh$ and the trigonometric functions $\cos$ and $\sin$ can all be represented by looking at the modular surface of $|\sin(z)|$, visualized in \cref{fig:modular_sine}: of course, $\sin$ and $\cos$ only differ by a shift of $\pic/2$ along the real line, and $\cosh$ and $\sinh$ exist at cross-sections into the complex at integer multiples of $\pic$ and $\pic/2$ respectively.
 
-It has now been established that for continuous compounding can, from the right perspective, be viewed as a `hyperbolic process'. Of course, this is the as much the case for compound interest as for other exponential processes, such as radioactive decay, population growth, the spreading of disease etc. However, one might argue that in the case of compound interest, the analogy is particularly useful for two reasons:
-\begin{itemize}
-    \item The decomposition into `capital' and `yield' has a direct financial interpretation.
-    \item The complete hyperbola consists of two different `sheets': one positive and one negative. These two sheets can be interpreted as the difference between `debit' and `credit'.
-\end{itemize}
-One sheet (the positive one) of the hyperbola can be seen as a model of the one-dimensional hyperbolic space $\mathbb{H}^1$. More generally, the hyperbolic $n$-space can be seen as a circle with imaginary radius, i.e. $$\mathbb{H}^n = \qty{x \in \mathbb{R}^{n+1},\ r \in \mathbb{R}^{+}_{*} : \norm{x}^2 = -r}$$. 
-As such, hyperbolic spaces have a \emph{constant negative curvature} of $-1/r^2$, which makes them dual to a
-spherical $n$-space (called the $n$-sphere) with a constant positive curvature of $1/r^2$. \cite{Ratcliffe2019}.
-Hyperbolic spaces are characterised by so-called \emph{hyperbolic geometry} that encapsulates generalizations of triangles, parallellism etc. \cref{chap:hyperbolic_geometry} will highlight some important features of hyperbolic geometry. 
-
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \begin{tikzpicture}[scale=1.5]
-        %\draw[step=0.5, gray, very thin] (-2, -2) grid (2, 2);
-        \draw[->] (-2, 0) -- (2, 0) node[right] {$x$};
-        \draw[->] (0, -2) -- (0, 2) node[anchor=south] {$y$};
-        \draw[domain=0:1.3, variable=\t, thick, red] plot ({cosh(\t)}, {sinh(\t)}) node[anchor=south] {Debit + interest};
-        \draw[domain=-1.3:0, variable=\t, thick, red!50] plot ({cosh(\t)}, {sinh(\t)});
-        \draw[domain=0:1.3, variable=\t, thick, tudCyan, thick] plot ({-cosh(\t)}, {-sinh(\t)}) node[anchor=north] {Credit + interest};
-        \draw[domain=-1.3:0, variable=\t, thick, tudCyan!50] plot ({-cosh(\t)}, {-sinh(\t)});
-        \node[tudCyan!50] at (-2, 2) {Credit + discount};
-        \node[red!50] at (2, -2) {Debit + discount};
-        \node[draw] at (0, 2.7) {$x^2 - y^2 = K^2$};
-    \end{tikzpicture}
-    \label{fig:credit_debit}
-    \caption{Different parts of the complete hyperbola $x^2  - y^2 = K$ each have their distinct financial interpretation.}
-
-Of course, the hyperbolic $n$-space cannot simply be represented on a sheet of paper due to its inherent curvature. However, it is diffeomorphic to $\real{n}$ which makes for example possible to project the hyperbolic plane (two-dimensional hyperbolic space) to a flat space. Another approach, motivated by the aforementioned defintion, which is often called the hyperboloid model, is to embed the hyperbolic space of dimension $n$ into a vector space of dimension $n+1$. Obviously, this is only meaningful for $\hyperbolic{1}$ and $\hyperbolic{2}$. 
-
-
-
+    \input{media/tikz/complex_sine}
+    \caption{Modular surface of the sine over the complex plane, embedding all the trigonometric and hyperbolic functions at specific cross-sections.}
+    \label{fig:modular_sine}
 \end{figure}
+
+Based on the connections between hyperbolic and trigonometric functions, one can deduce a certain duality between circles and hyperbolae: while the former have constant positive curvature; the latter exhibit constant \emph{negative} curvature.(?)
+
+There are a variety of different (representations) of hyperbolae; in this case the discussion will be limited to so-called \emph{rectangular hyperbolae}, which are basically rotations, translations or a combination thereof of the scaled reciprocal function $y = K/y$. The term `rectangular' refers to the fact that there is no squeeze or stretch along any particular direction. Although the term `rectangular hyperbola' therefore corresponds to a whole range of shapes, including the unit hyperbola which is to be defined later, it will henceforth be used here as a \emph{totum pro parte} to refer to the function $y = K/y$ in particular in order accentuate the distinction with the unit hyperbola. An implicit parameterization of this rectangular hyperbola is 
+$$ 
+    \begin{cases}
+        x =  \pm K\ec^t\\
+        y = \pm K\ec^{-t}\\
+    \end{cases} t \in \real,\ K \in \real^+_*
+$$
+Clearly, this hyperbola has two asymptotes along the $x$ and $y$ axes. The line $x = y$ is called the \emph{major axis} of the hyperbola. By rotating the hyperbola over a \ang{45} angle in clockwise direction, the major axis will coincide with the $x$-axis, and a subsequent `squeeze' by factor $\sqrt{2}/2$, one arrives at the so-called \emph{unit hyperbola} defined by the implicit equations $x^2 - y^2 = K^2$. Applying this linear transformation (scale with $\sqrt{2}/2$ and rotate by $-\pi/4$) as a matrix operation to the aforementioned parametric description, one arrives at 
+$$
+  \frac{\sqrt{2}}{2}\mqty(\sfrac{\sqrt{2}}{2} & \sfrac{\sqrt{2}}{2} \\ -\sfrac{\sqrt{2}}{2} & \sfrac{\sqrt{2}}{2})\mqty(\pm K\ec^t\\\pm K\ec^{-t}) 
+  = \pm\frac{K}{2}\mqty(\ec^t + \ec^{-t}\\ \ec^{t} - \ec^{-t}) 
+  = K\mqty(\pm \cosh(t)\\\sinh(t))
+$$
+which is the common parameterizaton of the unit hyperbola, this will be the standard representation throughout this text. Please note that the `$\pm$' in front of the $\sinh$ can be disregarded because the $\sinh$ is an odd function. One can now also recognize the asymptotes as an alternative axis system, which recovers the original hyperbola; this axis system will be referred to as the \emph{idempotent axis system}. The hyperbolae and the corresponding axis system are shown in \cref{fig:hyperbola_comparison}.
+
+\begin{figure}[ht!]
+    \centering
+    \input{media/tikz/hyperbola_comparison}
+    \caption{Comparison between the reciprocal function $(x, \tfrac{1}{x})$ and the unit hyperbola $(\cosh(t), \sinh(t))$ (implicit equation $x^2 - y^2 = 1$). The idempotent axis system (denoted by the dashed lines) coincides with the asymptotes of the unit hyperbola; from this axis system the unit hyperbola again satisfies the equation $x' y' = 1$.}
+    \label{fig:hyperbola_comparison}
+\end{figure}
+
+\section{Hyperbolic angles}
+Until now, the argument of the $\sinh$/$\cosh$ parameterization has been $t$ as is the familiar notation for a parametric curve. However, the duality between circles and hyperbolas can be exploited further by defining the arguments of the hyperbolic functions as \emph{hyperbolic angles}, like one does for the trigonometric functions $\sin$ and $\cos$, which could be named `circular' angles to further highlight the distinction. In both cases, an angle refers to a certain region bounded by the curve (hyperbola/circle) at issue. The standard notation for the hyperbolic angle will be $\zeta$, in accordance to the rapidity from special relativity which can also be viewed as a hyperbolic angle as will be discussed later on. 
+\begin{definition}[Hyperbolic sector]
+A hyperbolic sector is the region bounded by two lines extending from the origin to each to a point on the (unit) hyperbola, and the graph of the hyperbola itself. 
+\end{definition}
+Clearly, hyperbolic sectors are entirely analogous to their `traditional' circular cousins. Fixing one of the rays to the $x$-axis, one can define the corresponding hyperbolic angle:
+\begin{definition}[Hyperbolic angle]
+A hyperbolic angle corresponding to a point $A$ is defined as twice the area of the hyperbolic sector based on the point $A$ and the intersection point of the unit hyperbola and the $x$-axis $(K, 0)$.
+\end{definition}
+Clearly, any point on a hyperbola with radius $K$ can be parameterized using $(K\cosh(\zeta), K\sinh(\zeta)$. By allowing the radius $K$ to be negative, all the points in the disconnected open set bounded by $y = x$ and $y = -x$ can be identified with a unique radius $K$ and hyperbolic angle $\zeta$. This is somewhat similar to polar coordinates, which is why these coordinates will be referred to as `hyperbolic polar coordinates'.
+
+\begin{figure}[ht!]
+    \centering
+    \input{media/tikz/hyperbolic_angle}
+    \caption{Illustration of a hyperbolic angle along the hyperbola with semi-major axis $K$.}
+    \label{fig:hyperbolic_angle}
+\end{figure}
+It may already be clear that hyperbolic polar coordinates do \emph{not} provide coordinates for the entire plane like regular polar coordinates do. Indeed, the mapping defined by the coordinate functions from the $K-\zeta$ space to the $x$-$y$ space is neither injective nor surjective: its image is the disconnected open set bounded by the lines $y = x$ and $y = -x$ (not surjective), and the entire line $K = 0$ in the $K-\zeta$ plane is mapped to the origin in the $x-y$ plane (not injective). As such, one can obtain a bijection by disregarding the degenerate cases for which $K = 0$ and restricting the codomain of the mapping to the set $\qty{(x, y) \in \real^2: \abs{x} > \abs{y}}$. The action of the mapping is illustrated by \cref{fig:polar_coords}.
+\begin{figure}[ht!]
+    \centering
+    \input{media/tikz/polar_coords}
+    \caption{}
+    \label{fig:polar_coords}
+\end{figure}
+
+A possible workaround for this problem can be found in the so-called \emph{generalized trigonometry} as described by \citet{Harkin2004}: in this case, the notion of the hyperbolic angle itself is ambiguous and must be accompanied the branch of the hyperbola that is associated with the angle. In this case four hyperbolic branches are considered, so both branches of $x^2 - y^2 = K^2$ combined with $y^2 - x^2 = K^2$ which were disregarded up till now.\footnote{In fact, \citeauthor{Harkin2004} provide an even more general treatment, covering so-called generalized complex numbers of the form $z = x + iy\quad x, y \in \real$ with $i^2 = iq + p\quad p, q \in \real$. However, in this case $p = 1$ and $q = 0$, as will become clear later in the discussion about hyperbolic numbers.}
+\begin{equation}
+    \zeta = 
+    \begin{cases}
+        \tanh[-1](x/y) & \text{for branches I and III}\\
+        \tanh[-1](y/x) = \coth[-1](x/y) & \text{for branches II and IV}\\
+    \end{cases}
+\end{equation}
+As such, one must keep track of
+
+\section{The Lorentz metric}
+The sign of the Lorentz metric gives rise to an equivalence relation $\sim_L$ defined to be $a \sim_L b \iff \sgn{\norm{a}} = \sgn{\norm{b}}$.\footnote{An equivalence relation is a binary relation that is symmetric, reflexive and transitive.} Therefore, the \emph{quotient set} of all the points in the plane $\real / \sim_L $ contains three elements $\qty{-1, 0, 1}$, these equivalence classes are given the respective terminology $\qty{\text{\texttt{spacelike}}, \text{\texttt{lightlike}}, \text{\texttt{timelike}}}$ based on the terminology from special relativity \cite{Landau1971}.
+ 
+\towrite{lorentz product}
+
+\towrite{lorentz metric}
+
+\towrite{light-like/space-like/time-like}
+
+\section{The Lorentz group}
+
+\section{Hyperbolic numbers}
+Perhaps the most convenient way to view the hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, `hyperbolic numbers' will be used to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, $\jj$ will be used, though in literature also $\mathrm{u}$ and $\mathrm{h}$ make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit $\jj$ with the defining property $\jj^2 = 1$, where obviously $\jj \notin \real$. Like complex numbers, the hyperbolic numbers can have a real and a hyperbolic part
+$$ z = x + y\jj \qquad x, y \in \real$$
+Combined with addition and multiplication defined on them, the hyperbolic numbers form a commutative ring. Each hyperbolic number $z$ is associated with its \emph{hyperbolic conjugate} $z^* = x - y\jj$. The product of a hyperbolic number with its own hyperbolic conjugate creates a quadratic form $zz^* = x^2 - y^2$, which always returns a real number and is equivalent Lorentzian metric. However, in contrast to complex numbers (whose quadratic form would be $x^2 + y^2$), this quadratic form is \emph{isotropic}, which means that there exists a $z \neq 0$ such that $zz^* = 0$ --- this is precisely the case for all the $z$ on the light cone in the hyperbolic plane. The \emph{hyperbolic modulus} therefore requires an absolute value in order like so
+$$ \abs{z} \triangleq \sqrt{\abs{zz^*}}$$
+which considered to be the hyperbolic distance from $z$ to the origin \cite{Sobczyk1995}.
+
+Hyperbolic numbers can also be written in a \emph{polar form}, i.e.
+$$z = K \exp(\zeta \jj)$$
+which can be evaluated using the Taylor expansion of $\exp$:
+%$$z = K\exp(\zeta \jj) = K \sum^\infty_{k = 0} \frac{(\zeta \jj)}{k!}  $$
+\subsection{Matrix representation}
+The hyperbolic numbers are ring-isomorphic to the matrix ring
+$$ \mqty(x & y \\ y & x) \quad x, y \in \real$$
+under matrix addition and matrix multiplication. The determinant of said matrix then recovers the Lorentz metric
+$$ \det \mqty(x & y \\ y & x) = x^2 - y^2$$
