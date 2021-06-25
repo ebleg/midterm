@@ -47,11 +47,14 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usetikzlibrary{external}
+\usetikzlibrary{patterns}
 \usepackage{lipsum}
 
 % Style
+\usepackage{graphicx}
 \usepackage{framed}
 \usepackage{enumitem}
+\usepackage{tcolorbox}
 
 % --------------------------------------------------------------------
 %% TIKZ / PGF
@@ -95,12 +98,18 @@
 \definecolor{customBlockColor}{RGB}{200,228,250}
 \definecolor{customAlertColor}{RGB}{31,112,173}
 
+\newenvironment{block}[1]{%
+    \tcolorbox[%
+    colback=accent1!20!,colframe=accent1,%
+    title=#1]}%
+    {\endtcolorbox}
+
 % --------------------------------------------------------------------
 %% CUSTOM OPTIONS
 % --------------------------------------------------------------------
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
+\newtheorem{definition}{Definition}
 \newtheorem*{definition_inf}{Definition}
 
 \theoremstyle{plain}
@@ -128,7 +137,11 @@
 \newcommand{\ec}{\ensuremath{\mathrm{e}}}          % Euler's constant
 \newcommand{\ii}{\ensuremath{\mathrm{i}}}          % Imaginary unit
 \newcommand{\jj}{\ensuremath{\mathrm{j}}}          % Split-complex unit
+\newcommand{\jjp}{\ensuremath{\mathrm{j}_{_+}}}          % Split-complex unit
+\newcommand{\jjm}{\ensuremath{\mathrm{j}_{_-}}}         % Split-complex unit
 \newcommand{\cc}{\ensuremath{\mathrm{c}}}           % Speed of light
+
+\newcommand{\lag}{\ensuremath{\mathscr{L}}}
 
 \newcommand{\han}{\ensuremath{\zeta}\xspace} % Hyperbolic angle
 \newcommand{\hanv}{\ensuremath{\delta}\xspace} % Hyperbolic angular velocity
@@ -137,6 +150,7 @@
 \renewcommand{\real}{\ensuremath{\mathbb{R}}\xspace}
 \newcommand{\hyperbolic}{\ensuremath{\mathbb{H}}\xspace}
 \newcommand{\complex}{\ensuremath{\mathbb{C}}\xspace}
+\newcommand{\lnorm}[1]{\ensuremath{\norm{#1}_L}}
 
 \DeclareMathOperator{\sgn}{sgn}
 

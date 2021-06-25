@@ -5,6 +5,16 @@ A topology is a collection of elements from the power set of a given set. Roughl
 
 Definitions from \cite{Lee2000}
 
+\begin{definition}[Inner product]
+    An \emph{inner product} on a real vector space $V$ is a function from $V \times V$ to $\real$, denoted by $(\vb{u}, \vb{v}) \mapsto \langle \vb{u}, \vb{v} \rangle$ such that for all $\vb{u}, \vb{v}$ in $V$
+    \begin{enumerate}
+        \item $\langle \vb{u}, \rangle$ and $\langle, \vb{v}\rangle$ are linear functions from $V$ to $\real$ (bilinearity),
+        \item $\langle \vb{u}, \vb{v} \rangle$ = $\langle \vb{u}, \vb{v} \rangle$ (symmetry),
+        \item If $\vb{u} \neq 0$, then there is a $\vb{v} \neq 0$ such that $\rangle \vb{u}, \vb{v} \rangle \neq 0$ (nondegeneracy).
+    \end{enumerate}
+    
+\end{definition}
+
 \begin{definition}[Topology]
     A \emph{topology} on a set $X$ is a collection $\mathscr{T}$ of subsets of $X$ called \emph{open sets}, satisfying the following properties:
     \begin{enumerate}[label=\roman*]

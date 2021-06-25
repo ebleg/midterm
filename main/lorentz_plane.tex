@@ -22,9 +22,9 @@ Or, alternatively, via the definition of the hyperbolic functions
 \end{equation}
 Clearly, the $\cosh$ and $\sinh$ functions are constructed by isolating the even or the odd powers respectively from the Taylor expansion of the exponential. The astute reader may notice that \cref{eq:effective_interest} bears some resemblance to Euler's formula $\exp(\ii x) = \cos(x) + \ii \sin(x)$. As described by \citet{Needham1997}, this connection can be generalized by recognizing that
 $$ \cos(\ii x) = \cosh(x) \qquad \sin(\ii x) = \ii\sinh(x) $$
-As such, both the hyperbolic functions $\sinh$, $\cosh$ and the trigonometric functions $\cos$ and $\sin$ can all be represented by looking at the modular surface of $|\sin(z)|$, visualized in \cref{fig:modular_sine}: of course, $\sin$ and $\cos$ only differ by a shift of $\pic/2$ along the real line, and $\cosh$ and $\sinh$ exist at cross-sections into the complex at integer multiples of $\pic$ and $\pic/2$ respectively.
+As such, both the hyperbolic functions $\sinh$, $\cosh$ and the trigonometric functions $\cos$ and $\sin$ can all be represented by looking at the modular surface of $|\sin(z)|$, visualized in \cref{fig:modular_sine}: of course, $\sin$ and $\cos$ only differ by a shift of $\pic/2$ along the real line, and $\cosh$ and $\sinh$ exist at cross-sections into the complex at integer multiples of $\pic/2$ and $\pic$ respectively.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \input{media/tikz/complex_sine}
     \caption{Modular surface of the sine over the complex plane, embedding all the trigonometric and hyperbolic functions at specific cross-sections.}
@@ -48,7 +48,7 @@ $$
 $$
 which is the common parameterizaton of the unit hyperbola, this will be the standard representation throughout this text. Please note that the `$\pm$' in front of the $\sinh$ can be disregarded because the $\sinh$ is an odd function. One can now also recognize the asymptotes as an alternative axis system, which recovers the original hyperbola; this axis system will be referred to as the \emph{idempotent axis system}. The hyperbolae and the corresponding axis system are shown in \cref{fig:hyperbola_comparison}.
 
-\begin{figure}[ht!]
+\begin{figure}[ht]
     \centering
     \input{media/tikz/hyperbola_comparison}
     \caption{Comparison between the reciprocal function $(x, \tfrac{1}{x})$ and the unit hyperbola $(\cosh(t), \sinh(t))$ (implicit equation $x^2 - y^2 = 1$). The idempotent axis system (denoted by the dashed lines) coincides with the asymptotes of the unit hyperbola; from this axis system the unit hyperbola again satisfies the equation $x' y' = 1$.}
@@ -57,14 +57,14 @@ which is the common parameterizaton of the unit hyperbola, this will be the stan
 
 \section{Hyperbolic angles}
 Until now, the argument of the $\sinh$/$\cosh$ parameterization has been $t$ as is the familiar notation for a parametric curve. However, the duality between circles and hyperbolas can be exploited further by defining the arguments of the hyperbolic functions as \emph{hyperbolic angles}, like one does for the trigonometric functions $\sin$ and $\cos$, which could be named `circular' angles to further highlight the distinction. In both cases, an angle refers to a certain region bounded by the curve (hyperbola/circle) at issue. The standard notation for the hyperbolic angle will be $\zeta$, in accordance to the rapidity from special relativity which can also be viewed as a hyperbolic angle as will be discussed later on. 
-\begin{definition}[Hyperbolic sector]
+\begin{block}{Hyperbolic sector}
 A hyperbolic sector is the region bounded by two lines extending from the origin to each to a point on the (unit) hyperbola, and the graph of the hyperbola itself. 
-\end{definition}
+\end{block}
 Clearly, hyperbolic sectors are entirely analogous to their `traditional' circular cousins. Fixing one of the rays to the $x$-axis, one can define the corresponding hyperbolic angle:
-\begin{definition}[Hyperbolic angle]
+\begin{block}{Hyperbolic angle}
 A hyperbolic angle corresponding to a point $A$ is defined as twice the area of the hyperbolic sector based on the point $A$ and the intersection point of the unit hyperbola and the $x$-axis $(K, 0)$.
-\end{definition}
-Clearly, any point on a hyperbola with radius $K$ can be parameterized using $(K\cosh(\zeta), K\sinh(\zeta)$. By allowing the radius $K$ to be negative, all the points in the disconnected open set bounded by $y = x$ and $y = -x$ can be identified with a unique radius $K$ and hyperbolic angle $\zeta$. This is somewhat similar to polar coordinates, which is why these coordinates will be referred to as `hyperbolic polar coordinates'.
+\end{block}
+Clearly, any point on a hyperbola with radius $K$ can be parameterized using $$\qty(K\cosh(\zeta), K\sinh(\zeta))$$ By allowing the radius $K$ to be negative, all the points in the disconnected open set bounded by $y = x$ and $y = -x$ can be identified with a unique radius $K$ and hyperbolic angle $\zeta$. This is somewhat similar to polar coordinates, which is why these coordinates will be referred to as `hyperbolic polar coordinates'.
 
 \begin{figure}[ht!]
     \centering
@@ -73,14 +73,14 @@ Clearly, any point on a hyperbola with radius $K$ can be parameterized using $(K
     \label{fig:hyperbolic_angle}
 \end{figure}
 It may already be clear that hyperbolic polar coordinates do \emph{not} provide coordinates for the entire plane like regular polar coordinates do. Indeed, the mapping defined by the coordinate functions from the $K-\zeta$ space to the $x$-$y$ space is neither injective nor surjective: its image is the disconnected open set bounded by the lines $y = x$ and $y = -x$ (not surjective), and the entire line $K = 0$ in the $K-\zeta$ plane is mapped to the origin in the $x-y$ plane (not injective). As such, one can obtain a bijection by disregarding the degenerate cases for which $K = 0$ and restricting the codomain of the mapping to the set $\qty{(x, y) \in \real^2: \abs{x} > \abs{y}}$. The action of the mapping is illustrated by \cref{fig:polar_coords}.
-\begin{figure}[ht!]
+\begin{figure}[ht]
     \centering
     \input{media/tikz/polar_coords}
     \caption{}
     \label{fig:polar_coords}
 \end{figure}
 
-A possible workaround for this problem can be found in the so-called \emph{generalized trigonometry} as described by \citet{Harkin2004}: in this case, the notion of the hyperbolic angle itself is ambiguous and must be accompanied the branch of the hyperbola that is associated with the angle. In this case four hyperbolic branches are considered, so both branches of $x^2 - y^2 = K^2$ combined with $y^2 - x^2 = K^2$ which were disregarded up till now.\footnote{In fact, \citeauthor{Harkin2004} provide an even more general treatment, covering so-called generalized complex numbers of the form $z = x + iy\quad x, y \in \real$ with $i^2 = iq + p\quad p, q \in \real$. However, in this case $p = 1$ and $q = 0$, as will become clear later in the discussion about hyperbolic numbers.}
+A possible workaround for this problem can be found in the so-called \emph{generalized trigonometry} as described by \citet{Harkin2004}: in this case, the notion of the hyperbolic angle itself is considered ambiguous and must be accompanied the branch of the hyperbola that is associated with the angle. In this case four hyperbolic branches are considered, so both branches of $x^2 - y^2 = K^2$ combined with $y^2 - x^2 = K^2$ which were disregarded up till now.\footnote{In fact, \citeauthor{Harkin2004} provide an even more general treatment, covering so-called generalized complex numbers of the form $z = x + iy\quad x, y \in \real$ with $i^2 = iq + p\quad p, q \in \real$. However, in this case $p = 1$ and $q = 0$, as will become clear later in the discussion about hyperbolic numbers.}
 \begin{equation}
     \zeta = 
     \begin{cases}
@@ -88,32 +88,77 @@ A possible workaround for this problem can be found in the so-called \emph{gener
         \tanh[-1](y/x) = \coth[-1](x/y) & \text{for branches II and IV}\\
     \end{cases}
 \end{equation}
-As such, one must keep track of
+Although this extended definition brings the other two quadrants of the hyperbolic plane within reach of the polar form as well, there is still a particular set that even now cannot be represented this way: $\qty{(x, y)\mid \abs{x} = \abs{y}}$, or the `light cone' from special relativity.
+
+\section{Special relativity}
 
 \section{The Lorentz metric}
-The sign of the Lorentz metric gives rise to an equivalence relation $\sim_L$ defined to be $a \sim_L b \iff \sgn{\norm{a}} = \sgn{\norm{b}}$.\footnote{An equivalence relation is a binary relation that is symmetric, reflexive and transitive.} Therefore, the \emph{quotient set} of all the points in the plane $\real / \sim_L $ contains three elements $\qty{-1, 0, 1}$, these equivalence classes are given the respective terminology $\qty{\text{\texttt{spacelike}}, \text{\texttt{lightlike}}, \text{\texttt{timelike}}}$ based on the terminology from special relativity \cite{Landau1971}.
- 
-\towrite{lorentz product}
+Central in the discussion of interest movements as hyperbolic motions will be the so-called Lorentzian inner (or Lorentz) product\footnote{In literature (both physics and mathematics) many variations on the so-called `metric signature' of the Lorentz product. In terms of $\real^4$, these variations come down roughly to $(+,-,-,-)$, $(-,-,-,+)$, $(-,+,+,+)$ and $(+,+,+,-)$, where the first one coincides with the definition used here, in accordance with the magnificent work of \citet{Landau1971}. Luckily, this is just a matter of convention and its influence on the mathematical machinery at hand is limited to the switching of some signs.}.
+\begin{block}{Lorentz product}
+    Let $\vb{u}, \vb{v}$ be vectors in $\real^n$. The \emph{Lorentzian inner product} of $\vb{u}$ and $\vb{v}$ is defined to be the real number
+    $$ \vb{u} \diamond \vb{v} = u_1v_1 - u_2v_2 - \ldots - u_nv_n   $$
+\end{block}
+The Lorentz product is an inner product, which means that it takes two elements from a vector space and returns a scalar value, while satisfying two (or three) conditions: (1) bilinearity, (2) symmetry and (3) nondegeneracy \cite{Ratcliffe2019}.
 
-\towrite{lorentz metric}
+In some literature, the condition of nondegeneracy is replaced by a stronger notion of positive definiteness, which means that an inner product of a vector with itself is always nonnegative and zero if and only if the vector is the zero vector. However, this condition does not apply to the Lorentz product --- this fact has rather far-reaching ramifications, as will become clear with the next definition. 
 
-\towrite{light-like/space-like/time-like}
+Based on the Lorentz inner product it is natural to define also a corresponding \emph{Lorentzian norm} $\lnorm{\cdot}$:
+    $$ \lnorm{\vb{v}} = \qty(\vb{v}\diamond\vb{v})^\frac{1}{2} $$
+Because the Lorentz product is not positive definite but indefinite, the result of $\vb{v}\diamond\vb{v}$ is not guaranteed to be a positive number. As such, $\lnorm{\vb{v}} \in \complex$, in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a nonnegative real number.
+
+The norm provides a notion of length for a vector. Based on this length, a \emph{metric} yields a distance between two points, i.e. the distance between $\vb{u}$ and $\vb{v}$ is equal to 
+$$ d_L(\vb{v}, \vb{u}) \triangleq \lnorm{\vb{v} - \vb{u}}$$ 
+Because the norm is not positive definite but `only' nondegenerate, it is called a \emph{pseudo-Euclidean metric}, and the vector space it is associated with a \emph{pseudo-Euclidean space}. A vector space equipped with this pseudometric (in more general terms, a bilinear nondegenerate form) is called a Lorentz space. The particular case for $\real^4$ sets the stage for the theory of special relativity (with one `special' dimension for time and three spatial dimensions) and is called the Minkowski space, after the German physicist Hermann Minkowski \cite{Catoni2008}. Sometimes the two-dimensional plane that is discovered here is also called the Minkowski plane, because this is what he used to explain his ideas, being unable to draw anything like four-dimensional space. However, this text will adhere to the more mathematically inclined tradition and call it `Lorentz(ian) space' which applies for any dimension larger than one \cite{Ratcliffe2019}. 
+
+The sign of the Lorentz norm gives rise to an equivalence relation $\sim_L$ defined to be $a \sim_L b \iff \sgn{\norm{a}} = \sgn{\norm{b}}$.\footnote{An equivalence relation is a binary relation that is symmetric, reflexive and transitive.} Therefore, the \emph{quotient set} of all the points in the plane $\real / \sim_L $ contains three elements $\qty{-1, 0, 1}$, these equivalence classes are given the respective names $\qty{\text{\texttt{spacelike}}, \text{\texttt{lightlike}}, \text{\texttt{timelike}}}$ based on the terminology from special relativity \cite{Landau1971}.
+
+\begin{figure}[ht]
+    \centering
+    \input{media/tikz/lightlike_spacelike}
+    \caption{Overview of the three `types' of vectors in the Lorentz-Minkowski plane: spacelike ($\lnorm{\vb{v}} < 0$), lightlike ($\lnorm{\vb{v}} = 0$) and timelike ($\lnorm{\vb{v}} > 0$). The lines $y = x$ and $y = -x$ containing all the lightlike vectors form the so-called light cone or null cone. The hyperbola of in the spacelike region (dark gray) obey the equation $y^2 - x^2 = K^2$, they will be referred to the hyperbolic branches II ($y > 0$) and IV ($y < 0$). In contrast, the timelike hyperbolic branches with equation $x^2 - y^2 = K^2$ (light gray region) are referred to as I ($x > 0$) and III ($x < 0$).}
+    \label{fig:lightlike_spacelike}
+\end{figure}
 
 \section{The Lorentz group}
 
 \section{Hyperbolic numbers}
-Perhaps the most convenient way to view the hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, `hyperbolic numbers' will be used to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, $\jj$ will be used, though in literature also $\mathrm{u}$ and $\mathrm{h}$ make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit $\jj$ with the defining property $\jj^2 = 1$, where obviously $\jj \notin \real$. Like complex numbers, the hyperbolic numbers can have a real and a hyperbolic part
+Perhaps the most convenient way to view the hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, $\jj$ will be used, though in literature also $\mathrm{u}$ (for unipotent) and $\mathrm{h}$ (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit $\jj$ with the defining unipotence property $\jj^2 = 1$, where obviously $\jj \notin \real$. Like complex numbers, the hyperbolic numbers can have a real and a hyperbolic part
 $$ z = x + y\jj \qquad x, y \in \real$$
-Combined with addition and multiplication defined on them, the hyperbolic numbers form a commutative ring. Each hyperbolic number $z$ is associated with its \emph{hyperbolic conjugate} $z^* = x - y\jj$. The product of a hyperbolic number with its own hyperbolic conjugate creates a quadratic form $zz^* = x^2 - y^2$, which always returns a real number and is equivalent Lorentzian metric. However, in contrast to complex numbers (whose quadratic form would be $x^2 + y^2$), this quadratic form is \emph{isotropic}, which means that there exists a $z \neq 0$ such that $zz^* = 0$ --- this is precisely the case for all the $z$ on the light cone in the hyperbolic plane. The \emph{hyperbolic modulus} therefore requires an absolute value in order like so
+Combined with addition and multiplication defined on them, the hyperbolic numbers form a commutative ring. Each hyperbolic number $z$ is associated with its \emph{hyperbolic conjugate} $z^* = x - y\jj$. The product of a hyperbolic number with its own hyperbolic conjugate creates a quadratic form $zz^* = x^2 - y^2$, which always returns a real number and is equivalent Lorentzian metric. Again, three cases can be distinguished for $z$:
+\begin{itemize}
+    \item \emph{timelike} when $zz^* > 0$
+    \item \emph{lightlike} when $zz^* = 0$
+    \item \emph{spacelike} when $zz^* < 0$
+\end{itemize}
+However, in contrast to complex numbers (whose quadratic form would be $x^2 + y^2$), this quadratic form is \emph{isotropic}, which means that there exists a $z \neq 0$ such that $zz^* = 0$ --- this is precisely the case for all the $z$ on the light cone in the hyperbolic plane. The \emph{hyperbolic modulus} therefore requires an absolute value in order like so
 $$ \abs{z} \triangleq \sqrt{\abs{zz^*}}$$
 which considered to be the hyperbolic distance from $z$ to the origin \cite{Sobczyk1995}.
 
-Hyperbolic numbers can also be written in a \emph{polar form}, i.e.
+Again, in correspondence with complex numbers, the hyperbolic numbers also have a  \emph{polar form}, i.e.
 $$z = K \exp(\zeta \jj)$$
-which can be evaluated using the Taylor expansion of $\exp$:
-%$$z = K\exp(\zeta \jj) = K \sum^\infty_{k = 0} \frac{(\zeta \jj)}{k!}  $$
+which can be evaluated using the Taylor expansion of the exponential $\exp$:
+$$z = K\exp(\zeta \jj) = K \sum^\infty_{k = 0} \frac{(\zeta \jj)^k}{k!} =  K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k}}{(2k)!} + K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k+1}}{(2k + 1)!} = K\cosh(\zeta) + K\jj\sinh(\zeta)$$
+when the hyperbolic angle $\zeta$ is associated with hyperbolic branches I and III. For branches II and IV, one essentially has to consider $z = K\jj\exp(\zeta\jj)$ or
+$$z = K\sinh(\zeta) + K\jj\cosh(\zeta) $$
+
+Furthermore, consider the \emph{conjugate product} of two hyperbolic numbers $z_1 = x_1 + y_1\jj$ and $z_2 = x_2 + y_2\jj$:
+$$ z_1^*z_2 = \underbrace{(x_1x_2 - y_1y_2)}_\text{inner product} 
+            + \underbrace{(x_1y_2 - x_2y_1)}_\text{outer product}\jj $$
+of the resulting expression, the real part is called the inner product and the hyperbolic part the outer product. The inner product is equivalent to the Lorentz product while the outer product yields the directed area of the parallelogram spanned by $z_1$ and $z_2$ (or the determinant of $\mqty(x_1 & x_2\\y_1&y_2)$. The outer product is the same as for regular complex numbers, while the inner product recovers the Lorentz inner product instead of the Euclidean inner product. This is why one can say that the hyperbolic number plane and the complex plane have an identical notion of area. Based on the inner product, one can however recognize a different notion of orthogonality, i.e. $z_1$ and $z_2$ are \emph{hyperbolically orthogonal} if their hyperbolic inner product equals zero --- this will yield a different notion of orthogonality than the Euclidean counterpart \cite{Needham1997, Sobczyk1995}.
+
 \subsection{Matrix representation}
 The hyperbolic numbers are ring-isomorphic to the matrix ring
 $$ \mqty(x & y \\ y & x) \quad x, y \in \real$$
 under matrix addition and matrix multiplication. The determinant of said matrix then recovers the Lorentz metric
 $$ \det \mqty(x & y \\ y & x) = x^2 - y^2$$
+
+\subsection{The idempotent basis}
+Previously it was already mentioned that the hyperbola can be viewed conveniently in two particular axis systems, the standard axis system and the idempotent axis system, as illustrated in \cref{fig:hyperbola_comparison}. This basis can also be defined in terms of hyperbolic numbers; in terms of the standard basis $\qty{1, \jj}$ the idempotent basis is $\qty{\jjp, \jjp}$ with 
+$$ \jjp = \frac{1}{2}(1 + \jj) \qquad \jjp = \frac{1}{2}(1 - \jj) $$
+The term `idempotent' is a testament to the fact that $\jjp^2 = \jjp$ and $\jjp^2 = \jjp$. As such, a given hyperbolic number $z = x + y\jj$ in idempotent coordinates is 
+$$ \underbrace{\qty(x + y)}_{z_{_+}}\jj_{_+} + \underbrace{\qty(x - y)}_{z_{_-}}\jjp$$
+Furthermore, the idempotent basis is mutually annihilating, i.e. $\jjp \jjm = 0$, which is why they possess a projective property: \cite{Sobczyk1995}
+$$ z\jjp = z_{_+}\jjp\quad\text{and}\quad z\jjm = z_{_-}\jjm$$
+The idempotent axis system is interesting because it returns the total amount compounded or discounted over time; in contrast to the standard yield-capital decomposition.
+
+\subsection{Clifford algebra}
