@@ -1,7 +1,7 @@
 \begin{tikzpicture}[scale=2]
     \draw[->] (-0.5, 0) -- (2, 0) node[right] {$x$};
     \draw[->] (0, -0.5) -- (0, 2) node[above] {$y$};
-    \filldraw[fill=accent1!50] (0, 0) -- (1, 0) -- (1.54308, 1.1752) -- cycle;
+    \filldraw[fill=gray!20] (0, 0) -- (1, 0) -- (1.54308, 1.1752) -- cycle;
     \filldraw[domain=-0.5:1.32, smooth, variable=\x, thick, fill=white] plot ({cosh(\x)}, {sinh(\x)}) node[anchor=south west] {$x^2 - y^2 = K^2$};
     \draw[dashed] (-0.5, -0.5) -- (1.85, 1.85);
     \draw[->] (-0.5, 0) -- (2, 0) node[right] {$x$};

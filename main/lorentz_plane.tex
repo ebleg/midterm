@@ -31,7 +31,7 @@ As such, both the hyperbolic functions $\sinh$, $\cosh$ and the trigonometric fu
     \label{fig:modular_sine}
 \end{figure}
 
-Based on the connections between hyperbolic and trigonometric functions, one can deduce a certain duality between circles and hyperbolae: while the former have constant positive curvature; the latter exhibit constant \emph{negative} curvature.(?)
+\section{Conic sections}
 
 There are a variety of different (representations) of hyperbolae; in this case the discussion will be limited to so-called \emph{rectangular hyperbolae}, which are basically rotations, translations or a combination thereof of the scaled reciprocal function $y = K/y$. The term `rectangular' refers to the fact that there is no squeeze or stretch along any particular direction. Although the term `rectangular hyperbola' therefore corresponds to a whole range of shapes, including the unit hyperbola which is to be defined later, it will henceforth be used here as a \emph{totum pro parte} to refer to the function $y = K/y$ in particular in order accentuate the distinction with the unit hyperbola. An implicit parameterization of this rectangular hyperbola is 
 $$ 
@@ -51,7 +51,7 @@ which is the common parameterizaton of the unit hyperbola, this will be the stan
 \begin{figure}[ht]
     \centering
     \input{media/tikz/hyperbola_comparison}
-    \caption{Comparison between the reciprocal function $(x, \tfrac{1}{x})$ and the unit hyperbola $(\cosh(t), \sinh(t))$ (implicit equation $x^2 - y^2 = 1$). The idempotent axis system (denoted by the dashed lines) coincides with the asymptotes of the unit hyperbola; from this axis system the unit hyperbola again satisfies the equation $x' y' = 1$.}
+    \caption{Comparison between the reciprocal function $(x, \tfrac{1}{x})$ and the unit hyperbola $(\cosh(t), \sinh(t))$ (implicit equation $x^2 - y^2 = 1$). The idempotent axis system (denoted by the gray lines) coincides with the asymptotes of the unit hyperbola; from this axis system the unit hyperbola again satisfies the equation $x' y' = 1$.}
     \label{fig:hyperbola_comparison}
 \end{figure}
 
@@ -93,7 +93,8 @@ Although this extended definition brings the other two quadrants of the hyperbol
 \section{Special relativity}
 
 \section{The Lorentz metric}
-Central in the discussion of interest movements as hyperbolic motions will be the so-called Lorentzian inner (or Lorentz) product\footnote{In literature (both physics and mathematics) many variations on the so-called `metric signature' of the Lorentz product. In terms of $\real^4$, these variations come down roughly to $(+,-,-,-)$, $(-,-,-,+)$, $(-,+,+,+)$ and $(+,+,+,-)$, where the first one coincides with the definition used here, in accordance with the magnificent work of \citet{Landau1971}. Luckily, this is just a matter of convention and its influence on the mathematical machinery at hand is limited to the switching of some signs.}.
+\label{sec:lorentz_metric}
+Central in the discussion of interest movements as hyperbolic motions will be the so-called Lorentzian inner (or Lorentz) product\footnote{In literature (both physics and mathematics) many variations on the so-called `metric signature' of the Lorentz product. In terms of $\real^4$, these variations come down to $(+,-,-,-)$, $(-,-,-,+)$, $(-,+,+,+)$ and $(+,+,+,-)$, where the first one coincides with the definition used here, in accordance with the magnificent work of \citet{Landau1971}. Luckily, this is just a matter of convention and its influence on the mathematical machinery at hand is limited to the switching of some signs.}.
 \begin{block}{Lorentz product}
     Let $\vb{u}, \vb{v}$ be vectors in $\real^n$. The \emph{Lorentzian inner product} of $\vb{u}$ and $\vb{v}$ is defined to be the real number
     $$ \vb{u} \diamond \vb{v} = u_1v_1 - u_2v_2 - \ldots - u_nv_n   $$
@@ -104,7 +105,7 @@ In some literature, the condition of nondegeneracy is replaced by a stronger not
 
 Based on the Lorentz inner product it is natural to define also a corresponding \emph{Lorentzian norm} $\lnorm{\cdot}$:
     $$ \lnorm{\vb{v}} = \qty(\vb{v}\diamond\vb{v})^\frac{1}{2} $$
-Because the Lorentz product is not positive definite but indefinite, the result of $\vb{v}\diamond\vb{v}$ is not guaranteed to be a positive number. As such, $\lnorm{\vb{v}} \in \complex$, in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a nonnegative real number.
+Because the Lorentz product is not positive definite but rather indefinite, the result of $\vb{v}\diamond\vb{v}$ is not guaranteed to be a positive number. As such, $\lnorm{\vb{v}} \in \complex$, in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a nonnegative real number.
 
 The norm provides a notion of length for a vector. Based on this length, a \emph{metric} yields a distance between two points, i.e. the distance between $\vb{u}$ and $\vb{v}$ is equal to 
 $$ d_L(\vb{v}, \vb{u}) \triangleq \lnorm{\vb{v} - \vb{u}}$$ 
@@ -144,7 +145,7 @@ $$z = K\sinh(\zeta) + K\jj\cosh(\zeta) $$
 Furthermore, consider the \emph{conjugate product} of two hyperbolic numbers $z_1 = x_1 + y_1\jj$ and $z_2 = x_2 + y_2\jj$:
 $$ z_1^*z_2 = \underbrace{(x_1x_2 - y_1y_2)}_\text{inner product} 
             + \underbrace{(x_1y_2 - x_2y_1)}_\text{outer product}\jj $$
-of the resulting expression, the real part is called the inner product and the hyperbolic part the outer product. The inner product is equivalent to the Lorentz product while the outer product yields the directed area of the parallelogram spanned by $z_1$ and $z_2$ (or the determinant of $\mqty(x_1 & x_2\\y_1&y_2)$. The outer product is the same as for regular complex numbers, while the inner product recovers the Lorentz inner product instead of the Euclidean inner product. This is why one can say that the hyperbolic number plane and the complex plane have an identical notion of area. Based on the inner product, one can however recognize a different notion of orthogonality, i.e. $z_1$ and $z_2$ are \emph{hyperbolically orthogonal} if their hyperbolic inner product equals zero --- this will yield a different notion of orthogonality than the Euclidean counterpart \cite{Needham1997, Sobczyk1995}.
+of the resulting expression, the real part is called the inner product and the hyperbolic part the outer product. The inner product is equivalent to the Lorentz product while the outer product yields the directed area of the parallelogram spanned by $z_1$ and $z_2$ (or the determinant of $\mqty(x_1 & x_2\\y_1&y_2)$. The outer product is the same as for regular complex numbers, while the inner product recovers the Lorentz inner product instead of the Euclidean inner product. This is why one can say that the hyperbolic number plane and the complex plane have an identical notion of area. Based on the inner product, one can however recognize a different notion of orthogonality, i.e. $z_1$ and $z_2$ are \emph{hyperbolically orthogonal} if their hyperbolic inner product equals zero --- this will yield a different notion of orthogonality than their Euclidean counterpart \cite{Needham1997, Sobczyk1995}.
 
 \subsection{Matrix representation}
 The hyperbolic numbers are ring-isomorphic to the matrix ring
@@ -153,8 +154,8 @@ under matrix addition and matrix multiplication. The determinant of said matrix 
 $$ \det \mqty(x & y \\ y & x) = x^2 - y^2$$
 
 \subsection{The idempotent basis}
-Previously it was already mentioned that the hyperbola can be viewed conveniently in two particular axis systems, the standard axis system and the idempotent axis system, as illustrated in \cref{fig:hyperbola_comparison}. This basis can also be defined in terms of hyperbolic numbers; in terms of the standard basis $\qty{1, \jj}$ the idempotent basis is $\qty{\jjp, \jjp}$ with 
-$$ \jjp = \frac{1}{2}(1 + \jj) \qquad \jjp = \frac{1}{2}(1 - \jj) $$
+Previously it was already mentioned that the hyperbola can be viewed conveniently in two particular axis systems, the standard axis system and the idempotent axis system, as illustrated in \cref{fig:hyperbola_comparison}. This basis can also be defined in terms of hyperbolic numbers; in terms of the standard basis $\qty{1, \jj}$ the idempotent basis is $\qty{\jjp, \jjm}$ with 
+$$ \jjp = \frac{1}{2}(1 + \jj) \qquad \jjm = \frac{1}{2}(1 - \jj) $$
 The term `idempotent' is a testament to the fact that $\jjp^2 = \jjp$ and $\jjp^2 = \jjp$. As such, a given hyperbolic number $z = x + y\jj$ in idempotent coordinates is 
 $$ \underbrace{\qty(x + y)}_{z_{_+}}\jj_{_+} + \underbrace{\qty(x - y)}_{z_{_-}}\jjp$$
 Furthermore, the idempotent basis is mutually annihilating, i.e. $\jjp \jjm = 0$, which is why they possess a projective property: \cite{Sobczyk1995}
