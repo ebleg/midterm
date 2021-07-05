@@ -100,9 +100,9 @@ Although this extended definition brings the other two quadrants of the hyperbol
 \label{sec:lorentz_metric}
 Central in the discussion of interest movements as hyperbolic motions will be the so-called Lorentzian inner (or Lorentz) product\footnote{In literature (both physics and mathematics) many variations on the so-called `metric signature' of the Lorentz product. In terms of \(\real^4\), these variations come down to \((+,-,-,-)\), \((-,-,-,+)\), \((-,+,+,+)\) and \((+,+,+,-)\), where the first one coincides with the definition used here, in accordance with the magnificent work of \citet{Landau1971}. Luckily, this is just a matter of convention and its influence on the mathematical machinery at hand is limited to the switching of some signs.}.
 \begin{block}{Lorentz product}
-    Let \(\vb{u}, \vb{v}\) be vectors in \(\real^n\). The \emph{Lorentzian inner product} of \(\vb{u}\) and \(\vb{v}\) is defined to be the real number
+    Let \(\vec{u}, \vec{v}\) be vectors in \(\real^n\). The \emph{Lorentzian inner product} of \(\vec{u}\) and \(\vec{v}\) is defined to be the real number
     \[
-     \vb{u} \diamond \vb{v} = u_1v_1 - u_2v_2 - \ldots - u_nv_n
+     \vec{u} \diamond \vec{v} = u_1v_1 - u_2v_2 - \ldots - u_nv_n
 \]
 \end{block}
 The Lorentz product is an inner product, which means that it takes two elements from a vector space and returns a scalar value, while satisfying two (or three) conditions: (1) bilinearity, (2) symmetry and (3) nondegeneracy \cite{Ratcliffe2019}.
@@ -111,13 +111,13 @@ In some literature, the condition of nondegeneracy is replaced by a stronger not
 
 Based on the Lorentz inner product it is natural to define also a corresponding \emph{Lorentzian norm} \(\lnorm{\cdot}\):
     \[
-     \lnorm{\vb{v}} = \qty(\vb{v}\diamond\vb{v})^\frac{1}{2}
+     \lnorm{\vec{v}} = \qty(\vec{v}\diamond\vec{v})^\frac{1}{2}
 \]
-Because the Lorentz product is not positive definite but rather indefinite, the result of \(\vb{v}\diamond\vb{v}\) is not guaranteed to be a positive number. As such, \(\lnorm{\vb{v}} \in \complex\), in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a nonnegative real number.
+Because the Lorentz product is not positive definite but rather indefinite, the result of \(\vec{v}\diamond\vec{v}\) is not guaranteed to be a positive number. As such, \(\lnorm{\vec{v}} \in \complex\), in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a nonnegative real number.
 
-The norm provides a notion of length for a vector. Based on this length, a \emph{metric} yields a distance between two points, i.e. the distance between \(\vb{u}\) and \(\vb{v}\) is equal to 
+The norm provides a notion of length for a vector. Based on this length, a \emph{metric} yields a distance between two points, i.e. the distance between \(\vec{u}\) and \(\vec{v}\) is equal to 
 \[
-     d_L(\vb{v}, \vb{u}) \triangleq \lnorm{\vb{v} - \vb{u}}
+     d_L(\vec{v}, \vec{u}) \triangleq \lnorm{\vec{v} - \vec{u}}
 \] 
 Because the norm is not positive definite but `only' nondegenerate, it is called a \emph{pseudo-Euclidean metric}, and the vector space it is associated with a \emph{pseudo-Euclidean space}. A vector space equipped with this pseudometric (in more general terms, a bilinear nondegenerate form) is called a Lorentz space. The particular case for \(\real^4\) sets the stage for the theory of special relativity (with one `special' dimension for time and three spatial dimensions) and is called the Minkowski space, after the German physicist Hermann Minkowski \cite{Catoni2008}. Sometimes the two-dimensional plane that is discovered here is also called the Minkowski plane, because this is what he used to explain his ideas, being unable to draw anything like four-dimensional space. However, this text will adhere to the more mathematically inclined tradition and call it `Lorentz(ian) space' which applies for any dimension larger than one \cite{Ratcliffe2019}. 
 
@@ -126,7 +126,7 @@ The sign of the Lorentz norm gives rise to an equivalence relation \(\sim_L\) de
 \begin{figure}[ht]
     \centering
     \input{media/tikz/lightlike_spacelike}
-    \caption{Overview of the three `types' of vectors in the Lorentz-Minkowski plane: spacelike (\(\lnorm{\vb{v}} < 0\)), lightlike (\(\lnorm{\vb{v}} = 0\)) and timelike (\(\lnorm{\vb{v}} > 0\)). The lines \(y = x\) and \(y = -x\) containing all the lightlike vectors form the so-called light cone or null cone. The hyperbola of in the spacelike region (dark gray) obey the equation \(y^2 - x^2 = K^2\), they will be referred to the hyperbolic branches II (\(y > 0\)) and IV (\(y < 0\)). In contrast, the timelike hyperbolic branches with equation \(x^2 - y^2 = K^2\) (light gray region) are referred to as I (\(x > 0\)) and III (\(x < 0\)).}
+    \caption{Overview of the three `types' of vectors in the Lorentz-Minkowski plane: spacelike (\(\lnorm{\vec{v}} < 0\)), lightlike (\(\lnorm{\vec{v}} = 0\)) and timelike (\(\lnorm{\vec{v}} > 0\)). The lines \(y = x\) and \(y = -x\) containing all the lightlike vectors form the so-called light cone or null cone. The hyperbola of in the spacelike region (dark gray) obey the equation \(y^2 - x^2 = K^2\), they will be referred to the hyperbolic branches II (\(y > 0\)) and IV (\(y < 0\)). In contrast, the timelike hyperbolic branches with equation \(x^2 - y^2 = K^2\) (light gray region) are referred to as I (\(x > 0\)) and III (\(x < 0\)).}
     \label{fig:lightlike_spacelike}
 \end{figure}
 
