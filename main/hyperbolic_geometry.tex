@@ -42,7 +42,7 @@ Surface curvature can be approached more rigorously from the perspective of Riem
     \end{split}
     \label{eq:first_fform}
 \end{equation}
-The components of the metric tensor \(\mathtens{g}_{ij}\) then coincide with the components of the first fundamental form: \(\mathtens{g}_{11} = E\), \(\mathtens{g}_{12} = \mathtens{g}_{21}= F\) and \(\mathtens{g}_{22} = G\). Therefore, the first fundamental form determines the length of curves lying in the surface.
+The components of the metric tensor \(\mathtens{g}\) then coincide with the components of the first fundamental form: \(g_{11} = E\), \(g_{12} = g_{21}= F\) and \(g_{22} = G\). Therefore, the first fundamental form determines the length of curves lying in the surface.
 
 In contrast, the \emph{second fundamental form} II provides information on the curvature or shape of the embedded surface, more specifically the rate of change of the tangent planes in any direction. Again, it is characterised by three coefficients \(e\), \(f\) and \(g\) like so 
 \[ e\dd{u}^2 + 2f\dd{u}\dd{v} + g\dd{v}^2. \]
@@ -165,7 +165,7 @@ Thus, the conformality of the mapping imposes a restriction on the mapping for \
     \dd{s} = \norm{\pdv{\vec{r}}{u}\dd{u} + \pdv{\vec{r}}{v}\dd{v}}
     = \sech(u)\sqrt{\sinh[2](u)\dd{u}^2 + \dd{v}^2} = \frac{\sqrt{x^2 + y^2}}{y}
 \]
-This metric is also called the \emph{Poincaré metric}. \Cref{eq:dy_halfplane} already states that for \(u = 0\), i.e. the rim of the pseudosphere, maps to the horizontal line \(y = 1\). This suggests that the pseudosphere is covered by the region of the half plane for which \(y \geq 1\).
+This metric is called the \emph{Poincaré metric}. \Cref{eq:dy_halfplane} already states that for \(u = 0\), i.e. the rim of the pseudosphere, maps to the horizontal line \(y = 1\). This suggests that the pseudosphere is covered by the region of the half plane for which \(y \geq 1\).
 
 The Poincaré metric suggests that distances get larger and larger when travelling downwards in \(y\)-direction. At the line \(y=0\) they even become infinitely large! For someone living in the half plane, this line would never be reachable, as they would have to travel for an infinite amount of time. It is not part of the half plane itself, which is why it is called the \emph{horizon}; points on the horizon are named \emph{ideal points} \cite{Needham1997}.
 
@@ -178,7 +178,20 @@ Geodesics in the Poincaré half plane connecting two points are either straight 
 \towrite{Figure of the half plane and pseudosphere}
 
 \subsection{Poincaré disk}
-The Poincaré disk arises naturally from the Poincaré half plane by virtue of the Cayley transform. This mapping is a so-called inversion, i.e. it maps every point
+The Poincaré disk arises naturally from the Poincaré half plane by virtue of the Cayley transform. When the Poincaré half plane is viewed `on top' of the complex plane, the Cayley transform is defined as
+\begin{equation}
+    f(z) = \frac{z - i}{z + i}\quad z \in \complex
+    \label{eq:cayley_transform}
+\end{equation}
+which maps the entire half plane to the unit disk. The horizon coincides with the rim of the disk, while the origin maps to the positive intersection of the disk with the \(x\)-axis. As will become clear later, \cref{eq:cayley_transform} belongs to the class of Möbius transforms, which means that it also must be conformal. Therefore, angles on the pseudosphere, half plane and disk will all look alike.
+
+
+
+\towrite{geodesics}
+
+\towrite{horocyles hypercycles}
+
+\subsubsection{The Smith chart}
 
 \subsection{Hyperboloid model}
 \subsection{Cayley-Klein disk}
