@@ -6,7 +6,7 @@
 %
 \definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
 %
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}
 
 \begin{axis}[%
     width=2.113in,
@@ -22,7 +22,7 @@
     ymax=1.5,
     zmin=0,
     zmax=3.5,
-    zlabel=\(u\),
+    %zlabel=\(u\),
     view={32.0545132396862}{25.0188534547135},
     axis background/.style={fill=white},
 ]
@@ -77,7 +77,7 @@
         -0.0955793143506863  -0.49077957849553266  2\\
         -0.04801151295384122  -0.49768955647459906  2\\
         -9.184850993605148e-17  -0.5  2\\
-    } node[pos=0.7, above] {\(v\)};
+    } node[pos=0.7, above] {$v$};
 
     \addplot3 [color=mycolor1]
      table[row sep=crcr] {%
@@ -2641,6 +2641,5 @@
     0.0366189934736865	-8.96906662910961e-18	3.00067070026093	3.00067070026093\\
     };
 
-    
     \end{axis}
 \end{tikzpicture}%
