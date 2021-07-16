@@ -181,7 +181,7 @@ Geodesics in the Poincaré half plane connecting two points are either straight 
 \begin{figure}
     \centering
     \input{media/tikz/pseudosphere_halfplane}
-    \caption{Blabla}
+    \caption{Comparison of various trajectories on the pseudosphere (left) and the Poincaré half plane (right). Lines \(A\), \(B\) and \(C\) are geodesics. The endpoints of \(B\) are closer together because it covers a wider range on the \(x\)-axis --- if it would be larger than \(2\pic\), the curve would show an entire encirclement of the pseudosphere. Line \(D\) corresponds to the rim of the pseudosphere and the line \(y = 1\) in the pseudosphere.}
     \label{fig:pseudosphere_hp}
 \end{figure}
 \subsection{Poincaré disk}
@@ -194,7 +194,8 @@ which maps the entire half plane to the unit disk. Furthermore,
 \begin{itemize}
     \item the horizon coincides with the rim of the disk,
     \item the points \(\pm1\) are invariant,
-    \item and \(\ii\) maps to the origin.
+    \item \(\ii\) maps to the origin, 
+    \item the origin corresponds to \(-\ii\)
 \end{itemize}
 As will become clear later, \cref{eq:cayley_transform} belongs to the class of Möbius transforms, which means that it also must be conformal. Therefore, angles on the pseudosphere, half plane and disk will all look alike. Since the horizon containing the ideal points is now the rim of the unit disk, it makes sense that the pullback metric based on \cref{eq:hp_metric} will have the $y$ replaced by the distance from the rim of the unit disk, which is $1 - x^2 - y^2$. Indeed, the halfplane metric can be written as in terms of the complex variable $z$, using the mapping \cref{eq:cayley_transform} the metric in the disk turns out to be \cite{Needham1997}
 \[
@@ -204,13 +205,25 @@ In \(x-y\) coordinates, this metric is
 \begin{equation}
     \dd{s} = \frac{2\sqrt{\dd{x}^2 + \dd{y}^2}}{1 - x^2 - y^2}.
 \end{equation}
-It has been pointed out that the Cayley transform is a member of a larger class called Möbius transforms, which will be elaborated upon in \cref{sec:mobius}. Apart from being conformal, Möbius transforms also preserve circles (i.e. the result of a a Möbius transform applied to a circle will again be a circle). The geodesics in the half plane have the either the shape of straight lines extending from the horizontal axis, or circles that are cross the horizontal axis at a right angle. Consequently, it is straightforward to deduce that the geodesics in the Poincaré disk are also circles that `start' orthogonally to the rim of the unit disk. Additionally, all diameters of the Poincaré disk are geodesics as well: they can be interpreted as circles with infinite radius that are obviously also orthogonal to the rim of the disk.
+It has been pointed out that the Cayley transform is a member of a larger class called Möbius transforms, which will be elaborated upon in \cref{sec:mobius}. Apart from being conformal, Möbius transforms also preserve circles (i.e. the result of a a Möbius transform applied to a circle will again be a circle). The geodesics in the half plane have the either the shape of straight lines extending from the horizontal axis, or circles that cross the horizontal axis at a right angle. Consequently, it is straightforward to deduce that the geodesics in the Poincaré disk are also circles that `start' orthogonally to the rim of the unit disk. Additionally, all diameters of the Poincaré disk are geodesics as well: they can be interpreted as circles with infinite radius that are obviously also orthogonal to the rim of the disk.
+
+\begin{figure}[ht]
+    \centering
+    \input{media/tikz/halfplane_disk}
+    \label{fig:halfplane_disk}
+    \caption{Comparison between trajectories in the Poincaré half plane (left) and the Poincaré disk (right). Several types of trajectories are shown: the solid lines \(A\) are `typical' geodesics, i.e. circles with finite radius in the half plane. The dotted line \(B\) is also a geodesic but never reaches the horizon at its endpoint (which would take an infinite distance), this is also clearly visible in the disk. Clearly, the origin in the half plane maps to \(-\ii\). The dashdotted lines \(C\) are horocycles; they preserve their shape under the action of the Cayley transform. Dotted line \(D\) is a hypercycle; a circle that crosses the horizon at an oblique or acute angle.}
+\end{figure}
 
 \subsubsection{The Smith chart}
 
 \subsection{Hyperboloid model}
+Hilbert's theorem about the embedding of a hyperbolic surface in Euclidean space eradicates any hope to find a `globe' for the hyperbolic space, like a regular sphere would be for an elliptic space. However, as strong as it may seem, Hilbert's theorem still leaves some room for other possiblities because it is very explicit about the nature of the space in question: it must be Euclidean. \Cref{chap:lorentz_plane} already introduced a notorious alternative: the Lorentz space. It will probably not come as a surprise that the Lorentz space does allow for the embedding of a hyperbolic surface, which is known as the \emph{hyperboloid model}.
+
+Now, why would one find any solace in the Lorentz plane specically? Recall that the curvature of a surface can be expressed in terms of its local radius, i.e. \(1/R^2\). A negative curvature therefore implies that \(R\) is somehow not a real but imaginary number. Obviously, this can never make any sense in an Euclidean space, but the Lorentzian space perfectly allows this kind of odd witchcraft, as illustrated by \cref{fig:lightlike_spacelike} \cite{Ratcliffe2019}. Indeed, the hyperboloid model is represented embedded in the Lorentzian three-space as the following set:
+\[  \]
 \subsection{Cayley-Klein disk}
 \subsection{Horizontal strip}
 
 \section{Möbius transformations}
 \label{sec:mobius}
+
