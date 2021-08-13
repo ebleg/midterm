@@ -10,29 +10,29 @@ Logic dictates that if this axiom is not true, two possible alternatives arise. 
     \item there exists \emph{no} line through \(p\) that does not meet \(L\), or
     \item there exist \emph{at least two} lines through \(p\) that do not meet \(L\).
 \end{itemize}
-The first statement corresponds to what is called \emph{spherical geometry}, while the latter is the defining axiom for \emph{hyperbolic geometry}. It does not take too much imagination to realize that the parallel axiom is equivalent to another basic fact in Euclidean geometry: the sum of the angles of a triangle is equal to \(\pi\). As such, for both types of non-Euclidean geometry this will not be the case; let \(\mathcal{E}(T)\) denote the \emph{angular excess} of a triangle \(T\) in a certain geometry.
+The first statement corresponds to what is called \emph{spherical geometry}, while the latter is the defining axiom for \emph{hyperbolic geometry}. It does not take too much imagination to realize that the parallel axiom is equivalent to another basic fact in Euclidean geometry: the sum of the angles of a triangle is equal to \(\pic\). As such, for both types of non-Euclidean geometry this will not be the case; let \(\mathscr{E}(T)\) denote the \emph{angular excess} of a triangle \(T\) in a certain geometry.
 \begin{itemize}
-    \item Naturally, for Euclidean geometry \(\mathcal{E}(T) = 0\),
-    \item in spherical geometry, \(\mathcal{E}(T) > 0\),
-    \item in hyperbolic geometry, \(\mathcal{E}(T) < 0\).
+    \item Naturally, for Euclidean geometry \(\mathscr{E}(T) = 0\),
+    \item in spherical geometry, \(\mathscr{E}(T) > 0\),
+    \item in hyperbolic geometry, \(\mathscr{E}(T) < 0\).
 \end{itemize}
 It may come as a surprise that the angular excess can be related to the size of the triangle (more specifically, its area) like so \cite{Needham1997}
 \begin{equation}
-    \mathcal{E}(T) = k\mathcal{A}(T)
+    \mathscr{E}(T) = k\mathscr{A}(T)
     \label{eq:angular_excess} 
 \end{equation}
 where \(k = 0\) for Euclidean geometry, \(k < 0\) for hyperbolic geometry and \(k > 0\) for spherical geometry. This hints at the fact that spherical geometry and hyperbolic geometry are somehow `larger' classes of geometry than Euclidean geometry, since they exist for a whole range of values for \(k\), be it positive or negative. There is indeed a `different' geometry for every value of \(k\), and only one of those values corresponds to the traditional concept of Euclidean geometry that most people are familiar with. Another consequence of \cref{eq:angular_excess} is that similar triangles cannot exist in non-Euclidean geometry; since apart from the trivial case where the triangles are also congruent, they must differ in area, which yields a different angular excess. The value of \(k\) is, as it turns out, equal to the \emph{Gaussian curvature} of the surface: a negatively curved surface has an angular deficiency while a positively curved surface has an angular excess; only for surface with zero curvature the sum of the angles of a triangle will be precisely equal to \(\pic\).
 
 \subsection{Surface curvature}
 \label{ssec:curvature}
-Perhaps one of the most remarkable results attributed to Carl Friedrich Gauss is his \emph{Theorema Egregium}\footnote{Alternatively translated by \citet{Lee1997} as the \emph{Totally Awesome Theorem}.} about the (Gaussian) curvature of surfaces. The theorem states that curvature is an \emph{intrinsic} property, which means that it remains preserved when the surface is transformed by `bending without stretching'. Curvature can be positive, negative or zero. Positively curved surfaces `bend away' from their tangent plane in any direction (local convexity) and negatively curved surfaces intersect their tangent plane like a saddle. For surfaces with zero curvature, there is always at least one straight line that lies in the tangent plane; examples are a cylinder (always one straight line) and a plane (straight lines in two directions). If a coordinate system is defined such that the point at issue is at the origin and the tangent plane to the surface described by \(f(x, y)\) coincides with the horizontal, the Gaussian curvature can be computed by means of the determinant of the Hessian \cite{Thurston1997, ONeill2006}
+Perhaps one of the most remarkable results attributed to Carl Friedrich Gauss is his \emph{Theorema Egregium}\footnote{Loosely translated by John M. \citet{Lee1997} as the \emph{Totally Awesome Theorem}.} about the (Gaussian) curvature of surfaces. The theorem states that curvature is an \emph{intrinsic} property, which means that it remains preserved when the surface is transformed by `bending without stretching'. Curvature can be positive, negative or zero. Positively curved surfaces `bend away' from their tangent plane in any direction (local convexity) and negatively curved surfaces intersect their tangent plane like a saddle. For surfaces with zero curvature, there is always at least one straight line that lies in the tangent plane; examples are a cylinder (always one straight line) and a plane (straight lines in two directions). If a coordinate system is defined such that the point at issue is at the origin and the tangent plane to the surface described by \(f(x, y)\) coincides with the horizontal, the Gaussian curvature can be computed by means of the determinant of the Hessian \cite{Thurston1997, ONeill2006}
     \[ 
         k = \det \begin{pmatrix}
                 f_{xx} & f_{xy}\\
                 f_{yx} & f_{yy}
         \end{pmatrix}.
     \]
-Surface curvature can be approached more rigorously from the perspective of Riemannian geometry. The core concept behind Riemannian geometry are the eponymous manifolds: these are manifolds equipped with an positive definite inner product\footnote{In contrast to \cref{sec:lorentz_metric}, the positive definiteness of the inner product is essential for Riemannian geometry. When the inner product is not positive definite but nondegenerate, as the Lorentz product, the manifold is called \emph{pseudo-Riemannian}.} on their tangent space, hence providing a \emph{metric (tensor)} that allows to determine lengths, angles and curvature. The metric on a parametric surface \(\vec{r}(u, v)\) can be written in terms of the so-called \emph{first fundamental form} I, which is defined as the inner product of two tangent vectors to the surface  and is characterised by coefficients \(E\), \(F\) and \(G\).
+    Surface curvature can be approached more rigorously from the perspective of Riemannian geometry. The core concept behind Riemannian geometry are the eponymous manifolds: these are manifolds equipped with an positive definite inner product\footnote{In contrast to \cref{sec:lorentz_metric}, the positive definiteness of the inner product is essential for Riemannian geometry. When the inner product is not positive definite but nondegenerate, as the Lorentz product, the manifold is called \emph{pseudo-Riemannian}.} on their tangent space, hence providing a \emph{metric (tensor)} that allows to determine lengths, angles and curvature. The metric on a parametric surface \(\vec{r}(u, v)\) can be written in terms of the so-called \emph{first fundamental form}\footnote{Unfortunately, the first (and second) fundamental forms are not forms in the modern mathematical sense of the word; this terminology is merely inherited from older works \cite{Spivak1999b}.} I, which is defined as the inner product of two tangent vectors to the surface  and is characterised by coefficients \(E\), \(F\) and \(G\).
 \begin{equation}
     \begin{split}
         E &= \vec{r}_u \cdot \vec{r}_u \\
@@ -61,7 +61,7 @@ the coefficients are then given by
     \end{split}
     \label{eq:second_fform}
 \end{equation}
-Finally, the first and second fundamental form can then be used to determine the Gaussian curvature of the parametric surface: \cite{ONeill2006}
+Finally, the first and second fundamental form can then be used to determine the Gaussian curvature of the parametric surface: \cite{ONeill2006, Spivak1999b}
 \begin{equation}
     k = \frac{\det(\mathrm{II})}{\det(\mathrm{I})} = \frac{eg - f^2}{EG - F^2}.
     \label{eq:gaussian_curv}
@@ -166,7 +166,7 @@ Thus, the conformality of the mapping imposes a restriction on the mapping for \
  the Euclidean metric of the pseudosphere:
 \begin{equation} 
     \dd{s} = \norm{\pdv{\vec{r}}{u}\dd{u} + \pdv{\vec{r}}{v}\dd{v}}
-    = \sech(u)\sqrt{\sinh[2](u)\dd{u}^2 + \dd{v}^2} = \frac{\sqrt{x^2 + y^2}}{y}
+    = \sech(u)\sqrt{\sinh[2](u)\dd{u}^2 + \dd{v}^2} = \frac{\sqrt{\dd{x}^2 + \dd{y}^2}}{y}
     \label{eq:hp_metric}
 \end{equation}
 This metric is called the \emph{Poincaré metric}. \Cref{eq:dy_halfplane} already states that for \(u = 0\), i.e. the rim of the pseudosphere, maps to the horizontal line \(y = 1\). This suggests that the pseudosphere is covered by the region of the half plane for which \(y \geq 1\).
@@ -187,6 +187,7 @@ Geodesics in the Poincaré half plane connecting two points are either straight 
     \label{fig:pseudosphere_hp}
 \end{figure}
 \subsection{Poincaré disk}
+\index{Poincaré disk}
 The Poincaré disk arises naturally from the Poincaré half plane by virtue of the Cayley transform. When the Poincaré half plane is viewed `on top' of the complex plane, the Cayley transform is defined as [source?]
 \begin{equation}
     D(z) = \frac{\ii z + 1}{z + \ii}\quad z \in \complex
@@ -219,6 +220,7 @@ It has been pointed out that the Cayley transform is a member of a larger class 
 \subsubsection{The Smith chart}
 
 \subsection{Hyperboloid model}
+\index{Hyperboloid model}
 Hilbert's theorem about the embedding of a hyperbolic surface in Euclidean space eradicates any hope to find a `globe' for the hyperbolic space, like a regular sphere would be for an elliptic space. However, as strong as it may seem, Hilbert's theorem still leaves some room for other possiblities because it is very explicit about the nature of the space in question: it must be Euclidean. \Cref{chap:lorentz_plane} already introduced a notorious alternative: the Lorentz space. It will probably not come as a surprise that the Lorentz space does allow for the embedding of a hyperbolic surface, which is known as the \emph{hyperboloid model}.
 
 Now, why would one find any solace in the Lorentz plane specifically? Recall that the curvature of a surface can be expressed in terms of its local radius, i.e. \(1/p^2\). A negative curvature therefore implies that \(p\) is somehow not a real but imaginary number. Obviously, this can never make any sense in an Euclidean space, but the Lorentzian space perfectly allows this kind of odd witchcraft, as illustrated by \cref{fig:lightlike_spacelike} \cite{Ratcliffe2019}. The complete hyperboloid consists of two sheets, a positive sheet and a negative sheet, implicitly described by the following set: 
@@ -246,8 +248,34 @@ Performing these calculations on \cref{eq:parametric_hyperboloid} yields indeed 
 \subsubsection{Lorentz group}
 
 \subsection{Cayley-Klein disk}
-\subsection{Horizontal strip}
 
 \section{Möbius transformations}
 \label{sec:mobius}
+\index{Möbius transformation}
+Many of the transforms and mappings discussed in the preceding chapters may be expressed as a Möbius transformation. These are mappings of the form \cite{Needham1997}
+\begin{equation}
+    M(z) = \frac{az + b}{cz + d}
+    \label{eq:mobius}
+\end{equation}
+where \(a, b, c, d \in \complex \) are constants. Möbius transformations carry a deep connection with hyperbolic geometry (and non-Euclidean in general), and Einteins theory of relativity. As such, the connection with the financial interpretation of the Lorentz plane can be readily made. As stated by \citet{Needham1997}, the complex mappings that correspond to a Lorentz transformation are Möbius transformations and vice versa --- every Möbius transform corresponds to a unique Lorentz transformation.
 
+The Möbius transformation \(M\) is called \emph{singular} if \(ad - bc = 0\), which maps every point to the same image \(a/c\). In general, any Möbius transformation can be decomposed into four elementary transformations:
+\begin{enumerate}
+    \item A translation \(z \mapsto z + \frac{d}{c}\)
+    \item A \emph{complex inversion} \(z \mapsto \frac{1}{z}\)
+    \item An expansion and rotation \(z \mapsto -\frac{ad - bc}{c^2}z\)
+    \item A translation \(z + \frac{a}{c}\)
+\end{enumerate}
+Each of these transformations are conformal and preserve circles which is why general Möbius transformations inherit these vital properties as well. It is quite clear from \cref{eq:mobius} that multiplication of both the denominator and the numerator by the same constant \(k\) will not affect the result of the mapping. Therefore, a Möbius transformation is uniquely determined by only three quantities \(a/b,\ b/c\) and \(c/d\). This ambiguity allows for the notion of \emph{normalized transformations}, for which \(ad - bc = 1\). 
+
+If \(M\) is nonsingular, the transformation is bijective; the inverse transformation is then given by \cite{Needham1997}
+\[ M^{-1}(z) = \frac{dz - b}{-cz + a} \]
+
+    
+\subsection{Matrix interpretation}
+blabla
+
+\subsection{Group structure}
+It is neither surprising nor hard to show that the nonsingular Möbius transformations form a group under composition; the identity mapping is a Möbius transformation, the inverse transformation is also a Möbius transformation as illustrated by the expression for \(M^{-1}\) stated above and that the composition of two transformations \(M_2 \circ M_1\) again yields a member of the class of Möbius transformations \cite{Needham1997}.
+
+Within the Möbius transforms, four atomic classes may be distinguished. These can be most easily visualized on the Riemann sphere, which is a model of the extended complex plane\footnote{This is the regular complex plane combined with a value for infinity \(\infty\).}. First of all, there are the \emph{elliptic transforms}, whose invariant curves are horizontal circles on the Riemann sphere, or equivalently, circles centered at the origin in the complex plane. The corresponding transform has the form \(z \mapsto \exp(\ii\alpha)z\). Secondly, \emph{hyperbolic transforms} 
