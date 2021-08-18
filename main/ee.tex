@@ -1,3 +1,27 @@
 % Second chapter
 \chapter{Economic engineering}
+Economic engineering is build on analogies between (macro)economic theory and common engineering disciplines such as thermodynamics, circuit theory and (classical) mechanics\footnote{as opposed to more recent theories in relativistic mechanics and quantum mechanics}. Escpecially for the latter, a rich variety of useful analogues can be devised. There are two common classses of interpretations mechanics: \emph{analytical mechanics} including the formulations by Joseph-Louis Lagrange and sir William Rowan Hamilton, and \emph{vectorial mechanics}, better known as \emph{Newtonian mechanics}. The former variant is usually preferred in the field of engineering whereas the analytical mechanics are due to their mathematical elegance powerful interpretative value. Likewise, the theory of economic engineering can be approached in two similar ways. Usually the `Newtonian' approach is given the most attention, but in the case of this work the energy-based approach will prove to be more useful, which is why it will be the starting point of this discussion instead.
 
+\section{Analytical approach}
+Analytical mechanics, more specifically \emph{Lagrangian} and \emph{Hamiltonian} mechanics, are built around the definition of special state functions, respectively called the Lagrangian \(\lag\) and the Hamiltonian \(\ham\).
+
+\subsection{Lagrangian mechanics}
+Central to the concept of Lagrangian mechanics is the so-called \emph{configuration space} \(M\), which is an \(n\)-dimensional manifold provided with some parameterization called \emph{generalized coordinates} assembled in the vector \(\vec{q}\). In classical mechanics, these generalized coordinates parameterize completely every allowable position of the system at issue. In economic engineering, \(\vec{q}\) has a similar intuitive notion, namely the stock values of various products, which denote the `position' of some economic system. Just as in mechanics, the configuration manifold may just be equal to \(\real^n\), but in more interesting and realistic cases it is often some manifold embedded in \(\real^n\). 
+
+The Lagrangian \(\lag\) is then defined as a mapping from the \emph{tangent bundle} \(TM\) of the configuration manifold \(M\) , optionally paired with a time argument for time-varying problems to the reals,
+    \[ \lag : TM \times \real^+ \to \real, \]
+i.e. it takes a generalized position \(\vec{q}\) and a generalized velocity \(\dot{\vec{q}}\) (which live in the tangent space of \(M\)), and a time instance to some scalar value. The crux of the Lagrangian theory is that motions of a mechanical system coincide with \emph{extremals}\footnote{this is a natural extension of the term \emph{extremum} to the calculus of variations.} of the action integral
+\[ \Phi(\gamma) = \int^{t_1}_{t_0} \lag \dd{t}\]
+where by convention \(\lag = \mathscr{T}^{*} - \mathscr{V}\), i.e. the difference between the kinetic co-energy and potential energy in the system. In economic engineering, the lagrangian is analogous to running costs. Hence, the extremal of the aforementioned integral coincides with a cost minimization, which fits will into the rational behaviour of economic agents on whatever scale.
+
+\begin{block}{Lagrangian system}
+    Let \(M\) be a differentiable manifold, \(TM\) its tangent bundle, and \(\lag: TM \to \real\) a differentiable function. A map \(\gamma: \real \to M\)  is called a motion in the lagrangian system with configuration manifold \(M\) and lagrangian function \(\lag\) if \(\gamma\) is an extremal of the functional
+    \[
+     \Phi(\gamma) =  \int^{t_1}_{t_0} \lag\qty(\dot{\gamma})\dd{t}
+\]
+    where \(\dot{\gamma}\) is the velocity vector \(\dot{\gamma}(t) \in TM_{\gamma(t)}\) \cite{Arnold1989}.
+\end{block}
+
+\subsection{Hamiltonian mechanics}
+
+\section{Newtonian approach}
