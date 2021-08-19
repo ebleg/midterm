@@ -108,7 +108,13 @@
 \newenvironment{block}[1]{%
     \tcolorbox[%
     colback=accent1!20!,colframe=accent1,%
-    title=#1]}%
+    title=\textsf{#1}]}%
+    {\endtcolorbox}
+
+\newenvironment{econ}[1]{%
+    \tcolorbox[%
+    colback=accent3!20!,colframe=accent3,%
+    title=\textsf{#1}]}%
     {\endtcolorbox}
 
 % --------------------------------------------------------------------
@@ -162,6 +168,11 @@
 \newcommand{\hyperbolic}{\ensuremath{\mathbb{H}}\xspace}
 \newcommand{\complex}{\ensuremath{\mathbb{C}}\xspace}
 \newcommand{\lnorm}[1]{\ensuremath{\norm{#1}_L}}
+\newcommand{\ecokin}{\ensuremath{T^*}}
+\newcommand{\ekin}{\ensuremath{T}}
+\newcommand{\epot}{\ensuremath{U}}
+\newcommand{\gpos}{\ensuremath{\vec{q}}}
+\newcommand{\gvel}{\ensuremath{\dot{\vec{q}}}}
 
 \DeclareMathOperator{\sgn}{sgn}
 

@@ -6,22 +6,56 @@ Economic engineering is build on analogies between (macro)economic theory and co
 Analytical mechanics, more specifically \emph{Lagrangian} and \emph{Hamiltonian} mechanics, are built around the definition of special state functions, respectively called the Lagrangian \(\lag\) and the Hamiltonian \(\ham\).
 
 \subsection{Lagrangian mechanics}
-Central to the concept of Lagrangian mechanics is the so-called \emph{configuration space} \(M\), which is an \(n\)-dimensional manifold provided with some parameterization called \emph{generalized coordinates} assembled in the vector \(\vec{q}\). In classical mechanics, these generalized coordinates parameterize completely every allowable position of the system at issue. In economic engineering, \(\vec{q}\) has a similar intuitive notion, namely the stock values of various products, which denote the `position' of some economic system. Just as in mechanics, the configuration manifold may just be equal to \(\real^n\), but in more interesting and realistic cases it is often some manifold embedded in \(\real^n\). 
+Central to the concept of Lagrangian mechanics is the so-called \emph{configuration space} \(M\), which is an \(n\)-dimensional manifold provided with some parameterization called \emph{generalized coordinates} assembled in the vector \(\gpos\). In classical mechanics, these generalized coordinates parameterize completely every allowable position of the system at issue. 
 
-The Lagrangian \(\lag\) is then defined as a mapping from the \emph{tangent bundle} \(TM\) of the configuration manifold \(M\) , optionally paired with a time argument for time-varying problems to the reals,
+The configuration manifold may just be equal to \(\real^n\), but in more interesting and realistic cases it is often some manifold embedded in \(\real^n\). This is often the result of holonomic constraints, which are constraints that impose a restriction only on the configuration space, but not, for example, on the allowable velocities.
+
+\begin{econ}{Configuration manifold}
+    In economic engineering, \(\gpos\) has a similar intuitive notion, namely the stock values of various products, which denote the `position' of some economic system. The name `position' may be misleading when intuitively ported to the familiar three-dimensional space; the configuration space usually has less structure such as the absence of a metric or inner product.
+\end{econ}
+
+The Lagrangian \(\lag\) is then defined as a mapping from the \emph{tangent bundle} \(TM\) of the configuration manifold \(M\), optionally paired with a time argument for time-varying problems to the reals,
     \[ \lag : TM \times \real^+ \to \real, \]
-i.e. it takes a generalized position \(\vec{q}\) and a generalized velocity \(\dot{\vec{q}}\) (which live in the tangent space of \(M\)), and a time instance to some scalar value. The crux of the Lagrangian theory is that motions of a mechanical system coincide with \emph{extremals}\footnote{this is a natural extension of the term \emph{extremum} to the calculus of variations.} of the action integral
-\[ \Phi(\gamma) = \int^{t_1}_{t_0} \lag \dd{t}\]
-where by convention \(\lag = \mathscr{T}^{*} - \mathscr{V}\), i.e. the difference between the kinetic co-energy and potential energy in the system. In economic engineering, the lagrangian is analogous to running costs. Hence, the extremal of the aforementioned integral coincides with a cost minimization, which fits will into the rational behaviour of economic agents on whatever scale.
+    i.e. it takes a generalized position \(\gpos\) and a generalized velocity \(\gvel\) (which live in the tangent space of \(M\)), and a time instance to some scalar value. Since the economic interpretation of \(\gpos\) is a vector of stock levels, its time derivative \(\gvel\) denotes a flow of goods. In classical mechanics, by convention 
+    \[\lag = \ecokin - \epot,\] 
+    i.e., where \ecokin is the kinetic co-energy\footnote{As will become clear later, the term `co-energy' is used to distinguish between the definition of kinetic energy in terms of the generalized momenta, which is the perspective of Hamiltonian mechanics.} of the system and \epot the potential energy. Generally, the kinetic co-energy is a quadratic form on the tangent space of the configuration manifold, whose coefficients may depend on the generalized position: \(\ecokin = \frac{1}{2}a_{ij}(\gpos)\dot{q}_i\dot{q_j} \). The potential energy is simply a mapping from the configuration manifold to the reals. If \(M\) is a Riemannian manifold and its Lagrangian has the aforementioned form, the system is called \emph{natural}.
 
-\begin{block}{Lagrangian system}
-    Let \(M\) be a differentiable manifold, \(TM\) its tangent bundle, and \(\lag: TM \to \real\) a differentiable function. A map \(\gamma: \real \to M\)  is called a motion in the lagrangian system with configuration manifold \(M\) and lagrangian function \(\lag\) if \(\gamma\) is an extremal of the functional
-    \[
-     \Phi(\gamma) =  \int^{t_1}_{t_0} \lag\qty(\dot{\gamma})\dd{t}
-\]
-    where \(\dot{\gamma}\) is the velocity vector \(\dot{\gamma}(t) \in TM_{\gamma(t)}\) \cite{Arnold1989}.
-\end{block}
+The crux of the Lagrangian theory is that motions of a mechanical system coincide with \emph{extremals}\footnote{this is a natural extension of the term \emph{extremum} to the calculus of variations.} of the action integral
+\[ S = \int^{t_1}_{t_0} \lag(\gpos, \gvel, t) \dd{t}\]
+where \(S\) is a quantity named \emph{action} with units of energy-time, or \si{\joule \second}. This is colloquially named the \emph{principle of least action}, or alternatively (and rather confoundingly), \emph{Hamilton's principle}.
+
+\begin{econ}{Lagrangian}
+   The lagrangian is analogous to running costs --- the action \(S\) has the units of money in economic engineering. Hence, the extremal of the aforementioned integral coincides with a cost minimization, which fits well into what is considered as rational behaviour of economic agents on whatever scale. 
+\end{econ}
+
+Please note that arguably the most fundamental finding in classical mechanics (and also economic engineering) appears here rather subtly, namely that the Lagrangian is a function of only \(\gpos\) and its first derivative \(\gvel\), but no higher derivatives --- that is, the state of the system is completely determined by the generalized positions and generalized velocities. This encodes Newton's famous second law \(F = ma\) already in a very elegant fashion.
+
+The aforementioned principle only is for now only helpful on a conceptual level, because it does not how to arrive at any solutions. For this, a branch of mathematics called the calculus of variations comes to aid, which is concerned with finding extremals of \emph{functionals}\footnote{A functional is a real-valued function on a vector space (of functions.)}, in this case the action \(S\). A necessary condition for \(S\) to attain an extremum is that 
+\[ \var{S} = 0,\]
+where \(\var{S}\) is called the \emph{first variation} of \(S\). Just like a regular differential can be seen as an infinitesimal perturbation of a function value, the variation is a very small perturbation of a functional by means of a trajectory \(h(t)\). The resulting perturbed functional can then in general be decomposed in a part that varies linearly with \(h\), and a nonlinear part. The requirement for the extremal is that the \emph{linear part vanishes for any} \(h\) \cite{Arnold1989}.
+
+As shown by \citet{Landau1976}, the condition \(\var{S} = 0\) is equivalent to the \emph{Euler-Lagrange} equation
+\[ \dv{}{t}\qty(\pdv{\lag}{\gvel}) - \pdv{\lag}{\gpos} = 0. \]
+This yields a total of \(n\) second-order differential equations, or equivalently a system of \(2n\) first-order equations. Of course, this also requires \(2n\) initial conditions for a solution to be found.
+
+It was already mentioned that \(\lag = \ecokin - \epot\) in classical mechanics, but what is the economic interpretation behind this equation?
+\begin{econ}{Kinetic energy}
+    \citet{Mendel2019} sees kinetic (co)-energy as an analogue to surplus --- i.e. an area either above or below the price elasticity curve in a suply-demand diagram.
+\end{econ}
+
+\begin{econ}{Potential energy}
+    Blabla
+\end{econ}
+
+% \begin{block}{Lagrangian system}
+%     Let \(M\) be a differentiable manifold, \(TM\) its tangent bundle, and \(\lag: TM \to \real\) a differentiable function. A map \(\gamma: \real \to M\)  is called a motion in the lagrangian system with configuration manifold \(M\) and lagrangian function \(\lag\) if \(\gamma\) is an extremal of the functional
+%     \[
+%      \Phi(\gamma) =  \int^{t_1}_{t_0} \lag\qty(\dot{\gamma})\dd{t}
+% \]
+%     where \(\dot{\gamma}\) is the velocity vector \(\dot{\gamma}(t) \in TM_{\gamma(t)}\) \cite{Arnold1989}.
+% \end{block}
 
 \subsection{Hamiltonian mechanics}
+
 
 \section{Newtonian approach}
