@@ -102,7 +102,7 @@ DIFF =
 MAXREPEAT = 5
 
 # Build directory.
-BUILDDIR =
+BUILDDIR = build
 
 # Use latex-dev if DEV is defined.
 DEV =

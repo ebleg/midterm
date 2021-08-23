@@ -26,12 +26,13 @@ where \(k = 0\) for Euclidean geometry, \(k < 0\) for hyperbolic geometry and \(
 \subsection{Surface curvature}
 \label{ssec:curvature}
 Perhaps one of the most remarkable results attributed to Carl Friedrich Gauss is his \emph{Theorema Egregium}\footnote{Loosely translated by John M. \citet{Lee1997} as the \emph{Totally Awesome Theorem}.} about the (Gaussian) curvature of surfaces. The theorem states that curvature is an \emph{intrinsic} property, which means that it remains preserved when the surface is transformed by `bending without stretching'. Curvature can be positive, negative or zero. Positively curved surfaces `bend away' from their tangent plane in any direction (local convexity) and negatively curved surfaces intersect their tangent plane like a saddle. For surfaces with zero curvature, there is always at least one straight line that lies in the tangent plane; examples are a cylinder (always one straight line) and a plane (straight lines in two directions). If a coordinate system is defined such that the point at issue is at the origin and the tangent plane to the surface described by \(f(x, y)\) coincides with the horizontal, the Gaussian curvature can be computed by means of the determinant of the Hessian \cite{Thurston1997, ONeill2006}
-    \[ 
-        k = \det \begin{pmatrix}
-                f_{xx} & f_{xy}\\
-                f_{yx} & f_{yy}
-        \end{pmatrix}.
-    \]
+\[ 
+    k = \det 
+    \begin{pmatrix}
+            f_{xx} & f_{xy}\\
+            f_{yx} & f_{yy}
+    \end{pmatrix}.
+\]
     Surface curvature can be approached more rigorously from the perspective of Riemannian geometry. The core concept behind Riemannian geometry are the eponymous manifolds: these are manifolds equipped with an positive definite inner product\footnote{In contrast to \cref{sec:lorentz_metric}, the positive definiteness of the inner product is essential for Riemannian geometry. When the inner product is not positive definite but nondegenerate, as the Lorentz product, the manifold is called \emph{pseudo-Riemannian}.} on their tangent space, hence providing a \emph{metric (tensor)} that allows to determine lengths, angles and curvature. The metric on a parametric surface \(\vec{r}(u, v)\) can be written in terms of the so-called \emph{first fundamental form}\footnote{Unfortunately, the first (and second) fundamental forms are not forms in the modern mathematical sense of the word; this terminology is merely inherited from older works \cite{Spivak1999b}.} I, which is defined as the inner product of two tangent vectors to the surface  and is characterised by coefficients \(E\), \(F\) and \(G\).
 \begin{equation}
     \begin{split}
@@ -273,7 +274,7 @@ If \(M\) is nonsingular, the transformation is bijective; the inverse transforma
 
     
 \subsection{Matrix interpretation}
-blabla
+blabla 
 
 \subsection{Group structure}
 It is neither surprising nor hard to show that the nonsingular Möbius transformations form a group under composition; the identity mapping is a Möbius transformation, the inverse transformation is also a Möbius transformation as illustrated by the expression for \(M^{-1}\) stated above and that the composition of two transformations \(M_2 \circ M_1\) again yields a member of the class of Möbius transformations \cite{Needham1997}.

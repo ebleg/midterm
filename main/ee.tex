@@ -18,7 +18,7 @@ The Lagrangian \(\lag\) is then defined as a mapping from the \emph{tangent bund
     \[ \lag : TM \times \real^+ \to \real, \]
     i.e. it takes a generalized position \(\gpos\) and a generalized velocity \(\gvel\) (which live in the tangent space of \(M\)), and a time instance to some scalar value. Since the economic interpretation of \(\gpos\) is a vector of stock levels, its time derivative \(\gvel\) denotes a flow of goods. In classical mechanics, by convention 
     \[\lag = \ecokin - \epot,\] 
-    i.e., where \ecokin is the kinetic co-energy\footnote{As will become clear later, the term `co-energy' is used to distinguish between the definition of kinetic energy in terms of the generalized momenta, which is the perspective of Hamiltonian mechanics.} of the system and \epot the potential energy. Generally, the kinetic co-energy is a quadratic form on the tangent space of the configuration manifold, whose coefficients may depend on the generalized position: \(\ecokin = \frac{1}{2}a_{ij}(\gpos)\dot{q}_i\dot{q_j} \). The potential energy is simply a mapping from the configuration manifold to the reals. If \(M\) is a Riemannian manifold and its Lagrangian has the aforementioned form, the system is called \emph{natural}.
+    i.e., where \ecokin is the kinetic co-energy\footnote{As will become clear later, the term `co-energy' is used to distinguish between the definition of kinetic energy in terms of the generalized momenta, which is the perspective of Hamiltonian mechanics.} of the system and \epot the potential energy. Generally, the kinetic co-energy is a quadratic form on the tangent space of the configuration manifold, whose coefficients may depend on the generalized position: \(\ecokin = \frac{1}{2}a_{ij}(\gpos)\dot{q}_i\dot{q_j} \). The potential energy is simply a mapping from the configuration manifold to the reals. If \(M\) is a Riemannian manifold and its Lagrangian has the aforementioned form, the system is called \emph{natural} \cite{Arnold1989}.
 
 The crux of the Lagrangian theory is that motions of a mechanical system coincide with \emph{extremals}\footnote{this is a natural extension of the term \emph{extremum} to the calculus of variations.} of the action integral
 \[ S = \int^{t_1}_{t_0} \lag(\gpos, \gvel, t) \dd{t}\]
@@ -56,6 +56,9 @@ It was already mentioned that \(\lag = \ecokin - \epot\) in classical mechanics,
 % \end{block}
 
 \subsection{Hamiltonian mechanics}
+One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distincition will then just be a matter of definition.} \cite{Landau1976}.
+
+Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1976}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
 
 
 \section{Newtonian approach}
