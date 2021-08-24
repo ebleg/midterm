@@ -47,28 +47,28 @@
 % Make the cover page and hell of a lot of title pages
 \maketitle
 %
-\include{formalities/abstract}
+\input{formalities/abstract}
 %
 % table of contents, (\toc of \toclof of \tocloflot )
 \tocloflot
 %
 %
 %\include{formalities/preface}
-\include{formalities/acknowledgements}
+\input{formalities/acknowledgements}
 %\include{formalities/dedication}
 %
 %========================== Main matter ======================================
 \mainmatter
 
-\include{notes/structure}
+%\input{notes/structure}
 % \include{notes/questions}
 
-\include{main/introduction}
-\include{main/finance}
-\include{main/lorentz_plane}
-\include{main/hyperbolic_geometry}
-\include{main/ee}
-\include{main/analytical_mechanics}
+\input{main/introduction}
+\input{main/finance}
+\input{main/lorentz_plane}
+\input{main/hyperbolic_geometry}
+\input{main/ee}
+\input{main/analytical_mechanics}
 
 
 %========================== Appendices =======================================
@@ -84,7 +84,7 @@
 % Bibliography
 \printbib{library}
 %
-\include{formalities/glossary}
+\input{formalities/glossary}
 %
 % Index
 \cleardoublepage
