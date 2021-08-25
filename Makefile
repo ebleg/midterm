@@ -114,7 +114,7 @@ KEEP_TEMP =
 # - always
 # - never
 # - auto (default)
-COLOR =
+COLOR = always
 
 # Files not to be included in a distribution.
 NODISTFILES =
@@ -191,7 +191,7 @@ WGET =
 CURL =
 
 # Command options.
-LATEX_OPT = -interaction=nonstopmode -halt-on-error -synctex=1 --shell-escape
+LATEX_OPT = -interaction=batchmode -halt-on-error -synctex=1 --shell-escape
 PDFLATEX_DVI_OPT = -output-format=dvi
 DVIPS_OPT = -Ppdf -z
 DVIPDF_OPT =
