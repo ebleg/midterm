@@ -281,7 +281,8 @@ If \(M\) is nonsingular, the transformation is bijective; the inverse transforma
 It is neither surprising nor hard to show that the nonsingular Möbius transformations form a group under composition; the identity mapping is a Möbius transformation, the inverse transformation is also a Möbius transformation as illustrated by the expression for \(M^{-1}\) stated above and that the composition of two transformations \(M_2 \circ M_1\) again yields a member of the class of Möbius transformations \cite{Needham1997}. 
 
 \paragraph{The Riemann sphere} 
-The Möbius group is the automorphism group of the Riemann sphere. Being the simplest compact Riemann surface, the Riemann sphere is a special representation of the extended complex plane\footnote{The complex plane combined with a value for infinity `\(\infty\)'.} in three-dimensional space: it can be visualized by placing the complex plane horizontally and considering a unit sphere centered around the origin, such that its intersection coincides with the unit disk of the complex plane. To map the plane to the sphere, a stereographic projection is is used from the `north pole' of the sphere. As such, anything inside the unit disk is mapped to the southern hemisphere, everything on the unit disk is mapped onto itself (since it lies at the intersection) and everything outside the unit disk lies on the northern hemisphere. The north pole of the Riemann sphere then coincides with the distinctive feature of the extended complex plane, namely the point at infinity \(\infty\) \cite{Needham1997}.
+The Möbius group \moebiusgroup is the automorphism group of the Riemann sphere. Being the simplest compact Riemann surface, the Riemann sphere is a special representation of the extended complex plane\footnote{The complex plane combined with a value for infinity `\(\infty\)'.} \(\hat{\complex}\) in three-dimensional space: it can be visualized by placing the complex plane horizontally and considering a unit sphere centered around the origin, such that its intersection coincides with the unit disk of the complex plane. To map the plane to the sphere, a stereographic projection is is used from the `north pole' of the sphere. As such, anything inside the unit disk is mapped to the southern hemisphere, everything on the unit disk is mapped onto itself (since it lies at the intersection) and everything outside the unit disk lies on the northern hemisphere. The north pole of the Riemann sphere then coincides with the distinctive feature of the extended complex plane, namely the point at infinity \(\infty\) \cite{Needham1997}. Hence, to put it formally:
+\[ \moebiusgroup = \automorphgroup{\hat{\complex}} \quad \hat{\complex} = \complex \cup \{\infty\}\]
 
 In order to turn towards the computational aspect of the Riemann sphere, one must consider a different coordinate system for the complex plane; namely the \emph{homogeneous} or \emph{projective} coordinates. These consist of an ordered pair of complex numbers\footnote{In physics, these objects are also called \emph{2-spinors} which are also fundamentally connected with the theory of relativity, as demonstrated by \cite{Penrose1984}.} , i.e. an element of \(\complex^2/\left\{[0, 0]\right\}\),  denoted as \(\qty[\mathfrak{z}_1, \mathfrak{z}_2]\). These two complex numbers are subject to an equivalence relation that makes them projective coordinates, in that \[\qty[\mathfrak{z}_1, \mathfrak{z}_2] \sim \qty[\mathfrak{w}_1, \mathfrak{w}_2] \iff \mathfrak{w}_1 = \lambda \mathfrak{z}_1\ \text{ and }\ \mathfrak{w_2} = \lambda \mathfrak{z}_2\]
 with \(\lambda\) any nonzero complex number. The projective space is then formed by the quotient set of the complex 2-space (excluding the origin) and this equivalence relation. Every equivalence class can be uniquely identified with a point \([1, \sfrac{\mathfrak{z}_2}{\mathfrak{z}_1}]\), which then corresponds to a point on the The Riemann sphere (or equivalently on the extended complex plane). The only point where this mapping breaks down is the point \([0, 1]\), which can be associated with the north pole on the Riemann sphere, or the infinity point. In technical terms, this is called a one-point compactification of a plane into a sphere, with the desirable property that the infinity point \emph{has no special meaning on the sphere}, which it inevitably has in a plane. The Riemann sphere is therefore equal to the one-dimensional complex projective space \(\mathbb{CP}^1\) \cite{Thurston1997}. 
@@ -322,6 +323,7 @@ Every Möbius transform can be associated with one of four different classes:
     \item Hyperbolic
     \item Loxodromic
 \end{itemize}
+\(\mathsf{L}\mathcal{L}\mathscr{L}\mathbb{L}\mathfrak{L}\)
 
 \paragraph{The special linear group}
 Another classic Lie group is the special linear group \slgroup{n}{\field}, which are the volume-preserving transformations on a vector space --- this property turns out to be quite important. The special linear group over the complex numbers (2-dimensional) \slgroup{2}{\complex} can be represented as the group of all the complex \(2\times2\) matrices with unit determinant. It has been mentioned previously that any such matrix coincides with a Möbius transform, albeit surjectively: for every Möbius transform, there are two such matrices. As such, \slgroup{2}{\complex} is a \emph{double cover} of \moebiusgroup.
@@ -331,7 +333,6 @@ All three geometries of constant curvature have symmetry groups (of direct isome
 \paragraph{The Lorentz group}
 
 \subsection{Relation to flow maps of linear ODE's}
-
 
 \subsection{Notes}
 \begin{itemize}
@@ -350,3 +351,6 @@ All three geometries of constant curvature have symmetry groups (of direct isome
 
 \end{itemize}
 
+\nomenclature{\(\mathbb{R}\)}{Real numbers}
+\nomenclature{\(\mathbb{C}\)}{Complex numbers}
+\nomenclature{\(\mathbb{H}\)}{Quaternions}
