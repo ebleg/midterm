@@ -1,4 +1,1 @@
-wsl make 
-cd build
-wsl -- rubber-info mscLiterature.log > ./summary.log
-cd ..
+wsl latexmk -outdir=build -silent mscLiterature

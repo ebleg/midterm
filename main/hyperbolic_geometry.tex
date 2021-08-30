@@ -316,14 +316,50 @@ Based on the matrix analogy, the one can state that \moebiusgroup is the group o
 An interesting fact from group theory arises here as well: it has already been established that Möbius transforms are only unique up to multiplication by a scalar --- as such, they can be normalized (with unit determinant) without loss of generalization. This suggests that \moebiusgroup is really the action of the \emph{special} linear group modulo scalar multiplication, resulting in the \emph{projective special linear group}. Luckily, this fact is also reconciled within group theory: the groups \pglgroup{n}{\field} and \pslgroup{n}{\field} over the field \field are isomorphic as long as every element of \field has an \(n\)th root within \field. The fact that is is true for \(\field = \complex\) is probably the most fundamental property of the complex numbers. To summarize, the Möbius group \moebiusgroup is equal to the projective linear group and the special projective group (over the field of complex numbers), which are isomorphic to each other in this particular case.
 
 \paragraph{Classification of Möbius transforms}
-Every Möbius transform can be associated with one of four different classes:
+In the preceding discussion about the matrix representation of Möbius transforms, one important aspect has not yet been addressed: what about the eigenvalues and eigenvectors of \([M]\)? Eigenvectors are vectors that remains invariant (up to scaling) under the multiplication of a particular matrix. Of course, one should bear in mind that the vector in this case contains projective coordinates, so that even when scaled, its coordinate representation remains identical. As such, the eigenvectors of the matrix \(M\) are the \emph{fixed points} of the Möbius transform \(M\); any Möbius transform has two at most. This is even more perspicuous by solving the equation \(z^* = M(z^*)\), which has solutions
+\[ z^* = \frac{(a - d) \pm \sqrt{(a + d)^2 - 4}}{2c}.\]
+When converted to projective coordinates, the two solutions for \(z^*\) then coincide with the eigenvectors of \([M]\). In the degenerate case for which \(a + d = 2\), the argument of the square root amounts to zero, which means that there is only one unique fixed point. These transforms are called \emph{parabolic}, more will become clear about them later \cite{Needham1997}.
+
+Now, it remains to analyse the significance of the eigenvalues. Of course, since eigenvalues are sensitive to scaling of the matrix, it is important to stress again that \([M]]\) must be normalized (have a unit determinant) in order for the following to hold. It is well known from linear algebra that if \(\lambda_1, \lambda_2\) are eigenvalues of \([M]\), then
+\[ \trace{[M]} = \lambda_1 + \lambda_2 \quad\text{and}\quad \det [M]  = \lambda_1 \lambda_2.\]
+Because the matrix is normalized, these two results can be combined into:
+\begin{equation}
+    \lambda + \frac{1}{\lambda} = a + d = \trace{[M]}.
+    \label{eq:moebius_eigvals}
+\end{equation}
+It can be shown that every non-parabolic Möbius transform is conjugate\footnote{Two group elements \(a\) and \(b\) are called \emph{conjugate} if there exists another group element \(g\) such that \(b = g^{-1}ag\). This is analogous to similarity transforms (and therefore the notion of similar matrices) in linear algebra.} to a Möbius transform that has fixed points 0 and \(\infty\), and is therefore of the form
+\(\tilde{M}(z) = kz,\)
+where \(k\) is called the \emph{multiplier} of this Möbius transform, and consequently all the transforms that are conjugate to it. The matrix \([\tilde{M}]\) that coincides with this transform necessarily must have the form (again emphasizing the transform is normalized)
+\[ [\tilde{M}] = \mqty(\dmat[0]{\sqrt{k}, \frac{1}{\sqrt{k}}}), \]
+because then of course \(\tilde{M}(z) = \frac{\sqrt{k}z}{1/\sqrt{k}} = kz\). Because conjugacy translates to a similarity transform in the matrix analogy, it leaves the eigenvalues of the matrix unaffected. But, for \(\tilde{M}\) is a diagonal matrix, its eigenvalues are exactly on the main diagonal. As a result, the multiplier of a Möbius transform is equal to the square of its eigenvalue. Strictly speaking, every Möbius transform has of course two eigenvalues and two multipliers, but since they are both each others reciprocal, they do not have to be considered separately.
+
+Using \cref{eq:moebius_eigvals}, one can distinguish three different `classes' in terms of solutions for \(\lambda\); 
 \begin{itemize}
-    \item Elliptic
-    \item Parabolic
-    \item Hyperbolic
-    \item Loxodromic
+    \item When \(\trace{[M]} \in [0, 4)\), it can be shown that \(\lambda\) is a complex number on the unit circle (\(\abs{\lambda} = 1\)); the corresponding matrix will then be similar to a rotation matrix:
+        \[ \lambda = \exp(\ii \alpha) \qquad [M] \text{ similar to } \mqty(\cos(\alpha) & -\sin(\alpha) \\ \sin(\alpha) & \cos(\alpha)), \]
+        which would be equivalent to the real Jordan block form of the matrix \([M]\). These transforms are called \emph{elliptic}. The particular case for which \(\trace{[M]} = 0\) is called a \emph{circular transform}.
+    \item As mentioned before, \emph{parabolic transforms} form a degenerate `edge' case for which \(\trace{[M]} = 4\). They only have a single fixed point, and the transforms are simply translations in the plane.
+    \item If \(\trace{[M]} > 4\), the solution for \(\lambda\) is real. The transform is then similar to a \emph{squeeze mapping}
+        \[ \mqty(\dmat[0]{\exp(\varphi), \exp(-\varphi)}) \]
+    \item The hyperbolic case is part of a larger class called \emph{loxodromic transforms} which comprise all the cases for which \(\trace{[M]} \notin [0, 4]\).
 \end{itemize}
-\(\mathsf{L}\mathcal{L}\mathscr{L}\mathbb{L}\mathfrak{L}\)
+
+\begin{table}
+    \caption{Blabla}
+    \label{tab:moebiusclasses}
+    \centering
+    \begin{tabular}{llll}
+        \toprule
+        \textbf{Class} & \textbf{Multiplier} & 
+        \textbf{Trace} & \textbf{Jordan block} \\
+        \midrule
+        Elliptic    & \(\lambda = \exp(\ii\alpha)\)   &  \([0, 4)\) & \mqty()  \\
+        Parabolic   & 1  &  4  & \(\mqty(1 & b \\ 0 & 1)\) \\
+        Hyperbolic  & \(\lambda \in \real/\qty{\pm1, 0}\)  &  \\
+        Loxodromic  & \(\abs{\lambda} \neq 1\)  &  &  \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \paragraph{The special linear group}
 Another classic Lie group is the special linear group \slgroup{n}{\field}, which are the volume-preserving transformations on a vector space --- this property turns out to be quite important. The special linear group over the complex numbers (2-dimensional) \slgroup{2}{\complex} can be represented as the group of all the complex \(2\times2\) matrices with unit determinant. It has been mentioned previously that any such matrix coincides with a Möbius transform, albeit surjectively: for every Möbius transform, there are two such matrices. As such, \slgroup{2}{\complex} is a \emph{double cover} of \moebiusgroup.
@@ -348,7 +384,6 @@ All three geometries of constant curvature have symmetry groups (of direct isome
     \item \textbf{General linear Group}: change of basis in vector space, i.e. the group of \(N\times N\) invertible matrices. Basis vectors transform in a covariant way while coordinates/components transform in a contravariant way. 
     \item \textbf{Special Linear Group}: volume-preserving transformations, with determinant 1.
     \item \textbf{Metric-preserving group}: groups preserving bilinear symmetric metrics are called orthogonal. Groups preserving bilinear antisymmetric metrics are called symplectic. Groups preserving sequilinear symmetric metrics are called unitary.
-
 \end{itemize}
 
 \nomenclature{\(\mathbb{R}\)}{Real numbers}
