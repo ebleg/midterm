@@ -1,1 +1,1 @@
-wsl latexmk -outdir=build -silent mscLiterature
+wsl latexmk -shell-escape -silent mscLiterature

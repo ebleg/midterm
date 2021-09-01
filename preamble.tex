@@ -73,6 +73,12 @@
 
 \pgfplotsset{compat=1.16} 
 
+% Make sure that TikZ cache files are named properly
+\newcommand{\inputtikz}[1]{%
+  \tikzsetnextfilename{#1}%
+  \input{#1}%
+}
+
 % --------------------------------------------------------------------
 %% COLORS
 % --------------------------------------------------------------------
@@ -194,4 +200,3 @@
 \newcommand{\tens}[1]{{\mathtens{#1}}}
 
 \newcommand{\towrite}[1]{{\centering (\texttt{... #1 ...})}}
-

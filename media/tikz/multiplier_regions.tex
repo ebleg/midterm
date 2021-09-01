@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+
+    \fill[gray!20] (-3.2, -3.2) rectangle (3.2, 3.2);
+
+    \draw[very thick] (0, 0) circle (2.5 cm); 
+    \draw[->] (-3.2, 0) -- (3.2, 0) node[anchor=north east] {\footnotesize{Re}};
+    \draw[->] (0, -3.2) -- (0, 3.2) node[anchor=north west] {\footnotesize{Im}};
+
+    \draw (0.5, 0) -- (4, 1.75) node[anchor=west] {Hyperbolic};
+    \draw (2.5, 0) -- (4, 1) node[anchor=west] {Parabolic};
+    \draw[gray, very thick] (0, 0) -- (3.2, 0);
+
+    \filldraw[fill=white, very thick] (2.5, 0) circle (0.08 cm);
+    \filldraw[fill=black, very thick] (-2.5, 0) circle (0.08 cm);
+    \filldraw[color=gray, fill=white, very thick] (0, 0) circle (0.08 cm);
+
+    \node[anchor=west] at (-2.8, -2.8) {Loxodromic};
+    \draw (1.7677669529663689, 1.7677669529663689) -- (4, 2.5) node[anchor=west] {Elliptic};
+
+    \draw (-2.5, 0) -- (-3.5, 1.5) node[anchor=east] {Circular};
+
+    \node[anchor=south east] at (3.2, -3.2) {\(\complex\)};
+
+\end{tikzpicture}

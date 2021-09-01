@@ -281,8 +281,8 @@ If \(M\) is nonsingular, the transformation is bijective; the inverse transforma
 It is neither surprising nor hard to show that the nonsingular Möbius transformations form a group under composition; the identity mapping is a Möbius transformation, the inverse transformation is also a Möbius transformation as illustrated by the expression for \(M^{-1}\) stated above and that the composition of two transformations \(M_2 \circ M_1\) again yields a member of the class of Möbius transformations \cite{Needham1997}. 
 
 \paragraph{The Riemann sphere} 
-The Möbius group \moebiusgroup is the automorphism group of the Riemann sphere. Being the simplest compact Riemann surface, the Riemann sphere is a special representation of the extended complex plane\footnote{The complex plane combined with a value for infinity `\(\infty\)'.} \(\hat{\complex}\) in three-dimensional space: it can be visualized by placing the complex plane horizontally and considering a unit sphere centered around the origin, such that its intersection coincides with the unit disk of the complex plane. To map the plane to the sphere, a stereographic projection is is used from the `north pole' of the sphere. As such, anything inside the unit disk is mapped to the southern hemisphere, everything on the unit disk is mapped onto itself (since it lies at the intersection) and everything outside the unit disk lies on the northern hemisphere. The north pole of the Riemann sphere then coincides with the distinctive feature of the extended complex plane, namely the point at infinity \(\infty\) \cite{Needham1997}. Hence, to put it formally:
-\[ \moebiusgroup = \automorphgroup{\hat{\complex}} \quad \hat{\complex} = \complex \cup \{\infty\}\]
+The Möbius group \moebiusgroup is the automorphism group of the Riemann sphere. Being the simplest compact Riemann surface, the Riemann sphere is a special representation of the extended complex plane\footnote{The complex plane combined with a value for infinity `\(\infty\)'.} \(\hat{\complex}\) in three-dimensional space: it can be visualized by placing the complex plane horizontally and considering a unit sphere centered around the origin, such that its intersection coincides with the unit disk of the complex plane. To map the plane to the sphere, a stereographic projection is is used from the `north pole' of the sphere. As such, anything inside the unit disk is mapped to the southern hemisphere, everything on the unit disk is mapped onto itself (since it lies at the intersection) and everything outside the unit disk lies on the northern hemisphere. The north pole of the Riemann sphere then coincides with the distinctive feature of the extended complex plane, namely the point at infinity \(\infty\) \cite{Needham1997}. Stated more formally:
+\[ \moebiusgroup = \automorphgroup{\hat{\complex}} \quad \hat{\complex} = \complex \cup \{\infty\}.\]
 
 In order to turn towards the computational aspect of the Riemann sphere, one must consider a different coordinate system for the complex plane; namely the \emph{homogeneous} or \emph{projective} coordinates. These consist of an ordered pair of complex numbers\footnote{In physics, these objects are also called \emph{2-spinors} which are also fundamentally connected with the theory of relativity, as demonstrated by \cite{Penrose1984}.} , i.e. an element of \(\complex^2/\left\{[0, 0]\right\}\),  denoted as \(\qty[\mathfrak{z}_1, \mathfrak{z}_2]\). These two complex numbers are subject to an equivalence relation that makes them projective coordinates, in that \[\qty[\mathfrak{z}_1, \mathfrak{z}_2] \sim \qty[\mathfrak{w}_1, \mathfrak{w}_2] \iff \mathfrak{w}_1 = \lambda \mathfrak{z}_1\ \text{ and }\ \mathfrak{w_2} = \lambda \mathfrak{z}_2\]
 with \(\lambda\) any nonzero complex number. The projective space is then formed by the quotient set of the complex 2-space (excluding the origin) and this equivalence relation. Every equivalence class can be uniquely identified with a point \([1, \sfrac{\mathfrak{z}_2}{\mathfrak{z}_1}]\), which then corresponds to a point on the The Riemann sphere (or equivalently on the extended complex plane). The only point where this mapping breaks down is the point \([0, 1]\), which can be associated with the north pole on the Riemann sphere, or the infinity point. In technical terms, this is called a one-point compactification of a plane into a sphere, with the desirable property that the infinity point \emph{has no special meaning on the sphere}, which it inevitably has in a plane. The Riemann sphere is therefore equal to the one-dimensional complex projective space \(\mathbb{CP}^1\) \cite{Thurston1997}. 
@@ -316,50 +316,83 @@ Based on the matrix analogy, the one can state that \moebiusgroup is the group o
 An interesting fact from group theory arises here as well: it has already been established that Möbius transforms are only unique up to multiplication by a scalar --- as such, they can be normalized (with unit determinant) without loss of generalization. This suggests that \moebiusgroup is really the action of the \emph{special} linear group modulo scalar multiplication, resulting in the \emph{projective special linear group}. Luckily, this fact is also reconciled within group theory: the groups \pglgroup{n}{\field} and \pslgroup{n}{\field} over the field \field are isomorphic as long as every element of \field has an \(n\)th root within \field. The fact that is is true for \(\field = \complex\) is probably the most fundamental property of the complex numbers. To summarize, the Möbius group \moebiusgroup is equal to the projective linear group and the special projective group (over the field of complex numbers), which are isomorphic to each other in this particular case.
 
 \paragraph{Classification of Möbius transforms}
-In the preceding discussion about the matrix representation of Möbius transforms, one important aspect has not yet been addressed: what about the eigenvalues and eigenvectors of \([M]\)? Eigenvectors are vectors that remains invariant (up to scaling) under the multiplication of a particular matrix. Of course, one should bear in mind that the vector in this case contains projective coordinates, so that even when scaled, its coordinate representation remains identical. As such, the eigenvectors of the matrix \(M\) are the \emph{fixed points} of the Möbius transform \(M\); any Möbius transform has two at most. This is even more perspicuous by solving the equation \(z^* = M(z^*)\), which has solutions
+In the preceding discussion about the matrix representation of Möbius transforms, one important aspect has not yet been addressed: what about the eigenvalues and eigenvectors of \([M]\)? Eigenvectors are vectors that remains invariant (up to scaling) under the multiplication of a particular matrix. Of course, one should bear in mind that the vector in this case contains projective coordinates, so that even when scaled, its coordinate representation remains identical. As such, the eigenvectors of the matrix \([M]\) are the \emph{fixed points} of the Möbius transform \(M\); any Möbius transform has two at most. This is even more perspicuous by solving the equation \(z^* = M(z^*)\), which has solutions
 \[ z^* = \frac{(a - d) \pm \sqrt{(a + d)^2 - 4}}{2c}.\]
-When converted to projective coordinates, the two solutions for \(z^*\) then coincide with the eigenvectors of \([M]\). In the degenerate case for which \(a + d = 2\), the argument of the square root amounts to zero, which means that there is only one unique fixed point. These transforms are called \emph{parabolic}, more will become clear about them later \cite{Needham1997}.
+When converted to projective coordinates, the two solutions for \(z^*\) then coincide with the eigenvectors of \([M]\). In the degenerate case for which \(a + d = \pm2\), the argument of the square root amounts to zero, which means that there is only one unique fixed point. These transforms are called \emph{parabolic}, more will become clear about them later \cite{Needham1997}.
 
-Now, it remains to analyse the significance of the eigenvalues. Of course, since eigenvalues are sensitive to scaling of the matrix, it is important to stress again that \([M]]\) must be normalized (have a unit determinant) in order for the following to hold. It is well known from linear algebra that if \(\lambda_1, \lambda_2\) are eigenvalues of \([M]\), then
+Now, it remains to analyse the significance of the eigenvalues. Of course, since eigenvalues are sensitive to scaling of the matrix, it is important to stress again that \([M]\) must be normalized (have a unit determinant) in order for the following to hold. A well known fact in linear algebra states that if \(\lambda_1, \lambda_2\) are eigenvalues of \([M]\), then
 \[ \trace{[M]} = \lambda_1 + \lambda_2 \quad\text{and}\quad \det [M]  = \lambda_1 \lambda_2.\]
 Because the matrix is normalized, these two results can be combined into:
 \begin{equation}
     \lambda + \frac{1}{\lambda} = a + d = \trace{[M]}.
     \label{eq:moebius_eigvals}
 \end{equation}
-It can be shown that every non-parabolic Möbius transform is conjugate\footnote{Two group elements \(a\) and \(b\) are called \emph{conjugate} if there exists another group element \(g\) such that \(b = g^{-1}ag\). This is analogous to similarity transforms (and therefore the notion of similar matrices) in linear algebra.} to a Möbius transform that has fixed points 0 and \(\infty\), and is therefore of the form
+It can be shown that every non-parabolic Möbius transform is conjugate\footnote{Two group elements \(a\) and \(b\) are called \emph{conjugate} if there exists another group element \(g\) such that \(b = g^{-1}ag\). This is analogous to similarity transforms (and therefore the notion of similar matrices) in linear algebra. \index{conjugate!group elements}} to a Möbius transform that has fixed points 0 and \(\infty\), and is therefore of the form
 \(\tilde{M}(z) = kz,\)
-where \(k\) is called the \emph{multiplier} of this Möbius transform, and consequently all the transforms that are conjugate to it. The matrix \([\tilde{M}]\) that coincides with this transform necessarily must have the form (again emphasizing the transform is normalized)
+where \(k\) is called the \emph{multiplier} of this Möbius transform, and consequently all the transforms that are conjugate to it. The matrix \([\tilde{M}]\) that coincides with this transform necessarily must have the form (again emphasizing the transform is normalized) \cite{Needham1997}
 \[ [\tilde{M}] = \mqty(\dmat[0]{\sqrt{k}, \frac{1}{\sqrt{k}}}), \]
-because then of course \(\tilde{M}(z) = \frac{\sqrt{k}z}{1/\sqrt{k}} = kz\). Because conjugacy translates to a similarity transform in the matrix analogy, it leaves the eigenvalues of the matrix unaffected. But, for \(\tilde{M}\) is a diagonal matrix, its eigenvalues are exactly on the main diagonal. As a result, the multiplier of a Möbius transform is equal to the square of its eigenvalue. Strictly speaking, every Möbius transform has of course two eigenvalues and two multipliers, but since they are both each others reciprocal, they do not have to be considered separately.
-
-Using \cref{eq:moebius_eigvals}, one can distinguish three different `classes' in terms of solutions for \(\lambda\); 
+because then of course \(\tilde{M}(z) = \frac{\sqrt{k}z}{1/\sqrt{k}} = kz\). Because conjugacy translates to a similarity transform in the matrix analogy, it leaves the eigenvalues of the matrix unaffected. But, for \(\tilde{M}\) is a diagonal matrix, its eigenvalues are exactly on the main diagonal. As a result, \emph{the multiplier of a Möbius transform is equal to the square of its eigenvalue}, or \(k = \lambda^2\). Strictly speaking, every Möbius transform has of course two eigenvalues and two multipliers, but since they are both each others reciprocal, they do not have to be considered separately. With this result, \cref{eq:moebius_eigvals} can then also be restated in terms of the multiplier \(k\) instead of the eigenvalues:
+    \[\sqrt{k} + \frac{1}{\sqrt{k}} = a + d = \trace{[M]}.\]
+Solving \cref{eq:moebius_eigvals}, one obtains
+ \[ \lambda^2 - (a + d)\lambda + 1 = 0\]
+ which is a quadratic equation with discriminant \(\Delta = (a + d)^2 - 4\): from the sign of \(\Delta\) one can then distinguish three possible cases:
+\begin{enumerate}
+    \item \(\Delta < 0\) or \((a + d)^2 < 4\): there are two complex solutions for \(\lambda\). It is easy to show that the solution will then be equal to 
+        \[\frac{a + d}{2} \pm \frac{\ii}{2}\sqrt{4 - (a + d)^2}.\] 
+        By inspection of this expression, it comes natural to make a further categorization: 
+        \begin{enumerate}
+            \item if \((a + d)^2 \in [0, 4)\), the argument of the square root is positive and consequently the solutions for \(\lambda\) are both located on the unit circle (evidently, the unit circle as a whole is invariant under complex inversion).
+            \item Conversely, if \((a + d)^2 < 0\), the solutions will generally be complex (please note that because \(a\) and \(d\) are both complex numbers, they must not necessarily be conjugate to each other).
+        \end{enumerate}
+    \item \(\Delta = 0\) or \((a + d)^2 = 4\): there is one solution for \(\lambda\), namely \(\lambda = k = 1\).
+    \item \(\Delta > 0\) or \((a + d)^2 > 4\): there are wo real solutions for \(\lambda\). SOLUTION MUST BE POSITIVE, WHY?
+\end{enumerate}
+\towrite{Incorporate below list in above list, take care of half angles}\\
+\towrite{Eigenvalue has `half angle', multiplier whole angle}
 \begin{itemize}
-    \item When \(\trace{[M]} \in [0, 4)\), it can be shown that \(\lambda\) is a complex number on the unit circle (\(\abs{\lambda} = 1\)); the corresponding matrix will then be similar to a rotation matrix:
-        \[ \lambda = \exp(\ii \alpha) \qquad [M] \text{ similar to } \mqty(\cos(\alpha) & -\sin(\alpha) \\ \sin(\alpha) & \cos(\alpha)), \]
+    \item When \((a + d)^2 \in [0, 4)\), it can be shown that \(\lambda\) is a complex number on the unit circle (\(\abs{\lambda} = 1\)); the corresponding matrix will then be similar to a rotation matrix:
+        \[ \lambda = \exp(\ii \theta) \qquad [M] \text{ similar to } \mqty(\cos(\alpha) & -\sin(\alpha) \\ \sin(\alpha) & \cos(\alpha)), \]
         which would be equivalent to the real Jordan block form of the matrix \([M]\). These transforms are called \emph{elliptic}. The particular case for which \(\trace{[M]} = 0\) is called a \emph{circular transform}.
-    \item As mentioned before, \emph{parabolic transforms} form a degenerate `edge' case for which \(\trace{[M]} = 4\). They only have a single fixed point, and the transforms are simply translations in the plane.
-    \item If \(\trace{[M]} > 4\), the solution for \(\lambda\) is real. The transform is then similar to a \emph{squeeze mapping}
+    \item As mentioned before, \emph{parabolic transforms} form a degenerate `edge' case for which \((a + d)^2 = 4\). Parabolic transforms only have a single fixed point, and the transforms are simply translations in the plane. Intuitively, it also makes sense that they have only one fixed point, namely the point at infinity; all the other points in the complex plane are shifted by the same amount.
+    \item If \((a + d)^2 > 4\), the solution for \(\lambda\) is real. The transform is then similar to a \emph{squeeze mapping}
         \[ \mqty(\dmat[0]{\exp(\varphi), \exp(-\varphi)}) \]
-    \item The hyperbolic case is part of a larger class called \emph{loxodromic transforms} which comprise all the cases for which \(\trace{[M]} \notin [0, 4]\).
+    \item The hyperbolic case is part of a larger class called \emph{loxodromic transforms} which comprise all the cases for which \((a + d)^2 \notin [0, 4]\).
 \end{itemize}
+
+\begin{figure}
+    \centering
+    \input{media/tikz/mobius_transforms}
+    \caption{Overview of the four classes of Möbius transform and their typical action on the Riemann sphere. The curves shown on the Riemann sphere are the \emph{invariant curves} of the transformation, i.e. these curves as a whole remain invariant under the transformation. Clearly, the elliptic, hyperbolic and loxodromic transformations have the North and South pole, or \(\infty\) and 0 as fixed points, whereas the parabolic transformation only has a single fixed point at the North pole. The loxodromic transformations borrow their name from loxodromes, which are spiral-like trajectories on the Earth with constant bearing --- a ship that taking a loxodromic path would maintain a constant angle with respect to true North. Illustration reprinted from \citet[p. 78]{Needham2021}.}
+\end{figure}
 
 \begin{table}
     \caption{Blabla}
     \label{tab:moebiusclasses}
     \centering
-    \begin{tabular}{llll}
+    \begin{tabular}{lcccc}
         \toprule
         \textbf{Class} & \textbf{Multiplier} & 
-        \textbf{Trace} & \textbf{Jordan block} \\
+        \(\qty(a + d)^2\) & \textbf{Jordan block} & \textbf{Parent class} \\
         \midrule
-        Elliptic    & \(\lambda = \exp(\ii\alpha)\)   &  \([0, 4)\) & \mqty()  \\
-        Parabolic   & 1  &  4  & \(\mqty(1 & b \\ 0 & 1)\) \\
-        Hyperbolic  & \(\lambda \in \real/\qty{\pm1, 0}\)  &  \\
-        Loxodromic  & \(\abs{\lambda} \neq 1\)  &  &  \\
+        Circular    & \(\qty{-1}\)  &  \([0, 4)\) & 
+                      \(\mqty(0 & -1 \\ 1 & 0)\) & Elliptic   \\[0.8cm]
+        Elliptic    & \(\qty{k \in \complex \mid \abs{k} = 1, k \neq 1}\)   &  \([0, 4)\) &
+                      \(\mqty(\ec^{\theta\ii/2} & 0 \\ 0 & \ec^{-\theta\ii/2})\) & ---  \\[0.8cm]
+        Parabolic   & \(\{1\}\)  &  \(\qty{4}\)  & 
+                      \(\mqty(1 & b \\ 0 & 1)\) & --- \\[0.8cm]
+        Hyperbolic  & \(\real^+_{0}\setminus\qty{1}\) & \((4, +\infty)\)& 
+                      \(\mqty(\ec^{\zeta/2} & 0 \\ 0 & \ec^{-\zeta/2})\) & Loxodromic \\[0.8cm]
+        Loxodromic  & \(\qty{k \in \complex \mid \abs{k} \neq 1 }\)  & \(\complex\setminus[0, 4]\) &
+                      \(\mqty(k & 0 \\ 0 & k^{-1})\) & --- \\[0.4cm]
         \bottomrule
     \end{tabular}
 \end{table}
+
+\begin{figure}
+    \centering
+    \input{media/tikz/multiplier_regions} 
+    \caption{Classification of Möbius transform in terms of the location of the multiplier \(k\) in the complex plane. Any point that is not on the unit circle yields a loxodromic transform; a particular subclass are the hyperbolic transforms, which are on the real axis except at -1 and 1 where it intersects with the unit circle, and at the origin, where the transform becomes singular. If the multiplier lies on the unit circle except 1 are elliptic transforms, a special case is the circular transform for \(k = -1\). Finally, the parabolic transforms have a multiplier of 1 \cite{Needham1997}.}
+\end{figure}
 
 \paragraph{The special linear group}
 Another classic Lie group is the special linear group \slgroup{n}{\field}, which are the volume-preserving transformations on a vector space --- this property turns out to be quite important. The special linear group over the complex numbers (2-dimensional) \slgroup{2}{\complex} can be represented as the group of all the complex \(2\times2\) matrices with unit determinant. It has been mentioned previously that any such matrix coincides with a Möbius transform, albeit surjectively: for every Möbius transform, there are two such matrices. As such, \slgroup{2}{\complex} is a \emph{double cover} of \moebiusgroup.
