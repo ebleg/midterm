@@ -130,15 +130,17 @@ Solving \cref{eq:moebius_eigvals}, one obtains
     \centering
     \input{media/tikz/multiplier_regions} 
     \caption{Classification of Möbius transform in terms of the location of the multiplier \(k\) in the complex plane. Any point that is not on the unit circle yields a loxodromic transform; a particular subclass are the hyperbolic transforms, which are on the real axis except at \(-1\) and \(1\) where it intersects with the unit circle, and at the origin, where the transform becomes singular. If the multiplier lies on the unit circle except 1 are elliptic transforms, a special case is the circular transform for \(k = -1\). Finally, the parabolic transforms have a multiplier of 1 \cite{Needham1997}.}
+    \label{fig:multiplier_regions}
 \end{figure}
 To summarize, there are five different classes of Möbius transform: circular, elliptic, hyperbolic, loxodromic and parabolic. Circular transforms are part of the elliptic transforms and hyperbolic transforms are a subclass of loxodromic transforms. The class to which a Möbius transform belongs is determined completely by its trace \(a + d\), or equivalently, the value of the multiplier \(k\). For the multiplier, one can distinguish several `regions' in the complex plane that are each associated with a class of Möbius transforms, this is visualized in \cref{fig:multiplier_regions}. The nature of the Jordan form of the matrix associated to a Möbius transform also clearly give away to which class a transform belongs. 
 \begin{figure}
     \centering
     \input{media/tikz/mobius_transforms}
     \caption{Overview of the four classes of Möbius transform and their typical action on the Riemann sphere. The curves shown on the Riemann sphere are the \emph{invariant curves} of the transformation, i.e. these curves as a whole remain invariant under the transformation. Clearly, the elliptic, hyperbolic and loxodromic transformations have the North and South pole, or \(\infty\) and 0 as fixed points, whereas the parabolic transformation only has a single fixed point at the North pole. The loxodromic transformations borrow their name from loxodromes, which are spiral-like trajectories on the Earth with constant bearing --- a ship that taking a loxodromic path would maintain a constant angle with respect to true North. Illustration reprinted from \citet[p. 78]{Needham2021}.}
-    \label{fig:multiplier_regions}
+    \label{fig:riemann_transforms}
 \end{figure}
-\Cref{tab:moebiusclasses} provides an overview of the five Möbius classes, together with the values for the matrix trace, the multiplier and the Jordan form.
+
+\Cref{tab:moebiusclasses} provides an overview of the five Möbius classes, together with the values for the matrix trace, the multiplier and the Jordan form. Finally, \cref{fig:riemann_transforms} visualizes the effect of each of the transform classes on points on the Riemann sphere. Elliptic transforms push points along circles of constant latitude, while hyperbolic transforms move points orthogonally, along the meridians of the Riemann sphere. Loxodromic transforms are compositions of hyperbolic and elliptic transforms, the associated trajectories therefore look like spirals; incorporating both a North-South and an East-West movement.
 \begin{table}
     \caption{Overview of the five classes of Möbius transforms and the corresponding values for the trace squared of the matrix (\(\trace{M} = a + d\)), the multiplier of the transform and the Jordan form.}
     \label{tab:moebiusclasses}
@@ -162,10 +164,13 @@ To summarize, there are five different classes of Möbius transform: circular, e
     \end{tabular}
 \end{table}
 
-
 \section{Relation with special linear group}
 Another classic Lie group is the special linear group \slgroup{n}{\field}, which are the volume-preserving transformations on a vector space --- this property turns out to be quite important. The special linear group over the complex numbers (2-dimensional) \slgroup{2}{\complex} can be represented as the group of all the complex \(2\times2\) matrices with unit determinant. It has been mentioned previously that any such matrix coincides with a Möbius transform, albeit surjectively: for every Möbius transform, there are two such matrices. As such, \slgroup{2}{\complex} is a \emph{double cover} of \moebiusgroup.
 
+Arguably more interesting than \slgroup{2}{\complex} is the same group over the reals \slgroup{2}{\real}, i.e. every invertible \(2 \times 2\) matrix with real entries and a unit determinant; they form a subgroup of \slgroup{2}{\complex} as well. It has been mentioned before that the for the normalized Möbius transforms, the eigenvalues should be complex inverses of each other. For matrices with real entries, the eigenvalues are either real or complex conjugates of each other. When not on the real axis, the only way eigenvalues can be complex inverses and be complex conjugate is to be located on the unit circle. As can be seen on \cref{fig:multiplier_regions}, that means that the matrices with real entries contain exactly the hyperbolic, elliptic and parabolic classes. The remaining part are the partly the loxodromic transforms which have a nonreal trace [CHECK].
+
+
+\section{Relation to hyperbolic geometry}
 All three geometries of constant curvature have symmetry groups (of direct isometries) that are subgroups of the group of Möbius transformations \cite{Needham2021}.
 
 \subsection{Relation to flow maps of linear ODE's}
