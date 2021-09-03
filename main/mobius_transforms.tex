@@ -164,35 +164,26 @@ To summarize, there are five different classes of Möbius transform: circular, e
     \end{tabular}
 \end{table}
 
+\section{Subgroups}
+Apart from the classification considered in the preceding chapter, there are also several subgroups of the Möbius group that can be distinguished. Interestingly, these subgroups can each be identified with one of the `geometry types' that were considered in \cref{chap:hyperbolic_geometry}: those of positive (spherical), zero (Euclidean) and negative (hyperbolic) geometry. For each of these geometry types, a specific subgroup of the Möbius group will play the role of the direct isometry group in a particular `map' \cite{Needham2021}.
+
+\paragraph{Euclidean geometry} The direct isometries in the Euclidean plane consist simply of translations and rotations. Clearly, a rotation in the complex plane (around the origin) can be represented simply by \(z \mapsto e^{\ii \theta}\), while a translation is \(z \mapsto z + b\) with \(b \in \complex\). Hence, the entire direct isometry group of the Euclidean plane is given by
+    \[ \mathfrak{E}(z) = e^{\ii\theta} + b. \]
+\paragraph{Spherical geometry} Of course, the Möbius transforms act in the extended complex plane, 
+
+\paragraph{Hyperbolic geometry}
+
 \section{Relation with special linear group}
 Another classic Lie group is the special linear group \slgroup{n}{\field}, which are the volume-preserving transformations on a vector space --- this property turns out to be quite important. The special linear group over the complex numbers (2-dimensional) \slgroup{2}{\complex} can be represented as the group of all the complex \(2\times2\) matrices with unit determinant. It has been mentioned previously that any such matrix coincides with a Möbius transform, albeit surjectively: for every Möbius transform, there are two such matrices. As such, \slgroup{2}{\complex} is a \emph{double cover} of \moebiusgroup.
 
-Arguably more interesting than \slgroup{2}{\complex} is the same group over the reals \slgroup{2}{\real}, i.e. every invertible \(2 \times 2\) matrix with real entries and a unit determinant; they form a subgroup of \slgroup{2}{\complex} as well. It has been mentioned before that the for the normalized Möbius transforms, the eigenvalues should be complex inverses of each other. For matrices with real entries, the eigenvalues are either real or complex conjugates of each other. When not on the real axis, the only way eigenvalues can be complex inverses and be complex conjugate is to be located on the unit circle. As can be seen on \cref{fig:multiplier_regions}, that means that the matrices with real entries contain exactly the hyperbolic, elliptic and parabolic classes. The remaining part are the partly the loxodromic transforms which have a nonreal trace [CHECK].
-
+Arguably more interesting than \slgroup{2}{\complex} is the special linear group over the reals \slgroup{2}{\real}, i.e. every invertible \(2 \times 2\) matrix with real entries and a unit determinant; they form a subgroup of \slgroup{2}{\complex} as well. It has been mentioned before that the for the normalized Möbius transforms, the eigenvalues should be complex inverses of each other. For matrices with real entries, the eigenvalues are either both real or complex conjugates of each other. When not on the real axis, the only way eigenvalues can be complex inverses and complex conjugate is to be located on the unit circle. As can be seen on \cref{fig:multiplier_regions}, that means that the matrices with real entries contain exactly the hyperbolic (both real), elliptic (unit circle) and parabolic classes. The remaining part are the loxodromic transforms which have a nonreal trace [CHECK].
 
 \section{Relation to hyperbolic geometry}
-All three geometries of constant curvature have symmetry groups (of direct isometries) that are subgroups of the group of Möbius transformations \cite{Needham2021}.
+All three geometries of constant curvature have symmetry groups (of direct isometries) that are subgroups of the group of Möbius transformations \cite{Needham2021}. 
 
 \subsection{Relation to flow maps of linear ODE's}
 
 \section{Relation with Lorentz group}
 
-\subsection{Notes}
-\begin{itemize}
-    \item The smallest number of distinct group operations which, multiplied in all possible combinations and powers, gives all the distinct group operations, gives a basis for the group. These group operations are called \emph{generators} of the group.
-    \item A mapping of one algebraic structure into another similar structure is called a \emph{homomorphism}.
-    \item If the mapping one-to-one such that an inverse exists and is well-defined, it is called an \emph{isomorphism}.
-    \item The exponential of an element in a vector space with a Lie algebra structure is an element of some group.
-    \item injective = into, surjective = onto, bijective = one-to-one
-\end{itemize}
 
-\subsubsection*{Classical matrix groups}
-\begin{itemize}
-    \item \textbf{General linear Group}: change of basis in vector space, i.e. the group of \(N\times N\) invertible matrices. Basis vectors transform in a covariant way while coordinates/components transform in a contravariant way. 
-    \item \textbf{Special Linear Group}: volume-preserving transformations, with determinant 1.
-    \item \textbf{Metric-preserving group}: groups preserving bilinear symmetric metrics are called orthogonal. Groups preserving bilinear antisymmetric metrics are called symplectic. Groups preserving sequilinear symmetric metrics are called unitary.
-\end{itemize}
 
-\nomenclature{\(\mathbb{R}\)}{Real numbers}
-\nomenclature{\(\mathbb{C}\)}{Complex numbers}
-\nomenclature{\(\mathbb{H}\)}{Quaternions}
