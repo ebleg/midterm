@@ -1,20 +1,8 @@
 %
 % An Appendix
 \chapter{Some math}
+From \cite{Lee2000}
 A topology is a collection of elements from the power set of a given set. Roughly speaking, a topology gives rise to a notion of `neighborhoods', which further allows for the concepts of convergence and continuity to be properly defined on a set.
-
-Definitions from \cite{Lee2000}
-
-\begin{definition}[Inner product]
-    An \emph{inner product} on a real vector space $V$ is a function from $V \times V$ to $\real$, denoted by $(\vb{u}, \vb{v}) \mapsto \langle \vb{u}, \vb{v} \rangle$ such that for all $\vb{u}, \vb{v}$ in $V$
-    \begin{enumerate}
-        \item $\langle \vb{u}, \rangle$ and $\langle, \vb{v}\rangle$ are linear functions from $V$ to $\real$ (bilinearity),
-        \item $\langle \vb{u}, \vb{v} \rangle$ = $\langle \vb{u}, \vb{v} \rangle$ (symmetry),
-        \item If $\vb{u} \neq 0$, then there is a $\vb{v} \neq 0$ such that $\rangle \vb{u}, \vb{v} \rangle \neq 0$ (nondegeneracy).
-    \end{enumerate}
-    
-\end{definition}
-
 \begin{definition}[Topology]
     A \emph{topology} on a set $X$ is a collection $\mathscr{T}$ of subsets of $X$ called \emph{open sets}, satisfying the following properties:
     \begin{enumerate}[label=\roman*]
@@ -26,3 +14,72 @@ Definitions from \cite{Lee2000}
 \begin{definition}[Homeomorphism]
     If $X$ and $Y$ are topological spaces, a \emph{homeomorphism} from $X$ to $Y$ is defined to be a continuous bijective map $\varphi: X\to Y$ with continuous inverse. If there exists a homeomorphism between $X$ and $Y$, they are called homeomorphic or topologically equivalent.
 \end{definition}
+
+From \cite{Schuller2014}
+\begin{definition}[Mapping]
+    Let \(A, B\) be sets. A \emph{map} \(\phi: A \to B\) is a relation such that for each \( a \in A\) there exists exactly one \( b \in B\) such that \(\phi(a, b)\). The map \(\phi\) is said to be 
+    \begin{itemize}
+        \item \emph{injective} if for any \(a_1, a_2 \in A: \phi(a_1) = \phi(a_2) \implies a_1 = a_2\);
+        \item \emph{surjective} if \(\mathrm{im}_\phi(A) = B\);
+        \item \emph{bijective} if it is both injective and surjective.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[Isomorphism (sets)]
+    Two sets \(A\) and \(B\) are set-theoretic isomorphic if there exists a bijection \(\phi: A \to B\). Notation \(A \cong_\text{set} B\)
+\end{definition}
+
+\begin{definition}[Cover]
+    Let \((M, \mathscr{O})\) be a topological space. A set \(C \subseteq \mathscr{P}(M)\) is called a \emph{cover} if
+    \[ \bigcup C = M. \]
+    It is said to be an \emph{open cover} when \(C \subseteq \mathscr{O}.\)
+\end{definition}
+
+\textbf{Informal} so it must be possible to construct a cover using a finite number of elements from the power set of \(M\) that are part of the topology of \(M\).
+
+If \(\real^d\) is equipped with the standard topology, then a subset of \(real^d\) is compact if and only if it is \emph{closed} and \emph{bounded} (bounded means that there exists a \(d\)-ball of finite radius that contains the subset).
+
+
+\begin{definition}[Subcover]
+    Let \(C\) be a cover. Then any subset \(\tilde{C}\subseteq C\) such that \(\tilde{C}\) is still a cover, is called a \emph{subcover}. Additionally, it is said to be a \emph{finite} subcover if it is finite as a set.
+\end{definition}
+
+\begin{definition}[Compact]
+    A topological space \((M, \mathscr{O})\) is said to be \emph{compact} if every open 
+\end{definition}
+
+\begin{definition}[Paracompact]
+    A topological space \((M, \mathscr{O})\) is said to be \emph{paracompact} if every open cover has an open refinement that is locally finite.
+\end{definition}
+
+\textbf{Informal} It can locally be decomposed into a finite number of subsets.
+
+\begin{definition}[Group]
+    A \emph{group} is a pair \((G, \square)\), where \(G\) is a set and \(square: G \times G \to G\) is a map (or binary operation) such that:
+    \begin{enumerate}
+        \item foo 
+        \item bar 
+        \item baz
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Group isomorphism]
+    A \emph{group isomorphism} between two groups \((G, \square)\) and \((H, \sqbullet)\) is a bijection \(\phi: G \to H\) such that:
+    \[ \forall a, b \in G: \phi(a\square b) = \phi(a) \sqbullet \phi(b).\]
+    Notation: \(G\) and \(H\) are group isomorphic; \(G \cong_\text{group} H\)
+\end{definition}
+
+
+Definitions from \cite{Lee2000}
+
+\begin{definition}[Inner product]
+    An \emph{inner product} on a real vector space $V$ is a function from $V \times V$ to $\real$, denoted by $(\vb{u}, \vb{v}) \mapsto \langle \vb{u}, \vb{v} \rangle$ such that for all $\vb{u}, \vb{v}$ in $V$
+    \begin{enumerate}
+        \item $\langle \vb{u}, \rangle$ and $\langle, \vb{v}\rangle$ are linear functions from $V$ to $\real$ (bilinearity),
+        \item $\langle \vb{u}, \vb{v} \rangle$ = $\langle \vb{u}, \vb{v} \rangle$ (symmetry),
+        \item If $\vb{u} \neq 0$, then there is a $\vb{v} \neq 0$ such that $\langle \vb{u}, \vb{v} \rangle \neq 0$ (nondegeneracy).
+    \end{enumerate}
+    
+\end{definition}
+
+
