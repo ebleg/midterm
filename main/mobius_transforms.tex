@@ -40,7 +40,7 @@ with \(\lambda\) any nonzero complex number. The projective space is then formed
 
 \subsection{Matrix representation}
 A very powerful property of Möbius transforms is that they can each be associated to a \(2\times 2\) complex matrix like so:
-\[ \frac{az + b}{cz + d} \rightarrow \mqty(a & b \\ c & d).\] 
+\[ \frac{az + b}{cz + d} \corresponds \mqty(a & b \\ c & d).\] 
 Because the transformations are only defined up to multiplication of a constant, so is associated matrix. However, one can assume to have the transformation normalized, i.e. \(ad - bc = 1\) which is equivalent to restricting the matrix to have a unit determinant.  When normalized, there are precisely two matrices corresponding to every Möbius transform, since multiplying the entire matrix with -1 would still yield the same result. Now, how can one actually effect a Möbius transformation using this matrix representation? This is where the projective coordinates come into play. As it turns out, 
 \[ 
     \mqty(a & b\\ c & d)\mqty(\mathfrak{z}_1\\\mathfrak{z}_2)
@@ -165,25 +165,46 @@ To summarize, there are five different classes of Möbius transform: circular, e
 \end{table}
 
 \section{Subgroups}
-Apart from the classification considered in the preceding chapter, there are also several subgroups of the Möbius group that can be distinguished. Interestingly, these subgroups can each be identified with one of the `geometry types' that were considered in \cref{chap:hyperbolic_geometry}: those of positive (spherical), zero (Euclidean) and negative (hyperbolic) geometry. For each of these geometry types, a specific subgroup of the Möbius group will play the role of the direct isometry group in a particular `map' \cite{Needham2021}.
+Apart from the classification considered in the preceding chapter, there are also several subgroups of the Möbius group that can be distinguished. It is compelling to observe that each of these subgroups can each be identified with one of the `geometry types' that were considered in \cref{chap:hyperbolic_geometry}: those of positive (spherical), zero (Euclidean) and negative (hyperbolic) geometry. For every geometry type, a specific subgroup of the Möbius group will play the role of the direct isometry group in a particular `map' \cite{Needham2021}.
 
-\paragraph{Euclidean geometry} The direct isometries in the Euclidean plane consist simply of translations and rotations. Clearly, a rotation in the complex plane (around the origin) can be represented simply by \(z \mapsto e^{\ii \theta}\), while a translation is \(z \mapsto z + b\) with \(b \in \complex\). Hence, the entire direct isometry group of the Euclidean plane is given by
+\subsection{Euclidean geometry}
+The direct isometries in the Euclidean plane consist simply of translations and rotations. Clearly, a rotation in the complex plane (around the origin) can be represented simply by \(z \mapsto e^{\ii \theta}\), while a translation is \(z \mapsto z + b\) with \(b \in \complex\). Hence, the entire direct isometry group of the Euclidean plane is given by
     \[ \mathfrak{E}(z) = e^{\ii\theta} + b. \]
-\paragraph{Spherical geometry} Of course, the Möbius transforms act in the extended complex plane, 
+This group is also called the Euclidean group of dimension two.
+\subsection{Spherical geometry}
+One of the most prevalent applications of group theory is are the representation of rotations in three-dimensional Euclidean space. Of course, the group associated with these rotations is the special orthogonal group \(\sogroup\). This group is diffeomorphic to the three-dimensional real projective space \(\mathbb{RP}^3\) (intuitively, this space consists of three `directions'). The rotations in \(\real^3\) can also be parameterized by \emph{unit quaternions} (also called \emph{versors}): these represent points on the 3-sphere \(\sphere{3}\). The difference between the 3-sphere and the real projective space is that the latter identifies the \emph{antipodal} parts that are present on the sphere. As such, any rotation in \(\real^3\) corresponds precisely to two points on the 3-sphere (or two unit quaternions) --- the group of unit quaternions therefore is a double cover of \sogroup. 
 
-\paragraph{Hyperbolic geometry}
+Quaternions can also be represented as complex matrices: \cite{Stillwell2008}
+\[ q = \quat{m}{n}{o}{p} \in \quaternions \corresponds Q = \mqty(m + \ii p & -n - \ii o\\n - \ii o & m - \ii p),\]
+which is a general represention of a \(2\times 2\) \emph{unitary}\footnote{A unitary matrix is a matrix whose inverse is its conjugate transpose --- it is the complex counterpart of orthogonal matrices.} matrix. Likewise, the unit quaternions then translate to matrices of the above type with an additional restriction: they must have a determinant of 1: these matrices are members of the \emph{special unitary group} \sugroup{2}. As such, the group of unit quaternions is isomorphic to the \sugroup{2} which is therefore also a double cover of \sogroup.
+
+Since the members of \sugroup{2} can be identified with a Möbius transform (inspection of the matrix above makes this immediately apparent), a specific subgroup of \moebiusgroup can be used to represent the rotations in \(\real^3\) --- recall that every normalized Möbius transform also corresponds to two matrices, differing by a factor -1. Observing the matrix above, one can see that the entries on the main diagonal are each others' conjugate, while the entries on the antidiagonal are conjugate opposite. Therefore, the general expression of a rotation of the Riemann sphere as a Möbius transform can be written as: \cite{Needham2021}
+\[\mathfrak{S} = \frac{az + b}{-b\bar{z}+\bar{a}}\quad\text{where } \abs{a}^2 + \abs{b}^2 = 1; \]
+the latter equivalent then enforces that \(\det Q = 1\). There are always two quaternions representing the same rotation; they are antipodal and differ by a factor of \(-1\). As a result, there are two possibilities for \(Q\) as well, again identical but with opposite entries. Recall that the same applies to the matrix representations of Möbius transforms: as such, the ambiguities are eliminated, and the group of transforms of type \(\mathfrak{S}\) is isomorphic to \sogroup. In the complex plane, these tranformations represent the isometries of spherical geometry in the stereographic map \cite{Needham1997}. 
+
+\index{versor}
+\index{quaternion}
+
+\subsection{Hyperbolic geometry}
+The normalized transforms with real entries
+\[\mathfrak{H}(z) = \frac{az + b}{cz + d}\qquad a, b, c, d \in \real \quad ad - bc = 1;\]
+are the isometries of the Poincaré half plane \cite{Needham2021}. [...]
 
 \section{Relation with special linear group}
 Another classic Lie group is the special linear group \slgroup{n}{\field}, which are the volume-preserving transformations on a vector space --- this property turns out to be quite important. The special linear group over the complex numbers (2-dimensional) \slgroup{2}{\complex} can be represented as the group of all the complex \(2\times2\) matrices with unit determinant. It has been mentioned previously that any such matrix coincides with a Möbius transform, albeit surjectively: for every Möbius transform, there are two such matrices. As such, \slgroup{2}{\complex} is a \emph{double cover} of \moebiusgroup.
 
 Arguably more interesting than \slgroup{2}{\complex} is the special linear group over the reals \slgroup{2}{\real}, i.e. every invertible \(2 \times 2\) matrix with real entries and a unit determinant; they form a subgroup of \slgroup{2}{\complex} as well. It has been mentioned before that the for the normalized Möbius transforms, the eigenvalues should be complex inverses of each other. For matrices with real entries, the eigenvalues are either both real or complex conjugates of each other. When not on the real axis, the only way eigenvalues can be complex inverses and complex conjugate is to be located on the unit circle. As can be seen on \cref{fig:multiplier_regions}, that means that the matrices with real entries contain exactly the hyperbolic (both real), elliptic (unit circle) and parabolic classes. The remaining part are the loxodromic transforms which have a nonreal trace [CHECK].
 
-\section{Relation to hyperbolic geometry}
-All three geometries of constant curvature have symmetry groups (of direct isometries) that are subgroups of the group of Möbius transformations \cite{Needham2021}. 
 
 \subsection{Relation to flow maps of linear ODE's}
 
 \section{Relation with Lorentz group}
 
+\section{Chapter summary}
+
+\begin{figure}
+    
+
+\end{figure}
 
 

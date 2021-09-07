@@ -48,7 +48,7 @@
 \usepackage{xfrac}
 \usepackage{nomencl}
 \usepackage{dutchcal}
-\usepackage{mathabx}
+\usepackage{MnSymbol}
 \makeindex
 \makenomenclature
 
@@ -177,9 +177,13 @@
 \newcommand{\amnt}{\ensuremath{A}\xspace} % Amount function
 \newcommand{\ininv}{\ensuremath{K}\xspace} % Initial investment; arm
 \renewcommand{\real}{\ensuremath{\mathbb{R}}\xspace}
-\newcommand{\hyperbolic}{\ensuremath{\mathbb{H}}\xspace}
+
+\newcommand{\hyperbolic}{\ensuremath{\mathbf{H}}\xspace}
+\newcommand{\quaternions}{\ensuremath{\mathbb{H}}\xspace}
 \newcommand{\complex}{\ensuremath{\mathbb{C}}\xspace}
 \newcommand{\integer}{\ensuremath{\mathbb{Z}}\xspace}
+\newcommand{\sphere}[1]{\ensuremath{\mathbb{S}^{#1}}\xspace}
+
 \newcommand{\lnorm}[1]{\ensuremath{\norm{#1}_L}\xspace}
 \newcommand{\ecokin}{\ensuremath{T^*}\xspace}
 \newcommand{\ekin}{\ensuremath{T}\xspace}
@@ -187,13 +191,19 @@
 \newcommand{\gpos}{\ensuremath{\vec{q}}\xspace}
 \newcommand{\gvel}{\ensuremath{\dot{\vec{q}}}\xspace}
 
-\newcommand{\moebiusgroup}{\ensuremath{\mathrm{Möb}}\xspace}
+\newcommand{\moebiusgroup}{\ensuremath{\text{Möb}}\xspace}
 \newcommand{\automorphgroup}[1]{\ensuremath{\mathrm{Aut}(#1)}\xspace}
 \newcommand{\pglgroup}[2]{\ensuremath{\mathrm{PGL}(#1, #2)}\xspace}
 \newcommand{\pslgroup}[2]{\ensuremath{\mathrm{PSL}(#1, #2)}\xspace}
 \newcommand{\glgroup}[2]{\ensuremath{\mathrm{GL}(#1, #2)}\xspace}
 \newcommand{\slgroup}[2]{\ensuremath{\mathrm{SL}(#1, #2)}\xspace}
+\newcommand{\sogroup}{\ensuremath{\mathrm{SO}(3)}\xspace}
+\newcommand{\sugroup}[1]{\ensuremath{\mathrm{SU}(#1)}\xspace} % SU(2) etc
+\newcommand{\susugroup}[2]{\ensuremath{\mathrm{SU}(#1, #2)}\xspace}   % for SU(1, 1)
 \newcommand{\field}{\ensuremath{\mathbb{F}}\xspace}
+
+\newcommand{\quat}[4]{\ensuremath{#1 + #2\vb{i} + #3\vb{j} + #4\vb{k}}\xspace}
+\newcommand{\corresponds}{\ensuremath{\quad \leftrightsquigarrow \quad}}
 
 \DeclareMathOperator{\sgn}{sgn}
 

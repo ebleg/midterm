@@ -55,18 +55,32 @@ If \(\real^d\) is equipped with the standard topology, then a subset of \(real^d
 \textbf{Informal} It can locally be decomposed into a finite number of subsets.
 
 \begin{definition}[Group]
-    A \emph{group} is a pair \((G, \square)\), where \(G\) is a set and \(square: G \times G \to G\) is a map (or binary operation) such that:
-    \begin{enumerate}
-        \item foo 
-        \item bar 
-        \item baz
+    A \emph{group} is a pair \((G, \bullet)\), where \(G\) is a set and \(square: G \times G \to G\) is a map (or binary operation) such that:
+    \begin{enumerate}[label=(\roman*), itemsep=0.2ex, partopsep=0.2ex]
+        \item \(\forall a, b, c \in G: (a \bullet b) \bullet c = a \bullet (b \bullet c)\) (Associativity);
+        \item \(\exists e \in G: \forall g \in G: g \bullet e = e \bullet g = g\) (Identity);
+        \item \(\forall g \in G: \exists g^{-1} \in G: g \bullet g^{-1} = g^{-1} 
+            \bullet g = e.\)
     \end{enumerate}
 \end{definition}
 
 \begin{definition}[Group isomorphism]
-    A \emph{group isomorphism} between two groups \((G, \square)\) and \((H, \sqbullet)\) is a bijection \(\phi: G \to H\) such that:
-    \[ \forall a, b \in G: \phi(a\square b) = \phi(a) \sqbullet \phi(b).\]
+    A \emph{group isomorphism} between two groups \((G, \bullet)\) and \((H, \circ)\) is a bijection \(\phi: G \to H\) such that:
+    \[ \forall a, b \in G: \phi(a\bullet b) = \phi(a) \circ \phi(b).\]
     Notation: \(G\) and \(H\) are group isomorphic; \(G \cong_\text{group} H\)
+\end{definition}
+
+\begin{definition}[Topological manifold]
+    A paracompact, Hausdorff, topological space \((M, \mathscr{O})\) is called a 
+    \(d-\)\emph{dimensional topological manifold} if for every point \(p \in M\) there exists a neighborhood \(U(p)\) and a homeomorphism \(x: U(p)\to x(U(p)) \subseteq \real^d\).
+\end{definition}
+
+\begin{definition}[Bundle]
+    A \emph{bundle} is a triple \((E, \pi, M)\) where \(E\) and \(M\) are topological manifolds called the total space and the base space respectively, and \(\pi\) is a continuous surjective map \(\pi: E \to M\) called the projective map.
+\end{definition}
+
+\begin{definition}[Fibre]
+    Let \(E, \pi, M\) be a bundle and let \(p \in M\). Then \(F_p \triangleq \text{preim}_\pi ({p})\) is called the \emph{fibre} at the point \(p\).
 \end{definition}
 
 
@@ -79,7 +93,7 @@ Definitions from \cite{Lee2000}
         \item $\langle \vb{u}, \vb{v} \rangle$ = $\langle \vb{u}, \vb{v} \rangle$ (symmetry),
         \item If $\vb{u} \neq 0$, then there is a $\vb{v} \neq 0$ such that $\langle \vb{u}, \vb{v} \rangle \neq 0$ (nondegeneracy).
     \end{enumerate}
-    
 \end{definition}
+
 
 
