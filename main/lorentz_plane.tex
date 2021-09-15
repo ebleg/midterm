@@ -85,7 +85,7 @@ It may already be clear that hyperbolic polar coordinates do \emph{not} provide 
     \label{fig:polar_coords}
 \end{figure}
 
-A possible workaround for this problem can be found in the so-called \emph{generalized trigonometry} as described by \citet{Harkin2004}: in this case, the notion of the hyperbolic angle itself is considered ambiguous and must be accompanied the branch of the hyperbola that is associated with the angle. In this case four hyperbolic branches are considered, so both branches of \(x^2 - y^2 = K^2\) combined with \(y^2 - x^2 = K^2\) which were disregarded up till now.\footnote{In fact, \citeauthor{Harkin2004} provide an even more general treatment, covering so-called generalized complex numbers of the form \(z = x + iy\quad x, y \in \real\) with \(i^2 = iq + p\quad p, q \in \real\). However, in this case \(p = 1\) and \(q = 0\), as will become clear later in the discussion about hyperbolic numbers.}
+A possible workaround for this problem can be found in the so-called \emph{generalized trigonometry} as described by \citet{Harkin2004}: in this case, the notion of the hyperbolic angle itself is considered ambiguous and must be accompanied the branch of the hyperbola that is associated with the angle. In this case four hyperbolic branches are considered, so both branches of \(x^2 - y^2 = K^2\) combined with \(y^2 - x^2 = K^2\) which were disregarded up till now.\footnote{In fact, \citeauthor{Harkin2004} provide an even more general treatment, covering so-called generalized complex numbers of the form \(z = x + \iota y\quad x, y \in \real\) with \(\iota^2 = \iota q + p\quad p, q \in \real\). However, in this case \(p = 1\) and \(q = 0\), as will become clear later in the discussion about hyperbolic numbers.}
 \begin{equation}
     \zeta = 
     \begin{cases}
@@ -96,11 +96,17 @@ A possible workaround for this problem can be found in the so-called \emph{gener
 Although this extended definition brings the other two quadrants of the hyperbolic plane within reach of the polar form as well, there is still a particular set that even now cannot be represented this way: \(\qty{(x, y)\mid \abs{x} = \abs{y}}\), or the `light cone' from special relativity.
 
 \section{Special relativity}
+This section gives a basic outline of the theory of special relavity. It is by no means meant to be a comprehensive overview, for which many other excellent resources exist such as \citet{Misner1970}, \citet{Taylor1992}, \citet{Landau1971}, or \citet{Penrose1978} for a shorter, less technical introduction. Instead, the goal of this section is to give a physical context for the concept of Lorentz geometry and the associated Lorentz space and metric, as well as their connection with hyperbolic geometry and Möbius transforms which will be introduced in \cref{chap:hyperbolic_geometry} and \cref{chap:moebius_transforms}.
+
 Before the advent of the theory of special relativity, developed by i.a. Poincaré, Minkowski, Lorentz and Einstein, so-called `Galilean relativity' was the norm. Galilean relativity entails the definition of Galilean transformations which links reference frames that move relative to each other at a constant linear speed. The laws of physics should be invariant between these inertial reference frames. However, a problem presented itself in the form of the famous Maxwell equations that pose the governing laws in electromagnetism. A consequence from Maxwell's laws is the finite propagation speed of light and therefore all possible interactions between particles in the universe. It is not hard to imagine that the Galilean invariance breaks down as a result of the introduction of a `special' speed. As such, the laws of physics in a moving reference frame \emph{will} depend on the speed of that particular reference frame: a major inconsistency with the traditional train of thought.
 
 The new principle of relativity that brought reconciliation with Maxwell's ideas not only required space to be relative (i.e. dependent on a frame of reference), but also views \emph{time as a relative concept} whereas it had always been assumed to be absolute in classical mechanics. As such, the notion of time is dependent on the choice of reference frame too. This has the immediate consequence that the traditional three-dimensional setting of classical mechanics (often with Cartesian coordinates \(x, y, z\)) will not suffice for the description of special relativity: a fourth coordinate four time is indespensable to incorporate the relativity of time. Points in the four-dimensional \emph{spacetime} are called \emph{world points}, their associated trajectories are \emph{world lines} \cite{Landau1971}.
+\index{world line}
+\index{world point}
 
+\subsection{Spacetime intervals}
 Overwhelming experimental evidence has pointed out that the propagation of light is completely independent of its direction. This can be encapsulated in spacetime by means of \emph{spacetime intervals} which provide a notion of distance between two world points. If a signal travels at the speed of light \(c\), the distance between two world points along its trajectory should be zero. The spatial distance squared between two points is equal to
+\index{spacetime interval}
 \[ \qty(x_2 - x_1)^2 + \qty(y_2 - y_1)^2 + \qty(z_2 - z_1)^2 \]
 whereas the distance squared covered by a signal travelling at the speed of light is equal to 
 \[c^2(t_2 - t_1)^2. \]
@@ -110,9 +116,74 @@ Therefore, the spacetime interval between two world points is
 \]
 which will amount to zero for the world lines corresponding to a signal travelling at the speed of light. For an infinitesimal distance \(\dd{s}\), the spacetime interval can be expressed as
 \[ \dd{s}^2 = c^2 \dd{t}^2 - \dd{x}^2 - \dd{y}^2 - \dd{z}^2.\]
+The spacetime interval is the same in any inertial reference frame. This is the mathematical translation of the invariance of the speed of light in the universe \cite{Landau1971}. Based on the sign of the spacetime interval, three classes can be distinguished.
+\begin{itemize}
+    \item If \(s_{12}^2 > 0\), the interval is \emph{timelike} and there exists a frame of reference in which both events occured \emph{at the same location} in space, they are simply separated by the passage of time \(t_{12} = \frac{s_{12}}{c}\); 
+    \item in contrast, when \(s_{12}^2 < 0\), the interval is \emph{spacelike} and the events are `too far apart' to reach within the limits of the speed of light --- the events must therefore be at different locations (absolutely remote), and there exists a reference frame in which the events occur \emph{simultaneously} at distance \(l_{12} = \ii s_{12}\);
+    \item intervals for which \(s_{12}^2 = 0\) are called \emph{lightlike}, because only light can travel between these events.
+\end{itemize}
+\index{lightlike}
+\index{spacelike}
+\index{timelike}
+Now, one can ask the question what the actual time is that an observer would experience in uniform motion, i.e. what difference in time is there on clocks which have been travelling at different velocities? The time experienced by an observer is called \emph{proper time}, and it can be computed by evaluating the following path integral:
+\begin{equation}
+    t'_2 - t'_1 = \int^{t_2}_{t_1} \dd{t} \sqrt{1 - \qty(\frac{v}{c})^2}.
+    \label{eq:proper_time}
+\end{equation}
+Clearly, if the velocity makes up a larger fraction of the speed of light, the proper time is lower; that is: moving clocks run slower than a clock at rest (hypothetical clocks travelling at the speed of light do not register elapsed time at all). 
+\towrite{Twin paradox ?}
+
+\subsection{Lorentz transformations}
+As mentioned, special relativity corrects the flaw of the Galilean transforms, which represent the classical view of inertial reference systems: for example, if one coordinate system moves at constant velocity with respect to the other in \(x\)-direction (the coordinate directions are assumed to coincide for simplicity), the Galilean transform takes the form:
+\begin{equation}
+    x = x' + Vt, \quad y = y', \quad z = z',\quad t = t'.
+    \label{eq:galilean_transform}
+\end{equation}
+The statement \(t = t'\) encodes the traditional assumption in mechanics that time has an absolute character. Of course, it is precisely this statement that is refuted by special relativity. As such, one could devise a new type of transformation that takes this (and the invariance of spacetime intervals between events, as discussed in the previous section) into account. These transformations are called \emph{Lorentz transformations}. 
+
+As described by \citet{Landau1971}, these transformations comprise the rotations in four-dimensional space: since there are six ways to pick a plane (or two coordinates) from a set of four axes, every rotation in four-space can be decomposed into six successive rotations. Of these six rotations, three are purely spatial: they are the familiar rotations that can be parameterized by e.g. Euler angles. On the other hand, the three other rotations involve time as well, and they are of a different nature. Whereas the spatial rotations are circular, the time-rotations are hyperbolic (they are represented by hyperbolic functions rather than trigonometric functions). For example, a rotation in the \(tx\)-plane would take the following form:
+\begin{equation}
+    x = ct'\sinh(\zeta)\qquad ct = ct'\cosh(\zeta);
+    \label{eq:lorentz_transform_hyp}
+\end{equation}
+\index{Lorentz!transformation}
+or, using the fact that \(V = x/t\):
+\begin{equation}
+    x = \largefrac{x' + Vt'}{\sqrt{1 - \qty(\frac{V}{c})^2}} \qquad t = \frac{t' + \largefrac{V}{c^2}x'}{\sqrt{1 - \qty(\frac{V}{c})^2}} \qquad y = y' \qquad z = z';
+    \label{eq:lorentz_transform_sqrt}
+\end{equation}
+which also indicates that the hyperbolic (boost) angle \(\zeta\) can be written in terms of the velocity \(V\) of one frame with respect to the other
+\[ \tanh(\zeta) = \frac{V}{c},\]
+which means that the argument of the hyperbolic rotation purely depends on the relative velocity between the two reference frames as a fraction of the speed of light. A few observations can be be made based on these equations: 
+\begin{itemize}
+    \item Clearly, \(V\) cannot be larger than \(c\); there is no real \(\zeta\) for which this could be true. This again reaffirms the statement that there can be no motions with velocities larger than the speed of light.
+    \item Secondly, this transform keeps \(c^2t^2 - x^2\) unaffected (of course, \(z\) and \(y\) keep their value for obvious reasons); all points in the \(tx\)-plane that remain invariant under this type of transformations lie on the same hyperbola. This underlines the connection with the capital-yield plane discussed in the previous sections: in that analogy, the accumulated interest corresponds to the Lorentz boost \(\zeta\).
+    \item In the limit for \(c \to \infty\), the original Galilean transform is recovered; as such, the original laws still function as an approximation when \(V\) is of negligible size with respect to \(c\).
+    \item Due to the multiplication factor in the transform, two points \(x_1\) and \(x_2\) are closer together when travelling at speed than when they are at rest. A length measured in a rest frame are called \emph{proper} \index{proper length}, and contracts when in a moving frame: this phenomenon is called \emph{Lorentz contraction} \index{Lorentz!contraction} \cite{Landau1971}.
+    \item In contrast to Galilean transforms, Lorentz transforms are generally not commutative: just like regular three-dimensional rotations, they depend on the order in which they are applied.
+\end{itemize}
+\paragraph{Velocity transform} The Lorentz transform described by \cref{eq:lorentz_transform_hyp,,eq:lorentz_transform_sqrt} shows how to transform coordinates from one frame to another. However, because the transform affects both \(x\) and \(t\), a velocity measured in the frame (not to be confused with the relative velocity between the frames \(V\)) \(\vec{v}\) with components will see not only its \(x\)-component affected, but the other two components \(v_x\) and \(v_z\) as well. The transformation of \(\vec{v}\) to \(\vec{v}'\) is then:
+\begin{equation}
+    v_x = \largefrac{v_x' + V}{\sqrt{1 - \qty(\frac{V}{c})^2}}\qquad 
+    v_y = \largefrac{v_y'\sqrt{1 - \qty(\frac{V}{c})^2}}{1 + v_x'
+    \qty(\frac{V}{c})}\qquad
+    v_z = \largefrac{v_z'\sqrt{1 - \qty(\frac{V}{c})^2}}{1 + v_x'\qty(\frac{V}{c})}. \text{\cite{Landau1971}}
+    \label{eq:lorentz_transform_vel}
+\end{equation}
+
+\subsection{Four-vectors}
+Instead of the usual three-vectors that are common in classical mechanics, the points in four-dimensional spacetime may be regarded as elements in a four-dimensional vector space. Components are then
+\begin{equation}
+    x^1 = ct^2\qquad x^2 = x \qquad x^3 = y \qquad x^4 = z
+    \label{eq:four-vector}
+\end{equation}
+
 
 \section{The Lorentz metric}
 \label{sec:lorentz_metric}
+\index{Lorentz!metric}
+\index{Lorentz!norm}
+\index{Lorentz!product}
 Central in the discussion of interest movements as hyperbolic motions will be the so-called Lorentzian inner (or Lorentz) product
 
 \begin{block}{Lorentz product}
@@ -150,6 +221,7 @@ The sign of the Lorentz norm gives rise to an equivalence relation \(\sim_L\) de
 In literature (both physics and mathematics) many variations on the so-called `metric signature' of the Lorentz product make their appearance. In terms of \(\real^4\), these variations come down to \((+,-,-,-)\), \((-,-,-,+)\), \((-,+,+,+)\) and \((+,+,+,-)\), where the first one coincides with the definition used here, in accordance with the magnificent work of \citet{Landau1971}. Luckily, this is just a matter of convention and its influence on the mathematical machinery at hand is limited to the switching of some signs.
 
 \section{The Lorentz group}
+
 
 \section{Hyperbolic numbers}
 Perhaps the most convenient way to view the hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, \(\jj\) will be used, though in literature also \(\mathrm{u}\) (for unipotent) and \(\mathrm{h}\) (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit \(\jj\) with the defining unipotence property \(\jj^2 = 1\), where obviously \(\jj \notin \real\). Like complex numbers, the hyperbolic numbers can have a real and a hyperbolic part

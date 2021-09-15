@@ -83,6 +83,7 @@ It can be shown that every non-parabolic Möbius transform is conjugate\footnote
 \(\mathfrak{J}(z) = kz,\)
 where \(k\) is called the \emph{multiplier} of this Möbius transform, and consequently all the transforms that are conjugate to it. The matrix \(J\) that coincides with this transform necessarily must have the form (the letter \(J\) is used to denote this transform because it is equal to the Jordan form of the transformation matrix \(M\)) \cite{Needham1997}
 \[J = \mqty(\dmat[0]{\sqrt{k}, \frac{1}{\sqrt{k}}}), \]
+\index{Jordan form}
 because then of course \(\mathfrak{J}(z) = \frac{\sqrt{k}z}{1/\sqrt{k}} = kz\). Because conjugacy translates to a similarity transform in the matrix analogy, it leaves the eigenvalues of the matrix unaffected. But, for \(J\) is a diagonal matrix, its eigenvalues are exactly on the main diagonal. As a result, \emph{the multiplier of a Möbius transform is equal to the square of its eigenvalue}, or \(k = \lambda^2\). Strictly speaking, every Möbius transform has of course two eigenvalues and two multipliers, but since they are both each others reciprocal, they do not have to be considered separately. With this result, \cref{eq:moebius_eigvals} can then also be restated in terms of the multiplier \(k\) instead of the eigenvalues:
     \[\sqrt{k} + \frac{1}{\sqrt{k}} = a + d = \trace{M}.\]
 Solving \cref{eq:moebius_eigvals}, one obtains
@@ -102,7 +103,7 @@ Solving \cref{eq:moebius_eigvals}, one obtains
                 \[J = \mqty(\cos(\theta/2) & -\sin(\theta/2)\\
                                       \sin(\theta/2) & \cos(\theta/2))\]
                 which is a rotation matrix\footnote{One should be mindful that the conversion to the real Jordan form is only possible when the eigenvalues of the matrix are complex conjugate. In general, \(M\) is complex, which means that this is not necessarily the case. However, on the unit circle, a complex inversion results in a reflection along the real axis, which means that the eigenvalues are in the elliptic case indeed complex conjugate.}. Therefore, \emph{matrices associated with elliptic transforms are rotation matrices}. These transforms are called \emph{elliptic}. The edge case for which \((a + d)^2 = 0\) with a multiplier is equal to -1, is denoted as a \emph{circular} transform (which is still an elliptic transform).
-            \item Conversely, if \((a + d)^2 < 0\), the solutions will generally be complex (and not conjugate). These transforms are part of a larger class called \emph{loxodromic}.
+            \item Conversely, if \((a + d)^2 < 0\), the solutions will generally be complex (and not conjugate). These transforms are part of a larger class called \emph{loxodromic}. As already stated, the loxodromic transforms also include the hyperbolic ones. \citet{Needham1997} reckons the elliptic transforms among the loxodromic transforms as well, but this is not general. In any case, the term `loxodromic' usually refers as a pars pro toto to the non-hyperbolic transforms in particular to make the distinction.
         \end{enumerate}
     \item \(\Delta = 0\) or \((a + d)^2 = 4\): there is one solution for \(\lambda\), either \(1^{(2)}\) or \(-1^{(2)}\), corresponding to a trace of -2 and 2 respectively (the superscript between parentheses indicates the algebraic multiplicity of the eigenvalues), because a normalized Möbius transform is only unique up to a sign. The multiplier for both cases is the same though, as \(k = 1\). Möbius transformations of this kind are called \emph{parabolic}. Because they have only one eigenvalue, there will also be one fixed point: the infinity point. The parabolic transforms give rise to translations in the complex plane of the form \(z \mapsto z + b\) with matrix representation
     \[ M = \mqty(1 & b \\ 0 & 1 ), \]
@@ -125,6 +126,7 @@ Solving \cref{eq:moebius_eigvals}, one obtains
 \index{Möbius transform!loxodromic}
 \index{Möbius transform!circular}
 \index{Möbius transform!parabolic}
+\index{unipotent matrix}
 
 \begin{figure}
     \centering
@@ -140,7 +142,7 @@ To summarize, there are five different classes of Möbius transform: circular, e
     \label{fig:riemann_transforms}
 \end{figure}
 
-\Cref{tab:moebiusclasses} provides an overview of the five Möbius classes, together with the values for the matrix trace, the multiplier and the Jordan form. Finally, \cref{fig:riemann_transforms} visualizes the effect of each of the transform classes on points on the Riemann sphere. Elliptic transforms push points along circles of constant latitude, while hyperbolic transforms move points orthogonally, along the meridians of the Riemann sphere. Loxodromic transforms are compositions of hyperbolic and elliptic transforms, the associated trajectories therefore look like spirals; incorporating both a North-South and an East-West movement.
+\Cref{tab:moebiusclasses} provides an overview of the five Möbius classes, together with the values for the matrix trace, the multiplier and the Jordan form. Finally, \cref{fig:riemann_transforms} visualizes the effect of each of the transform classes on points on the Riemann sphere. Elliptic transforms push points along circles of constant latitude, while hyperbolic transforms move points orthogonally, along the meridians of the Riemann sphere. %Loxodromic transforms are compositions of hyperbolic and elliptic transforms, the associated trajectories therefore look like spirals; incorporating both a North-South and an East-West movement.
 \begin{table}
     \caption{Overview of the five classes of Möbius transforms and the corresponding values for the trace squared of the matrix (\(\trace{M} = a + d\)), the multiplier of the transform and the Jordan form.}
     \label{tab:moebiusclasses}
@@ -156,7 +158,7 @@ To summarize, there are five different classes of Möbius transform: circular, e
                       \(\mqty(\ec^{\theta\ii/2} & 0 \\ 0 & \ec^{-\theta\ii/2})\) & ---  \\[0.8cm]
         Parabolic   & \(\{1\}\)  &  \(\qty{4}\)  & 
                       \(\mqty(1 & b \\ 0 & 1)\) & --- \\[0.8cm]
-        Hyperbolic  & \(\real^+_{0}\setminus\qty{1}\) & \((4, +\infty)\)& 
+        Hyperbolic  & \(\real^+_{0} \setminus \qty{1}\) & \((4, +\infty)\)& 
                       \(\mqty(\ec^{\zeta/2} & 0 \\ 0 & \ec^{-\zeta/2})\) & Loxodromic \\[0.8cm]
         Loxodromic  & \(\qty{k \in \complex \mid \abs{k} \neq 1 }\)  & \(\complex\setminus[0, 4]\) &
                       \(\mqty(k & 0 \\ 0 & k^{-1})\) & --- \\[0.4cm]
@@ -186,25 +188,33 @@ the latter equivalent then enforces that \(\det Q = 1\). There are always two qu
 \index{quaternion}
 
 \subsection{Hyperbolic geometry}
-The normalized transforms with real entries
+As described by \citet{Rovenski2010}, the isometries of the Poincaré half plane are any (composition) of the following types of transformations, i.e. they leave distances according to the Poincaré metric unaffected:
+\begin{itemize}
+    \item horizontal translations: \((x, y)\mapsto(x + a, y)\) where \(x, y, a \in real\);
+    \item reflection around the vertical axis: \((x, y) \mapsto (-x, y)\);
+    \item dilations centered around the origin: \((x, y) \mapsto (ax, ay)\);
+    \item inversions with respect to the unit circle \((x, y)\mapsto\qty(\frac{x}{x^2 + y^2}, \frac{y}{x^2 + y^2})\).
+\end{itemize}
+The group of all these transformations is precisely \pslgroup{2}{\real}, or the Möbius tranforms with real parameters:
 \[\mathfrak{H}(z) = \frac{az + b}{cz + d}\qquad a, b, c, d \in \real \quad ad - bc = 1;\]
-are the isometries of the Poincaré half plane \cite{Needham2021}. [...]
+these are the isometries of the Poincaré half plane \cite{Needham2021}. Recall from \cref{ssec:poincare_halfplane} that there are two types of geodesics in the half plane: semicircles centered at the origin and straight (from Euclidean perspective) vertical lines. These are precisely invariant curves for the transformations listed --- isometries take geodesics to geodesics \cite{Lee1997}.
 
 \section{Relation with special linear group}
 Another classic Lie group is the special linear group \slgroup{n}{\field}, which are the volume-preserving transformations on a vector space --- this property turns out to be quite important. The special linear group over the complex numbers (2-dimensional) \slgroup{2}{\complex} can be represented as the group of all the complex \(2\times2\) matrices with unit determinant. It has been mentioned previously that any such matrix coincides with a Möbius transform, albeit surjectively: for every Möbius transform, there are two such matrices. As such, \slgroup{2}{\complex} is a \emph{double cover} of \moebiusgroup.
 
 Arguably more interesting than \slgroup{2}{\complex} is the special linear group over the reals \slgroup{2}{\real}, i.e. every invertible \(2 \times 2\) matrix with real entries and a unit determinant; they form a subgroup of \slgroup{2}{\complex} as well. It has been mentioned before that the for the normalized Möbius transforms, the eigenvalues should be complex inverses of each other. For matrices with real entries, the eigenvalues are either both real or complex conjugates of each other. When not on the real axis, the only way eigenvalues can be complex inverses and complex conjugate is to be located on the unit circle. As can be seen on \cref{fig:multiplier_regions}, that means that the matrices with real entries contain exactly the hyperbolic (both real), elliptic (unit circle) and parabolic classes. The remaining part are the loxodromic transforms which have a nonreal trace [CHECK].
 
-
 \subsection{Relation to flow maps of linear ODE's}
+\(\conj{z}\)
 
 \section{Relation with Lorentz group}
 
 \section{Chapter summary}
 
 \begin{figure}
-    
-
+    \centering
+    \input{media/tikz/mobius_group}
+    \caption{Bla bla}
 \end{figure}
 
 

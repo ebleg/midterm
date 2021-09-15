@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+    \node[draw, align=center, thick] (moebius) at (0, 0) {\scriptsize{Möbius group}\\\moebiusgroup = \automorphgroup{\hat{\complex}}};
+    \node[draw, align=center] (lorentz) at (0, -2) {\scriptsize{Lorentz group}\\\restlorentzgroup};
+    \node[draw, align=center] (psl) at (4, 0) {\scriptsize{Projective special linear group}\\\pslgroup{2}{\complex}};
+    \node[draw, align=center] (pgl) at (4, -2) {\scriptsize{Projective linear group}\\\pglgroup{2}{\complex}};
+
+    \node[draw, align=center] (slc) at (0, 4) {\slgroup{2}{\complex}};
+    \node[draw, align=center] (slr) at (4, 4) {\slgroup{2}{\real}};
+
+    \node[draw, align=center] (e) at (-4, -2) {\(\mathfrak{E}\)};
+    \node[draw, align=center] (s) at (-4, 0) {\(\mathfrak{S}\)};
+    \node[draw, align=center] (h) at (3, 1.5) {\(\mathfrak{H}\)};
+
+    \node[draw, align=center] (euclidean) at (-4, -4) {\scriptsize{Euclidean group}};
+    \node[draw, align=center] (su) at (-4, 5) {\scriptsize{Special unitary group}\\\sugroup{2}};
+    \node[draw, align=center] (so) at (-4, 2) {\scriptsize{Special orthogonal group}\\\sogroup};
+
+    \node[draw, align=center] (su11) at (5, 6) {\scriptsize{Special unitary group}\\\sugroup{1, 1}};
+    \node[draw, align=center] (sp) at (1, 6) {\scriptsize{Symplectic group}\\\spgroup{2}{\real}};
+    
+    \draw[style=double] (moebius) -- (lorentz);
+    \draw[style=double] (moebius) -- (psl);
+    \draw[style=double] (lorentz) -- (psl);
+    \draw[style=double] (lorentz) -- (pgl);
+    \draw[style=double] (moebius) -- (pgl);
+    \draw[style=double] (pgl) -- (psl);
+    \draw[style=double] (s) -- (so);
+    \draw[style=double] (e) -- (euclidean);
+    \draw[style=double] (su11) -- (sp);
+    \draw[style=double] (slr) -- (sp);
+    \draw[style=double] (slr) -- (su11);
+
+    \draw[->] (slc) -- (moebius) node[pos=0.5, sloped, anchor=centre, above] {\scriptsize{double cover}};
+    \draw[->] (slr) -- (slc) node[pos=0.5, sloped, anchor=centre, above] {\scriptsize{subgroup}};
+    \draw[->] (e) -- (moebius) node[pos=0.5, sloped, anchor=centre, above] {\scriptsize{subgroup}};
+    \draw[->] (s) -- (moebius) node[pos=0.5, sloped, anchor=centre, above] {\scriptsize{subgroup}};
+    \draw[->] (h) -- (moebius) node[pos=0.5, sloped, anchor=centre, above] {\scriptsize{subgroup}};
+    \draw[->] (su) -- (so) node[pos=0.5, sloped, anchor=centre, above] {\scriptsize{double cover}};
+    \draw[->] (slr) -- (h) node[pos=0.5, sloped, anchor=centre, above] {\scriptsize{double cover}};
+\end{tikzpicture}
