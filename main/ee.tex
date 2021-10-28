@@ -1,64 +1,158 @@
 % Second chapter
-\chapter{Economic engineering}
-Economic engineering is built on analogies between (macro)economic theory and common engineering disciplines such as thermodynamics, circuit theory and (classical) mechanics\footnote{as opposed to more recent theories in relativistic mechanics and quantum mechanics}. Escpecially for the latter, a rich variety of useful analogues can be devised. There are two common classses of interpretations mechanics: \emph{analytical mechanics} including the formulations by Joseph-Louis Lagrange and sir William Rowan Hamilton, and \emph{vectorial mechanics}, better known as \emph{Newtonian mechanics}. The former variant is usually preferred in the field of engineering whereas the analytical mechanics are due to their mathematical elegance powerful interpretative value. Likewise, the theory of economic engineering can be approached in two similar ways. Usually the `Newtonian' approach is given the most attention, but in the case of this work the energy-based approach will prove to be more useful, which is why it will be the starting point of this discussion instead.
+\chapter{Economic engineering with analytical mechanics}
+Economic engineering is built on analogies between (macro)economic theory and common engineering disciplines such as thermodynamics, circuit theory and (classical) mechanics\footnote{as opposed to more recent theories in relativistic mechanics and quantum mechanics}. Escpecially for the latter, a rich variety of useful analogues can be devised. There are two common classses of interpretations mechanics: \emph{analytical mechanics} including the formulations by Joseph-Louis Lagrange and sir William Rowan Hamilton, and \emph{vectorial mechanics}, better known as \emph{Newtonian mechanics}. The former variant is usually preferred in the field of engineering whereas the analytical mechanics are due to their mathematical elegance powerful interpretative value. Likewise, the theory of economic engineering can be approached in two similar ways. Usually the `Newtonian' approach is given the most attention, but in the case of this work the energy-based approach will prove to be more useful, which is why it is the starting point of this discussion instead.
 
-\section{Analytical approach}
-Analytical mechanics, more specifically \emph{Lagrangian} and \emph{Hamiltonian} mechanics, are built around the definition of special state functions, respectively called the Lagrangian \(\lag\) and the Hamiltonian \(\ham\).
+Analytical mechanics, more specifically \emph{Lagrangian} and \emph{Hamiltonian} mechanics, are established around the definition of special state functions, respectively called the Lagrangian \(\lag\) and the Hamiltonian \(\ham\). As per usual, Lagrangian mechanics will be introduced first, for it has the most intuitive explanation. Then, a more formal approach allows to (Legendre) transform the discussion into one of Hamiltonian mechanics. 
 
-\subsection{Lagrangian mechanics}
-Central to the concept of Lagrangian mechanics is the so-called \emph{configuration space} \(M\), which is an \(n\)-dimensional manifold provided with some parameterization called \emph{generalized coordinates} assembled in the vector \(\gpos\). In classical mechanics, these generalized coordinates parameterize completely every allowable position of the system at issue. 
+In this chapter, frequent analogies will be made between mechanics and economics; as such, the idea is to have the `normal text' pertain mostly to the discussion of classical mechanics, and to provide the analogies in special `boxes' like so:
+\begin{econ}{Example}
+    An analogy between economics and classical mechanics.
+\end{econ}
+The reason for this particular choice of layout is twofold: first, it allows to make a sharp distinction between the older, extremely rigorous theory of classical mechanics and the novel approach of economic engineering: many ideas and interpretations are still tentative (especially in the realm of classical mechanics) as the field of economic engineering matures. Secondly, it allows for easier reference as to not obscure the economic analogies (which are arguably the most important aspects of this chapter) with the highly theoretical discussion of analytical mechanics.
 
+\section{Economic engineering}
+Very basic introduction to economic engineering:
+\begin{itemize}
+    \item Motivation \& analogies
+    \item Price - quantity
+    \item Past works
+\end{itemize}
+
+\section{Lagrangian mechanics}
+\subsection{The configuration manifold}
+Central to the concept of Lagrangian mechanics is the so-called \emph{configuration space} \(M\), which is an \(n\)-dimensional manifold provided with some parameterization called \emph{generalized coordinates} assembled in the vector \(\gpos\). 
 The configuration manifold may just be equal to \(\real^n\), but in more interesting and realistic cases it is often some manifold embedded in \(\real^n\). This is often the result of holonomic constraints, which are constraints that impose a restriction only on the configuration space, but not, for example, on the allowable velocities.
+By using the generalized coordinates, one can parameterize all the allowable positions of a system whose motions may occur in a higher-dimensional space with a smaller coordinate set (e.g. the two-dimensional motion of a pendulum can be expressed in a single coordinate due to the constraint imposed by the rigid link).  The crucial insight here is that the constraint forces will never perform any work on the system; as such, they act always orthogonally to the configuration manifold. This is why, provided that one is succesful in correctly describing this manifold with a suitable coordinate set, the constraint forces need not be taken into account: a  major advantage over Newtonian mechanics. 
+\index{configuration manifold}
+\index{configuration space}
+\index{generalized coordinates}
+\index{holonomic}
+\index{nonholonomic}
 
-\begin{econ}{Configuration manifold}
-    In economic engineering, \(\gpos\) has a similar intuitive notion, namely the stock values of various products, which denote the `position' of some economic system. The name `position' may be misleading when intuitively ported to the familiar three-dimensional space; the configuration space usually has less structure such as the absence of a metric or inner product.
+Unfortunately, the pursuit of finding a set of these all-encompassing generalized coordinates is fruitless for some systems, for they cannot possibly be represented in this simple fashion. Luckily, for a certain class of constraints they may be included to constrict the motion of the system nevertheless by means of the \emph{Lagrange multipliers}. They are applicable to holonomic constraints for which it is impractical or nonintuitive to take them into account directly in the parameterization of the configuration manifold, and a restricted class of nonholonomic constraints that can be written in the so-called \emph{Pfaffian} form \cite{Bullo2005}.
+\index{Pfaffian form}
+\index{Lagrange multipliers}
+
+\begin{figure}[ht]
+    \centering
+    \input{media/tikz/configuration_manifold.tex}
+    \caption{Schematic of a two-dimensional (configuration) manifold $M$ embedded in $\real^3$; the local generalized velocities associated with a point $\vec{x}$ are vectors that live in the tangent space $TM_{\vec{x}}$.}
+    \label{fig:conf_mnfold}
+\end{figure}
+
+\begin{econ}{Configuration manifold and the economic system}
+    In economic engineering, \(\gpos\) has a similar intuitive notion, namely the stock values of various products, which denote the `position' of some economic system. The name `position' may be misleading when intuitively ported to the familiar three-dimensional space; the configuration space usually has less structure such as the absence of a metric or inner product.\\
+
+    Just like in mechanics, the simplest shape the configuration manifold $M$ can take is a simple $n$-dimensional vector space, but more sophisticated cases exist as well. As mentioned, a nontrivial configuration manifold is usually the result of holonomic constraints applied to the system; these constraints have their meaning in economics too.
+    For example, when Lagrangian analysis is applied to the analysis of electrical circuits, the generalized coordinates naturally reflect Kirchoff's current laws (what comes in must go out); as they provide simple constraints to the current in each part of the circuit. An intuitive extension can be made to economics, where the flow of goods is often subject to a Kirchoff-type law as well, especially when considering supply chains or transport. 
 \end{econ}
 
-The Lagrangian \(\lag\) is then defined as a mapping from the \emph{tangent bundle} \(TM\) of the configuration manifold \(M\), optionally paired with a time argument for time-varying problems to the reals,
+\subsection{Hamilton's principle of stationary action}
+The configuration manifold in described in the previous section is the first step in the Lagrangian approach, for it defines a single mathematical space containing all the possible motions of the system. For all intents and purposes, it usually pertains to the very nature of the system itself; e.g. the wiring of the electrical, how the mechanical parts are connected to each other or which goods are present in an economic system and whether their quantities are fundamentally related. Of course, the configuration manifold itself does not provide any information about the behavior of the system: this is where Hamilton's principle comes in --- the second, crucial puzzle piece that makes Lagrangian mechanics work.
+
+Hamilton's principle (also referred to as the principle of least or stationary action) concerns the existence of a special state function, the Lagrangian $\lag$, determines the system's behavior \cite{Arnold1989}:
+\begin{quote}
+    \textbf{Hamilton's principle}\qquad Motions $\gamma: 
+    \real \to M$ of a mechanical system coincide with extremals of the action functional
+    \begin{equation}
+        S(\gamma) = \int_{t_1}^{t_2} \lag \dd{t},
+        \label{eq:ham_principle}
+    \end{equation}
+    where $\lag$ is the \emph{Lagrangian function} of the system.
+\end{quote}
+The Lagrangian \(\lag\) is a mapping from the \emph{tangent bundle} \(TM\) of the configuration manifold \(M\), optionally paired with a time argument for time-varying problems to the reals,
     \[ \lag : TM \times \real^+ \to \real, \]
-    i.e. it takes a generalized position \(\gpos\) and a generalized velocity \(\gvel\) (which live in the tangent space of \(M\)), and a time instance to some scalar value. Since the economic interpretation of \(\gpos\) is a vector of stock levels, its time derivative \(\gvel\) denotes a flow of goods. In classical mechanics, by convention 
-    \[\lag = \ecokin - \epot,\] 
-    i.e., where \ecokin is the kinetic co-energy\footnote{As will become clear later, the term `co-energy' is used to distinguish between the definition of kinetic energy in terms of the generalized momenta, which is the perspective of Hamiltonian mechanics.} of the system and \epot the potential energy. Generally, the kinetic co-energy is a quadratic form on the tangent space of the configuration manifold, whose coefficients may depend on the generalized position: \(\ecokin = \frac{1}{2}a_{ij}(\gpos)\dot{q}_i\dot{q_j} \). The potential energy is simply a mapping from the configuration manifold to the reals. If \(M\) is a Riemannian manifold and its Lagrangian has the aforementioned form, the system is called \emph{natural} \cite{Arnold1989}.
+i.e. it takes a generalized position \(\gpos\) and a generalized velocity \(\gvel\) (which live in the tangent space of \(M\)), and a time instance to some scalar values.
+\index{Hamilton's principle}
+\index{generalized velocities}
+\index{principle of least action}
+\index{tangent space}
+\index{tangent bundle}
 
-The crux of the Lagrangian theory is that motions of a mechanical system coincide with \emph{extremals}\footnote{this is a natural extension of the term \emph{extremum} to the calculus of variations.} of the action integral
-\[ S = \int^{t_1}_{t_0} \lag(\gpos, \gvel, t) \dd{t}\]
-where \(S\) is a quantity named \emph{action} with units of energy-time, or \si{\joule \second}. This is colloquially named the \emph{principle of least action}, or alternatively (and rather confoundingly), \emph{Hamilton's principle}.
-
-\begin{econ}{Lagrangian}
-   The lagrangian is analogous to running costs --- the action \(S\) has the units of money in economic engineering. Hence, the extremal of the aforementioned integral coincides with a cost minimization, which fits well into what is considered as rational behaviour of economic agents on whatever scale. 
-\end{econ}
-
-Please note that arguably the most fundamental finding in classical mechanics (and also economic engineering) appears here rather subtly, namely that the Lagrangian is a function of only \(\gpos\) and its first derivative \(\gvel\), but no higher derivatives --- that is, the state of the system is completely determined by the generalized positions and generalized velocities. This encodes Newton's famous second law \(F = ma\) already in a very elegant fashion.
-
-The aforementioned principle only is for now only helpful on a conceptual level, because it does not how to arrive at any solutions. For this, a branch of mathematics called the calculus of variations comes to aid, which is concerned with finding extremals of \emph{functionals}\footnote{A functional is a real-valued function on a vector space (of functions.)}, in this case the action \(S\). A necessary condition for \(S\) to attain an extremum is that 
+The aforementioned principle only is for now only helpful on a conceptual level, because it does not how to arrive at any solutions. For this, a branch of mathematics called the calculus of variations comes to aid, which is concerned with finding extremals of \emph{functionals}\footnote{A functional is a real-valued function on a vector space (of functions.)}, in this case \(S\). A necessary condition for \(S\) to attain an extremum is that 
 \[ \var{S} = 0,\]
 where \(\var{S}\) is called the \emph{first variation} of \(S\). Just like a regular differential can be seen as an infinitesimal perturbation of a function value, the variation is a very small perturbation of a functional by means of a trajectory \(h(t)\). The resulting perturbed functional can then in general be decomposed in a part that varies linearly with \(h\), and a nonlinear part. The requirement for the extremal is that the \emph{linear part vanishes for any} \(h\) \cite{Arnold1989}.
+\index{functional}
 
-As shown by \citet{Landau1976}, the condition \(\var{S} = 0\) is equivalent to the \emph{Euler-Lagrange} equation
+\citet{Landau1976} use the the tools of the calculus of variations to show that the solution of \cref{eq:ham_principle} is
 \[ \dv{}{t}\qty(\pdv{\lag}{\gvel}) - \pdv{\lag}{\gpos} = 0. \]
-This yields a total of \(n\) second-order differential equations, or equivalently a system of \(2n\) first-order equations. Of course, this also requires \(2n\) initial conditions for a solution to be found.
+This yields a total of \(n\) second-order differential equations, or equivalently a system of \(2n\) first-order equations. A special significance is assigned to the vector $\pdv{\lag}{\gvel}$, defined as the \emph{generalized momentum} $\gmom$.
+\index{generalized momentum}
 
-It was already mentioned that \(\lag = \ecokin - \epot\) in classical mechanics, but what is the economic interpretation behind this equation?
+\begin{econ}{Hamilton's principle and utility maximization}
+    The generalization of Hamilton's principle to economics is not far-fetched; it is generally accepted that elementary economic agents act as to maximize their own utility; this is known as the \emph{utility maximization problem}\footnote{It is important to realize that the term `extremal' does not necessarily refer to a minimum, as is often incorrectly stated when explaining Hamilton's theorem --- indeed, the least action principle is sometimes called the principle of \emph{stationary} action, which is more in line with its mathematical definition.}. \\
+    \index{utility maximization principle}
+
+    Thus, the formulation of economic motions as an extremal problem is quite straightforward. However, in order to descend from a purely philosophical debate a formalism that is actually useful, the Lagrangian must be assigned with a concrete meaning. As such, our aim is to translate the concept of energy to economics. In mechanics, the \emph{energy} of the system is, bluntly speaking, its ability to perform \emph{work}. For now, a purely mechanical interpretation is pursued, neglecting the connection between temperature and energy --- the application of economic engineering and thermodynamics is desribed in the thesis of \citet{Manders2019}. The economic engineering interpretation of work is the fulfilling of wants. As such, the energy of an ecomomic system is its ability to fulfill wants. Just like for mechanics, when assuming an economic configuration manifold, a natural dichotomy arises.
+    \begin{itemize}
+        \item \emph{Kinetic energy} is related to the utility due to market (trading) activity, it therefore depends in the first place on the \emph{flow of goods}; it is the surplus of the economic agent \cite{Mankiw2017}.
+        \item \emph{Potential energy} gives significance to utility obtained from the posession of goods; it must therefore depend on stock levels. One can see this as a sort of `convenience yield' (a term used in futures pricing): the benefits of actually possessing the good.
+    \end{itemize}
+    A more rigorous definition of these concepts in economics will be given later in this section. The intuition behind the principle of stationary action can be found in \citet{Feynman2010}:
+    \begin{quote}
+        \emph{``[...] the solution is some kind of balance between trying to get more potential energy with the least amount of extra kinetic energy—trying to get the difference, kinetic minus the potential, as small as possible."}
+    \end{quote}
+    Likewise, this can be restated as the basic least action principle in economic engineering:
+    \begin{quote}
+        \textbf{Hamilton's principle in economic engineering}\\ Economic agents try to to maximize their convenience yield (the utility of the goods they possess) by sacrificing as little  economic surplus as possible.
+    \end{quote}
+    As described by \citet{Feynman2010}, this is not only a global trajectory, but also a local one at every (infinitesimal) piece of the trajectory: one can see this as a formal restatement of the rational behavior of economic agents, which is a crucial assumptions in may economic theories \cite{Mankiw2017}.
+\end{econ}
+
+\subsection{Kinetic and potential energy}
+In classical mechanics, the Lagrangian is defined by convention
+\[\lag(\gpos,\gvel; t) = \ecokin(\gpos,\gvel; t) - \epot(\gpos; t),\] 
+where \ecokin is the kinetic co-energy\footnote{As will become clear later, the term `co-energy' is used to distinguish between the definition of kinetic energy in terms of the generalized momenta, which is the perspective of Hamiltonian mechanics.} of the system and \epot the potential energy. 
+
+In the most general terms, the kinetic energy of the system is \emph{defined} as a quadratic form on the tangent space of the configuration manifold. Assuming that $M$ is a Riemannian manifold (i.e. it is equipped with a Riemannian metric $\inner{\vec{\xi}}{\vec{\xi}}$), one can define the kinetic energy as
+\begin{equation}
+    \ecokin = \frac{m}{2}\inner{\vec{v}}{\vec{v}}\qquad \vec{v} \in TM_{\vec{x}}
+    \label{eq:ekin_mfld}
+\end{equation}
+The usage of $\ecokin$ in the Lagrangian formulation is only useful if it is expressed in the generalized coordinates and generalized velocities; in general $\ecokin$ will be of the form
+$$\ecokin(\gpos, \gvel) = \frac{1}{2}a_{ij}(\gpos)\dot{q}_i\dot{q_j}. $$ 
+This interpretation of kinetic energy as a Riemannian metric on the configuration manifold must not be overlooked; indeed, a free particle (i.e. in the absence of potential forces) will follow a trajectory along the \emph{geodesic} dictated by the `kinetic co-energy metric'; this is called the Maupertuis-Jacobi principle \cite{Arnold1989}.
+
+The potential energy is simply a mapping from the configuration manifold to the reals. If \(M\) is a Riemannian manifold and its Lagrangian has the aforementioned form, the system is called \emph{natural} \cite{Arnold1989}.
+
 \begin{econ}{Kinetic energy}
-    \citet{Mendel2019} sees kinetic (co)-energy as an analogue to surplus --- i.e. an area either above or below the price elasticity curve in a suply-demand diagram.
+    The interpretation of kinetic energy in economic engineering is a big leap forward, perhaps one of the most fundamental aspects of the entire theoretical framework. However, the formulation in \cref{eq:ekin_mfld} obscures the intuition behind it. This is why it is more instructive to look at the simple scalar case, where kinetic energy is a notion of the amount of work it takes to accelerate a particle from rest to a certain velocity.
+
+    To explain the significance of kinetic energy as surplus, the example given by \citet[chap.~6]{Marshall1920} about consumer's surplus will be recycled here in order to illustrate the point.
+
+    Imagine a woman (Jane), who likes to drink tea. When buying tea, she continuously makes the unconcious deliberations between (i) how much she likes to drink tea and (ii) how much she likes to pay for tea --- this is a consequence of the assumption that the Jane is a rational market participant. \citeauthor{Marshall1920} quantifies the woman's unconcious deliberation process by means of the following table:
+    \begin{center}
+        \begin{tabular}{lcccc}
+            Price / pound & 20 & 14 & 10 & 6 \\
+            \midrule
+            Pounds bought / year & 1 & 2 & 3 & 4 \\
+        \end{tabular}
+    \end{center}
+    It is rather straightforward that Jane is willing to buy more tea as it gets cheaper. Marshall explains this by means of the concept of utility: if the price of tea, say 20\$, drops to 14\$, Jane obtains her additional pound of tea for 14\$ for instead of the 20\$ she was willing to pay for the first pound. As such, she gains a surplus satisfaction (or consumer's surplus) of 6\$ --- this is, as Marshall states, \emph{precisely} the additional utlity of the second pound of tea, i.e. how much Jane values it on top of the first one. The total utility of the the two pounds of tea per year is then 20\$ +  14\$ = 34\$. This can be 
+
 \end{econ}
 
 \begin{econ}{Potential energy}
     Blabla
 \end{econ}
 
-% \begin{block}{Lagrangian system}
-%     Let \(M\) be a differentiable manifold, \(TM\) its tangent bundle, and \(\lag: TM \to \real\) a differentiable function. A map \(\gamma: \real \to M\)  is called a motion in the lagrangian system with configuration manifold \(M\) and lagrangian function \(\lag\) if \(\gamma\) is an extremal of the functional
-%     \[
-%      \Phi(\gamma) =  \int^{t_1}_{t_0} \lag\qty(\dot{\gamma})\dd{t}
-% \]
-%     where \(\dot{\gamma}\) is the velocity vector \(\dot{\gamma}(t) \in TM_{\gamma(t)}\) \cite{Arnold1989}.
-% \end{block}
+\begin{econ}{Dissative energy}
+    Foo bar
+\end{econ}
 
-\subsection{Hamiltonian mechanics}
+\subsection{Noether's theorem}
+
+\section{Hamiltonian mechanics}
+\subsection{The Legendre transform}
 One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distincition will then just be a matter of definition.} \cite{Landau1976}.
 
 Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1976}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
 
+\subsection{Hamilton-Jacobi}
+The circulation of a vector field \(\vec{v}\) is the integral of the 1-form \(\omega^1\). To the curl of \(\vec{v}\) there corresponds the 2-form \(\omega^2=\dd{\omega^1}\).
 
-\section{Newtonian approach}
+Let \(\omega^2\) be an exterior algebraic 2-form on the odd-dimensional vector space \(\real^{2n+ 1}\). Then there exists a vector \(\vec{\xi} \ne 0\) such that 
+\[ \omega^2(\vec{\xi}, \vec{\eta}) = 0\quad \forall \vec{\eta} \in \real^{2n+1}.  \]
+This can be shown by representing \(\omega^2\) by a skew-symmetric matrix, whose determinant vanishes if it is odd-dimensional. As such, there exists an eigenvector (\(\vec{\xi}\)) that is associated with the zero eigenvalue. Such vectors are called \emph{null vectors} of the form \(\omega^2\).
+
+

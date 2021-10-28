@@ -68,8 +68,8 @@ An interesting fact from group theory arises here as well: it has already been e
 \index{special projective linear group}
 
 \section{Classification of Möbius transforms}
-In the preceding discussion about the matrix representation of Möbius transforms, one important aspect has not yet been addressed: what about the eigenvalues and eigenvectors of \(M\)? Eigenvectors are vectors that remains invariant (up to scaling) under the multiplication of a particular matrix. Of course, one should bear in mind that the vector in this case contains projective coordinates, so that even when scaled, its coordinate representation remains identical. As such, the eigenvectors of the matrix \(M\) are the \emph{fixed points} of the Möbius transform \(\mathfrak{M}\); any Möbius transform has two at most. This is even more perspicuous by solving the equation \(z^* = \mathfrak{M}(z^*)\), which has solutions
-\[ z^* = \frac{(a - d) \pm \sqrt{(a + d)^2 - 4}}{2c}.\]
+In the preceding discussion about the matrix representation of Möbius transforms, one important aspect has not yet been addressed: what about the eigenvalues and eigenvectors of \(M\)? Eigenvectors are vectors that remains invariant (up to scaling) under the multiplication of a particular matrix. Of course, one should bear in mind that the vector in this case contains projective coordinates, so that even when scaled, its coordinate representation remains identical. As such, the eigenvectors of the matrix \(M\) are the \emph{fixed points} of the Möbius transform \(\mathfrak{M}\); any Möbius transform has two at most. This is even more perspicuous by solving the equation \(z_0 = \mathfrak{M}(z^*)\), which has solutions
+\[ z_0 = \frac{(a - d) \pm \sqrt{(a + d)^2 - 4}}{2c}.\]
 When converted to projective coordinates, the two solutions for \(z^*\) then coincide with the eigenvectors of \(M\). In the degenerate case for which \(a + d = \pm2\), the argument of the square root amounts to zero, which means that there is only one unique fixed point. These transforms are called \emph{parabolic}, more will become clear about them later \cite{Needham1997}.
 
 Now, it remains to analyse the significance of the eigenvalues. Of course, since eigenvalues are sensitive to scaling of the matrix, it is important to stress again that \(M\) must be normalized (have a unit determinant) in order for the following to hold. A well known fact in linear algebra states that if \(\lambda_1, \lambda_2\) are eigenvalues of \(M\), then
@@ -181,7 +181,7 @@ Quaternions can also be represented as complex matrices: \cite{Stillwell2008}
 which is a general represention of a \(2\times 2\) \emph{unitary}\footnote{A unitary matrix is a matrix whose inverse is its conjugate transpose --- it is the complex counterpart of orthogonal matrices.} matrix. Likewise, the unit quaternions then translate to matrices of the above type with an additional restriction: they must have a determinant of 1: these matrices are members of the \emph{special unitary group} \sugroup{2}. As such, the group of unit quaternions is isomorphic to the \sugroup{2} which is therefore also a double cover of \sogroup.
 
 Since the members of \sugroup{2} can be identified with a Möbius transform (inspection of the matrix above makes this immediately apparent), a specific subgroup of \moebiusgroup can be used to represent the rotations in \(\real^3\) --- recall that every normalized Möbius transform also corresponds to two matrices, differing by a factor -1. Observing the matrix above, one can see that the entries on the main diagonal are each others' conjugate, while the entries on the antidiagonal are conjugate opposite. Therefore, the general expression of a rotation of the Riemann sphere as a Möbius transform can be written as: \cite{Needham2021}
-\[\mathfrak{S} = \frac{az + b}{-b\bar{z}+\bar{a}}\quad\text{where } \abs{a}^2 + \abs{b}^2 = 1; \]
+\[\mathfrak{S} = \frac{az + b}{-\conj{b}z+\conj{a}}\quad\text{where } \abs{a}^2 + \abs{b}^2 = 1; \]
 the latter equivalent then enforces that \(\det Q = 1\). There are always two quaternions representing the same rotation; they are antipodal and differ by a factor of \(-1\). As a result, there are two possibilities for \(Q\) as well, again identical but with opposite entries. Recall that the same applies to the matrix representations of Möbius transforms: as such, the ambiguities are eliminated, and the group of transforms of type \(\mathfrak{S}\) is isomorphic to \sogroup. In the complex plane, these tranformations represent the isometries of spherical geometry in the stereographic map \cite{Needham1997}. 
 
 \index{versor}
@@ -216,5 +216,7 @@ Arguably more interesting than \slgroup{2}{\complex} is the special linear group
     \input{media/tikz/mobius_group}
     \caption{Bla bla}
 \end{figure}
+
+\towrite{Arnol'd appendix 3: connection between symplectic geometry and complex projective space}
 
 

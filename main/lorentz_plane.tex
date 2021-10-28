@@ -95,10 +95,10 @@ A possible workaround for this problem can be found in the so-called \emph{gener
 \end{equation}
 Although this extended definition brings the other two quadrants of the hyperbolic plane within reach of the polar form as well, there is still a particular set that even now cannot be represented this way: \(\qty{(x, y)\mid \abs{x} = \abs{y}}\), or the `light cone' from special relativity.
 
-\section{Special relativity}
+\section{Introduction to the theory of special relativity}
 This section gives a basic outline of the theory of special relavity. It is by no means meant to be a comprehensive overview, for which many other excellent resources exist such as \citet{Misner1970}, \citet{Taylor1992}, \citet{Landau1971}, or \citet{Penrose1978} for a shorter, less technical introduction. Instead, the goal of this section is to give a physical context for the concept of Lorentz geometry and the associated Lorentz space and metric, as well as their connection with hyperbolic geometry and Möbius transforms which will be introduced in \cref{chap:hyperbolic_geometry} and \cref{chap:moebius_transforms}.
 
-Before the advent of the theory of special relativity, developed by i.a. Poincaré, Minkowski, Lorentz and Einstein, so-called `Galilean relativity' was the norm. Galilean relativity entails the definition of Galilean transformations which links reference frames that move relative to each other at a constant linear speed. The laws of physics should be invariant between these inertial reference frames. However, a problem presented itself in the form of the famous Maxwell equations that pose the governing laws in electromagnetism. A consequence from Maxwell's laws is the finite propagation speed of light and therefore all possible interactions between particles in the universe. It is not hard to imagine that the Galilean invariance breaks down as a result of the introduction of a `special' speed. As such, the laws of physics in a moving reference frame \emph{will} depend on the speed of that particular reference frame: a major inconsistency with the traditional train of thought.
+Before the advent of the theory of special relativity, developed by i.a. Poincaré, Minkowski, Lorentz and Einstein, so-called `Galilean relativity' was the norm. Galilean relativity entails the definition of Galilean transformations which links reference frames that move relative to each other at a constant linear speed. The laws of physics should be invariant between these inertial reference frames. However, a problem presented itself in the form of the famous Maxwell equations that pose the governing laws in electromagnetism. A consequence from Maxwell's laws is the finite propagation speed of light and therefore all possible interactions between particles in the universe. It is not hard to imagine that the Galilean invariance breaks down as a result of the introduction of a `special' speed - indeed, the Galilean transform proclaims a complete independence between the physical laws and the constant velocity of the frame in which they are applied. But, as a direct consequence from Maxwell's equations, the laws of physics in a moving reference frame \emph{will} depend on the speed of that particular reference frame: a major inconsistency with the traditional train of thought.
 
 The new principle of relativity that brought reconciliation with Maxwell's ideas not only required space to be relative (i.e. dependent on a frame of reference), but also views \emph{time as a relative concept} whereas it had always been assumed to be absolute in classical mechanics. As such, the notion of time is dependent on the choice of reference frame too. This has the immediate consequence that the traditional three-dimensional setting of classical mechanics (often with Cartesian coordinates \(x, y, z\)) will not suffice for the description of special relativity: a fourth coordinate four time is indespensable to incorporate the relativity of time. Points in the four-dimensional \emph{spacetime} are called \emph{world points}, their associated trajectories are \emph{world lines} \cite{Landau1971}.
 \index{world line}
@@ -130,7 +130,7 @@ Now, one can ask the question what the actual time is that an observer would exp
     t'_2 - t'_1 = \int^{t_2}_{t_1} \dd{t} \sqrt{1 - \qty(\frac{v}{c})^2}.
     \label{eq:proper_time}
 \end{equation}
-Clearly, if the velocity makes up a larger fraction of the speed of light, the proper time is lower; that is: moving clocks run slower than a clock at rest (hypothetical clocks travelling at the speed of light do not register elapsed time at all). 
+Clearly, if the velocity makes up a larger fraction of the speed of light, the proper time is lower; that is: moving clocks run slower than a clock at rest (hypothetical clocks travelling at the speed of light do not register the passage of time whatsoever). 
 \towrite{Twin paradox ?}
 
 \subsection{Lorentz transformations}
@@ -172,12 +172,33 @@ which means that the argument of the hyperbolic rotation purely depends on the r
 \end{equation}
 
 \subsection{Four-vectors}
-Instead of the usual three-vectors that are common in classical mechanics, the points in four-dimensional spacetime may be regarded as elements in a four-dimensional vector space. Components are then
+\index{four-vector}
+Instead of the usual three-vectors that are common in classical mechanics, the points in four-dimensional spacetime may be regarded as elements in a four-dimensional vector space instead:
 \begin{equation}
-    x^1 = ct^2\qquad x^2 = x \qquad x^3 = y \qquad x^4 = z
+    A^0 = ct\qquad A^1 = x \qquad A^2 = y \qquad A^3 = z;
     \label{eq:four-vector}
 \end{equation}
+where the superscript indices indicate \emph{contravariant} (vector) components. These can be converted to covariant indices by virtue of the metric tensor \tens{g}
+\index{metric tensor}
+\[g_{ij} = g^{ij} = \mqty(\dmat[0]{1, -1, -1, -1}).\]
+Using \tens{g}, indices can then be lowered (or raised) like so
+\[ A^0 = A_0\qquad A^1 = -A_1 \qquad A^2 = -A_2 \qquad A^3 = -A_3; \]
+such that the spacetime interval may be expressed in tensor notation (observing the Einstein summation convention) as
+\[ s^2 = A^i A_i = c^2t^2 - x^2 - y^2 - z^2.\]
+Much like position, velocities have a four-dimensional spacetime counterpart as well; these objects are called \emph{four-velocities}, they are defined as \cite{Landau1971}\index{four-velocity}
+\[ u^i = \dv{x^i}{s} \qquad \text{ with } \dd{s} = c\dd{t} \sqrt{1 - \qty(\frac{v}{c})},\]
+\(v\) being the three-dimensional velocity of the particle. The components of the four-velocity are then
+\[ 
+u^0 = \largefrac{1}{\sqrt{1 - \qty(\frac{v}{c})^2}} 
+\qquad  u^1 = \largefrac{v_x}{c\sqrt{1 - \qty(\frac{v}{c})^2}}
+\qquad  u^2 = \largefrac{v_y}{c\sqrt{1 - \qty(\frac{v}{c})^2}}
+\qquad  u^3 = \largefrac{v_z}{c\sqrt{1 - \qty(\frac{v}{c})^2}}
+\]
+which are all dimensionless quantities. Clearly, any four-velocity squared amounts to one; or \(u^i u_i = 1\). This is analogous to the statement that all four-velocities live on a four-dimensional \emph{unit hyperboloid} (due to the nature of the metric tensor); this means that the four-velocities \emph{do not} form a vector space; the sum of two four-velocities does not generally yield another four-velocity. Instead, four-velocities exhibit a special type of geometry called \emph{hyperbolic geometry} --- this is an important concept to which \cref{chap:hyperbolic_geometry} is entirely devoted.
 
+\subsection{Relativistic mechanics}
+As described by \citet{Landau1971}, the Lagrangian for a relativistic particle is 
+\[\lag = -mc^2\sqrt{1 - \qty(\frac{v}{c})^2}\]
 
 \section{The Lorentz metric}
 \label{sec:lorentz_metric}

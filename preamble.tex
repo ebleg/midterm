@@ -57,6 +57,7 @@
 \usepackage{pgfplots}
 \usetikzlibrary{external}
 \usetikzlibrary{patterns}
+\usetikzlibrary{intersections}
 \usepackage{lipsum}
 
 % Figures
@@ -190,6 +191,7 @@
 \newcommand{\epot}{\ensuremath{U}\xspace}
 \newcommand{\gpos}{\ensuremath{\vec{q}}\xspace}
 \newcommand{\gvel}{\ensuremath{\dot{\vec{q}}}\xspace}
+\newcommand{\gmom}{\ensuremath{\dot{\vec{p}}}\xspace}
 
 \newcommand{\moebiusgroup}{\ensuremath{\text{Möb}}\xspace}
 \newcommand{\automorphgroup}[1]{\ensuremath{\mathrm{Aut}(#1)}\xspace}
@@ -205,8 +207,12 @@
 
 \newcommand{\quat}[4]{\ensuremath{#1 + #2\vb{i} + #3\vb{j} + #4\vb{k}}\xspace}
 \newcommand{\corresponds}{\ensuremath{\quad \leftrightsquigarrow \quad}}
+\newcommand{\conj}[1]{\ensuremath{\bar{#1}}}
 
-\newcommand{\conj}[1]{\ensuremath{#1^{\dagger}}}
+\newcommand{\ctran}[1]{\ensuremath{#1^{\dagger}}}
+\newcommand{\tran}[1]{\ensuremath{#1^{\top}}}
+
+\newcommand{\inner}[2]{\ensuremath{\langle #1,\, #2\rangle}}
 
 \newcommand{\largefrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}
 
@@ -215,6 +221,6 @@
 % Vectors, Tensors, Matrices
 % Vector notation: bold italic
 \renewcommand{\vec}[1]{\vb*{#1}}
-\newcommand{\tens}[1]{{\mathtens{#1}}}
+\newcommand{\tens}[1]{\ensuremath{\mathtens{#1}}}
 
 \newcommand{\towrite}[1]{{\centering (\texttt{... #1 ...})}}
