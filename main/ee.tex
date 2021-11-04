@@ -8,21 +8,35 @@ In this chapter, frequent analogies will be made between mechanics and economics
 \begin{econ}{Example}
     An analogy between economics and classical mechanics.
 \end{econ}
-The reason for this particular choice of layout is twofold: first, it allows to make a sharp distinction between the older, extremely rigorous theory of classical mechanics and the novel approach of economic engineering: many ideas and interpretations are still tentative (especially in the realm of classical mechanics) as the field of economic engineering matures. Secondly, it allows for easier reference as to not obscure the economic analogies (which are arguably the most important aspects of this chapter) with the highly theoretical discussion of analytical mechanics.
-
+The reason for this particular choice of layout is twofold: first, it allows to make a sharp distinction between the older, extremely rigorous theory of classical mechanics and the novel approach of economic engineering: many ideas and propositions are still tentative (especially in the realm of classical mechanics) as the field of economic engineering matures. Secondly, it allows for easier reference as to not obscure the economic analogies (which are arguably the most important aspects of this chapter) with the highly theoretical discussion of analytical mechanics.
 \section{Economic engineering}
-Very basic introduction to economic engineering:
-\begin{itemize}
-    \item Motivation \& analogies
-    \item Price - quantity
-    \item Past works
-\end{itemize}
+The discipline of `economic engineering' is a very new one. The theoretical foundations have been developed over the past years at the Delft Center of Systems and Control primarily by prof. em. dr. ir. Mendel, combined with the contributions of several theses that have been recently written about the subject. The purpose of economic engineering is to use tools from various engineering disciplines and physics to improve the predictive power of (macro)economic models. The core idea is to extend `domain-neutral' modeling techniques such as bond graph modeling \cite{Karnopp2012} that are built on analogies between mechanical, electrical, hydraulic, ... systems to economic systems as well. Hence, one attempts to give an economic interpretation to a generalized mass (I-element), generalized spring (C-element) and generalized damper (R-element). The idea is that this consistent engineering approach leads to actual \emph{predictive} models that provide much richer insights than the `stylized facts' from macroeconomy or, on the other end of the spectrum, the `black-box' econometric models that have lost all interpretative value. Indeed, applied economic engineering pursues \emph{grey-box} modeling instead, as is most common in traditional engineering models \cite{Kruimer2021}. Some analogies between mechanical, electrical and economic systems are listed in \cref{tab:analogies} to merely for the sake of illustration; a thorough motivation for each of them will be given in the following section. \Cref{tab:analogies} provides some examples of the analogies that are used within economic engineering. In general, their meaning is not as specific as given here and this table applies only to the most elementary cases. 
+\begin{table}[h]
+    \centering
+    \caption{Some examples of the analogies that are used in the application of economic engineering. The theory behind bond-graph modeling defines a generalization of the mechanical concepts of displacement, velocity, momentum and effort and applies these to electrical, thermodynamic, hydraulic, ... systems too \cite{Karnopp2012}.}
+    \label{tab:analogies}
+    \begin{tabular}{cccc}
+        \toprule
+        \textbf{General} & \textbf{Mechanical} & \textbf{Electrical} & \textbf{Economic} \\ 
+        \midrule
+        Displacement & Displacement & Charge & Stock level\\
+        Flow & Velocity & Current & Flow of goods \\
+        Momentum & Momentum & Flux linkage & Price \\
+        Effort & Force & Voltage & Economic want \\
+        \midrule
+        I-element & Mass & Inductor & Market \\
+        C-element & Spring & Capacitor & Storage of goods \\
+        R-element & Damper & Resistor & Depreciation / Consumption \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+The main theory behind economic engineering is outlined by \citet{Mendel2019}. Some other notable results in the field have been achieved in recent years as well. \citet{Hutters2020b} demonstrated the application of Hamiltonian mechanics to dissipative systems as to include the mechanics of consumption in port-Hamiltonian systems. A formal approach inspired by the theory of thermodynamics was used by \citet{Manders2019} to explain economic growth and productivity. \citet{Kruimer2021} and \citet{VanArdenne2020} used economic engineering bond graph techniques to build extensive models for the U.S. economy and a `generalized' firm (as to improve business valuation techniques).
 
 \section{Lagrangian mechanics}
 \subsection{The configuration manifold}
 Central to the concept of Lagrangian mechanics is the so-called \emph{configuration space} \(M\), which is an \(n\)-dimensional manifold provided with some parameterization called \emph{generalized coordinates} assembled in the vector \(\gpos\). 
 The configuration manifold may just be equal to \(\real^n\), but in more interesting and realistic cases it is often some manifold embedded in \(\real^n\). This is often the result of holonomic constraints, which are constraints that impose a restriction only on the configuration space, but not, for example, on the allowable velocities.
-By using the generalized coordinates, one can parameterize all the allowable positions of a system whose motions may occur in a higher-dimensional space with a smaller coordinate set (e.g. the two-dimensional motion of a pendulum can be expressed in a single coordinate due to the constraint imposed by the rigid link).  The crucial insight here is that the constraint forces will never perform any work on the system; as such, they act always orthogonally to the configuration manifold. This is why, provided that one is succesful in correctly describing this manifold with a suitable coordinate set, the constraint forces need not be taken into account: a  major advantage over Newtonian mechanics. 
+By using the generalized coordinates, one can parameterize all the allowable positions of a system whose motions may occur in a higher-dimensional space with a smaller coordinate set (e.g. the two-dimensional motion of a pendulum can be expressed in a single coordinate due to the constraint imposed by the rigid link).  The crucial insight here is that the constraint forces will never perform any work on the system\footnote{This is known as \emph{D'Alembert's principle}.}; as such, they act always orthogonally to the configuration manifold. This is why, provided that one is succesful in correctly describing this manifold with a suitable coordinate set, the constraint forces need not be taken into account: a  major advantage over Newtonian mechanics. 
 \index{configuration manifold}
 \index{configuration space}
 \index{generalized coordinates}
@@ -74,7 +88,7 @@ The aforementioned principle only is for now only helpful on a conceptual level,
 where \(\var{S}\) is called the \emph{first variation} of \(S\). Just like a regular differential can be seen as an infinitesimal perturbation of a function value, the variation is a very small perturbation of a functional by means of a trajectory \(h(t)\). The resulting perturbed functional can then in general be decomposed in a part that varies linearly with \(h\), and a nonlinear part. The requirement for the extremal is that the \emph{linear part vanishes for any} \(h\) \cite{Arnold1989}.
 \index{functional}
 
-\citet{Landau1976} use the the tools of the calculus of variations to show that the solution of \cref{eq:ham_principle} is
+\citet{Landau1960} use the the tools of the calculus of variations to show that the solution of \cref{eq:ham_principle} is
 \[ \dv{}{t}\qty(\pdv{\lag}{\gvel}) - \pdv{\lag}{\gpos} = 0. \]
 This yields a total of \(n\) second-order differential equations, or equivalently a system of \(2n\) first-order equations. A special significance is assigned to the vector $\pdv{\lag}{\gvel}$, defined as the \emph{generalized momentum} $\gmom$.
 \index{generalized momentum}
@@ -83,7 +97,7 @@ This yields a total of \(n\) second-order differential equations, or equivalentl
     The generalization of Hamilton's principle to economics is not far-fetched; it is generally accepted that elementary economic agents act as to maximize their own utility; this is known as the \emph{utility maximization problem}\footnote{It is important to realize that the term `extremal' does not necessarily refer to a minimum, as is often incorrectly stated when explaining Hamilton's theorem --- indeed, the least action principle is sometimes called the principle of \emph{stationary} action, which is more in line with its mathematical definition.}. \\
     \index{utility maximization principle}
 
-    Thus, the formulation of economic motions as an extremal problem is quite straightforward. However, in order to descend from a purely philosophical debate a formalism that is actually useful, the Lagrangian must be assigned with a concrete meaning. As such, our aim is to translate the concept of energy to economics. In mechanics, the \emph{energy} of the system is, bluntly speaking, its ability to perform \emph{work}. For now, a purely mechanical interpretation is pursued, neglecting the connection between temperature and energy --- the application of economic engineering and thermodynamics is desribed in the thesis of \citet{Manders2019}. The economic engineering interpretation of work is the fulfilling of wants. As such, the energy of an ecomomic system is its ability to fulfill wants. Just like for mechanics, when assuming an economic configuration manifold, a natural dichotomy arises.
+    Thus, the formulation of economic motions as an extremal problem is quite straightforward. However, in order to descend from a purely philosophical debate a formalism that is actually useful, the Lagrangian must be assigned with a concrete meaning. As such, our aim is to translate the concept of energy to economics. In mechanics, the \emph{energy} of the system is, bluntly speaking, its ability to perform \emph{work}. For now, a purely mechanical interpretation is pursued, neglecting the connection between temperature and energy --- the application of economic engineering and thermodynamics is desribed in the thesis of \citet{Manders2019}. The economic engineering interpretation of work is the fulfilling of wants. As such, the energy of an ecomomic system is its ability to fulfill wants. A natural dichotomy arises when viewing the economic system in terms of its configuration manifold and generalized `velocities' (product flows), akin to the of forms energy in mechanics.
     \begin{itemize}
         \item \emph{Kinetic energy} is related to the utility due to market (trading) activity, it therefore depends in the first place on the \emph{flow of goods}; it is the surplus of the economic agent \cite{Mankiw2017}.
         \item \emph{Potential energy} gives significance to utility obtained from the posession of goods; it must therefore depend on stock levels. One can see this as a sort of `convenience yield' (a term used in futures pricing): the benefits of actually possessing the good.
@@ -99,23 +113,25 @@ This yields a total of \(n\) second-order differential equations, or equivalentl
     As described by \citet{Feynman2010}, this is not only a global trajectory, but also a local one at every (infinitesimal) piece of the trajectory: one can see this as a formal restatement of the rational behavior of economic agents, which is a crucial assumptions in may economic theories \cite{Mankiw2017}.
 \end{econ}
 
-\subsection{Kinetic and potential energy}
+\subsection{Kinetic energy}
 In classical mechanics, the Lagrangian is defined by convention
 \[\lag(\gpos,\gvel; t) = \ecokin(\gpos,\gvel; t) - \epot(\gpos; t),\] 
-where \ecokin is the kinetic co-energy\footnote{As will become clear later, the term `co-energy' is used to distinguish between the definition of kinetic energy in terms of the generalized momenta, which is the perspective of Hamiltonian mechanics.} of the system and \epot the potential energy. 
+where \ecokin is the kinetic co-energy\footnote{As will become clear later, the term `co-energy' is used to distinguish between the definition of kinetic energy in terms of the generalized momenta, which is the perspective of Hamiltonian mechanics.} of the system and \epot the potential energy. If \(M\) is a Riemannian manifold and its Lagrangian has the aforementioned form, the system is called \emph{natural} \cite{Arnold1989}.
 
-In the most general terms, the kinetic energy of the system is \emph{defined} as a quadratic form on the tangent space of the configuration manifold. Assuming that $M$ is a Riemannian manifold (i.e. it is equipped with a Riemannian metric $\inner{\vec{\xi}}{\vec{\xi}}$), one can define the kinetic energy as
+In the most general terms, the kinetic energy of the system is \emph{defined} as a quadratic form on the tangent space of the configuration manifold. Assuming that $m$ is a Riemannian manifold (i.e. it is equipped with a Riemannian metric $\inner{\vec{\xi}}{\vec{\xi}}$), one can define the kinetic co-energy as
 \begin{equation}
     \ecokin = \frac{m}{2}\inner{\vec{v}}{\vec{v}}\qquad \vec{v} \in TM_{\vec{x}}
     \label{eq:ekin_mfld}
 \end{equation}
 The usage of $\ecokin$ in the Lagrangian formulation is only useful if it is expressed in the generalized coordinates and generalized velocities; in general $\ecokin$ will be of the form
-$$\ecokin(\gpos, \gvel) = \frac{1}{2}a_{ij}(\gpos)\dot{q}_i\dot{q_j}. $$ 
-This interpretation of kinetic energy as a Riemannian metric on the configuration manifold must not be overlooked; indeed, a free particle (i.e. in the absence of potential forces) will follow a trajectory along the \emph{geodesic} dictated by the `kinetic co-energy metric'; this is called the Maupertuis-Jacobi principle \cite{Arnold1989}.
+$$\ecokin(\gpos, \gvel) = \frac{1}{2}m_{ij}(\gpos)\dot{q}_i\dot{q_j}, $$ 
+observing the Einstein summation convention. This interpretation of kinetic co-energy as a Riemannian metric on the configuration manifold must not be overlooked; indeed, a free particle (i.e. in the absence of potential forces) will follow a trajectory along the \emph{geodesic} dictated by the `kinetic co-energy metric'; this is called the Maupertuis-Jacobi principle \cite{Arnold1989}.
 
-The potential energy is simply a mapping from the configuration manifold to the reals. If \(M\) is a Riemannian manifold and its Lagrangian has the aforementioned form, the system is called \emph{natural} \cite{Arnold1989}.
+The distinction between energy and co-energy is not very common in literature, although thoroughly discussed by \citet{Jeltsema2009}. While energy is the ability to do work, and co-energy is the \emph{complement of energy}. Since energy is defined in terms of work, kinetic energy $\ekin$ should be defined in terms of momentum -- the integral of an applied force over time, instead of a velocity. The linear relation behind the change of variables from momentum to velocity by means of the mass makes the distinction between energy and co-energy moot at first glance, but it is nevertheless important to consider. However, the kinetic energy and co-energy are not always equal, e.g. in the relativistic case where the mass will depend on the velocity as well. In the simple nonrelativistic case, for a single particle with mass $m$, the following relations hold:
+$$ \text{kinetic energy } \ekin = \int \frac{p}{m}\dd{p} = \frac{p^2}{2m}\qquad
+   \text{kinetic co-energy } \ecokin = \int m v \dd{v} = \frac{mv^2}{2}.$$
 
-\begin{econ}{Kinetic energy}
+\begin{econ}{Kinetic energy and market surplus}
     The interpretation of kinetic energy in economic engineering is a big leap forward, perhaps one of the most fundamental aspects of the entire theoretical framework. However, the formulation in \cref{eq:ekin_mfld} obscures the intuition behind it. This is why it is more instructive to look at the simple scalar case, where kinetic energy is a notion of the amount of work it takes to accelerate a particle from rest to a certain velocity.
 
     To explain the significance of kinetic energy as surplus, the example given by \citet[chap.~6]{Marshall1920} about consumer's surplus will be recycled here in order to illustrate the point.
@@ -128,31 +144,100 @@ The potential energy is simply a mapping from the configuration manifold to the 
             Pounds bought / year & 1 & 2 & 3 & 4 \\
         \end{tabular}
     \end{center}
-    It is rather straightforward that Jane is willing to buy more tea as it gets cheaper. Marshall explains this by means of the concept of utility: if the price of tea, say 20\$, drops to 14\$, Jane obtains her additional pound of tea for 14\$ for instead of the 20\$ she was willing to pay for the first pound. As such, she gains a surplus satisfaction (or consumer's surplus) of 6\$ --- this is, as Marshall states, \emph{precisely} the additional utlity of the second pound of tea, i.e. how much Jane values it on top of the first one. The total utility of the the two pounds of tea per year is then 20\$ +  14\$ = 34\$. This can be 
+    It is rather straightforward that Jane is willing to buy more tea as it gets cheaper and vice versa. Marshall explains this by means of the concept of utility: if the price of tea, say 20\$, drops to 14\$, Jane obtains her additional pound of tea for 14\$ for instead of the 20\$ she was willing to pay for the first pound. As such, she gains a surplus satisfaction (or consumer's surplus) of 6\$ --- this is, as Marshall states, \emph{precisely} the additional utlity of the second pound of tea, i.e. how much Jane values it on top of the first one. The total utility of the the two pounds of tea per year is then 20\$ +  14\$ = 34\$. More simply stated, the consumer's surplus is the total utility of the products bought minus the price actually paid. In this example, the total utility is \emph{at least} 34\$, and the price paid is 2$\times$14\$ = 28\$: therefore, Jane's the consumer's surplus is 6\$. 
+    \begin{center}
+        \input{media/tikz/surplus}
+    \end{center}
+    Indeed, this example illustrates that \emph{surplus} and \emph{utility} are closely related; indeed, they only differ by the choice of a `setpoint' (the price at which Jane is buying tea). 
 
+    Both have units of \$/yr, a consequence of the demand being in quantity/yr (of course `yr' is an arbitrary choice for a time unit for the sake of this example) -- this is an important distinction from other texts in economics, which tend to be rather vague as to whether the demand is a flow or an absolute quantity of goods. Based on this discussion, the following relations can be obtained:
+    \begin{equation}
+        \text{total surplus}\: =\: \sum_{i = 1}^{i^m} p_i \Delta v \qquad \text{consumer's surplus} \:=\: \sum p_i \Delta v - \underbrace{\sum p_m \Delta v}_{\text{amount paid}}
+    \label{eq:surplus}
+    \end{equation}
+    with $p$ the price and $v$ the amount of tea sold per year. Hence, the summations happen over a set of prices between two points: a `reference' price (in this case, \$20), and the market price $p_m$; of course, the value of the consumer's surplus depends on the choice for these prices. Naturally, the market price may be quite undisputed, but the reference price is just that, and its choice is arbitrary. In this simple example, it happens to coincide with the reservation price for the first pound of tea, but that need not be the case at all.
+
+   By virtue of the foregoing discussion, it is established that \emph{the trade utility measured at a given price is the (consumer's) surplus}. The Lagrangian represents an exchange of `trade utility' (dependent on the flow of goods) and the `product utility', dependent on stock levels. To establish the analogy with mechanics, observe that the part of the mechanical Lagrangian that depends on the generalized velocities is the kinetic energy. This connection is the foundation of the following economic engineering principle:
+    \begin{quote}
+        \textbf{Kinetic (co-)energy is analogous to market surplus.}
+    \end{quote}
+    In mechanics, the calculation of kinetic energy is \emph{dependent on the frame of reference}, and this is analogous to the reference price used to calculate the consumer's surplus. There is one additional loose end: in the example of Jane, there was extensive mention of price, while the Lagrangian and the kinetic co-energy are only dependent on the flow of goods. One can observe from the example that the price determines the additional increase of surplus for every increase in the amount of tea bought per year, or otherwise
+    $$
+        \frac{\Delta (\text{total utility})}{\Delta v} = p_i
+    $$
+    To generalize, one can assume that $v$ and $p$ are continuous variables instead, related to each other by the bijective `reservation price mapping' that is denoted by $m: v \mapsto p$. The summations in the previous examples can then all be replaced by integrals:
+    $$ 
+        \text{total utility} = \int p\dd{v} \qquad 
+        \text{consumer's surplus} = \int p\dd{v} - p_1\int \dd{v}
+    $$ 
+    i.e. the total utility and consumer's surplus only differ by a choice of reference frame. With the consumer's surplus being analogous to kinetic energy, one can say that
+    \begin{quote}
+        \textbf{Price is analogous to momentum.}
+    \end{quote}
 \end{econ}
+
+\begin{figure}[ht]
+    \centering
+    \input{media/tikz/kinetic_energy}
+    \caption{Blabla. Figure courtesy of B. \citet{Krabbenborg2021}.}
+    \label{fig:kinetic_energy}
+\end{figure}
+
+\subsection{Potential energy}
+In mechanics, the potential energy arises due to the presence of a conservative force vector field $\vec{F}$. A vector field is conservative if the work done along any path only depends on the endpoints of the path and not on the intermediate shape. If that is the case, then it is always true that one can find a function such that\footnote{This is a consequence of the fundamental theorem for line integrals \cite{Stewart2012}.}
+$$ \vec{F} = - \pdv{U}{\vec{x}}. $$
+In the Lagrangian context, the position vector $\vec{x}$ can be expressed in terms of the generalized coordinates, such that (with a slight abuse of notation)
+$$ \vec{F} = -\pdv{U}{\gpos}. $$
 
 \begin{econ}{Potential energy}
-    Blabla
-\end{econ}
+    While in `regular physics' potential energy arises due to the presence of elastic, electric, gravitational ... forces, its interpretation in economic engineering is related to the utility gained from the posession of goods; i.e. it is a function that has units of cash flow (just like surplus) that depends only on the stock levels (possibly in terms of generalized coordinates).\\
 
+    The simplest example is the economic analogue of a spring: just like a spring, a restoring `force' (i.e. an economic want) occurs whenever the spring is elongated or stretched with respect to a certain reference distance. For economics agents, this means either being long or short on stock levels, again with respect to a certain reference $q_0$ (although important for practical interpretations, this reference does not really contribute on a conceptual levels, which is why it is omitted in the theoretical discusion, just like the reference momentum for the kinetic energy). Hence, there is a `potential utility' in either being long or short, in the sense that it can be exchanged for `market utility' or economic surplus, because it requires an exchange of goods. The continuous reciprocity between kinetic energy and 
+    potential energy is a central theme in mechanics, and it is henceforth been given a succinct economic intepretation as well.
+\end{econ}
+The stereotypical example in mechanics that contains a single storage of kinetic energy (a mass) and a single storage of potential energy (a spring) is the mass-spring system, which also arises as the linearization of a multitude of undamped nonlinear systems (i.e. the pendulum); the result is a second-order scalar autonomous differential equation:
+\begin{equation}
+    m\ddot{q} + \pdv{U}{q} = 0, \quad \text{with} U = \frac{kq^2}{2}
+    \label{eq:mass_spring}
+\end{equation}
+with $k$ being the sprign constant; this is immediately results in Newton's second law of motion. A simple mass-spring system is shown in \cref{fig:mass_spring}.
+\begin{figure}[ht]
+    \centering
+    \input{media/tikz/mass_spring}
+    \caption{A simple mass-spring system. Figure courtesy of B. \citet{Krabbenborg2021}.}
+    \label{fig:mass_spring}
+\end{figure}
+
+The distiction between energy and co-energy exists for potential energy too. Again, the potential energy itself is defined in terms of work: the integral of force over distance. Comparable between the bijective simple linear relation between velocity and momentum, for simple linear springs the force $F$ and displacement $q$ are related by $F = kq$. Again, in this case the distinction may seem a bit pointless; but, when this relation is nonlinear (as it in the real world often is), the potential energy and co-energy are no longer the same. 
+$$ \text{potential energy } \epot = \int F \dd{q} \quad \text{potential co-energy} \ecopot = \int q \dd{F} $$
+which for in the case of the simple spring turn out to be
+$$ \epot = \frac{kq^2}{2} \qquad \ecopot = \frac{f^2}{2k}. $$
+In the case of potential energy, the familiar equation really \emph{is} the one that corresponds to energy (and not to co-energy, as for kinetic energy). The second equation seems really odd, intuitively turning the causal relation around; but one should bear in mind that this equation is, from a fundamental perspective, equally `odd' as the extremely familiar $\frac{mv^2}{2}$. \Cref{fig:potential_energy} shows the relation between potential energy and co-energy and why they are equal for a linear relation between force and displacement.
+\begin{figure}[ht]
+    \centering
+    \input{media/tikz/potential_energy}
+    \caption{Blabla. Figure couretesy of B. \citet{Krabbenborg2021}.}
+    \label{fig:potential_energy}
+\end{figure}
+The solution of the simple mass-spring system is a sinusoid which continuous indefinitely in time. Intuitively, this seems odd; as it does seem to apply directly to economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex network of society. This makes the theoretical achievement that are the basic foundations economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path dependent forces in the system. These forces dissipate energy and are always present in reality, both in mechanics and economics; they will be the subject of the next section. 
+
+\subsection{Dissipative terms}
 \begin{econ}{Dissative energy}
     Foo bar
 \end{econ}
 
 \subsection{Noether's theorem}
 
+\begin{quote}
+    \textbf{Noether's theorem}\quad If the Lagrangian system $(M, \lag)$ admits the one-parameter group of transformations $h^s: M \to M, s \in \real$, then the Lagrangian system of equations corresponding to $\lag$ has a first integral: $I: TM \to \real$. In local coordinates $q$ on $M$ the integral $I$ is written in teh form 
+    $$ \left. I(\gpos, \gvel) = \pdv{\lag}{\gvel}\dv{h^s(\gpos)}{s}\right |_{s = 0} $$
+\end{quote}
+
 \section{Hamiltonian mechanics}
+
 \subsection{The Legendre transform}
-One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distincition will then just be a matter of definition.} \cite{Landau1976}.
+One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distincition will then just be a matter of definition.} \cite{Landau1960}.
 
-Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1976}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
-
-\subsection{Hamilton-Jacobi}
-The circulation of a vector field \(\vec{v}\) is the integral of the 1-form \(\omega^1\). To the curl of \(\vec{v}\) there corresponds the 2-form \(\omega^2=\dd{\omega^1}\).
-
-Let \(\omega^2\) be an exterior algebraic 2-form on the odd-dimensional vector space \(\real^{2n+ 1}\). Then there exists a vector \(\vec{\xi} \ne 0\) such that 
-\[ \omega^2(\vec{\xi}, \vec{\eta}) = 0\quad \forall \vec{\eta} \in \real^{2n+1}.  \]
-This can be shown by representing \(\omega^2\) by a skew-symmetric matrix, whose determinant vanishes if it is odd-dimensional. As such, there exists an eigenvector (\(\vec{\xi}\)) that is associated with the zero eigenvalue. Such vectors are called \emph{null vectors} of the form \(\omega^2\).
+Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1960}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
 
 

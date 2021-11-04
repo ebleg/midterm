@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+
+    \draw[thick,->] (-1,0) -- (5,0) node[anchor=west] {$q$ [\$]};
+    \draw[thick,->] (0,-1) -- (0,5) node[anchor=south] {$F$ [$\frac{\%}{yr^2}$]};
+    \draw[ultra thick,red, name path = S] (0,0) -- (5,5) node[anchor=west]{};
+
+    \draw[thick, dashed, name path = dv] (4.5,0) -- (4.5,4.5); 
+    \draw[thick, dashed, name path = dp] (0,4.5) -- (4.5,4.5); 
+    \tikzfillbetween[of = S and dp]{red, opacity=0.4};
+    \tikzfillbetween[of = S and dv]{red, opacity=0.2};
+
+    \draw[dashed] (0,3) node[anchor=east]{$dF$} -- (3,3); 
+    \draw[dashed] (0,3.3) -- (3.3,3.3) ;
+
+    \draw[dashed] (3,0) node[anchor=north]{$dq$} -- (3,3); 
+    \draw[dashed] (3.3,0) -- (3.3,3.3) ; 
+
+    \node at (2,0.5) (Vq) {$\epot(q)$};
+    \node at (1,2) (Ve) {$\ecopot(F)$};
+
+
+\end{tikzpicture}

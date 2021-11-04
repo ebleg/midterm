@@ -1,4 +1,4 @@
-$pdlatex = 'pdflatex -interaction=batchmode -halt-on-error -synctex=1 -shell-escape';
+$pdflatex = 'pdflatex -interaction=batchmode -halt-on-error  -shell-escape';
 $pdf_mode = 1;
 add_cus_dep( 'nlo', 'nls', 0, 'makenlo2nls' );
 sub makenlo2nls {

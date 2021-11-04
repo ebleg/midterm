@@ -55,9 +55,12 @@
 % Tikz
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usetikzlibrary{patterns,decorations.pathmorphing,positioning}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{intersections, pgfplots.fillbetween}
+\usepgfplotslibrary{fillbetween}
 \usetikzlibrary{external}
-\usetikzlibrary{patterns}
-\usetikzlibrary{intersections}
 \usepackage{lipsum}
 
 % Figures
@@ -69,12 +72,14 @@
 \usepackage{framed}
 \usepackage{enumitem}
 \usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+%\tcbuselibrary{skins}
 
 % --------------------------------------------------------------------
 %% TIKZ / PGF
 % --------------------------------------------------------------------
 
-\pgfplotsset{compat=1.16} 
+\pgfplotsset{compat=newest} 
 
 % Make sure that TikZ cache files are named properly
 \newcommand{\inputtikz}[1]{%
@@ -118,16 +123,18 @@
 \definecolor{customBlockColor}{RGB}{200,228,250}
 \definecolor{customAlertColor}{RGB}{31,112,173}
 
+%\tcbset{skin=enhanced}
 \newenvironment{block}[1]{%
-    \tcolorbox[%
-    colback=accent1!20!,colframe=accent1,%
-    title=\textsf{#1}]}%
+    \tcolorbox[colback=accent1!20!,colframe=accent1,%
+    title=\textsf{#1}, breakable]}%
     {\endtcolorbox}
 
 \newenvironment{econ}[1]{%
-    \tcolorbox[%
-    colback=accent3!20!,colframe=accent3,%
-    title=\textsf{#1}]}%
+    \tcolorbox[colback=accent3!20!,colframe=accent3,%
+    title=\textsf{#1}, breakable]}%
+    {\endtcolorbox}
+\newenvironment{econ_notitle}[1]{%
+    \tcolorbox[colback=accent3!20!,colframe=accent3]}%
     {\endtcolorbox}
 
 % --------------------------------------------------------------------
@@ -189,6 +196,7 @@
 \newcommand{\ecokin}{\ensuremath{T^*}\xspace}
 \newcommand{\ekin}{\ensuremath{T}\xspace}
 \newcommand{\epot}{\ensuremath{U}\xspace}
+\newcommand{\ecopot}{\ensuremath{U^*}\xspace}
 \newcommand{\gpos}{\ensuremath{\vec{q}}\xspace}
 \newcommand{\gvel}{\ensuremath{\dot{\vec{q}}}\xspace}
 \newcommand{\gmom}{\ensuremath{\dot{\vec{p}}}\xspace}
