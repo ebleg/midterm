@@ -1,5 +1,6 @@
 % Second chapter
 \chapter{Economic engineering with analytical mechanics}
+\label{chap:ee}
 Economic engineering is built on analogies between (macro)economic theory and common engineering disciplines such as thermodynamics, circuit theory and (classical) mechanics\footnote{as opposed to more recent theories in relativistic mechanics and quantum mechanics}. Escpecially for the latter, a rich variety of useful analogues can be devised. There are two common classses of interpretations mechanics: \emph{analytical mechanics} including the formulations by Joseph-Louis Lagrange and sir William Rowan Hamilton, and \emph{vectorial mechanics}, better known as \emph{Newtonian mechanics}. The former variant is usually preferred in the field of engineering whereas the analytical mechanics are due to their mathematical elegance powerful interpretative value. Likewise, the theory of economic engineering can be approached in two similar ways. Usually the `Newtonian' approach is given the most attention, but in the case of this work the energy-based approach will prove to be more useful, which is why it is the starting point of this discussion instead.
 
 Analytical mechanics, more specifically \emph{Lagrangian} and \emph{Hamiltonian} mechanics, are established around the definition of special state functions, respectively called the Lagrangian \(\lag\) and the Hamiltonian \(\ham\). As per usual, Lagrangian mechanics will be introduced first, for it has the most intuitive explanation. Then, a more formal approach allows to (Legendre) transform the discussion into one of Hamiltonian mechanics. 
@@ -65,15 +66,14 @@ Unfortunately, the pursuit of finding a set of these all-encompassing generalize
 The configuration manifold in described in the previous section is the first step in the Lagrangian approach, for it defines a single mathematical space containing all the possible motions of the system. For all intents and purposes, it usually pertains to the very nature of the system itself; e.g. the wiring of the electrical, how the mechanical parts are connected to each other or which goods are present in an economic system and whether their quantities are fundamentally related. Of course, the configuration manifold itself does not provide any information about the behavior of the system: this is where Hamilton's principle comes in --- the second, crucial puzzle piece that makes Lagrangian mechanics work.
 
 Hamilton's principle (also referred to as the principle of least or stationary action) concerns the existence of a special state function, the Lagrangian $\lag$, determines the system's behavior \cite{Arnold1989}:
-\begin{quote}
-    \textbf{Hamilton's principle}\qquad Motions $\gamma: 
-    \real \to M$ of a mechanical system coincide with extremals of the action functional
+\begin{thmblock}{Hamilton's principle}
+    Motions $\gamma: \real \to M$ of a mechanical system coincide with extremals of the action functional
     \begin{equation}
         S(\gamma) = \int_{t_1}^{t_2} \lag \dd{t},
         \label{eq:ham_principle}
     \end{equation}
     where $\lag$ is the \emph{Lagrangian function} of the system.
-\end{quote}
+\end{thmblock}
 The Lagrangian \(\lag\) is a mapping from the \emph{tangent bundle} \(TM\) of the configuration manifold \(M\), optionally paired with a time argument for time-varying problems to the reals,
     \[ \lag : TM \times \real^+ \to \real, \]
 i.e. it takes a generalized position \(\gpos\) and a generalized velocity \(\gvel\) (which live in the tangent space of \(M\)), and a time instance to some scalar values.
@@ -216,7 +216,7 @@ In the case of potential energy, the familiar equation really \emph{is} the one 
 \begin{figure}[ht]
     \centering
     \input{media/tikz/potential_energy}
-    \caption{Blabla. Figure couretesy of B. \citet{Krabbenborg2021}.}
+    \caption{Blabla. Figure courtesy of B. \citet{Krabbenborg2021}.}
     \label{fig:potential_energy}
 \end{figure}
 The solution of the simple mass-spring system is a sinusoid which continuous indefinitely in time. Intuitively, this seems odd; as it does seem to apply directly to economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex network of society. This makes the theoretical achievement that are the basic foundations economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path dependent forces in the system. These forces dissipate energy and are always present in reality, both in mechanics and economics; they will be the subject of the next section. 
@@ -228,14 +228,26 @@ The solution of the simple mass-spring system is a sinusoid which continuous ind
 
 \subsection{Noether's theorem}
 
-\begin{quote}
-    \textbf{Noether's theorem}\quad If the Lagrangian system $(M, \lag)$ admits the one-parameter group of transformations $h^s: M \to M, s \in \real$, then the Lagrangian system of equations corresponding to $\lag$ has a first integral: $I: TM \to \real$. In local coordinates $q$ on $M$ the integral $I$ is written in teh form 
+\begin{thmblock}{Noether's theorem}
+    If the Lagrangian system $(M, \lag)$ admits the one-parameter group of transformations $h^s: M \to M, s \in \real$, then the Lagrangian system of equations corresponding to $\lag$ has a first integral: $I: TM \to \real$. In local coordinates $q$ on $M$ the integral $I$ is written in teh form 
     $$ \left. I(\gpos, \gvel) = \pdv{\lag}{\gvel}\dv{h^s(\gpos)}{s}\right |_{s = 0} $$
-\end{quote}
+\end{thmblock}
 
 \section{Hamiltonian mechanics}
 
 \subsection{The Legendre transform}
+Whereas the Lagrangian of a system is a function of its generalized positions and generalized velocities, the Hamiltonian is a function of the generalized position and generalized momentum. Recall from the definition that the generalized (or \emph{conjugate}) momenta are defined in terms of the Lagrangian; $p_i = \pdv{\lag}{\dot{q}_i}$. Hence, the momenta and velocities are conjugate variables. To achieve this change of variables, from the
+
+The total differential of the Lagrangian is
+$$ \dd{\lag} = \pdv{\lag}{\gpos}\dd{\gpos} + \pdv{\lag}{\gvel}\dd{\gvel}. $$
+Two observations can be made: firstly, by definition, $\gmom = \pdv{\lag}{\gvel}$; and secondly, the Euler-Lagrange equations dictate that $\dv{}{t}(\gmom) = \pdv{\lag}{\gpos}$. As such, the total differential of the Lagrangian may be rewritten as:
+$$ \dd{\lag} = \dot{\gmom}\dd{\gpos} + \gmom \dd{\gvel}$$
+
+\subsection{Hamilton's equations}
+
+\subsection{Symplectic manifolds}
+
+\subsection{The canonical formalism}
 One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distincition will then just be a matter of definition.} \cite{Landau1960}.
 
 Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1960}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.

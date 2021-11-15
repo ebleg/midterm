@@ -49,6 +49,7 @@
 \usepackage{nomencl}
 \usepackage{dutchcal}
 \usepackage{MnSymbol}
+\usepackage{romanbar}
 \makeindex
 \makenomenclature
 
@@ -133,8 +134,10 @@
     \tcolorbox[colback=accent3!20!,colframe=accent3,%
     title=\textsf{#1}, breakable]}%
     {\endtcolorbox}
-\newenvironment{econ_notitle}[1]{%
-    \tcolorbox[colback=accent3!20!,colframe=accent3]}%
+
+\newenvironment{thmblock}[1]{%
+    \tcolorbox[colback=accent2!20!,colframe=accent2,%
+    title=\textsf{#1}]}%
     {\endtcolorbox}
 
 % --------------------------------------------------------------------
@@ -199,7 +202,7 @@
 \newcommand{\ecopot}{\ensuremath{U^*}\xspace}
 \newcommand{\gpos}{\ensuremath{\vec{q}}\xspace}
 \newcommand{\gvel}{\ensuremath{\dot{\vec{q}}}\xspace}
-\newcommand{\gmom}{\ensuremath{\dot{\vec{p}}}\xspace}
+\newcommand{\gmom}{\ensuremath{\vec{p}}\xspace}
 
 \newcommand{\moebiusgroup}{\ensuremath{\text{Möb}}\xspace}
 \newcommand{\automorphgroup}[1]{\ensuremath{\mathrm{Aut}(#1)}\xspace}
@@ -212,6 +215,8 @@
 \newcommand{\restlorentzgroup}{\ensuremath{\mathrm{SO^{+}(1, 3, \real)}}}
 \newcommand{\spgroup}[2]{\ensuremath{\mathrm{Sp}(#1, #2)}}
 \newcommand{\field}{\ensuremath{\mathbb{F}}\xspace}
+\newcommand{\firstff}{\ensuremath{\text{\textsf{\textbf{\Romanbar{I}}}}}}
+\newcommand{\secondff}{\ensuremath{\firstff\!\firstff}}
 
 \newcommand{\quat}[4]{\ensuremath{#1 + #2\vb{i} + #3\vb{j} + #4\vb{k}}\xspace}
 \newcommand{\corresponds}{\ensuremath{\quad \leftrightsquigarrow \quad}}
