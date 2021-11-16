@@ -112,11 +112,11 @@ Solving \cref{eq:moebius_eigvals}, one obtains
     which corresponds to the degenerate case where the geometric multiplicity of the eigenvalue is lower than its algebraic multiplicity.
     \item \(\Delta > 0\) or \((a + d)^2 > 4\): there are two real solutions for \(\lambda\), given by
         \[ \lambda = \frac{a + d}{2} \pm \frac{1}{2}\sqrt{(a + d)^2 - 4}. \]
-        The resulting solutions for \(\lambda\) are then always real and positive; they can then be expressed as the image of the exponential function: \(\lambda = \ec^{\frac{\zeta}{2}}\) such that \(k = \ec^{\zeta}\). The usage of \(\zeta\) is not at all coincidental: indeed, the argument here represents a \emph{hyperbolic angle}, as discussed in \cref{chap:lorentz_plane}. The corresponding Jordan form is a 
+        The resulting solutions for \(\lambda\) are then always real and positive; they can then be expressed as the image of the exponential function: \(\lambda = \ec^{\frac{\zeta}{2}}\) such that \(k = \ec^{\zeta}\). The usage of \(\zeta\) is not at all coincidental: indeed, the argument here represents a \emph{hyperbolic angle}, as discussed in \cref{chap:finance_rotation}. The corresponding Jordan form is a 
         \emph{squeeze mapping}:
         \[ J = \mqty(\dmat[0]{\ec^{\frac{\zeta}{2}}, \ec^{\frac{-\zeta}{2}}})
         \quad \zeta \in \real\setminus\qty{0}. \]
-        Similarly to the elliptic case, this matrix can also be expressed in terms of hyperbolic functions, completing the analogy that was already established in \cref{chap:lorentz_plane}:
+        Similarly to the elliptic case, this matrix can also be expressed in terms of hyperbolic functions, completing the analogy that was already established in \cref{chap:finance_rotation}:
         \[ M = \mqty(\cosh(\zeta/2) & -\sinh(\zeta/2)\\ 
                      \sinh(\zeta/2) & \cosh(\zeta/2)). \]
         As such, these transforms are akin to hyperbolic rotations, which is why they are also classified as \emph{hyperbolic}. The hyperbolic transforms are also part of the class of loxodromic transforms, together with the aforementioned class where \(\lambda\) is complex. They do however deserve their own subclass because, apart from frequently encountered, they also represent a particular part of the special linear group over the reals \slgroup{n}{\real}, as will be discussed later.
