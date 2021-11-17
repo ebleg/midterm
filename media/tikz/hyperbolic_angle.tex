@@ -1,13 +1,13 @@
 \begin{tikzpicture}[scale=2]
-    \draw[->] (-0.5, 0) -- (2, 0) node[right] {$x$};
-    \draw[->] (0, -0.5) -- (0, 2) node[above] {$y$};
-    \filldraw[fill=gray!20] (0, 0) -- (1, 0) -- (1.54308, 1.1752) -- cycle;
-    \filldraw[domain=-0.5:1.32, smooth, variable=\x, thick, fill=white] plot ({cosh(\x)}, {sinh(\x)}) node[anchor=south west] {$x^2 - y^2 = K^2$};
+    %\draw[->] (-0.5, 0) -- (2, 0) node[right] {$X$};
+    %\draw[->] (0, -0.5) -- (0, 2) node[above] {$Y$};
+    \filldraw[fill=accent1!50] (0, 0) -- (1, 0) -- (1.54308, 1.1752) -- cycle;
+    \filldraw[domain=-0.5:1.32, smooth, variable=\x, thick, fill=white] plot ({cosh(\x)}, {sinh(\x)}) node[anchor=south west] {$X^2 - Y^2 = 1$};
     \draw[dashed] (-0.5, -0.5) -- (1.85, 1.85);
-    \draw[->] (-0.5, 0) -- (2, 0) node[right] {$x$};
-    \draw[->] (0, -0.5) -- (0, 2) node[above] {$y$};
+    \draw[->] (-0.5, 0) -- (2, 0) node[right] {$X$};
+    \draw[->] (0, -0.5) -- (0, 2) node[above] {$Y$};
     \draw (-0.5, 1) node[right, anchor=east] {$\displaystyle\frac{\han}{2}$} -- (0.7, 0.25);
-    \draw[<->] (0, 1.1752) -- (1.54308, 1.1752) node[pos=0.5, anchor=south] {$K\cosh(\han)$}; 
-    \draw[<->] (1.54308, 0) -- (1.54308, 1.1752) node[pos=0.5, anchor=west] {$K\sinh(\han)$}; 
-    \draw[<->] (0, -0.1) -- (1, -0.1) node[pos=0.5, anchor=north] {$K$};
+    \draw[<->] (0, 1.1752) -- (1.54308, 1.1752) node[pos=0.5, anchor=south] {$\cosh(\han)$}; 
+    \draw[<->] (1.54308, 0) -- (1.54308, 1.1752) node[pos=0.5, anchor=west] {$\sinh(\han)$}; 
+    \draw[<->] (0, -0.1) -- (1, -0.1) node[pos=0.5, anchor=north] {$K = 1$};
 \end{tikzpicture}

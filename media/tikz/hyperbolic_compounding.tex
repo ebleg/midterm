@@ -7,7 +7,7 @@
         legend pos = south east,
         ymin = 0,
     ]
-        \addplot coordinates {
+        \addplot[mark=square*, mark options={fill=accent1}] coordinates {
                     (1000   ,  0     )
                     (1000   ,  50     )
                     (1002.5,  100    )
@@ -31,7 +31,7 @@
         };
         \addlegendentry{Yearly comp.};
         
-        \addplot coordinates {
+        \addplot[mark=*, mark options={fill=accent2}] coordinates {
             (1000., 0.0)
             (1001.2502604383691, 50.020835937655015)
             (1005.0041680558036, 100.16675001984403)
