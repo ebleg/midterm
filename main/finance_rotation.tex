@@ -1,5 +1,6 @@
 \chapter{Investment as a hyperbolic rotation}
 \label{chap:finance_rotation}
+In this chapter, 
 
 \section{Terminology}
 The aim of this research is to refine the way that economic engineering currently deals with financial instruments, primarily fixed-interest assets, but also marketable equity (stocks), derivatives etc. All of these can be regarded as `investments', for lack of a better word, because they require a \emph{principal}, that is the amount investment, and a certain return that is proportional to the principal. This is why the return is usually expressed as a percentage of the principal, which in the case of debt is the interest rate. The later contains the word `rate', because it has an inherent timely aspect: interest rates (and returns of investments in general) are associated with a certain `term' or duration over which the return is realized. As such, any type of investment is characterized by three components:
@@ -182,12 +183,12 @@ The resolution of these problems is one of the main goals of this research.
 \index{Lorentz!metric}
 \index{Lorentz!norm}
 \index{Lorentz!product}
-Central in the discussion of interest movements as hyperbolic motions will be the so-called Lorentzian inner (or Lorentz) product:\footnote{In literature (both physics and mathematics) many variations on the so-called `metric signature' of the Lorentz product make their appearance. In terms of \(\real^4\), these variations come down to \((+,-,-,-)\), \((-,-,-,+)\), \((-,+,+,+)\) and \((+,+,+,-)\), where the first one coincides with the definition used here, in accordance with the magnificent work of \citet{Landau1971}. Luckily, this is just a matter of convention and its influence on the mathematical machinery at hand is limited to the switching of some signs.}
+If investments are represented in the capital-yield plane, they are accompanied by a special notion of `distance', which determines the radius of the hyperbola that they are positioned on. This distance is different from the traditional Euclidean distance; rather, it is a \emph{Lorentzian} distance. This makes the capital-yield plane a \emph{Lorentzian vector space}. In order to make this formal, the definition of the Lorentzian inner (or Lorentz) product is required:\footnote{In literature (both physics and mathematics) many variations on the so-called `metric signature' of the Lorentz product make their appearance. In terms of \(\real^4\), these variations come down to \((+,-,-,-)\), \((-,-,-,+)\), \((-,+,+,+)\) and \((+,+,+,-)\), where the first one coincides with the definition used here, in accordance with the magnificent work of \citet{Landau1971}. Luckily, this is just a matter of convention and its influence on the mathematical machinery at hand is limited to the switching of some signs.}
 
 \begin{thmblock}{Lorentz product}
     Let \(\vec{u}, \vec{v}\) be vectors in \(\real^n\). The \emph{Lorentzian inner product} of \(\vec{u}\) and \(\vec{v}\) is defined to be the real number
     \[
-     \vec{u} \diamond \vec{v} = u_1v_1 - u_2v_2 - \ldots - u_nv_n.
+     \vec{u} \bullet \vec{v} = u_1v_1 - u_2v_2 - \ldots - u_nv_n.
 \]
 \end{thmblock}
 The Lorentz product is an inner product, which means that it takes two elements from a vector space and returns a scalar value, while satisfying two (or three) conditions: (1) bilinearity, (2) symmetry and (3) nondegeneracy \cite{Ratcliffe2019}.
@@ -196,17 +197,17 @@ In some literature, the condition of nondegeneracy is replaced by a stronger not
 
 Based on the Lorentz inner product it is natural to define also a corresponding \emph{Lorentzian norm} \(\lnorm{\cdot}\):
     \[
-     \lnorm{\vec{v}} = \qty(\vec{v}\diamond\vec{v})^\frac{1}{2}
+     \lnorm{\vec{v}} = \qty(\vec{v}\bullet\vec{v})^\frac{1}{2}
 \]
-Because the Lorentz product is not positive definite but rather indefinite, the result of \(\vec{v}\diamond\vec{v}\) is not guaranteed to be a positive number. As such, \(\lnorm{\vec{v}} \in \complex\), in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a nonnegative real number.
+Because the Lorentz product is not positive definite but rather indefinite, the result of \(\vec{v}\bullet\vec{v}\) is not guaranteed to be a positive number. As such, \(\lnorm{\vec{v}} \in \complex\), in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a nonnegative real number.
 
 The norm provides a notion of length for a vector. Based on this length, a \emph{metric} yields a distance between two points, i.e. the distance between \(\vec{u}\) and \(\vec{v}\) is equal to 
 \[
      d_L(\vec{v}, \vec{u}) \triangleq \lnorm{\vec{v} - \vec{u}}
 \] 
-Because the norm is not positive definite but `only' nondegenerate, it is called a \emph{pseudo-Euclidean metric}, and the vector space it is associated with a \emph{pseudo-Euclidean space}. A vector space equipped with this pseudometric (in more general terms, a bilinear nondegenerate form) is called a Lorentz space. The particular case for \(\real^4\) sets the stage for the theory of special relativity (with one `special' dimension for time and three spatial dimensions) and is called the Minkowski space, after the German physicist Hermann Minkowski \cite{Catoni2008}. Sometimes the two-dimensional plane that is discovered here is also called the Minkowski plane, because this is what he used to explain his ideas, being unable to draw anything like four-dimensional space. However, this text will adhere to the more mathematically inclined tradition and call it `Lorentz(ian) space' which applies for any dimension larger than one \cite{Ratcliffe2019}. 
+Because the norm is not positive definite but `only' nondegenerate, it is called a \emph{pseudo-Euclidean metric}, and the vector space it is associated with a \emph{pseudo-Euclidean space}. A vector space equipped with this pseudometric (in more general terms, a bilinear nondegenerate form) is called a Lorentz space. The particular case for \(\real^4\) sets the stage for the theory of special relativity (with one `special' dimension for time and three spatial dimensions) and is called the Minkowski space, after the German physicist Hermann Minkowski \cite{Catoni2008}. Sometimes the two-dimensional plane that is discovered here is also called the Minkowski plane, because this is what he used to explain his ideas, being unable to draw anything like four-dimensional space. However, this text will adhere to the more mathematically inclined tradition and call it `Lorentz(ian) space' which applies for any dimension larger than one \cite{Ratcliffe2019}. The theory of special relativity, and especially the role of the Lorentz metric will be discussed in \cref{chap:relativity}.
 
-The sign of the Lorentz norm gives rise to an equivalence relation \(\sim_L\) defined to be \(a \sim_L b \iff \sgn{\norm{a}} = \sgn{\norm{b}}\).\footnote{An equivalence relation is a binary relation that is symmetric, reflexive and transitive.} Therefore, the \emph{quotient set} of all the points in the plane \(\real / \sim_L \) contains three elements \(\qty{-1, 0, 1}\), these equivalence classes are given the respective names \(\qty{\text{\texttt{spacelike}},\, \text{\texttt{lightlike}},\, \text{\texttt{timelike}}}\) based on the terminology from special relativity \cite{Landau1971}.
+The sign of the Lorentz norm gives rise to an equivalence relation \(\sim_L\) defined to be \(a \sim_L b \iff \sgn{\norm{a}} = \sgn{\norm{b}}\).\footnote{An equivalence relation is a binary relation that is symmetric, reflexive and transitive.} Therefore, the quotient set of all the points in the plane \(\real / \sim_L \) contains three elements \(\qty{-1, 0, 1}\), these equivalence classes are given the respective names \(\qty{\text{\texttt{spacelike}},\, \text{\texttt{lightlike}},\, \text{\texttt{timelike}}}\) based on the terminology from special relativity \cite{Landau1971}. The difference between timelinke, spacelike and lightlike vectors is illustrated in \cref{fig:lightlike_spacelike}.
 
 \begin{figure}[ht]
     \centering
@@ -214,12 +215,13 @@ The sign of the Lorentz norm gives rise to an equivalence relation \(\sim_L\) de
     \caption{Overview of the three `types' of vectors in the Lorentz-Minkowski plane: spacelike (\(\lnorm{\vec{v}} < 0\)), lightlike (\(\lnorm{\vec{v}} = 0\)) and timelike (\(\lnorm{\vec{v}} > 0\)). The lines \(y = x\) and \(y = -x\) containing all the lightlike vectors form the so-called light cone or null cone. The hyperbola of in the spacelike region (dark gray) obey the equation \(y^2 - x^2 = K^2\), they will be referred to the hyperbolic branches II (\(y > 0\)) and IV (\(y < 0\)). In contrast, the timelike hyperbolic branches with equation \(x^2 - y^2 = K^2\) (light gray region) are referred to as I (\(x > 0\)) and III (\(x < 0\)).}
     \label{fig:lightlike_spacelike}
 \end{figure}
+The financial interpretation of the lightlike vectors are all the capital-yield combinations that are attainable, which is why spacelike vectors are fictitious in this regard if only the action of compound interest is considered. However, when one looks at velocities in this vector space; i.e. how fast a position vector is changing, the velocity vector can be spacelike due to capital injections that change the `arm' of the investment. 
 
 \section{Hyperbolic numbers}
 \label{sec:hyperbolic_numbers}
-Perhaps the most convenient way to view the hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, \(\jj\) will be used, though in literature also \(\mathrm{u}\) (for unipotent) and \(\mathrm{h}\) (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit \(\jj\) with the defining unipotence property \(\jj^2 = 1\), where obviously \(\jj \notin \real\). Like complex numbers, the hyperbolic numbers can have a real and a hyperbolic part
+An alternative way way to view hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, \(\jj\) will be used, though in literature also \(\mathrm{u}\) (for unipotent) and \(\mathrm{h}\) (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit \(\jj\) with the defining unipotence property \(\jj^2 = 1\), where \(\jj \notin \real\). Like complex numbers, the hyperbolic numbers can have a real and a hyperbolic part
 \[
-     z = x + y\jj \qquad x, y \in \real
+     z = x + y\jj \quad x, y \in \real.
 \]
 Combined with addition and multiplication defined on them, the hyperbolic numbers form a commutative ring. Each hyperbolic number \(z\) is associated with its \emph{hyperbolic conjugate} \(z^* = x - y\jj\). The product of a hyperbolic number with its own hyperbolic conjugate creates a quadratic form \(zz^* = x^2 - y^2\), which always returns a real number and is equivalent Lorentzian metric. Again, three cases can be distinguished for \(z\):
 \begin{itemize}
@@ -241,7 +243,7 @@ which can be evaluated using the Taylor expansion of the exponential \(\exp\):
 \[
      z = K\exp(\zeta \jj) = K \sum^\infty_{k = 0} \frac{(\zeta \jj)^k}{k!} =  K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k}}{(2k)!} + K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k+1}}{(2k + 1)!} = K\cosh(\zeta) + K\jj\sinh(\zeta)
 \]
-when the hyperbolic angle \(\zeta\) is associated with hyperbolic branches I and III. For branches II and IV, one essentially has to consider \(z = K\jj\exp(\zeta\jj)\) or
+when the hyperbolic angle \(\zeta\) is associated with hyperbolic branches I and III. Clearly, the polar form of the hyperbolic numbers reflects precisely the two different representations for investments: using principal and return (polar form), or capital and yield (`cartesian' form). For the spacelike branches II and IV, one essentially has to consider \(z = K\jj\exp(\zeta\jj)\) or
 \[
      z = K\sinh(\zeta) + K\jj\cosh(\zeta)
 \]
@@ -251,26 +253,26 @@ Furthermore, consider the \emph{conjugate product} of two hyperbolic numbers \(z
      z_1^*z_2 = \underbrace{(x_1x_2 - y_1y_2)}_\text{inner product} 
             + \underbrace{(x_1y_2 - x_2y_1)}_\text{outer product}\jj
 \]
-of the resulting expression, the real part is called the inner product and the hyperbolic part the outer product. The inner product is equivalent to the Lorentz product while the outer product yields the directed area of the parallelogram spanned by \(z_1\) and \(z_2\) (or the determinant of \(\mqty(x_1 & x_2\\y_1&y_2)\). The outer product is the same as for regular complex numbers, while the inner product recovers the Lorentz inner product instead of the Euclidean inner product. This is why one can say that the hyperbolic number plane and the complex plane have an identical notion of area. Based on the inner product, one can however recognize a different notion of orthogonality, i.e. \(z_1\) and \(z_2\) are \emph{hyperbolically orthogonal} if their hyperbolic inner product equals zero --- this will yield a different notion of orthogonality than their Euclidean counterpart \cite{Needham1997, Sobczyk1995}.
+of the resulting expression, the real part is called the inner product and the hyperbolic part the outer product. The inner product is equivalent to the Lorentz product while the outer product yields the directed area of the parallelogram spanned by \(z_1\) and \(z_2\) (or the determinant of \(\mqty(x_1 & x_2\\y_1&y_2)\). The outer product is the same as for regular complex numbers, while the inner product recovers the Lorentz inner product instead of the Euclidean inner product. This is why one can say that the hyperbolic number plane and the complex plane have an identical notion of area. Based on the inner product, one can recognize a different notion of orthogonality, i.e. \(z_1\) and \(z_2\) are \emph{hyperbolically orthogonal} if their hyperbolic inner product equals zero \cite{Needham1997, Sobczyk1995}.
 
-\towrite{Outer product angular momentum, inner product capital}
+The inner and outer product both have their financial interpretations: the inner product is related to the hyperbolic distance between two hyperbolic vectors, just like the Lorentz product in the previous section. The outer product is akin to the cross product, and is therefore used to rigorously define angular momentum in the Lorentzian space, which is an important component of the the economic engineering analogy.
 
 \subsection{Matrix representation}
-For many algebraic structures (groups, rings, fields, ...) an isormorphism can be found in the rhealm of linear algebra, by identifying a specific class of matrices. For example, the complex number system \(a + b\ii\) is isomorphic to the matrices
+For many algebraic structures (groups, rings, fields, ...) an isomorphism can be found in the realm of linear algebra, by identifying a specific class of matrices. For example, the complex number system \(a + b\ii\) is isomorphic to the matrices
 \[
      \mqty(a & -b \\ b & a) \quad a, b \in \real.
 \]
 Likewise, one can establish an isomorphism between the hyperbolic numbers and a certain class of matrices. The hyperbolic number system defined with addition and multiplication defined on it are ring-isomorphic to the matrix ring
 \[
-     \mqty(x & y \\ y & x) \quad x, y \in \real
+     \mqty(X & Y \\ Y & X) \quad X, Y \in \real,
 \]
 under matrix addition and matrix multiplication. The determinant of said matrix then recovers the Lorentz metric
 \[
-     \det \mqty(x & y \\ y & x) = x^2 - y^2
+     \det \mqty(X & Y \\ Y & X) = X^2 - Y^2.
 \]
 
 \subsection{The idempotent basis}
-Previously it was already mentioned that the hyperbola can be viewed conveniently in two particular axis systems, the standard axis system and the idempotent axis system, as illustrated in \cref{fig:hyperbola_comparison}. This basis can also be defined in terms of hyperbolic numbers; in terms of the standard basis \(\qty{1, \jj}\) the idempotent basis is \(\qty{\jjp, \jjm}\) with 
+Previously it was already mentioned that the hyperbola can be viewed conveniently in two particular axis systems, the standard axis system and the idempotent axis system, differing by a \ang{45} rotation. This basis can also be defined in terms of hyperbolic numbers; in terms of the standard basis \(\qty{1, \jj}\) the idempotent basis is \(\qty{\jjp, \jjm}\) with 
 \[
      \jjp = \frac{1}{2}(1 + \jj) \qquad \jjm = \frac{1}{2}(1 - \jj)
 \]
@@ -283,4 +285,6 @@ Furthermore, the idempotent basis is mutually annihilating, i.e. \(\jjp \jjm = 0
      z\jjp = z_{_+}\jjp\quad\text{and}\quad z\jjm = z_{_-}\jjm
 \]
 The idempotent axis system is interesting because it returns the total amount compounded or discounted over time; in contrast to the standard yield-capital decomposition.
+
+To summarize, it has been established that the hyperbolic numbers can be used to represent the rotational investment analogy, and that all the important concepts attached to it (inner product, cross product, total value, etc) are naturally incorporated in their algebra.
 

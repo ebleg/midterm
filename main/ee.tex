@@ -1,7 +1,7 @@
 % Second chapter
 \chapter{Economic engineering with analytical mechanics}
 \label{chap:ee}
-Economic engineering is built on analogies between (macro)economic theory and common engineering disciplines such as thermodynamics, circuit theory and (classical) mechanics\footnote{as opposed to more recent theories in relativistic mechanics and quantum mechanics}. Escpecially for the latter, a rich variety of useful analogues can be devised. There are two common classses of interpretations mechanics: \emph{analytical mechanics} including the formulations by Joseph-Louis Lagrange and sir William Rowan Hamilton, and \emph{vectorial mechanics}, better known as \emph{Newtonian mechanics}. The former variant is usually preferred in the field of engineering whereas the analytical mechanics are due to their mathematical elegance powerful interpretative value. Likewise, the theory of economic engineering can be approached in two similar ways. Usually the `Newtonian' approach is given the most attention, but in the case of this work the energy-based approach will prove to be more useful, which is why it is the starting point of this discussion instead.
+Economic engineering is built on analogies between (macro)economic theory and common engineering disciplines such as thermodynamics, circuit theory and (classical) mechanics\footnote{as opposed to more recent theories in relativistic mechanics and quantum mechanics}. Escpecially for the latter, a rich variety of useful analogues can be devised. There are two common classses of interpretations mechanics: \emph{analytical mechanics} including the formulations by Joseph-Louis Lagrange and sir William Rowan Hamilton, and \emph{vectorial mechanics}, better known as \emph{Newtonian mechanics}. The former variant is usually preferred in the field of engineering whereas the analytical mechanics are more common in physics due to their mathematical elegance and powerful interpretative value. Likewise, the theory of economic engineering can be approached in two similar ways. Usually the `Newtonian' approach is given the most attention, but in the case of this work the energy-based approach will prove to be more useful, which is why it is the starting point of this discussion. It is indeed, the underlying aspiration of this research that these more formal methods will allow to establish a sound framework for economic engineering in financial systems as well.
 
 Analytical mechanics, more specifically \emph{Lagrangian} and \emph{Hamiltonian} mechanics, are established around the definition of special state functions, respectively called the Lagrangian \(\lag\) and the Hamiltonian \(\ham\). As per usual, Lagrangian mechanics will be introduced first, for it has the most intuitive explanation. Then, a more formal approach allows to (Legendre) transform the discussion into one of Hamiltonian mechanics. 
 
@@ -181,7 +181,7 @@ $$ \text{kinetic energy } \ekin = \int \frac{p}{m}\dd{p} = \frac{p^2}{2m}\qquad
 \begin{figure}[ht]
     \centering
     \input{media/tikz/kinetic_energy}
-    \caption{Blabla. Figure courtesy of B. \citet{Krabbenborg2021}.}
+    \caption{Kinetic energy and co-energy in terms of the relation between momentum and velocity. Figure courtesy of B. \citet{Krabbenborg2021}.}
     \label{fig:kinetic_energy}
 \end{figure}
 
@@ -194,15 +194,15 @@ $$ \vec{F} = -\pdv{U}{\gpos}. $$
 \begin{econ}{Potential energy}
     While in `regular physics' potential energy arises due to the presence of elastic, electric, gravitational ... forces, its interpretation in economic engineering is related to the utility gained from the posession of goods; i.e. it is a function that has units of cash flow (just like surplus) that depends only on the stock levels (possibly in terms of generalized coordinates).\\
 
-    The simplest example is the economic analogue of a spring: just like a spring, a restoring `force' (i.e. an economic want) occurs whenever the spring is elongated or stretched with respect to a certain reference distance. For economics agents, this means either being long or short on stock levels, again with respect to a certain reference $q_0$ (although important for practical interpretations, this reference does not really contribute on a conceptual levels, which is why it is omitted in the theoretical discusion, just like the reference momentum for the kinetic energy). Hence, there is a `potential utility' in either being long or short, in the sense that it can be exchanged for `market utility' or economic surplus, because it requires an exchange of goods. The continuous reciprocity between kinetic energy and 
-    potential energy is a central theme in mechanics, and it is henceforth been given a succinct economic intepretation as well.
+    The simplest example is the economic analogue of a spring: just like a spring, a restoring `force' (i.e. an economic want) occurs whenever the spring is elongated or stretched with respect to a certain reference distance. For economics agents, this means either being long or short on stock levels, again with respect to a certain reference $q_0$ (although important for practical interpretations, this reference does not really contribute on a conceptual levels, which is why it is omitted in the theoretical discussion, just like the reference momentum for the kinetic energy). Hence, there is a `potential utility' in either being long or short, in the sense that it can be exchanged for `market utility' or economic surplus, because it requires an exchange of goods. The continuous reciprocity between kinetic energy and 
+    potential energy is a central theme in mechanics, and it is henceforth been given a succinct economic interpretation as well.
 \end{econ}
 The stereotypical example in mechanics that contains a single storage of kinetic energy (a mass) and a single storage of potential energy (a spring) is the mass-spring system, which also arises as the linearization of a multitude of undamped nonlinear systems (i.e. the pendulum); the result is a second-order scalar autonomous differential equation:
 \begin{equation}
     m\ddot{q} + \pdv{U}{q} = 0, \quad \text{with} U = \frac{kq^2}{2}
     \label{eq:mass_spring}
 \end{equation}
-with $k$ being the sprign constant; this is immediately results in Newton's second law of motion. A simple mass-spring system is shown in \cref{fig:mass_spring}.
+with $k$ being the spring constant; this is immediately results in Newton's second law of motion. A simple mass-spring system is shown in \cref{fig:mass_spring}.
 \begin{figure}[ht]
     \centering
     \input{media/tikz/mass_spring}
@@ -210,30 +210,23 @@ with $k$ being the sprign constant; this is immediately results in Newton's seco
     \label{fig:mass_spring}
 \end{figure}
 
-The distiction between energy and co-energy exists for potential energy too. Again, the potential energy itself is defined in terms of work: the integral of force over distance. Comparable between the bijective simple linear relation between velocity and momentum, for simple linear springs the force $F$ and displacement $q$ are related by $F = kq$. Again, in this case the distinction may seem a bit pointless; but, when this relation is nonlinear (as it in the real world often is), the potential energy and co-energy are no longer the same. 
-$$ \text{potential energy } \epot = \int F \dd{q} \quad \text{potential co-energy} \ecopot = \int q \dd{F} $$
+The distinction between energy and co-energy exists for potential energy too. Again, the potential energy itself is defined in terms of work: the integral of force over distance. Comparable between the bijective simple linear relation between velocity and momentum, for simple linear springs the force $F$ and displacement $q$ are related by $F = kq$. Again, in this case the distinction may seem a bit pointless; but, when this relation is nonlinear (as it in the real world often is), the potential energy and co-energy are no longer the same. 
+$$ \text{potential energy } \epot = \int F \dd{q} \qquad \text{potential co-energy } \ecopot = \int q \dd{F} $$
 which for in the case of the simple spring turn out to be
 $$ \epot = \frac{kq^2}{2} \qquad \ecopot = \frac{f^2}{2k}. $$
 In the case of potential energy, the familiar equation really \emph{is} the one that corresponds to energy (and not to co-energy, as for kinetic energy). The second equation seems really odd, intuitively turning the causal relation around; but one should bear in mind that this equation is, from a fundamental perspective, equally `odd' as the extremely familiar $\frac{mv^2}{2}$. \Cref{fig:potential_energy} shows the relation between potential energy and co-energy and why they are equal for a linear relation between force and displacement.
 \begin{figure}[ht]
     \centering
     \input{media/tikz/potential_energy}
-    \caption{Blabla. Figure courtesy of B. \citet{Krabbenborg2021}.}
+    \caption{Distinction between potential energy and co-energy in terms of the relation between force and displacement. Figure courtesy of B. \citet{Krabbenborg2021}.}
     \label{fig:potential_energy}
 \end{figure}
-The solution of the simple mass-spring system is a sinusoid which continuous indefinitely in time. Intuitively, this seems odd; as it does seem to apply directly to economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex network of society. This makes the theoretical achievement that are the basic foundations economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path dependent forces in the system. These forces dissipate energy and are always present in reality, both in mechanics and economics; they will be the subject of the next section. 
+The solution of the simple mass-spring system is a sinusoid which continues indefinitely in time. These `perfect' sinusoids are not often encountered in real economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex network of society. This makes the theoretical achievement that are the basic foundations economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path dependent forces in the system. These forces dissipate energy and are always present in reality, both in mechanics and economics; they will be the subject of the next section. 
 
-\subsection{Dissipative terms}
+\subsection{Energy dissipation}
 \begin{econ}{Dissative energy}
     Foo bar
 \end{econ}
-
-\subsection{Noether's theorem}
-
-\begin{thmblock}{Noether's theorem}
-    If the Lagrangian system $(M, \lag)$ admits the one-parameter group of transformations $h^s: M \to M, s \in \real$, then the Lagrangian system of equations corresponding to $\lag$ has a first integral: $I: TM \to \real$. In local coordinates $q$ on $M$ the integral $I$ is written in teh form 
-    $$ \left. I(\gpos, \gvel) = \pdv{\lag}{\gvel}\dv{h^s(\gpos)}{s}\right |_{s = 0} $$
-\end{thmblock}
 
 \section{Hamiltonian mechanics}
 
@@ -247,11 +240,44 @@ $$ \dd{\lag} = \dot{\gmom}\dd{\gpos} + \gmom \dd{\gvel}$$
 
 \subsection{Hamilton's equations}
 
-\subsection{Symplectic manifolds}
-
 \subsection{The canonical formalism}
-One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distincition will then just be a matter of definition.} \cite{Landau1960}.
+One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distinction will then just be a matter of definition.} \cite{Landau1960}.
 
 Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1960}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
 
+\subsection{Noether's theorem}
+Conservation principles play a vital role in physics and mechanics. Notable examples are the conservation of energy, linear momentum, angular momentum and charge. A surprising result in physics is that all of the mentioned conservation laws are a consequence of the same theorem, attributed to Emmy Noether. This theorem essentially looks at the nature of the Lagrangian of the system, and sees whether it is `ignorant' with respect to certain group of transformations. As defined by \citet{Arnold1989}, the theorem is as follows:
+
+\begin{thmblock}{Noether's theorem}
+    If the Lagrangian system $(M, \lag)$ admits the one-parameter group of transformations $h^s: M \to M, s \in \real$, then the Lagrangian system of equations corresponding to $\lag$ has a first integral: $I: TM \to \real$. In local coordinates $q$ on $M$ the integral $I$ is written in teh form 
+    $$ \left. I(\gpos, \gvel, t) = \pdv{\lag}{\gvel}\dv{h^s(\gpos)}{s}\right |_{s = 0} $$
+\end{thmblock}
+The word `admits' here means that the Lagrangian is invariant with respect to the transformation $h$; that is, the $\lag$ exhibits a \emph{symmetry} in that regard. A perspicuous consequence of this theorem is that when the Lagrangian has a cyclic coordinate (that is, it does not depend on some $q_i$), then the conjugate momentum of that coordinate is conserved, for the conjugate momentum of a coordinate $q_i$ is $\pdv{\lag}{\dot{q}_i}$.
+
+\paragraph{Energy conservation} When the Lagrangian is time-invariant, one can define $h^s: (\gpos, t) \mapsto (\gpos, t + s)$ as translation in time. To find the conserved quantity, the Lagrangian has to be extended to consider the time $t$ as an explicit generalized coordinate, i.e. define
+$$ \tilde{\lag}\qty(\gpos, t, \dv{\gpos}{\tau}, \dv{t}{\tau}) \triangleq \lag\qty(\gpos, \frac{\dv*{\gpos}{\tau}}{\dv*{t}{\tau}}, t)\dv{t}{\tau},$$
+where $\tau$ now plays the role of the independent variable. This definition ensures that the action integral for $\tilde{\lag}$ and $\lag$ are identical, which is why Noether's theorem can be applied to $\tilde{\lag}$ instead. Of course, $\dv{h}{s}$ equal to 1 for the time coordinate; so there is one first integral
+\begin{equation*}
+    \begin{split}
+        I = \pdv{\tilde{\lag}}{(t')} 
+        &= \lag + \pdv{}{t'}\qty(\lag\qty(\gpos, \frac{
+        \gpos'}{t'}, t))t'\\
+        &= \lag + \pdv{\lag}{\gvel}\pdv{}{t'}\qty(\frac{
+        \gpos'}{t'})t' = \lag - \pdv{\lag}{\gvel}\frac{\gpos'}{t'}\\
+        &= \lag - \pdv{\lag}{\gvel}\gvel
+    \end{split}
+\end{equation*}
+with $t' = \dv{t}{\tau}$ and $\gpos' = \dv{\gpos}{\tau}$. This is the negative of the Legendre transform of the Lagrangian, or the negative of the Hamiltonian; $I = -H$. Therefore, the total energy of the system is conserved. 
+
+\paragraph{(Angular) momentum conservation} The invariance of the Lagrangian in one or more coordinate directions implies the conservation of the associated conjugate momentum. 
+
+For example, a common assumption on Earth is that the gravitational force is constant and acts downwards. Therefore, only one coordinate appears in the potential energy expression, which is why the other coordinate directions (that is, the two `horizontal' directions, with proper choice of coordinate system) are cyclic. Hence, by virtue of Noether's theorem, the linear momentum in those directions is conserved, for it is unaffected by any potential force.
+
+Conservation of angular momentum often appears in the presence of so-called \emph{central} force fields, which means that the potential energy is a function of the \emph{distance} from a certain point: notable examples are Coulomb forces or gravitational forces in celestial mechanics. Because only distance matters, the orientation of the displacement vector between the origin of the force field and the body is of no importance; it will not appear in the Lagrangian either. Consequently, Noether's theorem dictates that these central force fields preserve angular momentum.
+
+\begin{econ}{Noether's theorem and conservation in economics}
+    Noether's theorem can be applied to economic systems as well. The most simple application is the conservation of prices in the absence of scarcity. When the utility Lagrangian does not depend on a certain stock level $q_i$, that essentially means that there is no utility associated with the possession (or shortage) of it; in other words, economic agents are not driven by scarcity (or abundance) of that particular product. The `conjugate momentum' of an economic good is its price; so \emph{in the absence of scarcity, price is conserved}.\\
+    
+    When the 
+\end{econ}
 
