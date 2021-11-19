@@ -1,7 +1,7 @@
 % Second chapter
 \chapter{Economic engineering with analytical mechanics}
 \label{chap:ee}
-Economic engineering is built on analogies between (macro)economic theory and common engineering disciplines such as thermodynamics, circuit theory and (classical) mechanics\footnote{as opposed to more recent theories in relativistic mechanics and quantum mechanics}. Escpecially for the latter, a rich variety of useful analogues can be devised. There are two common classses of interpretations mechanics: \emph{analytical mechanics} including the formulations by Joseph-Louis Lagrange and sir William Rowan Hamilton, and \emph{vectorial mechanics}, better known as \emph{Newtonian mechanics}. The former variant is usually preferred in the field of engineering whereas the analytical mechanics are more common in physics due to their mathematical elegance and powerful interpretative value. Likewise, the theory of economic engineering can be approached in two similar ways. Usually the `Newtonian' approach is given the most attention, but in the case of this work the energy-based approach will prove to be more useful, which is why it is the starting point of this discussion. It is indeed, the underlying aspiration of this research that these more formal methods will allow to establish a sound framework for economic engineering in financial systems as well.
+Economic engineering is built on analogies between (macro)economic theory and common engineering disciplines such as thermodynamics, circuit theory and (classical) mechanics\footnote{as opposed to more recent theories in relativistic mechanics and quantum mechanics}. Escpecially for the latter, a rich variety of useful analogues can be devised. There are two common classses of interpretations mechanics: \emph{analytical mechanics} including the formulations by Joseph-Louis Lagrange and sir William Rowan Hamilton, and \emph{vectorial mechanics}, better known as \emph{Newtonian mechanics}. The former variant is usually preferred in the field of engineering whereas the analytical mechanics are more common in physics due to their mathematical elegance and powerful theoretical foundation. Likewise, the theory of economic engineering can be approached in two similar ways. Usually the `Newtonian' approach is given the most attention, but in the case of this work the energy-based approach will prove to be more useful, which is why it is the subject of this discussion. This discussion will mostly pertain to `regular' economic systems, but it is the underlying aspiration of this research that these formal methods will allow to establish a sound framework for financial systems as well.
 
 Analytical mechanics, more specifically \emph{Lagrangian} and \emph{Hamiltonian} mechanics, are established around the definition of special state functions, respectively called the Lagrangian \(\lag\) and the Hamiltonian \(\ham\). As per usual, Lagrangian mechanics will be introduced first, for it has the most intuitive explanation. Then, a more formal approach allows to (Legendre) transform the discussion into one of Hamiltonian mechanics. 
 
@@ -221,7 +221,7 @@ In the case of potential energy, the familiar equation really \emph{is} the one 
     \caption{Distinction between potential energy and co-energy in terms of the relation between force and displacement. Figure courtesy of B. \citet{Krabbenborg2021}.}
     \label{fig:potential_energy}
 \end{figure}
-The solution of the simple mass-spring system is a sinusoid which continues indefinitely in time. These `perfect' sinusoids are not often encountered in real economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex network of society. This makes the theoretical achievement that are the basic foundations economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path dependent forces in the system. These forces dissipate energy and are always present in reality, both in mechanics and economics; they will be the subject of the next section. 
+The solution of the simple mass-spring system is a sinusoid which continues indefinitely in time. These `perfect' sinusoids are not often encountered in real economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex interconnected nature of society. This makes the theoretical achievement that are the basic foundations economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path dependent forces in the system. These forces dissipate energy and are always present in reality, both in mechanics and economics; they will be the subject of the next section. 
 
 \subsection{Energy dissipation}
 \begin{econ}{Dissative energy}
@@ -235,15 +235,35 @@ Whereas the Lagrangian of a system is a function of its generalized positions an
 
 The total differential of the Lagrangian is
 $$ \dd{\lag} = \pdv{\lag}{\gpos}\dd{\gpos} + \pdv{\lag}{\gvel}\dd{\gvel}. $$
-Two observations can be made: firstly, by definition, $\gmom = \pdv{\lag}{\gvel}$; and secondly, the Euler-Lagrange equations dictate that $\dv{}{t}(\gmom) = \pdv{\lag}{\gpos}$. As such, the total differential of the Lagrangian may be rewritten as:
-$$ \dd{\lag} = \dot{\gmom}\dd{\gpos} + \gmom \dd{\gvel}$$
+Two observations can be made: first, by definition, $\gmom = \pdv{\lag}{\gvel}$; and secondly, the Euler-Lagrange equations dictate that $\dv{\gmom}{t} = \pdv{\lag}{\gpos}$. As such, the total differential of the Lagrangian may be rewritten as: \cite{Landau1960}
+$$ \dd{\lag} = \dot{\gmom}\dd{\gpos} + \gmom \dd{\gvel}.$$
+By means of the product rule $\dd{(\gmom \gvel)} = \gmom\dd{\gvel} + \gvel\dd{\gmom}$, the above can be rewritten as: 
+$$ \dd{\underbrace{(\gmom\gvel - \lag)}_{\ham}} = \gvel\dd{\gmom} - \dot{\gmom}\dd{\gpos}. $$
+The argument of the differential on the left-hand side is the \emph{Hamiltonian} $\ham$ of the system
+
+\towrite{TODO}
+
+\begin{figure}
+    \centering
+    \input{media/tikz/legendre_transform}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{econ}{The Legendre transform in economics}
+    \towrite{TODO}
+\end{econ}
 
 \subsection{Hamilton's equations}
+    \towrite{TODO}
 
 \subsection{The canonical formalism}
 One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distinction will then just be a matter of definition.} \cite{Landau1960}.
 
 Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1960}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
+
+\subsection{Action-angle coordinates}
+\towrite{TODO}
 
 \subsection{Noether's theorem}
 Conservation principles play a vital role in physics and mechanics. Notable examples are the conservation of energy, linear momentum, angular momentum and charge. A surprising result in physics is that all of the mentioned conservation laws are a consequence of the same theorem, attributed to Emmy Noether. This theorem essentially looks at the nature of the Lagrangian of the system, and sees whether it is `ignorant' with respect to certain group of transformations. As defined by \citet{Arnold1989}, the theorem is as follows:
@@ -275,9 +295,14 @@ For example, a common assumption on Earth is that the gravitational force is con
 
 Conservation of angular momentum often appears in the presence of so-called \emph{central} force fields, which means that the potential energy is a function of the \emph{distance} from a certain point: notable examples are Coulomb forces or gravitational forces in celestial mechanics. Because only distance matters, the orientation of the displacement vector between the origin of the force field and the body is of no importance; it will not appear in the Lagrangian either. Consequently, Noether's theorem dictates that these central force fields preserve angular momentum.
 
+
 \begin{econ}{Noether's theorem and conservation in economics}
     Noether's theorem can be applied to economic systems as well. The most simple application is the conservation of prices in the absence of scarcity. When the utility Lagrangian does not depend on a certain stock level $q_i$, that essentially means that there is no utility associated with the possession (or shortage) of it; in other words, economic agents are not driven by scarcity (or abundance) of that particular product. The `conjugate momentum' of an economic good is its price; so \emph{in the absence of scarcity, price is conserved}.\\
     
-    When the 
+    A similar comment about cyclic coordinates can be made in the rotational analogy (which is to be discussed in \cref{chap:finance_rotation}). If the utility Lagrangian is independent on the return or interest $\zeta$, then borrowers or lenders will be indifferent about the realized returns of their investments, and never capitalize them (or in the case of borrowers, never repay their debts).\\
+    
+    Finally, the conservation of income in the economic system is related to the time-invariance of its Lagrangian. The Lagrangian does not depend on time if (i) there are no external influences or forcing terms and (ii) all parameters in the system remain constant over time. If that is the case, the Hamiltonian (or total income) in the economic system is conserved; or volume in the phase space (i.e. total amount of money) is conserved.\\
+    
+    Admittedly, all of these interpretations are arguably rather straightforward, since they mostly rely on either the presence cyclic coordinates or the direct correspondence of total energy and energy of the system. However, the discussion does prove that Noether's theorem has very tangible interpretations in economics. Its real power will, though, appear with more sophisticated symmetries that are present in complex economic systems. The idea is that the Lagrangian and Noether's theorem permit to extract `stylized facts' from these type of systems that would otherwise be concealed by their complexity. 
 \end{econ}
 
