@@ -1,10 +1,10 @@
 \begin{tikzpicture}
-    \draw[->, thick] (-0.5, 0) -- (4.5, 0) node[anchor=west] {$\dot{q}$};
-    \draw[->, thick] (0, -0.5) -- (0, 5.5);
+    \draw[->, thick] (-0.5, 0) -- (4.5, 0) node[anchor=west] {$x$};
+    \draw[->, thick] (0, -0.5) -- (0, 5.5) node[anchor=south] {$y$};
     
-    \draw[thick, domain=-0.5:4.2] plot ({\x}, {0.3*\x*\x}) node[anchor=west] {$\lag(\dot{q})$};
-    \draw[thick, domain=-0.5:4.2] plot ({\x}, {1.1*\x}) node[anchor = west] {$p\dot{q}$};
+    \draw[thick, domain=-0.5:4.2] plot ({\x}, {0.3*\x*\x}) node[anchor=west] {$f(x)$};
+    \draw[thick, domain=-0.5:4.2] plot ({\x}, {1.1*\x}) node[anchor = west] {$px$};
     
-    \draw[<->, thick] (1.8333, 1) -- (1.8333, 2.01663) node[anchor = south east] {$\ham(p)$};
+    \draw[<->, thick] (1.8333, 1) -- (1.8333, 2.01663) node[anchor = south east] {$g(p)$};
     
 \end{tikzpicture}

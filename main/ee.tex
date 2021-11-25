@@ -126,7 +126,10 @@ In the most general terms, the kinetic energy of the system is \emph{defined} as
     \label{eq:ekin_mfld}
 \end{equation}
 The usage of $\ecokin$ in the Lagrangian formulation is only useful if it is expressed in the generalized coordinates and generalized velocities; in general $\ecokin$ will be of the form
-$$\ecokin(\gpos, \gvel) = \frac{1}{2}m_{ij}(\gpos)\dot{q}_i\dot{q_j}, $$ 
+\begin{equation}
+    \ecokin(\gpos, \gvel) = \frac{1}{2}m_{ij}(\gpos)\dot{q}_i\dot{q_j},
+    \label{eq:kinetic_energy}
+\end{equation}
 observing the Einstein summation convention. This interpretation of kinetic co-energy as a Riemannian metric on the configuration manifold must not be overlooked; indeed, a free particle (i.e. in the absence of potential forces) will follow a trajectory along the \emph{geodesic} dictated by the `kinetic co-energy metric'; this is called the Maupertuis-Jacobi principle \cite{Arnold1989}.
 
 The distinction between energy and co-energy is not very common in literature, although thoroughly discussed by \citet{Jeltsema2009}. Energy is the ability to do work, while co-energy is the \emph{complement of energy}. Because energy is defined in terms of work, kinetic energy $\ekin$ should be defined in terms of momentum -- the integral of an applied force over time, instead of a velocity. The linear relation behind the change of variables from momentum to velocity by means of the mass makes the distinction between energy and co-energy moot at first glance, but it is nevertheless important to consider. The kinetic energy and co-energy are not always equal after all, e.g. in the relativistic case where the mass will depend on the velocity as well. In the simple non-relativistic case, for a single particle with mass $m$, the following relations hold:
@@ -231,38 +234,55 @@ The solution of the simple mass-spring system is a sinusoid which continues inde
 \section{Hamiltonian mechanics}
 
 \subsection{The Legendre transform}
-Whereas the Lagrangian of a system is a function of its generalized positions and generalized velocities, the Hamiltonian is a function of the generalized position and generalized momentum. Recall from the definition that the generalized (or \emph{conjugate}) momenta are defined in terms of the Lagrangian; $p_i = \pdv{\lag}{\dot{q}_i}$. Hence, the momenta and velocities are conjugate variables. To achieve this change of variables, from the
+Whereas the Lagrangian of a system is a function of its generalized positions and generalized velocities, the Hamiltonian is a function of the generalized position and generalized momentum. Recall from the definition that the generalized (or \emph{conjugate}) momenta are defined in terms of the Lagrangian; $p_i = \pdv{\lag}{\dot{q}_i}$. This change of variables is performed in a particular fashion called the \emph{Legendre transform}.
 
 The total differential of the Lagrangian is
-$$ \dd{\lag} = \pdv{\lag}{\gpos}\dd{\gpos} + \pdv{\lag}{\gvel}\dd{\gvel}. $$
+$$ \dd{\lag} = \pdv{\lag}{\gpos}\dd{\gpos} + \pdv{\lag}{\gvel}\dd{\gvel} + \pdv{\lag}{t}\dd{t}. $$
 Two observations can be made: first, by definition, $\gmom = \pdv{\lag}{\gvel}$; and secondly, the Euler-Lagrange equations dictate that $\dv{\gmom}{t} = \pdv{\lag}{\gpos}$. As such, the total differential of the Lagrangian may be rewritten as: \cite{Landau1960}
-$$ \dd{\lag} = \dot{\gmom}\dd{\gpos} + \gmom \dd{\gvel}.$$
+$$ \dd{\lag} = \dot{\gmom}\dd{\gpos} + \gmom \dd{\gvel} + \pdv{\lag}{t}\dd{t}.$$
 By means of the product rule $\dd{(\gmom \gvel)} = \gmom\dd{\gvel} + \gvel\dd{\gmom}$, the above can be rewritten as: 
-$$ \dd{\underbrace{(\gmom\gvel - \lag)}_{\ham}} = \gvel\dd{\gmom} - \dot{\gmom}\dd{\gpos}. $$
-The argument of the differential on the left-hand side is the \emph{Hamiltonian} $\ham$ of the system
+\begin{equation}
+    \dd{\underbrace{(\gmom\gvel - \lag)}_{\ham}} = \gvel\dd{\gmom} - \dot{\gmom}\dd{\gpos} - \pdv{\lag}{t}\dd{t}.
+    \label{eq:diff_hamiltonian}
+\end{equation}
+The argument of the differential on the left-hand side is the \emph{Hamiltonian} $\ham$ of the system, i.e. 
+$$ \ham(\gpos, \gmom, t) \triangleq \gmom \gvel - \lag(\gpos, \gvel, t). $$
+This coincides with the Hamiltonian being the Legendre transform of the Lagrangian, given that the Lagrangian is a convex function (in $\gvel$). Roughly speaking, the Legendre transform of a function $f(\gvel)$ finds $g(\gmom) = \gmom\gvel - f(\gvel)$ is maximal, i.e. $\gvel(\gmom)$ is chosen such that $g(\gmom)$ is maximal. Clearly, $\gmom$ must be chosen such that $\gmom = \pdv{f}{\gvel}$. This is precisely how the generalized momentum is defined in terms of the Lagrangian, which automatically implies that the Hamiltonian is indeed the Legendre transform of the Lagrangian. The convexity of the function guarantees uniqueness and maximality.
 
-\towrite{TODO}
-
+The Legendre transform is involutive; that is, the $\ham$ and $\lag$ are the Legendre transform of each other; this is why they are called \emph{dual in the sense of Young} \cite{Arnold1989}. For the scalar case, a graphical explanation of the Legendre transform exists is provided by \cref{fig:legendre_transform}. Here, the function $g(p) = \max_x \{px - f(x)\}$; this optimality condition is met when $p = \dv{f}{x}$, i.e. where $px$ and $f(x)$ are locally parallel.
 \begin{figure}
     \centering
     \input{media/tikz/legendre_transform}
-    \caption{Caption}
-    \label{fig:my_label}
+    \caption{Illustration of the Legendre transform. $g$ is the Legendre transform of the function $f$, as it maximizes the $px - f(x)$; this optimality is attained when $p = \dv{f}{x}$. In classical mechanics, this is extended to the multivariable case where $\lag$, $\ham$ and $\gvel$ take the role of $f$, $g$ and $x$ respectively.}
+    \label{fig:legendre_transform}
 \end{figure}
 
 \begin{econ}{The Legendre transform in economics}
-    \towrite{TODO}
+    In economics, the Lagrangian measures the exchange between market surplus and convenience yield. This exchange has the units of $\qty[\frac{\$}{\text{yr}}]$, and is in economic engineering sometimes named `cost' for short, although a definition in terms of utility would probably be more appropriate. The term $\gmom\gvel$ has a very clear interpretation in economics: it is the \emph{revenue} associated with the flow of goods and their prices. The Legendre transform then maximizes the difference between revenue and the Lagrangian `cost' with respect to the amount of goods exchanged; $\gvel$. The optimality is guaranteed by the price representing the change of utility with respect to a change in the flow of goods.
 \end{econ}
 
 \subsection{Hamilton's equations}
-    \towrite{TODO}
+\Cref{eq:diff_hamiltonian} provides an expression for the total differential of the Hamiltonian, $\dd{\ham}$. By definition, this differential is equal to:
+$$ \dd{\ham}(\gpos, \gmom, t) = \pdv{\ham}{\gpos}\dd{\gpos} + \pdv{\ham}{\gmom}\dd{\gmom} + \pdv{\ham}{t}\dd{t}. $$
+Then, \cref{eq:diff_hamiltonian} gives rise to the following equalities:
+\begin{equation}
+    \gvel = \pdv{\ham}{\gmom} \qquad \dot{\gmom} = -\pdv{\ham}{\gpos} \qquad \pdv{\ham}{t} = - \pdv{\lag}{t},
+    \label{eq:ham_eqs}
+\end{equation}
+which are known as \emph{Hamilton's equations}. The Hamiltonian combined with Hamilton's equations gives an equivalent representation of the system dynamics as the Lagrangian with the Euler-Lagrange equations.
 
-\subsection{The canonical formalism}
+In mechanics, the Hamiltonian corresponding to $\lag = \ecokin - \epot$, and where $\ecokin$ is the quadratic form given in \cref{eq:kinetic_energy}, the Hamiltonian is equal to:
+\begin{equation}
+    \ham = \ekin + \epot,
+\end{equation}
+that is, it is equal to the \emph{total mechanical energy in the system}. A vital property of the Hamiltonian is that of its time (in)dependence, t
+
+\subsubsection{The canonical formalism}
 One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distinction will then just be a matter of definition.} \cite{Landau1960}.
 
 Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1960}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
 
-\subsection{Action-angle coordinates}
+\subsubsection{Action-angle coordinates}
 \towrite{TODO}
 
 \subsection{Noether's theorem}
