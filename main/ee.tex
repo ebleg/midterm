@@ -112,7 +112,7 @@ This yields a total of \(n\) second-order differential equations, or equivalentl
     \begin{quote}
         \textbf{Hamilton's principle in economic engineering}\\ Economic agents try  to maximize their convenience yield (the utility of the goods they possess) by sacrificing as little  economic surplus as possible
     \end{quote}
-    As described by \citet{Feynman2010}, this is not only a global trajectory, but also a local one at every (infinitesimal) piece of the trajectory: one can see this as a formal restatement of the rational behavior of economic agents, which is a crucial assumptions in may economic theories \cite{Mankiw2017}.
+    As described by \citet{Feynman2010}, this is not only a global trajectory, but also a local one at every (infinitesimal) piece of the trajectory: one can see this as a formal restatement of the rational behavior of economic agents, which is a crucial assumption in may economic theories \cite{Mankiw2017}.
 \end{econ}
 
 \subsection{Kinetic energy}
@@ -125,7 +125,7 @@ In the most general terms, the kinetic energy of the system is \emph{defined} as
     \ecokin = \frac{m}{2}\inner{\vec{v}}{\vec{v}}\qq{with } \vec{v} \in TM_{\vec{x}}.
     \label{eq:ekin_mfld}
 \end{equation}
-The usage of $\ecokin$ in the Lagrangian formulation is only useful if it is expressed in the generalized coordinates and generalized velocities; in general $\ecokin$ will be of the form
+The usage of $\ecokin$ in the Lagrangian formulation is only useful if it is expressed in the generalized coordinates and generalized velocities; in general, $\ecokin$ will be of the form
 \begin{equation}
     \ecokin(\gpos, \gvel) = \frac{1}{2}m_{ij}(\gpos)\dot{q}_i\dot{q_j},
     \label{eq:kinetic_energy}
@@ -141,7 +141,7 @@ $$ \text{kinetic energy } \ekin = \int \frac{p}{m}\dd{p} = \frac{p^2}{2m}\qquad
 
     To explain the significance of kinetic energy as surplus, the example given by \citet[chap.~6]{Marshall1920} about consumer's surplus will be recycled here in order to illustrate the point.
 
-    Imagine a woman (Jane), who likes to drink tea. When buying tea, she continuously makes the unconscious deliberations between (i) how much she likes to drink tea and (ii) how much she likes to pay for tea --- this is a consequence of the assumption that the Jane is a rational market participant. \citeauthor{Marshall1920} quantifies Jane's unconscious deliberation process by means of the following table:
+    Imagine a woman (Jane), who likes to drink tea. When buying tea, she continuously makes the unconscious deliberations between (i) how much she likes to drink tea and (ii) how much she likes to pay for tea --- this is a consequence of the assumption that Jane is a rational market participant. \citeauthor{Marshall1920} quantifies Jane's unconscious deliberation process by means of the following table:
     \begin{center}
         \begin{tabular}{lcccc}
             Price / pound & 20 & 14 & 10 & 6 \\
@@ -149,7 +149,7 @@ $$ \text{kinetic energy } \ekin = \int \frac{p}{m}\dd{p} = \frac{p^2}{2m}\qquad
             Pounds bought / year & 1 & 2 & 3 & 4 \\
         \end{tabular}
     \end{center}
-    It is rather straightforward that Jane is willing to buy more tea as it gets cheaper and vice versa. Marshall explains this by means of the concept of utility: if the price of tea, say 20\$, drops to 14\$, Jane obtains her additional pound of tea for 14\$ for instead of the 20\$ she was willing to pay for the first pound. As such, she gains a surplus satisfaction (or consumer's surplus) of 6\$ --- this is, as Marshall states, \emph{precisely} the additional utility of the second pound of tea, i.e. how much Jane values it on top of the first one. The total utility of the the two pounds of tea per year is then 20\$ +  14\$ = 34\$. More simply stated, the consumer's surplus is the total utility of the products bought minus the price actually paid. In this example, the total utility is \emph{at least} 34\$, and the price paid is 2$\times$14\$ = 28\$: therefore, Jane's the consumer's surplus is 6\$. 
+    It is rather straightforward that Jane is willing to buy more tea as it gets cheaper and vice versa. Marshall explains this by means of the concept of utility: if the price of tea, say 20\$, drops to 14\$, Jane obtains her additional pound of tea for 14\$ for instead of the 20\$ she was willing to pay for the first pound. As such, she gains a surplus satisfaction (or consumer's surplus) of 6\$ --- this is, as Marshall states, \emph{precisely} the additional utility of the second pound of tea, i.e. how much Jane values it on top of the first one. The total utility of the two pounds of tea per year is then 20\$ +  14\$ = 34\$. More simply stated, the consumer's surplus is the total utility of the products bought minus the price actually paid. In this example, the total utility is \emph{at least} 34\$, and the price paid is 2$\times$14\$ = 28\$: therefore, Jane's consumer's surplus is 6\$. 
     \begin{center}
         \input{media/tikz/surplus}
     \end{center}
@@ -197,15 +197,15 @@ $$ \vec{F} = -\pdv{U}{\gpos}. $$
 \begin{econ}{Potential energy}
     While in `regular physics' potential energy arises due to the presence of elastic, electric, gravitational ... forces, its interpretation in economic engineering is related to the utility gained from the possession of goods; i.e. it is a function that has units of cash flow (just like surplus) that depends only on the stock levels (possibly in terms of generalized coordinates).\\
 
-    The simplest example is the economic analogue of a spring: just like a spring, a restoring `force' (i.e. an economic want) occurs whenever the spring is elongated or stretched with respect to a certain reference distance. For economics agents, this means either being long or short on stock levels, again with respect to a certain reference $q_0$ (although important for practical interpretations, this reference does not really contribute on a conceptual levels, which is why it is omitted in the theoretical discussion, just like the reference momentum for the kinetic energy). Hence, there is a `potential utility' in either being long or short, in the sense that it can be exchanged for `market utility' or economic surplus, because it requires an exchange of goods. The continuous reciprocity between kinetic energy and 
+    The simplest example is the economic analogue of a spring: just like a spring, a restoring `force' (i.e. an economic want) occurs whenever the spring is elongated or stretched with respect to a certain reference distance. For economics agents, this means either being long or short on stock levels, again with respect to a certain reference $q_0$ (although important for practical interpretations, this reference does not really contribute on a conceptual level, which is why it is omitted in the theoretical discussion, just like the reference momentum for the kinetic energy). Hence, there is a `potential utility in either being long or short, in the sense that it can be exchanged for `market utility' or economic surplus, because it requires an exchange of goods. The continuous reciprocity between kinetic energy and 
     potential energy is a central theme in mechanics, and it is henceforth been given a succinct economic interpretation as well.
 \end{econ}
-The stereotypical example in mechanics that contains a single storage of kinetic energy (a mass) and a single storage of potential energy (a spring) is the mass-spring system, which also arises as the linearization of a multitude of undamped nonlinear systems (i.e. the pendulum); the result is a second-order scalar autonomous differential equation:
+The stereotypical example in mechanics that contains a single storage element of kinetic energy (a mass) and a single storage  element of potential energy (a spring) is the mass-spring system, which also arises as the linearization of a multitude of undamped nonlinear systems (i.e. the pendulum); the result is a second-order scalar autonomous differential equation:
 \begin{equation}
     m\ddot{q} + \pdv{U}{q} = 0, \quad \text{with} U = \frac{kq^2}{2}
     \label{eq:mass_spring}
 \end{equation}
-with $k$ being the spring constant; this is immediately results in Newton's second law of motion. A simple mass-spring system is shown in \cref{fig:mass_spring}.
+with $k$ being the spring constant; this immediately results in Newton's second law of motion. A simple mass-spring system is shown in \cref{fig:mass_spring}.
 \begin{figure}[ht]
     \centering
     \input{media/tikz/mass_spring}
@@ -213,18 +213,18 @@ with $k$ being the spring constant; this is immediately results in Newton's seco
     \label{fig:mass_spring}
 \end{figure}
 
-The distinction between energy and co-energy exists for potential energy too. Again, the potential energy itself is defined in terms of work: the integral of force over distance. Comparable between the bijective simple linear relation between velocity and momentum, for simple linear springs the force $F$ and displacement $q$ are related by $F = kq$. Again, in this case the distinction may seem a bit pointless; but, when this relation is nonlinear (as it in the real world often is), the potential energy and co-energy are no longer the same. 
+The distinction between energy and co-energy exists for potential energy too. Again, the potential energy itself is defined in terms of work: the integral of force over a distance. Comparable between the bijective simple linear relation between velocity and momentum, for simple linear springs the force $F$ and displacement $q$ are related by $F = kq$. Again, in this case, the distinction may seem a bit pointless; but, when this relation is nonlinear (as it is the real world often is), the potential energy and co-energy are no longer the same. 
 $$ \text{potential energy } \epot = \int F \dd{q} \qquad \text{potential co-energy } \ecopot = \int q \dd{F} $$
 which for in the case of the simple spring turn out to be
 $$ \epot = \frac{kq^2}{2} \qquad \ecopot = \frac{f^2}{2k}. $$
-In the case of potential energy, the familiar equation really \emph{is} the one that corresponds to energy (and not to co-energy, as for kinetic energy). The second equation seems really odd, intuitively turning the causal relation around; but one should bear in mind that this equation is, from a fundamental perspective, equally `odd' as the extremely familiar $\frac{mv^2}{2}$. \Cref{fig:potential_energy} shows the relation between potential energy and co-energy and why they are equal for a linear relation between force and displacement.
+In the case of potential energy, the familiar equation really \emph{is} the one that corresponds to energy (and not to co-energy, as for kinetic energy). The second equation seems really odd, intuitively turning the causal relation around, but one should bear in mind that this equation is, from a fundamental perspective, equally `odd' as the extremely familiar $\frac{mv^2}{2}$. \Cref{fig:potential_energy} shows the relation between potential energy and co-energy and why they are equal for a linear relation between force and displacement.
 \begin{figure}[ht]
     \centering
     \input{media/tikz/potential_energy}
-    \caption{Distinction between potential energy and co-energy in terms of the relation between force and displacement. Figure courtesy of B. \citet{Krabbenborg2021}.}
+    \caption{The distinction between potential energy and co-energy in terms of the relation between force and displacement. Figure courtesy of B. \citet{Krabbenborg2021}.}
     \label{fig:potential_energy}
 \end{figure}
-The solution of the simple mass-spring system is a sinusoid which continues indefinitely in time. These `perfect' sinusoids are not often encountered in real economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex interconnected nature of society. This makes the theoretical achievement that are the basic foundations economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path dependent forces in the system. These forces dissipate energy and are always present in reality, both in mechanics and economics; they will be the subject of the next section. 
+The solution of the simple mass-spring system is a sinusoid that continues indefinitely in time. These `perfect' sinusoids are not often encountered in real economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex interconnected nature of society. This makes the theoretical achievement that are the basic foundations of economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path-dependent forces in the system. These forces dissipate energy and are always present in reality, both in mechanics and economics; they will be the subject of the next section. 
 
 \subsection{Energy dissipation}
 \begin{econ}{Dissipative energy}
@@ -258,7 +258,7 @@ The Legendre transform is involutive; that is, the $\ham$ and $\lag$ are the Leg
 \end{figure}
 
 \begin{econ}{The Legendre transform in economics}
-    In economics, the Lagrangian measures the exchange between market surplus and convenience yield. This exchange has the units of $\qty[\frac{\$}{\text{yr}}]$, and is in economic engineering sometimes named `cost' for short, although a definition in terms of utility would probably be more appropriate. The term $\gmom\gvel$ has a very clear interpretation in economics: it is the \emph{revenue} associated with the flow of goods and their prices. The Legendre transform then maximizes the difference between revenue and the Lagrangian `cost' with respect to the amount of goods exchanged; $\gvel$. The optimality is guaranteed by the price representing the change of utility with respect to a change in the flow of goods.
+    In economics, the Lagrangian measures the exchange between market surplus and convenience yield. This exchange has the units of $\qty[\frac{\$}{\text{yr}}]$, and is in economic engineering sometimes named `cost' for short, although a definition in terms of utility would probably be more appropriate. The term $\gmom\gvel$ has a very clear interpretation in economics: it is the \emph{revenue} associated with the flow of goods and their prices. The Legendre transform then maximizes the difference between revenue and the Lagrangian `cost' with respect to the number of goods exchanged; $\gvel$. The optimality is guaranteed by the price representing the change of utility with respect to a change in the flow of goods.
 \end{econ}
 
 \subsection{Hamilton's equations}
@@ -278,7 +278,7 @@ In mechanics, the Hamiltonian corresponding to $\lag = \ecokin - \epot$, and whe
 that is, it is equal to the \emph{total mechanical energy in the system}. A vital property of the Hamiltonian is that of its time (in)dependence, t
 
 \subsubsection{The canonical formalism}
-One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may not longer just pertain to a `spatial' component and a `momentum' component, this distinction will then just be a matter of definition.} \cite{Landau1960}.
+One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may no longer just pertain to a `spatial' component and a `momentum' component, this distinction will then just be a matter of definition.} \cite{Landau1960}.
 
 Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1960}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
 
@@ -286,7 +286,7 @@ Canonical transformations are transformations such that Hamilton's equations rem
 \towrite{TODO}
 
 \subsection{Noether's theorem}
-Conservation principles play a vital role in physics and mechanics. Notable examples are the conservation of energy, linear momentum, angular momentum and charge. A surprising result in physics is that all of the mentioned conservation laws are a consequence of the same theorem, attributed to Emmy Noether. This theorem essentially looks at the nature of the Lagrangian of the system, and sees whether it is `ignorant' with respect to certain group of transformations. As defined by \citet{Arnold1989}, the theorem is as follows:
+Conservation principles play a vital role in physics and mechanics. Notable examples are the conservation of energy, linear momentum, angular momentum and charge. A surprising result in physics is that all of the mentioned conservation laws are a consequence of the same theorem, attributed to Emmy Noether. This theorem essentially looks at the nature of the Lagrangian of the system, and sees whether it is `ignorant' with respect to a certain group of transformations. As defined by \citet{Arnold1989}, the theorem is as follows:
 
 \begin{thmblock}{Noether's theorem}
     If the Lagrangian system $(M, \lag)$ admits the one-parameter group of transformations $h^s: M \to M, s \in \real$, then the Lagrangian system of equations corresponding to $\lag$ has a first integral: $I: TM \to \real$. In local coordinates $q$ on $M$ the integral $I$ is written in teh form 
@@ -311,7 +311,7 @@ with $t' = \dv{t}{\tau}$ and $\gpos' = \dv{\gpos}{\tau}$. This is the negative o
 
 \paragraph{(Angular) momentum conservation} The invariance of the Lagrangian in one or more coordinate directions implies the conservation of the associated conjugate momentum. 
 
-For example, a common assumption on Earth is that the gravitational force is constant and acts downwards. Therefore, only one coordinate appears in the potential energy expression, which is why the other coordinate directions (that is, the two `horizontal' directions, with proper choice of coordinate system) are cyclic. Hence, by virtue of Noether's theorem, the linear momentum in those directions is conserved, for it is unaffected by any potential force.
+For example, a common assumption on Earth is that the gravitational force is constant and acts downwards. Therefore, only one coordinate appears in the potential energy expression, which is why the other coordinate directions (that is, the two `horizontal' directions, with proper choice of the coordinate system) are cyclic. Hence, by virtue of Noether's theorem, the linear momentum in those directions is conserved, for it is unaffected by any potential force.
 
 Conservation of angular momentum often appears in the presence of so-called \emph{central} force fields, which means that the potential energy is a function of the \emph{distance} from a certain point: notable examples are Coulomb forces or gravitational forces in celestial mechanics. Because only distance matters, the orientation of the displacement vector between the origin of the force field and the body is of no importance; it will not appear in the Lagrangian either. Consequently, Noether's theorem dictates that these central force fields preserve angular momentum.
 
@@ -323,6 +323,7 @@ Conservation of angular momentum often appears in the presence of so-called \emp
     
     Finally, the conservation of income in the economic system is related to the time-invariance of its Lagrangian. The Lagrangian does not depend on time if (i) there are no external influences or forcing terms and (ii) all parameters in the system remain constant over time. If that is the case, the Hamiltonian (or total income) in the economic system is conserved; or volume in the phase space (i.e. total amount of money) is conserved.\\
     
-    Admittedly, all of these interpretations are arguably rather straightforward, since they mostly rely on either the presence cyclic coordinates or the direct correspondence of total energy and energy of the system. However, the discussion does prove that Noether's theorem has very tangible interpretations in economics. Its real power will, though, appear with more sophisticated symmetries that are present in complex economic systems. The idea is that the Lagrangian and Noether's theorem permit to extract `stylized facts' from these type of systems that would otherwise be concealed by their complexity. 
+    Admittedly, all of these interpretations are arguably rather straightforward, since they mostly rely on either the presence of cyclic coordinates or the direct correspondence of total energy and energy of the system. However, the discussion does prove that Noether's theorem has very tangible interpretations in economics. Its real power will, though, appear with more sophisticated symmetries that are present in complex economic systems. The idea is that the Lagrangian and Noether's theorem permit the extraction of `stylized facts' from these types of systems that would otherwise be concealed by their complexity. 
 \end{econ}
 
+elem

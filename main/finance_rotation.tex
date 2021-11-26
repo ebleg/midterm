@@ -3,7 +3,7 @@
 In this chapter, 
 
 \section{Terminology}
-The aim of this research is to refine the way that economic engineering currently deals with financial instruments, primarily fixed-interest assets, but also marketable equity (stocks), derivatives etc. All of these can be regarded as `investments', for lack of a better word, because they require a \emph{principal}, that is the amount investment, and a certain return that is proportional to the principal. This is why the return is usually expressed as a percentage of the principal, which in the case of debt is the interest rate. The later contains the word `rate', because it has an inherent timely aspect: interest rates (and returns of investments in general) are associated with a certain `term' or duration over which the return is realized. As such, any type of investment is characterized by three components:
+The aim of this research is to refine the way that economic engineering currently deals with financial instruments, primarily fixed-interest assets, but also marketable equity (stocks), derivatives, etc. All of these can be regarded as `investments', for lack of a better word, because they require a \emph{principal}, that is the amount invested, and a certain return that is proportional to the principal. This is why the return is usually expressed as a percentage of the principal, which in the case of debt is the interest rate. The latter contains the word `rate', because it has an inherent timely aspect: interest rates (and returns of investments in general) are associated with a certain `term' or duration over which the return is realized. As such, any type of investment is characterized by three components:
 \begin{itemize}
     \item a \emph{principal}, something that is originally invested;
     \item a \emph{return} proportional to the principal;
@@ -12,24 +12,24 @@ The aim of this research is to refine the way that economic engineering currentl
 In the world of finance, the principal and return often refer to some amount of money, but that does not necessarily have to be the case. For example, some stocks pay \emph{stock dividends}, which means that dividends take the form of additional stock. Alternatively, one could look outside finance to other factors of production, such as land: a farmer may `invest' a certain amount of land to gain the earnings (crops that grow on it) after the period of one year; of course, the amount of crops grown is proportional to the surface area of the land that the farmer has cultivated.
 
 \section{Reinvestment of earnings}
-After the end of the investment period, the investor has two options: either he can spend his earnings, or he can reinvest them; essentially, he starts the next investment period with a higher principal than the first one. This reinvestment of capital is a crucial concept in the world of finance and is the reason for the existence of compound interest. Indeed, compound interest assumes that ones earnings after one period also bear interest; the so-called \emph{interest on interest}. This can be illustrated by means of the example shown in \cref{fig:compound_interest}. An investor holds a fixed-interest investment with a principal of \$1000 and an interest rate of 5\% annually. After one compounding period, he naturally earns \$50 directly on the principal. As such, his direct earnings, which will be called `yield', now amount to \$50 while the invested `capital' is still \$1000. The next compounding period however, provided that the investor does not withdraw his earnings from the account, the \$50 generate \$2.5 of interest as well, which are \emph{reinvested}; i.e. they take the form of capital instead of yield. Simultaneously, the investor als keeps the additional benefits from the \$1000 of capital in the form of another \$50 dollars of direct earnings.
+After the end of the investment period, the investor has two options: either he can spend his earnings, or he can reinvest them; essentially, he starts the next investment period with a higher principal than the first one. This reinvestment of capital is a crucial concept in the world of finance and is the reason for the existence of compound interest. Indeed, compound interest assumes that one's earnings after one period also bear interest; the so-called \emph{interest on interest}. This can be illustrated by means of the example shown in \cref{fig:compound_interest}. An investor holds a fixed-interest investment with a principal of \$1000 and an interest rate of 5\% annually. After one compounding period, he naturally earns \$50 directly on the principal. As such, his direct earnings, which will be called `yield', now amount to \$50 while the invested `capital' is still \$1000. The next compounding period, however, provided that the investor does not withdraw his earnings from the account, the \$50 generates \$2.5 of interest as well, which are \emph{reinvested}; i.e. they take the form of capital instead of yield. Simultaneously, the investor also keeps the additional benefits from the \$1000 of capital in the form of another \$50 dollars of direct earnings.
 \begin{figure}[h]
     \centering
     \input{media/tikz/compound_interest}
     \caption{A simple example of compound interest with a principal of \$1000 and an interest of 5\%. The direct earnings on the capital are called `yield', while the (re)invested amount is called `capital'.}
     \label{fig:compound_interest}
 \end{figure}
-This reinvestment of earnings is the driving force behind compound interest: without this step the investor would end up with \emph{simple interest}, which sees its relative returns essentially decreasing over time. One should, however, be cautious to associate this process exclusively with financial investments; for example a farmer could use the earnings from his land to buy more land, increase his earnings, use those again to buy even more land and so forth --- this will again give rise to a exponential growth. The farming example makes it quite clear that the object that `generates' the return (capital) is of a very different nature than the return itself (yield). They can be connected through the usage money as both a unit of account and a medium of exchange, which makes the whole process work \cite{Mankiw2017}. 
+This reinvestment of earnings is the driving force behind compound interest: without this step, the investor would end up with \emph{simple interest}, which sees its relative returns essentially decreasing over time. One should, however, be cautious to associate this process exclusively with financial investments; for example, a farmer could use the earnings from his land to buy more land, increase his earnings, use those again to buy even more land, and so forth --- this will again give rise to exponential growth. The farming example makes it quite clear that the object that `generates' the return (capital) is of a very different nature than the return itself (yield). They can be connected through the usage of money as both a unit of account and a medium of exchange, which makes the whole process work \cite{Mankiw2017}. 
 
-Financial investments are arguably the culmination of this concept, since money itself earns money that can be reinvested again instantaneously. Still, the capital-yield distinction remains relevant: for example, companies pay dividends to their shareholders in proportion to the amount of stock they own; the shareholders could then choose to reinvest these earnings in more stock of that (or another) company, increasing their `capital'. An additional example here are stock dividends, which are stocks with dividends that are paid as additional stock --- essentially taking the role of money out of the equation.
+Financial investments are arguably the culmination of this concept, since money itself earns money that can be reinvested again instantaneously. Still, the capital-yield distinction remains relevant: for example, companies pay dividends to their shareholders in proportion to the amount of stock they own; the shareholders could then choose to reinvest these earnings in more stock of that (or another) company, increasing their `capital'. An additional example here is stock dividends, which are stocks with dividends that are paid as additional stock --- essentially taking the role of money out of the equation.
 
 \section{The hyperbolic shape of compound interest}
-If the numbers from the example in \cref{fig:compound_interest} are plotted against each other, with capital on the horizontal axis and yield on the vertical axis, a hyperbolic shape appears, shown in \cref{fig:hyperbolic_compounding}. Hyperbola are characterized by the implicit equation 
+If the numbers from the example in \cref{fig:compound_interest} are plotted against each other, with capital on the horizontal axis and yield on the vertical axis, a hyperbolic shape appears, shown in \cref{fig:hyperbolic_compounding}. Hyperbolae are characterized by the implicit equation 
 \begin{equation}
     X^2 - Y^2 = K^2
     \label{eq:hyperbola}
 \end{equation}
-where \lsymb{$K$}{Original investment} represents the `radius' of the hyperbola, which coincides with the principal amount of the investment. The amount of capital and yield accumulated at a certain time are then on the \lsymb{$X$}{Capital} and \lsymb{$Y$}{Yield}-axis respectively. However, as \cref{fig:hyperbolic_compounding} demonstrates, the shape arising from the example is not quite hyperbolic, since it essentially lags behind the real hyperbola of that radius.
+where \lsymb{$K$}{Original investment} represents the `radius' of the hyperbola, which coincides with the principal amount of the investment. The amount of capital and yield accumulated at a certain time is then on the \lsymb{$X$}{Capital} and \lsymb{$Y$}{Yield}-axis respectively. However, as \cref{fig:hyperbolic_compounding} demonstrates, the shape arising from the example is not quite hyperbolic, since it essentially lags behind the real hyperbola of that radius.
 \begin{figure}[h!]
     \centering
     \input{media/tikz/hyperbolic_compounding}
@@ -64,14 +64,14 @@ The implicit equation for a hyperbola \cref{eq:hyperbola} is remarkably similar 
     \item $e = 1$ holds for \emph{parabolae};
     \item $e > 1$ are hyperbolae.
 \end{itemize}
-The elliptic-parabolic-hyperbolic (EPH) distinction is a common theme within mathematics and in this literature study, as it also applies to surface curvature, which gives rise to elliptic, parabolic or hyperbolic geometry (the subject of \cref{chap:hyperbolic_geometry}), and the classification of Möbius transformations discussed in \cref{chap:moebius_transforms}.
+The elliptic-parabolic-hyperbolic (EPH) distinction is a common theme within mathematics and in this literature study, as it also applies to surface curvature, which gives rise to elliptic, parabolic, or hyperbolic geometry (the subject of \cref{chap:hyperbolic_geometry}), and the classification of Möbius transformations discussed in \cref{chap:moebius_transforms}.
 
 \citet{Harkin2004} use the conic sections to extend the `classic' trigonometry based on circles (i.e. elliptic curves) to hyperbolic and parabolic trigonometry as well. Associated with each of these types of geometry is also a special number system akin to complex numbers, called double numbers (or hyperbolic numbers) and dual numbers (or parabolic numbers) --- hyperbolic numbers will briefly be explored in \cref{sec:hyperbolic_numbers}. The results of the previous section suggest that hyperbolic trigonometry can be used to describe investment problems: this will be the basis for the \emph{rotational analogy} in economic engineering, which will be introduced in \cref{sec:rotational_analogy}.
 
 \subsection{Hyperbolic angles}
-For both circles and hyperbolae, an angle refers to a certain region bounded by the curve at issue. The standard notation for the hyperbolic angle will be \(\zeta\), in accordance to the rapidity from special relativity, which can also be viewed as a hyperbolic angle (cf. \cref{chap:relativity}).
+For both circles and hyperbolae, an angle refers to a certain region bounded by the curve at issue. The standard notation for the hyperbolic angle will be \(\zeta\), in accordance with the rapidity from special relativity, which can also be viewed as a hyperbolic angle (cf. \cref{chap:relativity}).
 \begin{thmblock}{Hyperbolic sector}
-A hyperbolic sector is the region bounded by two lines extending from the origin to each to a point on the (unit) hyperbola, and the graph of the hyperbola itself. 
+A hyperbolic sector is a region bounded by two lines extending from the origin to each to a point on the (unit) hyperbola, and the graph of the hyperbola itself. 
 \end{thmblock}
 Clearly, hyperbolic sectors are entirely analogous to their `traditional' circular cousins. Fixing one of the rays to the \(x\)-axis, one can define the corresponding hyperbolic angle:
 \begin{thmblock}{Hyperbolic angle}
@@ -95,7 +95,7 @@ The preceding discussion suggests that hyperbolic polar coordinates do \emph{not
 \end{figure}
 From a financial perspective, this limit signifies the maximal yield one can obtain for a given amount of capital, i.e. one can never obtain more yield than (re)invested capital at a given moment in time.
 
-\paragraph{Remark} A possible workaround for this problem from a mathematical perspective can be found in the so-called \emph{generalized trigonometry} as described by \citet{Harkin2004}: in this case, the notion of the hyperbolic angle itself is considered ambiguous and must be accompanied the branch of the hyperbola that is associated with the angle. In this case four hyperbolic branches are considered, so both branches of \(x^2 - y^2 = K^2\) combined with \(y^2 - x^2 = K^2\) which were disregarded up till now.\footnote{In fact, \citeauthor{Harkin2004} provide an even more general treatment, covering so-called generalized complex numbers of the form \(z = x + \iota y\quad x, y \in \real\) with \(\iota^2 = \iota q + p\quad p, q \in \real\). However, in this case \(p = 1\) and \(q = 0\), as will become clear later in the discussion about hyperbolic numbers.}
+\paragraph{Remark} A possible workaround for this problem from a mathematical perspective can be found in the so-called \emph{generalized trigonometry} as described by \citet{Harkin2004}: in this case, the notion of the hyperbolic angle itself is considered ambiguous and must be accompanied by the branch of the hyperbola that is associated with the angle. In this case, four hyperbolic branches are considered, so both branches of \(x^2 - y^2 = K^2\) combined with \(y^2 - x^2 = K^2\) which were disregarded up till now.\footnote{In fact, \citeauthor{Harkin2004} provide an even more general treatment, covering so-called generalized complex numbers of the form \(z = x + \iota y\quad x, y \in \real\) with \(\iota^2 = \iota q + p\quad p, q \in \real\). However, in this case \(p = 1\) and \(q = 0\), as will become clear later in the discussion about hyperbolic numbers.}
 \begin{equation}
     \zeta = 
     \begin{cases}
@@ -128,7 +128,7 @@ Or, alternatively, via the definition of the hyperbolic functions
         \sinh(x) &\triangleq \frac{\exp(x) - \exp(-x)}{2}
     \end{split}
 \end{equation}
-As such, the hyperbolic functions allow to find the associated capital and yield for a given accumulated interest $\zeta$ and initial investment $K$.
+As such, the hyperbolic functions allow finding the associated capital and yield for a given accumulated interest $\zeta$ and initial investment $K$.
 
 Clearly, the \(\cosh\) and \(\sinh\) functions are constructed by isolating the even or the odd powers respectively from the Taylor expansion of the exponential. \Cref{eq:hyperbolic_identity} bears some resemblance to Euler's formula \(\exp(\ii x) = \cos(x) + \ii \sin(x)\); as described by \citet{Needham1997}, this connection can be generalized by recognizing that
 \begin{equation}
@@ -142,7 +142,7 @@ To make \cref{eq:trig_functions} more visual, the hyperbolic and trigonometric f
 \begin{figure}
     \centering
     \input{media/tikz/complex_sine}
-    \caption{Modular surface of the sine over the complex plane, embedding all the trigonometric and hyperbolic functions at specific cross-sections.}
+    \caption{The modular surface of the sine over the complex plane, embedding all the trigonometric and hyperbolic functions at specific cross-sections.}
     \label{fig:modular_sine}
 \end{figure}
 
@@ -150,9 +150,9 @@ To make \cref{eq:trig_functions} more visual, the hyperbolic and trigonometric f
 \label{sec:rotational_analogy}
 It has now been established that investments can be represented using (hyperbolic) angles. Since economic engineering attempts to find analogies between traditional engineering disciplines and economics, the rotational nature of investments is a strong motivation to make the connection with \emph{rotational mechanics} and the associated concepts of rotational kinetic energy, angular momentum, angular velocity, etc.
 
-Some aspects of the analogy are already apparent from the foregoing discussion: the \emph{angle} corresponds to the accumulated interest or return gained on an investment, while the \emph{arm} or radius is analogous to the principal of the investment. Likewise, the time derivative of the angle $\dot{\zeta}$ is the angular velocity, i.e. the interest rate, which may itself be time-varying.
+Some aspects of the analogy are already apparent from the foregoing discussion: the \emph{angle} corresponds to the accumulated interest or return gained on the investment, while the \emph{arm} or radius is analogous to the principal of the investment. Likewise, the time derivative of the angle $\dot{\zeta}$ is the angular velocity, i.e. the interest rate, which may itself be time-varying.
 
-The current interpretation in economic engineering is that credit corresponds to angular momentum. One reason for this is that the units of angular momentum are [\si{\newton \meter \second}], in economic engineering this would be units of currency [\$]. Furthermore, the analogy can be supported by means of the Lagrangian as well, similar to the reasoning in \cref{chap:ee} connecting prices and momentum. If one assumes that the rotational kinetic energy is the `market surplus' gained from borrowing or lending money (or investing in general) based on a certain return rate $\dot{\zeta}$, the conjugate momentum of this form of kinetic energy is necessarily the angular momentum. In the case of investments, market surplus is associated with a new type of elasticity that relates the amount invested $L$ with the return rate $\dot{\zeta}$, similar to the supply/demand curves for `regular' goods and services. In economics, this is called the \emph{curve of loanable funds}. Therefore, the `borrower' or `investor surplus' is well-defined: it is related to how much more the current return (or how much less the current interest) is than the minimal interest for which one is willing to invest or borrow. From this definition, the angular momentum must be analogous to the amount of funds invested (or borrowed); being the partial derivative of this `market surplus' with respect to the return. 
+The current interpretation in economic engineering is that credit corresponds to angular momentum. One reason for this is that the units of angular momentum are [\si{\newton \meter \second}], in economic engineering, this would be units of currency [\$]. Furthermore, the analogy can be supported by means of the Lagrangian as well, similar to the reasoning in \cref{chap:ee} connecting prices and momentum. If one assumes that the rotational kinetic energy is the `market surplus' gained from borrowing or lending money (or investing in general) based on a certain return rate $\dot{\zeta}$, the conjugate momentum of this form of kinetic energy is necessarily the angular momentum. In the case of investments, the market surplus is associated with a new type of elasticity that relates the amount invested $L$ with the return rate $\dot{\zeta}$, similar to the supply/demand curves for `regular' goods and services. In economics, this is called the \emph{curve of loanable funds}. Therefore, the `borrower' or `investor surplus' is well-defined: it is related to how much more the current return (or how much less the current interest) is than the minimal interest for which one is willing to invest or borrow. From this definition, the angular momentum must be analogous to the number of funds invested (or borrowed); being the partial derivative of this `market surplus' with respect to the return. 
 \begin{table}[h]
     \centering
     \caption{Overview of the analogies between rotational mechanics and economic engineering.}
@@ -174,7 +174,7 @@ The current interpretation in economic engineering is that credit corresponds to
 \begin{itemize}
     \item Currently, the difference between the arm (initial investment) and the angular momentum (credit) is not entirely clear.
     \item The sign of the interest rate does not determine the sign (i.e. direction) of the angular momentum; the former has to do with either discounting/appreciation while the latter denotes the direction of the contract (e.g. debit vs. credit).
-    \item The interpretation of the elasticity as the mass moment of inertia (because it determines the relation between the amount of credit and the interest rate) has not been consistently applied. In the past, the mass moment of inertia has been put on equal footing with the \emph{duration} of a financial contract, but more recent works have pointed out that duration is a part of valuation and is therefore associated with frequency domain analysis \cite{Krabbenborg2021}.
+    \item The interpretation of the elasticity as the mass moment of inertia (because it determines the relation between the amount of credit and the interest rate) has not been consistently applied. In the past, the mass moment of inertia has been put on equal footing with the \emph{duration} of a financial contract, but more recent works have pointed out that duration is a part of the valuation and is therefore associated with frequency domain analysis \cite{Krabbenborg2021}.
 \end{itemize}
 The resolution of these problems is one of the main goals of this research.
 
@@ -191,7 +191,7 @@ If investments are represented in the capital-yield plane, they are accompanied 
      \vec{u} \bullet \vec{v} = u_1v_1 - u_2v_2 - \ldots - u_nv_n.
 \]
 \end{thmblock}
-The Lorentz product is an inner product, which means that it takes two elements from a vector space and returns a scalar value, while satisfying two (or three) conditions: (1) bilinearity, (2) symmetry and (3) nondegeneracy \cite{Ratcliffe2019}.
+The Lorentz product is an inner product, which means that it takes two elements from a vector space and returns a scalar value, while satisfying two (or three) conditions: (i) bilinearity, (ii) symmetry, and (iii) nondegeneracy \cite{Ratcliffe2019}.
 
 In some literature, the condition of nondegeneracy is replaced by a stronger notion of positive definiteness, which means that an inner product of a vector with itself is always nonnegative and zero if and only if the vector is the zero vector. However, this condition does not apply to the Lorentz product --- this fact has rather far-reaching ramifications, as will become clear with the next definition. 
 
@@ -199,13 +199,13 @@ Based on the Lorentz inner product it is natural to define also a corresponding 
     \[
      \lnorm{\vec{v}} = \qty(\vec{v}\bullet\vec{v})^\frac{1}{2}
 \]
-Because the Lorentz product is not positive definite but rather indefinite, the result of \(\vec{v}\bullet\vec{v}\) is not guaranteed to be a positive number. As such, \(\lnorm{\vec{v}} \in \complex\), in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a nonnegative real number.
+Because the Lorentz product is not positive definite but rather indefinite, the result of \(\vec{v}\bullet\vec{v}\) is not guaranteed to be a positive number. As such, \(\lnorm{\vec{v}} \in \complex\), in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a non-negative real number.
 
 The norm provides a notion of length for a vector. Based on this length, a \emph{metric} yields a distance between two points, i.e. the distance between \(\vec{u}\) and \(\vec{v}\) is equal to 
 \[
      d_L(\vec{v}, \vec{u}) \triangleq \lnorm{\vec{v} - \vec{u}}
 \] 
-Because the norm is not positive definite but `only' nondegenerate, it is called a \emph{pseudo-Euclidean metric}, and the vector space it is associated with a \emph{pseudo-Euclidean space}. A vector space equipped with this pseudometric (in more general terms, a bilinear nondegenerate form) is called a Lorentz space. The particular case for \(\real^4\) sets the stage for the theory of special relativity (with one `special' dimension for time and three spatial dimensions) and is called the Minkowski space, after the German physicist Hermann Minkowski \cite{Catoni2008}. Sometimes the two-dimensional plane that is discovered here is also called the Minkowski plane, because this is what he used to explain his ideas, being unable to draw anything like four-dimensional space. However, this text will adhere to the more mathematically inclined tradition and call it `Lorentz(ian) space' which applies for any dimension larger than one \cite{Ratcliffe2019}. The theory of special relativity, and especially the role of the Lorentz metric will be discussed in \cref{chap:relativity}.
+Because the norm is not positive definite but `only' nondegenerate, it is called a \emph{pseudo-Euclidean metric}, and the vector space it is associated with a \emph{pseudo-Euclidean space}. A vector space equipped with this pseudometric (in more general terms, a bilinear nondegenerate form) is called a Lorentz space. The particular case for \(\real^4\) sets the stage for the theory of special relativity (with one `special' dimension for time and three spatial dimensions) and is called the Minkowski space, after the German physicist Hermann Minkowski \cite{Catoni2008}. Sometimes the two-dimensional plane that is discovered here is also called the Minkowski plane, because this is what he used to explain his ideas, being unable to draw anything like four-dimensional space. However, this text will adhere to the more mathematically inclined tradition and call it `Lorentz(ian) space' which applies to any dimension larger than one \cite{Ratcliffe2019}. The theory of special relativity, and especially the role of the Lorentz metric will be discussed in \cref{chap:relativity}.
 
 The sign of the Lorentz norm gives rise to an equivalence relation \(\sim_L\) defined to be \(a \sim_L b \iff \sgn{\norm{a}} = \sgn{\norm{b}}\).\footnote{An equivalence relation is a binary relation that is symmetric, reflexive and transitive.} Therefore, the quotient set of all the points in the plane \(\real / \sim_L \) contains three elements \(\qty{-1, 0, 1}\), these equivalence classes are given the respective names \(\qty{\text{\texttt{spacelike}},\, \text{\texttt{lightlike}},\, \text{\texttt{timelike}}}\) based on the terminology from special relativity \cite{Landau1971}. The difference between timelike, spacelike and lightlike vectors is illustrated in \cref{fig:lightlike_spacelike}.
 
@@ -215,11 +215,11 @@ The sign of the Lorentz norm gives rise to an equivalence relation \(\sim_L\) de
     \caption{Overview of the three `types' of vectors in the Lorentz-Minkowski plane: spacelike (\(\lnorm{\vec{v}} < 0\)), lightlike (\(\lnorm{\vec{v}} = 0\)) and timelike (\(\lnorm{\vec{v}} > 0\)). The lines \(y = x\) and \(y = -x\) containing all the lightlike vectors form the so-called light cone or null cone. The hyperbola of in the spacelike region (dark gray) obey the equation \(y^2 - x^2 = K^2\), they will be referred to the hyperbolic branches II (\(y > 0\)) and IV (\(y < 0\)). In contrast, the timelike hyperbolic branches with equation \(x^2 - y^2 = K^2\) (light gray region) are referred to as I (\(x > 0\)) and III (\(x < 0\)).}
     \label{fig:lightlike_spacelike}
 \end{figure}
-The financial interpretation of the lightlike vectors are all the capital-yield combinations that are attainable, which is why spacelike vectors are fictitious in this regard if only the action of compound interest is considered. However, when one looks at velocities in this vector space; i.e. how fast a position vector is changing, the velocity vector can be spacelike due to capital injections that change the `arm' of the investment. 
+The financial interpretation of the lightlike vectors is all the capital-yield combinations that are attainable, which is why spacelike vectors are fictitious in this regard if only the action of compound interest is considered. However, when one looks at velocities in this vector space; i.e. how fast a position vector is changing, the velocity vector can be spacelike due to capital injections that change the `arm' of the investment. 
 
 \section{Hyperbolic numbers}
 \label{sec:hyperbolic_numbers}
-An alternative way way to view hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, \(\jj\) will be used, though in literature also \(\mathrm{u}\) (for unipotent) and \(\mathrm{h}\) (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit \(\jj\) with the defining unipotence property \(\jj^2 = 1\), where \(\jj \notin \real\). Like complex numbers, the hyperbolic numbers can have a real and a hyperbolic part
+An alternative way to view hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, \(\jj\) will be used, though in literature also \(\mathrm{u}\) (for unipotent) and \(\mathrm{h}\) (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit \(\jj\) with the defining unipotence property \(\jj^2 = 1\), where \(\jj \notin \real\). Like complex numbers, hyperbolic numbers can have a real and a hyperbolic part
 \[
      z = x + y\jj \quad x, y \in \real.
 \]
@@ -233,7 +233,7 @@ However, in contrast to complex numbers (whose quadratic form would be \(x^2 + y
 \[
      \abs{z} \triangleq \sqrt{\abs{zz^*}}
 \]
-which considered to be the hyperbolic distance from \(z\) to the origin \cite{Sobczyk1995}.
+which is considered to be the hyperbolic distance from \(z\) to the origin \cite{Sobczyk1995}.
 
 Again, in correspondence with complex numbers, the hyperbolic numbers also have a  \emph{polar form}, i.e.
 \[
@@ -255,24 +255,24 @@ Furthermore, consider the \emph{conjugate product} of two hyperbolic numbers \(z
 \]
 of the resulting expression, the real part is called the inner product and the hyperbolic part the outer product. The inner product is equivalent to the Lorentz product while the outer product yields the directed area of the parallelogram spanned by \(z_1\) and \(z_2\) (or the determinant of \(\mqty(x_1 & x_2\\y_1&y_2)\). The outer product is the same as for regular complex numbers, while the inner product recovers the Lorentz inner product instead of the Euclidean inner product. This is why one can say that the hyperbolic number plane and the complex plane have an identical notion of area. Based on the inner product, one can recognize a different notion of orthogonality, i.e. \(z_1\) and \(z_2\) are \emph{hyperbolically orthogonal} if their hyperbolic inner product equals zero \cite{Needham1997, Sobczyk1995}.
 
-The inner and outer product both have their financial interpretations: the inner product is related to the hyperbolic distance between two hyperbolic vectors, just like the Lorentz product in the previous section. The outer product is akin to the cross product, and is therefore used to rigorously define angular momentum in the Lorentzian space, which is an important component of the the economic engineering analogy.
+The inner and outer product both have their financial interpretations: the inner product is related to the hyperbolic distance between two hyperbolic vectors, just like the Lorentz product in the previous section. The outer product is akin to the cross product, and is therefore used to rigorously define angular momentum in the Lorentzian space, which is an important component of the economic engineering analogy.
 
 \subsection{Matrix representation}
 For many algebraic structures (groups, rings, fields, ...) an isomorphism can be found in the realm of linear algebra, by identifying a specific class of matrices. For example, the complex number system \(a + b\ii\) is isomorphic to the matrices
 \[
      \mqty(a & -b \\ b & a) \quad a, b \in \real.
 \]
-Likewise, one can establish an isomorphism between the hyperbolic numbers and a certain class of matrices. The hyperbolic number system defined with addition and multiplication defined on it are ring-isomorphic to the matrix ring
+Likewise, one can establish an isomorphism between the hyperbolic numbers and a certain class of matrices. The hyperbolic number system defined with addition and multiplication defined on it is ring-isomorphic to the matrix ring
 \[
      \mqty(X & Y \\ Y & X) \quad X, Y \in \real,
 \]
-under matrix addition and matrix multiplication. The determinant of said matrix then recovers the Lorentz metric
+under matrix addition and matrix multiplication. The determinant of the said matrix then recovers the Lorentz metric
 \[
      \det \mqty(X & Y \\ Y & X) = X^2 - Y^2.
 \]
 
 \subsection{The idempotent basis}
-Previously it was already mentioned that the hyperbola can be viewed conveniently in two particular axis systems, the standard axis system and the idempotent axis system, differing by a \ang{45} rotation. This basis can also be defined in terms of hyperbolic numbers; in terms of the standard basis \(\qty{1, \jj}\) the idempotent basis is \(\qty{\jjp, \jjm}\) with 
+Previously it was already mentioned that the hyperbola can be viewed conveniently in two particular axis systems, the standard axis system, and the idempotent axis system, differing by a \ang{45} rotation. This basis can also be defined in terms of hyperbolic numbers; in terms of the standard basis \(\qty{1, \jj}\) the idempotent basis is \(\qty{\jjp, \jjm}\) with 
 \[
      \jjp = \frac{1}{2}(1 + \jj) \qquad \jjm = \frac{1}{2}(1 - \jj)
 \]
