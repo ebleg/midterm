@@ -224,12 +224,7 @@ In the case of potential energy, the familiar equation really \emph{is} the one 
     \caption{The distinction between potential energy and co-energy in terms of the relation between force and displacement. Figure courtesy of B. \citet{Krabbenborg2021}.}
     \label{fig:potential_energy}
 \end{figure}
-The solution of the simple mass-spring system is a sinusoid that continues indefinitely in time. These `perfect' sinusoids are not often encountered in real economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex interconnected nature of society. This makes the theoretical achievement that are the basic foundations of economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path-dependent forces in the system. These forces dissipate energy and are always present in reality, both in mechanics and economics; they will be the subject of the next section. 
-
-\subsection{Energy dissipation}
-\begin{econ}{Dissipative energy}
-    Foo bar
-\end{econ}
+The solution of the simple mass-spring system is a sinusoid that continues indefinitely in time. These `perfect' sinusoids are not often encountered in real economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex interconnected nature of society. This makes the theoretical achievement that are the basic foundations of economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path-dependent forces in the system. 
 
 \section{Hamiltonian mechanics}
 
@@ -275,12 +270,28 @@ In mechanics, the Hamiltonian corresponding to $\lag = \ecokin - \epot$, and whe
 \begin{equation}
     \ham = \ekin + \epot,
 \end{equation}
-that is, it is equal to the \emph{total mechanical energy in the system}. A vital property of the Hamiltonian is that of its time (in)dependence, t
+which means that $\ham$ is equal to the \emph{total mechanical energy in the system}. A vital property of the Hamiltonian is that of its time (in)dependence, namely:
+$$ 
+\dv{\ham}{t} = \underbrace{\pdv{\ham}{\gpos}\dv{\gpos}{t} + \pdv{\ham}{\gmom}\dv{\gmom}{t}}_{=0} + \pdv{\ham}{t} \implies \dv{\ham}{t} = \pdv{\ham}{t},
+$$
+that is, the Hamiltonian is only time-varying if it features an explicit time-dependence. The vanishing of the first two terms is a direct consequence of Hamilton's equations. This property leads directly to the conservation of (mechanical) energy in time-invariant systems.
+
+Whereas Lagrangian mechanics acts on the tangent bundle of the configuration manifold, Hamiltonian mechanics takes place in the \emph{cotangent bundle} $T^*M$, for it is expressed in terms of the momenta rather than the generalized velocities. The generalized momenta live in the cotangent space at a certaint point of the configuration manifold because they are the differential of a scalar function (the Lagrangian) on the manifold. The cotangent bundle is a vector bundle and thus a manifold in its own right; here the base manifold of the cotangent bundle is the configuration manifold $M$, the fibers are the cotangent space for each point. A natural 1-form can be defined on this cotangent bundle that exploits the distinction between the base manifold and the fibers; namely a 1-form on the co-tangent bundle that is `equivalent' to the covector in the cotangent space. The action of this natural 1-form, which is called the \emph{tautological 1-form} on a tangent vector to the cotangent bundle is equal to the action of the covector on this tangent vector \emph{under the pushforward of the projection map}. That is, if $\pi: T^*M \to M$ is the projection map, $\vec{\xi} \in T(T^*M)$ is a tangent vector to the cotangent bundle, and $m$ is an element of the cotangent bundle, the tautological 1-form $\omega^1$ is defined by \cite{Arnold1989,Abraham1978}
+$$ \omega^1 = m\circ\pi_* \;\text{or}\; \omega^1(\vec{\xi}) = m(\pi_*(\vec{\xi})).  $$
+In classical mechanics, $\omega^1$ is also named the \emph{Poincaré 1-form} or \emph{canonical 1-form}. The tautological 1-form can be expressed in canonical coordinates as follows:
+$$ \omega^1 = \gmom\dd{\gpos}, $$
+it is therefore a mathematical object that associates each component of the generalized momentum with the generalized position; said otherwise, it can be seen as the fundamental connection between Hamiltonian and Lagrangian mechanics.
 
 \subsubsection{The canonical formalism}
 One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may no longer just pertain to a `spatial' component and a `momentum' component, this distinction will then just be a matter of definition.} \cite{Landau1960}.
 
 Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1960}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
+
+\begin{thmblock}{Poisson brackets}
+    The \emph{Poisson bracket} $\poisson{E}{F}$ of functions $E$ and $F$ given on a symplectic manifold $(M^{2n}, \omega^2)$ is the derivative of the function $F$ in the direction of the phase flow with hamiltonian flow $H$:
+        $$ \poisson{E}{F}(x) = \left. \dv{}{t}\right|_{t = 0} F(g^t_H(x)) $$ 
+    where $g$ is the one-parameter group of canonical transformations of the manifold $M^{2n}$. The Poisson bracket is skew-symmetric and bilinear.
+\end{thmblock}
 
 \subsubsection{Action-angle coordinates}
 \towrite{TODO}
