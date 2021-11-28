@@ -55,7 +55,7 @@ Unfortunately, the pursuit of finding a set of these all-encompassing generalize
     \label{fig:conf_mnfold}
 \end{figure}
 
-\begin{econ}{Configuration manifold and the economic system}
+\begin{econ}{The configuration manifold and the economic system}
     In economic engineering, \(\gpos\) has a similar intuitive notion, namely the stock values of various products, which denote the `position' of some economic system. The name `position' may be misleading when intuitively ported to the familiar three-dimensional space; the configuration space usually has less structure such as the absence of a metric or inner product.\\
 
     Just like in mechanics, the simplest shape the configuration manifold $M$ can take is a simple $n$-dimensional vector space, but more sophisticated cases exist as well. As mentioned, a nontrivial configuration manifold is usually the result of holonomic constraints applied to the system; these constraints have their meaning in economics too.
@@ -179,6 +179,7 @@ $$ \text{kinetic energy } \ekin = \int \frac{p}{m}\dd{p} = \frac{p^2}{2m}\qquad
     \begin{quote}
         \textbf{Price is analogous to momentum.}
     \end{quote}
+    In this analogy, the `mass' plays the role of the market (in)elasticity, or the slope of the supply/demand line. Some generalizations are in order with respect to the classical notion of mass in mechanics. First of all, the elasticity is allowed to depend on the stock level, which is very common in economics (scarcity affects the supply and demand lines). Secondly, the product space (configuration manifold) is generally far from isotropic, i.e. mass is direction-dependent. This seems far from realistic for mechanical systems, but when one generalizes `mass' to the mass matrix found in the linearization of nonlinear mechanical systems, both position dependence and anisotropy are frequently encountered (e.g. double pendulum).
 \end{econ}
 
 \begin{figure}[ht]
@@ -254,6 +255,8 @@ The Legendre transform is involutive; that is, the $\ham$ and $\lag$ are the Leg
 
 \begin{econ}{The Legendre transform in economics}
     In economics, the Lagrangian measures the exchange between market surplus and convenience yield. This exchange has the units of $\qty[\frac{\$}{\text{yr}}]$, and is in economic engineering sometimes named `cost' for short, although a definition in terms of utility would probably be more appropriate. The term $\gmom\gvel$ has a very clear interpretation in economics: it is the \emph{revenue} associated with the flow of goods and their prices. The Legendre transform then maximizes the difference between revenue and the Lagrangian `cost' with respect to the number of goods exchanged; $\gvel$. The optimality is guaranteed by the price representing the change of utility with respect to a change in the flow of goods.
+
+    Because the Hamiltonian is equal to a difference between revenue and costs, its said to be analogous to earnings.
 \end{econ}
 
 \subsection{Hamilton's equations}
@@ -276,25 +279,70 @@ $$
 $$
 that is, the Hamiltonian is only time-varying if it features an explicit time-dependence. The vanishing of the first two terms is a direct consequence of Hamilton's equations. This property leads directly to the conservation of (mechanical) energy in time-invariant systems.
 
-Whereas Lagrangian mechanics acts on the tangent bundle of the configuration manifold, Hamiltonian mechanics takes place in the \emph{cotangent bundle} $T^*M$, for it is expressed in terms of the momenta rather than the generalized velocities. The generalized momenta live in the cotangent space at a certaint point of the configuration manifold because they are the differential of a scalar function (the Lagrangian) on the manifold. The cotangent bundle is a vector bundle and thus a manifold in its own right; here the base manifold of the cotangent bundle is the configuration manifold $M$, the fibers are the cotangent space for each point. A natural 1-form can be defined on this cotangent bundle that exploits the distinction between the base manifold and the fibers; namely a 1-form on the co-tangent bundle that is `equivalent' to the covector in the cotangent space. The action of this natural 1-form, which is called the \emph{tautological 1-form} on a tangent vector to the cotangent bundle is equal to the action of the covector on this tangent vector \emph{under the pushforward of the projection map}. That is, if $\pi: T^*M \to M$ is the projection map, $\vec{\xi} \in T(T^*M)$ is a tangent vector to the cotangent bundle, and $m$ is an element of the cotangent bundle, the tautological 1-form $\omega^1$ is defined by \cite{Arnold1989,Abraham1978}
-$$ \omega^1 = m\circ\pi_* \;\text{or}\; \omega^1(\vec{\xi}) = m(\pi_*(\vec{\xi})).  $$
-In classical mechanics, $\omega^1$ is also named the \emph{Poincaré 1-form} or \emph{canonical 1-form}. The tautological 1-form can be expressed in canonical coordinates as follows:
+Whereas Lagrangian mechanics acts on the tangent bundle of the configuration manifold, Hamiltonian mechanics takes place in the \emph{cotangent bundle} $T^*M$, for it is expressed in terms of the momenta rather than the generalized velocities. The generalized momenta live in the cotangent space at a certaint point of the configuration manifold because they are the differential of a scalar function (the Lagrangian) on the manifold. The cotangent bundle is a vector bundle and thus a manifold in its own right; here the base manifold of the cotangent bundle is the configuration manifold $M$, the fibers are the cotangent space for each point. A natural 1-form can be defined on this cotangent bundle that exploits the distinction between the base manifold and the fibers; namely a 1-form on the co-tangent bundle that is `equivalent' to the covector in the cotangent space (with respect to their action on the tangent vector to the cotangent bundle and configuration manifold respectively). The action of this natural 1-form, which is called the \emph{tautological 1-form}, on a tangent vector to the cotangent bundle is equal to the action of the covector on this tangent vector \emph{under the pushforward of the projection map}. That is, if $\pi: T^*M \to M$ is the projection map, $\vec{\xi} \in T(T^*M)$ is a tangent vector to the cotangent bundle, and $m$ is an element of the cotangent bundle, the tautological 1-form $\omega^1$ is defined by \cite{Arnold1989,Abraham1978}
+$$ \omega^1 = m\circ\pi_* \quad\text{or}\quad \omega^1(\vec{\xi}) = m(\pi_*(\vec{\xi})).  $$
+In classical mechanics, $\omega^1$ is also named the \emph{Poincaré 1-form} or \emph{canonical 1-form}. The Poincaré 1-form can be expressed in canonical coordinates as follows:
 $$ \omega^1 = \gmom\dd{\gpos}, $$
-it is therefore a mathematical object that associates each component of the generalized momentum with the generalized position; said otherwise, it can be seen as the fundamental connection between Hamiltonian and Lagrangian mechanics.
+it is therefore a mathematical object that associates each component of the generalized momentum with the generalized position, and thus provides a fundamental connection between Hamiltonian and Lagrangian mechanics.
+
+The exterior derivative of the Poincaré 1-form is a closed 2-form that is called the \emph{symplectic form};
+$$ \omega^2 = \dd{\omega^1}.$$
+In the given coordinates $\vec{q}$ and $\vec{p}$, the symplectic form is 
+$$ \omega^2 = \dd{\vec{p}}\wedge\dd{\vec{q}}; $$
+which makes the cotangent bundle $T^*M$ a symplectic manifold. The symplectic 2-form plays a similar role in symplectic geometry as the Riemannian metric does in Riemannian geometry; for example, by providing an isomorphism between the tangent and cotangent vectors. This isomorphism can be used to define the \emph{Hamiltonian vector field} \cite{Arnold1989}.
+\begin{thmblock}{Hamiltonian vector field}
+    Let $\ham$ be a function on a $2n$-dimensional symplectic manifold $(Q, \omega^2)$. The symplectic 2-form defined on $Q$ provides an isomorphism $I$ between its tangent and cotangent vectors, such that $\omega^2(\vec{\eta}, \vec{\xi}) = \omega^1_{\vec{\xi}}(\vec{\eta})$.  The vector field $I\dd{\ham}$ is called a Hamiltonian vector field, with $\ham$ being the hamiltonian function.
+\end{thmblock}
+A crucial property of the Hamiltonian vector field (and the corresponding Hamiltonian flow) is that it preserves the symplectic structure: \cite{Arnold1989}
+$$ (g^t)^* \omega^2  = \omega^2, $$
+i.e. where $(g^t)^*$ represents the pullback of the one-parameter group of diffeomorphisms of $Q$ that are governed by the Hamiltonian flow. Hence, the symplectic form is an integral invariant of the phase flow of the Hamiltonian system.  
+
+\begin{econ}{The symplectic nature of economics}
+    The preceding discussion presents the existence symplectic 2-form as a consequence of the phase space being the cotangent bundle of the configuration manifold. In economics, the existence of the symplectic structure is even more intuitive --- one could even argue that economics is evidently symplectic in the first place, and that the connection with classical mechanics is a consequence of this idea. If one asserts that the economy as a system `takes place' in the necessarily even-dimensional space of products and their prices, then there is only one, natural structure in economics that ties them together: the concept of money. More specifically, multiplying a number of products with their respective price allows one to `compare': this is precisely the role of money as the \emph{unit of account}, as stated by \citet{Mankiw2017}. Said otherwise, the area of the phase plane gives the economic space its defining structure, which in turn gives rise to the canonical 2-form $\dd{\vec{p}} \wedge \dd{\vec{q}}$. The area is signed because money is also `signed' from the perspective of an economic agent.
+
+    The canonical 2-form is only symplectic if it obeys two additional requirements: it mus be closed and nondegenerate. Both requirements translate easily to economics:
+    \begin{itemize}
+        \item \emph{Closed} means that the exterior derivative of the canonical 2-form is equal to zero. Crudely speaking, one could say that the exterior derivative is the `divergence' of the economic phase flow. If this divergence is zero, than the economic phase flow is incompressible with money being the notion of volume. Intuitively, this means that the 'value' of money is consistent throughout the phase flow. This makes sense from an economic perspective, for money wouldn't be very good as a unit of account if its value were inconsistent. Of course, some objections can be made, such as the existence of different currencies and inflation, but it is argued that these are not fundamental enough to violate this elementary principle. 
+        \item \emph{Nondegenerate} means that there is no product for which any price is necessarily 0, i.e. nothing is inherently `free' in economics. Again, this is a reasonable (and even fundamental) assumption for an economic system.
+    \end{itemize}
+    Hence, the economic space of prices and products naturally exhibits a symplectic structure. This can be further supported by the fact that another type of structure for this space, say a Riemannian structure (e.g. something like $\dd{p}^2 + \dd{q}^2$), would make much less sense as it does not capture the role of money as means to compare and exchange goods of different nature.
+    
+    The reason why one can make the additional connection with classical mechanics is that the price-product space is a cotangent bundle. This in turn is motivated by the additional observation that the prices are the partial derivative of a products' utility with respect to its transaction rate, i.e. $\gmom = \pdv{\lag}{\gvel}$, i.e. the prices live in the fibers attached to the configuration manifold. Finally, there are the \emph{additional} assumptions about the form of the Lagrangian and Hamiltonian; i.e. that they can be used in the same form as those in classical mechanics ($\lag = \ecokin - \epot$, $\ham = \ekin + \epot$). Although the previous sections motivate that this is indeed a sensible thing to do, they are essentially additional assumptions on top of the symplectic structure and the nature of price. 
+\end{econ}
 
 \subsubsection{The canonical formalism}
-One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. Of course, any selection of the generalized coordinates that parameterizes the admissible motions of the system is equally valid, the generalized velocities are inherently tied to the choice of these coordinates. In Hamiltonian mechanics, the \(p\) and \(q\) coordinates can be chosen completely independent of each other, which is why a larger class of transformations is allowed\footnote{Due to the large variety of transformations, the coordinates for \(q\) and \(p\) may no longer just pertain to a `spatial' component and a `momentum' component, this distinction will then just be a matter of definition.} \cite{Landau1960}.
+%The Hamiltonian functions on a symplectic manifold form a Lie algebra where the \emph{Poisson bracket of functions} plays the role of the Lie bracket / commutator operation.
+%\begin{thmblock}{Poisson brackets}
+%    The Poisson bracket of the functions $F$ and $H$ is equal to the skew-scalar product of the velocity vectors of the phase flows with Hamiltonian functions $H$ and $F$
+%    $$ \poisson{F}{H} = \omega^2(I\dd{H}, I\dd{F}). $$
+%    In canonical coordinates, the Poisson bracket takes the form:
+%    $$ \poisson{F}{H} = \pdv{H}{\gmom}\pdv{F}{\gpos} - \pdv{H}{\gpos}\pdv{F}{\gmom}.$$
+%    The Poisson bracket is skew-symmetric bilinear and satisfies the Jacobi identity:
+%    $$ \poisson{\poisson{A}{B}}{C} + \poisson{\poisson{B}{C}}{A} + \poisson{\poisson{C}{A}}{B} = 0 $$
+%    with $A$, $B$, $C$ functions.
+%\end{thmblock}
+%The Poisson brackets allow easy notation for various properties of the Hamiltonian system. For example, Hamilton's equations can be expressed as:
+%    $$ \gvel = \poisson{\gpos}{\ham} = \pdv{\ham}{\gmom} \qquad \dot{\gmom} = \poisson{\gmom}{\ham} = -\pdv{\ham}{\gpos}.$$
+%Furthermore, a function $f$ is an integral of motion (a conserved quantity) if and only if its Poisson bracket with the Hamiltonian is zero:
+%$$ \poisson{f}{\ham} = 0. $$
+%Poisson brackets can be used to define the so-called \emph{canonical transformations}.
+One of the great advantages of Hamiltonian mechanics is that it admits a much wider range of coordinate transformations. The Lagrangian formalism already allowed point-transformations, which simply apply to the configuration manifold (i.e. a change in generalized coordinates), where the conjugate momenta transform according to the Legendre transform. However, in the phase space the transformations may apply both to the momenta as the positions. Due to this large variety of transformations, the coordinates for \(\gpos\) and \(\gmom\) may no longer just pertain to a `spatial' component and a `momentum' component, this distinction will then just be a matter of definition \cite{Landau1960}. The `allowed' class of coordinate transformations, called the \emph{canonical transformations}, preserve the symplectic form $\omega^2$ and thus the form of Hamilton's equations \cite{Arnold1989}; they are \emph{symplectomorphisms} of the phase space. There is a rich variety in canonical transformations that can be helpful to better understand or integrate Hamiltonian systems; but this text will focus on one particular type that has been studied in economic engineering in the past: the action-angle coordinates.
 
-Canonical transformations are transformations such that Hamilton's equations remain valid in the new coordinate system. As shown by \citet{Landau1960}, each canonical transformation is characterized by a \emph{generating function}. Poisson brackets are invariant with respect to canonical transformations.
+\paragraph{Action-angle coordinates} A special choice of canonical coordinates arises for conservative systems, called the \emph{action-angle coordinates}. These are pairs of coordinates of the form $(\vec{I}, \vec{\phi})$, where $\vec{I}$ consists of the action coordinate and $\vec{\phi}$ are the angle coordinates. The reason why this set of coordinates exist in the first place is found in  Liouville's theorem, which states that when a system with $n$ degrees of freedom has $n$ independent first integrals $\vec{F}$, then the level set of these first integrals is diffeomorphic to the the $n$-dimensional torus $\mathbb{T}^n$. This torus is then completely parameterized by the $n$ action variables, while the angle coordinates determine the position on the torus. The action coordinates are functions of these first integrals as to ensure that the action-angle coordinate set is symplectic, i.e. \cite{Arnold1989}
+$$ \omega^2 = \sum \dd{I_i} \wedge \dd{\phi_i}. $$
+The major advantage of this particular choice of coordinates is that the corresponding differential equations are very easy to integrate. The action coordinates are constant over time, while the angle coordinates are characterized by a constant `angular velocity' --- another consequence of Liouville's theorem is that these systems are necessarily periodic. The angular velocity vector $\vec{\omega}$ depends on the value of the first integrals $\vec{f}$. That is, \cite{Arnold1989}
+$$ \dv{\vec{I}}{t} = 0 \qquad \dv{\vec{\phi}}{t} = \vec{\omega}(\vec{f}) \implies \vec{\phi}(t) = \vec{\phi}(0) + \vec{\omega}t. $$
+In the case where the cotangent bundle is $\real^{2n}$ (which is often the case for the linearized systems in economic engineering), the angle coordinates may constructed as follows:
+\begin{equation}
+    I_i(\vec{f}) = \frac{1}{2\pic}\oint_{\gamma_i} \gmom\dd{\gpos},
+    \label{eq:action_coords}
+\end{equation}
+where $\gamma_1, \ldots, \gamma_n$ form a \emph{basis} for the one-dimensional cycles on the torus (that is, they each define a cycle in terms of one of the angle coordinates). This coordinate transformation can be shown to preserve the symplectic form.
 
-\begin{thmblock}{Poisson brackets}
-    The \emph{Poisson bracket} $\poisson{E}{F}$ of functions $E$ and $F$ given on a symplectic manifold $(M^{2n}, \omega^2)$ is the derivative of the function $F$ in the direction of the phase flow with hamiltonian flow $H$:
-        $$ \poisson{E}{F}(x) = \left. \dv{}{t}\right|_{t = 0} F(g^t_H(x)) $$ 
-    where $g$ is the one-parameter group of canonical transformations of the manifold $M^{2n}$. The Poisson bracket is skew-symmetric and bilinear.
-\end{thmblock}
+\begin{econ}{Action-angle coordinates and the business cycle}
+    Action-angle coordinates have been applied in past economic engineering research, most notably in the works of \citet{VanArdenne2020} and \citet{Vos2019}. Based on dimensional analysis, they have been used to model financial markets; however, it is the opinion of the author that this application is a bit \emph{ad hoc} and does not entirely respect the precise formal meaning of action-angle coordinates as outlined in this section. Rather, these coordinates can be used to express an economic system in terms of the `magnitude' of the business cycle, where the `angle' measures the phase of the business cycle (in Dutch, one would call this `\emph{conjunctuur}'). \Cref{eq:action_coords} essentially measures a total revenue over an entire business cycle, which has a characteristic frequency depending on the system parameters.
 
-\subsubsection{Action-angle coordinates}
-\towrite{TODO}
+\end{econ}
 
 \subsection{Noether's theorem}
 Conservation principles play a vital role in physics and mechanics. Notable examples are the conservation of energy, linear momentum, angular momentum and charge. A surprising result in physics is that all of the mentioned conservation laws are a consequence of the same theorem, attributed to Emmy Noether. This theorem essentially looks at the nature of the Lagrangian of the system, and sees whether it is `ignorant' with respect to a certain group of transformations. As defined by \citet{Arnold1989}, the theorem is as follows:
@@ -326,7 +374,6 @@ For example, a common assumption on Earth is that the gravitational force is con
 
 Conservation of angular momentum often appears in the presence of so-called \emph{central} force fields, which means that the potential energy is a function of the \emph{distance} from a certain point: notable examples are Coulomb forces or gravitational forces in celestial mechanics. Because only distance matters, the orientation of the displacement vector between the origin of the force field and the body is of no importance; it will not appear in the Lagrangian either. Consequently, Noether's theorem dictates that these central force fields preserve angular momentum.
 
-
 \begin{econ}{Noether's theorem and conservation in economics}
     Noether's theorem can be applied to economic systems as well. The most simple application is the conservation of prices in the absence of scarcity. When the utility Lagrangian does not depend on a certain stock level $q_i$, that essentially means that there is no utility associated with the possession (or shortage) of it; in other words, economic agents are not driven by scarcity (or abundance) of that particular product. The `conjugate momentum' of an economic good is its price; so \emph{in the absence of scarcity, price is conserved}.\\
     
@@ -336,5 +383,3 @@ Conservation of angular momentum often appears in the presence of so-called \emp
     
     Admittedly, all of these interpretations are arguably rather straightforward, since they mostly rely on either the presence of cyclic coordinates or the direct correspondence of total energy and energy of the system. However, the discussion does prove that Noether's theorem has very tangible interpretations in economics. Its real power will, though, appear with more sophisticated symmetries that are present in complex economic systems. The idea is that the Lagrangian and Noether's theorem permit the extraction of `stylized facts' from these types of systems that would otherwise be concealed by their complexity. 
 \end{econ}
-
-elem
