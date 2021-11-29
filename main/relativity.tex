@@ -65,7 +65,7 @@ which means that the argument of the hyperbolic rotation purely depends on the r
     \item Due to the multiplication factor in the transform, two points \(x_1\) and \(x_2\) are closer together when travelling at speed than when they are at rest. A length measured in a rest frame are called \emph{proper} \index{proper length}, and contracts when in a moving frame: this phenomenon is called \emph{Lorentz contraction} \index{Lorentz!contraction} \cite{Landau1971}.
     \item In contrast to Galilean transforms, Lorentz transforms are generally not commutative: just like regular three-dimensional rotations, they depend on the order in which they are applied.
 \end{itemize}
-\paragraph{Velocity transform} The Lorentz transform described by \cref{eq:lorentz_transform_hyp,,eq:lorentz_transform_sqrt} shows how to transform coordinates from one frame to another. However, because the transform affects both \(x\) and \(t\), a velocity measured in the frame (not to be confused with the relative velocity between the frames \(V\)) \(\vec{v}\) with components will see not only its \(x\)-component affected, but the other two components \(v_x\) and \(v_z\) as well. The transformation of \(\vec{v}\) to \(\vec{v}'\) is then: \cite{Landau1971}
+\paragraph{Velocity transform} The Lorentz transform described by \cref{eq:lorentz_transform_hyp,eq:lorentz_transform_sqrt} shows how to transform coordinates from one frame to another. However, because the transform affects both \(x\) and \(t\), a velocity measured in the frame (not to be confused with the relative velocity between the frames \(V\)) \(\vec{v}\) with components will see not only its \(x\)-component affected, but the other two components \(v_x\) and \(v_z\) as well. The transformation of \(\vec{v}\) to \(\vec{v}'\) is then: \cite{Landau1971}
 
 \begin{equation}
     v_x = \largefrac{v_x' + V}{\sqrt{1 - \qty(\frac{V}{c})^2}}\qquad 
@@ -99,3 +99,6 @@ u^0 = \largefrac{1}{\sqrt{1 - \qty(\frac{v}{c})^2}}
 \qquad  u^3 = \largefrac{v_z}{c\sqrt{1 - \qty(\frac{v}{c})^2}}
 \]
 which are all dimensionless quantities. Clearly, any four-velocity squared amounts to one; or \(u^i u_i = 1\). This is analogous to the statement that all four-velocities live on a four-dimensional \emph{unit hyperboloid} (due to the nature of the metric tensor); this means that the four-velocities \emph{do not} form a vector space; the sum of two four-velocities does not generally yield another four-velocity. Instead, four-velocities exhibit a special type of geometry called \emph{hyperbolic geometry}, an important concept to which \cref{chap:hyperbolic_geometry} is entirely devoted.
+
+\paragraph{The Lorentz group} All the Lorentz transformations form a Lie group called the Lorentz group $\text{Lor}$. When applied to the four-dimensional Lorentzian vector space, i.e. $\real^4$ equipped with the Lorentz product, they can be regarded as the special orthogonal group for this space.
+

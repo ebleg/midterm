@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+    \draw[thick, ->] (-3, 0) -- (3, 0) node[anchor=north] {$q$};
+    \draw[thick, ->] (0, -3) -- (0, 3) node[anchor=west] {$p$};
+    
+    \filldraw[decoration={markings, mark=at position 0.625 with {\arrow{<}}}, postaction={decorate}, very thick, draw=tudCyan, fill=tudCyan!40, fill opacity=0.8] (0, 0) ellipse (2 and 1.5);
+    
+    \draw[decoration={markings, mark=at position 0.625 with {\arrow{<}}}, postaction={decorate}, very thick, tudCyan] (0, 0) ellipse (2.4 and 1.9);
+    \draw[decoration={markings, mark=at position 0.625 with {\arrow{<}}}, postaction={decorate}, very thick, tudCyan] (0, 0) ellipse (2.8 and 2.3);
+    
+    \draw (1, 1) -- (2, 2) node[anchor = south west] {$\displaystyle \oint p\;\text{d} q$};
+\end{tikzpicture}

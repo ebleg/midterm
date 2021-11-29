@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=1.4]
+    \draw[->, thick] (-2, 0) -- (2, 0) node[anchor=south] {$q$};    
+    \draw[->, thick] (0, -2) -- (0, 2) node[anchor=west] {$p$};    
+    \fill[fill=tudCyan!50] (0, 0) -- (1.06, 1.06) arc (45:-45:1.5) -- cycle;
+    \fill[fill=accent2!50] (0, 0) -- (1.06, -1.06) arc (-45:-135:1.5) -- cycle;
+    \fill[fill=accent3!50] (0, 0) -- (-1.06, 1.06) arc (135:225:1.5) -- cycle;
+    \fill[fill=accent4!50] (0, 0) -- (1.06, 1.06) arc (45:135:1.5) -- cycle;
+    \draw[->, very thick, color=tudCyan] (1.06, 1.06) arc (45:-45:1.5);
+    \draw[->, very thick, color=accent2] (1.06, -1.06) arc (-45:-135:1.5);
+    \draw[<-, very thick, color=accent3] (-1.06, 1.06) arc (135:225:1.5);
+    \draw[<-, very thick, color=accent4] (1.06, 1.06) arc (45:135:1.5);
+    \node at (0, 0.8)  {\scriptsize{\textsf{BOOM}}};
+    \node at (0.8, 0)  {\scriptsize{\textsf{RECESSION}}};
+    \node at (0, -0.8) {\scriptsize{\textsf{DEPRESSION}}};
+    \node at (-0.8, 0) {\scriptsize{\textsf{EXPANSION}}};
+\end{tikzpicture}
