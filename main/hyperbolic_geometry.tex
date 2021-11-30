@@ -34,36 +34,39 @@ Perhaps one of the most remarkable results attributed to Carl Friedrich Gauss is
             f_{yx} & f_{yy}
     \end{pmatrix}.
 \]
-    Surface curvature can be approached more rigorously from the perspective of Riemannian geometry. The core concept behind Riemannian geometry are the eponymous manifolds: these are manifolds equipped with an positive definite inner product\footnote{In contrast to \cref{sec:lorentz_metric}, the positive definiteness of the inner product is essential for Riemannian geometry. When the inner product is not positive definite but nondegenerate, as the Lorentz product, the manifold is called \emph{pseudo-Riemannian}.} on their tangent space, hence providing a \emph{metric (tensor)} that allows to determine lengths, angles and curvature. The metric on a parametric surface \(\vec{r}(u, v)\) can be written in terms of the so-called \emph{first fundamental form}\footnote{Unfortunately, the first (and second) fundamental forms are not forms in the modern mathematical sense of the word; this terminology is merely inherited from older works \cite{Spivak1999b}.} $\firstff$, which is defined as the inner product of two tangent vectors to the surface  and is characterised by coefficients \lsymb{\(E\)}{First component of the first fundamental form}, \lsymb{\(F\)}{Second component of the first fundamental form} and \lsymb{\(G\)}{Third component of the first fundamental form}.
-\begin{equation}
-    \begin{split}
-        E &= \vec{r}_u \cdot \vec{r}_u \\
-        F &= \vec{r}_u \cdot \vec{r}_v \\
-        G &= \vec{r}_v \cdot \vec{r}_v \\
-        \text{with }  \vec{r}_u = & \pdv{\vec{r}}{u},\ \vec{r}_v = \pdv{\vec{r}}{v}.
-    \end{split}
-    \label{eq:first_fform}
-\end{equation}
-The components of the metric tensor \(\mathtens{g}\) then coincide with the components of the first fundamental form: \(g_{11} = E\), \(g_{12} = g_{21}= F\) and \(g_{22} = G\). Therefore, the first fundamental form determines the length of curves lying in the surface.
+    Surface curvature can be approached more rigorously from the perspective of Riemannian geometry. The core concept behind Riemannian geometry are the eponymous manifolds: these are manifolds equipped with an positive definite inner product\footnote{In contrast to \cref{sec:lorentz_metric}, the positive definiteness of the inner product is essential for Riemannian geometry. When the inner product is not positive definite but nondegenerate, as the Lorentz product, the manifold is called \emph{pseudo-Riemannian}.} on their tangent space, hence providing a \emph{metric (tensor)} that allows to determine lengths, angles and curvature. The metric on a parametric surface \(\vec{r}(u, v)\) can be written in terms of the so-called \emph{first fundamental form}\footnote{Unfortunately, the first (and second) fundamental forms are not forms in the modern mathematical sense of the word; this terminology is merely inherited from older works \cite{Spivak1999b}.} $\firstff$. 
+    
+    \begin{thmblock}{First fundamental form} 
+        The first fundamental form $\firstff$ of a surface parameterized by $\vec{r}$ is a (0, 2)-tensor defined as the inner product of two tangent vectors to the surface. It is characterized by three coefficients \lsymb{\(E\)}{First component of the first fundamental form}, \lsymb{\(F\)}{Second component of the first fundamental form} and \lsymb{\(G\)}{Third component of the first fundamental form}:
+        \begin{equation}
+                E = \inner{\vec{r}_u}{\vec{r}_u} \qquad F = \inner{\vec{r}_u}{\vec{r}_v} \qquad G = \inner{\vec{r}_v}{\vec{r}_v}\\
+            \label{eq:first_fform}
+        \end{equation}
+        with $\displaystyle\vec{r}_u = \pdv{\vec{r}}{u}$ and $\displaystyle\vec{r}_v = \pdv{\vec{r}}{v}$.
+    \end{thmblock}
+The components of the metric tensor \(\mathtens{g}\) coincide with the components of the first fundamental form: \(g_{11} = E\), \(g_{12} = g_{21}= F\) and \(g_{22} = G\). Therefore, the first fundamental form determines the length of curves lying in the surface.
 
-In contrast, the \emph{second fundamental form} $\secondff$ provides information on the curvature or shape of the embedded surface, more specifically the rate of change of the tangent planes in any direction. Again, it is characterised by three coefficients \lsymb{\(e\)}{First component of the second fundamental form}, \lsymb{\(f\)}{Second component of the second fundamental form} and \lsymb{\(g\)}{Third component of the second fundamental form} like so
-\[ e\dd{u}^2 + 2f\dd{u}\dd{v} + g\dd{v}^2. \]
-The coefficients of the second fundamental form can be computed using the surface unit normal vector 
-\begin{equation}
-    \vec{n} =  \frac{\vec{r}_u \cross \vec{r}_v}{\norm{\vec{r}_u \cross \vec{r}_v}},
-    \label{eq:unit_normal}
-\end{equation}
-the coefficients are then given by
-\begin{equation}
-    \begin{split}
-        e &= \vec{r}_{uu} \cdot \vec{n}\\
-        f &= \vec{r}_{uv} \cdot \vec{n}\\
-        g &= \vec{r}_{vv} \cdot \vec{n}\\
-        \text{with }\ & \vec{r}_{uu} = \pdv[2]{\vec{r}}{u}\ \text{ etc.}
-    \end{split}
-    \label{eq:second_fform}
-\end{equation}
-Finally, the first and second fundamental form can then be used to determine the Gaussian curvature of the parametric surface: \cite{ONeill2006, Spivak1999b}
+In contrast, the \emph{second fundamental form} $\secondff$ provides information on the curvature or shape of the embedded surface, more specifically the rate of change of the tangent planes in any direction. 
+
+\begin{thmblock}{Second fundamental form}
+    The second fundamental form $\secondff$, is a (0,2)-tensor that is defined by
+    $$ \secondff(v_p, w_p) = -\inner{\dd{\nu(v_p)}}{w_p}, $$
+    where $\dd{\nu}$ is called the \emph{Weingarten map} --- it is the differential of the Gauss map $\nu$ that assigns a unit vector to every point of the manifold \cite{Spivak1999b}. The second fundamental form is characterized by three coefficients:
+    \[ e\dd{u}^2 + 2f\dd{u}\dd{v} + g\dd{v}^2. \]
+    These coefficients may be computed in three-dimensional Euclidean space using the surface unit normal vector 
+    \begin{equation}
+        \vec{n} =  \frac{\vec{r}_u \cross \vec{r}_v}{\norm{\vec{r}_u \cross \vec{r}_v}},
+        \label{eq:unit_normal}
+    \end{equation}
+    the coefficients are then given by
+    \begin{equation}
+            e = \vec{r}_{uu} \cdot \vec{n}\qquad f = \vec{r}_{uv} \cdot \vec{n} \qquad g = \vec{r}_{vv} \cdot \vec{n}
+        \label{eq:second_fform}
+    \end{equation}
+    with $\displaystyle \vec{r}_{uu} = \pdv[2]{\vec{r}}{u}$ etc.
+\end{thmblock}
+
+The first and second fundamental form can then be used to determine the Gaussian curvature of the parametric surface: \cite{ONeill2006, Spivak1999b}
 \begin{equation}
     k = \frac{\det(\secondff)}{\det(\firstff)} = \frac{eg - f^2}{EG - F^2}.
     \label{eq:gaussian_curv}
@@ -165,7 +168,7 @@ Combining this with the previous expression found for \(\dd{\sigma}\), one arriv
     \dd{y} = \sinh(u)\dd{u} \implies y = \cosh(u) + C.
     \label{eq:dy_halfplane}
 \end{equation}
-Thus, the conformality of the mapping imposes a restriction on the mapping for \(y\) up to a constant \(C\), which is usually taken to be 0 \cite{Needham1997}. Using this information, the metric of the Poincaré half-plane can also easily be deduced by \emph{pushing forward}\footnote{It must be clearly noted that the term \emph{pushforward metric} is not at all in place, and its usage here would in fact be quite pathological. The reason is as follows: the relation sketched here is not even strictly a mapping, as any point on the pseudosphere maps to an infinite amount of points on the half-plane. Beyond this problem of the unique images there is also the obvious fact that their is no preimage for the part of the half-plane where \(y < 1\) (non-surjective). As such, it would definitely make more sense to define the Poincaré metric first and then define the \emph{pullback metric} on the pseudosphere. However, since the pseudosphere exists in the familiar Euclidean space, it is more natural to introduce the pseudosphere first \cite{Schuller2014}.}
+Thus, the conformality of the mapping imposes a restriction on the mapping for \(y\) up to a constant \(C\), which is usually taken to be 0 \cite{Needham1997}. Using this information, the metric of the Poincaré half-plane can also easily be deduced by \emph{pushing forward}\footnote{It must be clearly noted that the term \emph{pushforward metric} is not at all in place, and its usage here would in fact be quite pathological. The reason is as follows: the relation sketched here is not even strictly a mapping, as any point on the pseudosphere maps to an infinite amount of points on the half-plane. Beside this problem of the unique images there is also the obvious fact that their is no preimage for the part of the half-plane where \(y < 1\) (non-surjective). As such, it would definitely make more sense to define the Poincaré metric first and then define the \emph{pullback metric} on the pseudosphere. However, since the pseudosphere exists in the familiar Euclidean space, it is more natural to introduce the pseudosphere first \cite{Schuller2014}.}
  the Euclidean metric of the pseudosphere:
 \begin{equation} 
     \dd{s} = \norm{\pdv{\vec{r}}{u}\dd{u} + \pdv{\vec{r}}{v}\dd{v}}
@@ -177,11 +180,7 @@ This metric is called the \emph{Poincaré metric}. \Cref{eq:dy_halfplane} alread
 
 The Poincaré metric suggests that distances get larger and larger when travelling downwards in \(y\)-direction. At the line \(y=0\) they even become infinitely large. For someone living in the half-plane, this line would never be reachable, because they would have to travel for an infinite amount of time. It is not part of the half-plane itself, which is why it is called the \emph{horizon}; points on the horizon are named \emph{ideal points} \cite{Needham1997}.
 
-Geodesics in the Poincaré half-plane connecting two points are either straight vertical lines if the two points have the same \(x\)-coordinate. Otherwise, the geodesic is the arc defined by the portion of the circle going through each of the two points that also intersects the \(x\)-axis at a right angle \cite{Ramsay1995}. Apart from the horizon, two other peculiar curves exist in the half-plane that will also show up in later models:
-\begin{itemize}
-    \item \emph{horocycles}: circles tangent to the \(x\)-axis or horizontal lines,
-    \item and \emph{hypercycles}: circular arcs that intersect the \(x\)-axis at non-right angles or straight lines that intersect the \(x\)-axis at a non-right angle. 
-\end{itemize}
+Geodesics in the Poincaré half-plane connecting two points are either straight vertical lines if the two points have the same \(x\)-coordinate. Otherwise, the geodesic is the arc defined by the portion of the circle going through each of the two points that also intersects the \(x\)-axis at a right angle \cite{Ramsay1995}.
 
 \begin{figure}
     \centering
@@ -221,10 +220,11 @@ It has been pointed out that the Cayley transform is a member of a larger class 
 \end{figure}
 
 \subsection{Hyperboloid model}
+\label{ssec:hyperboloid}
 \index{Hyperboloid model}
-Hilbert's theorem about the embedding of a hyperbolic surface in Euclidean space eradicates any hope to find a `globe' for the hyperbolic space, like a regular sphere would be for an elliptic space. However, as strong as it may seem, Hilbert's theorem still leaves some room for other possibilities because it is very explicit about the nature of the space in question: it must be Euclidean. \Cref{chap:finance_rotation} already introduced a notorious alternative: the Lorentz space. It will probably not come as a surprise that the Lorentz space does allow for the embedding of a hyperbolic surface, which is known as the \emph{hyperboloid model}.
+Hilbert's theorem about the embedding of a hyperbolic surface in Euclidean space eradicates any hope to find a `globe' for the hyperbolic space, like a regular sphere would be for an elliptic space. However, as strong as it may seem, Hilbert's theorem still leaves some room for other possibilities because it is very explicit about the nature of the space in question: it must be Euclidean. \Cref{chap:relativity} already introduced a possible alternative: the Lorentz space. It will probably not come as a surprise that the Lorentz space does allow for the embedding of a hyperbolic surface, which is known as the \emph{hyperboloid model}.
 
-Now, why would one find any solace in the Lorentz plane specifically? Recall that the curvature of a surface can be expressed in terms of its local radius, i.e. \(1/p^2\). A negative curvature therefore implies that \(p\) is somehow not a real but imaginary number. Obviously, this can never make any sense in an Euclidean space, but the Lorentzian space perfectly allows this kind of odd witchcraft, as illustrated by \cref{fig:lightlike_spacelike} \cite{Ratcliffe2019}. The complete hyperboloid consists of two sheets, a positive sheet and a negative sheet, implicitly described by the following set: 
+Now, why would one find any solace in the Lorentz space specifically? Recall that the curvature of a surface can be expressed in terms of its local radius, i.e. \(1/p^2\). A negative curvature therefore implies that \(p\) is somehow not a real but imaginary number. Obviously, this can never make any sense in an Euclidean space, but the Lorentzian space perfectly allows this kind of odd witchcraft, as illustrated by \cref{fig:lightlike_spacelike} \cite{Ratcliffe2019}. The complete hyperboloid consists of two sheets, a positive sheet and a negative sheet, implicitly described by the following set: 
 \[ H^2 = \qty{\vec{x} \in \real^3 \mid \lnorm{\vec{x}} = p}. \]
 However, on account of the positive and the negative sheet, this set is clearly \emph{disconnected}\footnote{A space is called connected if it is impossible to find two open sets whose union is equal to that space; which in this case clearly is not the case (the open sets are the positive and negative sheet of the hyperboloid).}. It is therefore common to discard the negative sheet of \(H^2\), the hyperboloid model of the hyperbolic 2-space is then \cite{Ratcliffe2019}
 \[ H^2_+ = \qty{\vec{x} \in \real^3 \mid \lnorm{\vec{x}} = p,\ x_1 > 0}. \]
@@ -234,7 +234,7 @@ A parametric representation of \(H^2_+\) is the following
     \label{eq:parametric_hyperboloid}
 \end{equation}
 To show that this surface has indeed a constant negative Gaussian curvature, a slightly more general approach must be followed than for the pseudosphere, since the calculations with the second fundamental form are restricted to a Euclidean space. As described by \citet{ONeill1983}
-\[ E = \partial_u \diamond \partial_v \quad F = \partial_u \diamond \partial_v \quad G = \partial_u \diamond \partial_v \]
+\[ E = \partial_u \bullet \partial_v \quad F = \partial_u \bullet \partial_v \quad G = \partial_u \bullet \partial_v \]
 which correspond to the components of the first fundamental form, generalized to the Lorentz product. The coordinate system \(u, v\) is called orthogonal if \(F\) vanishes, which is indeed the case for the parametrization given by \cref{eq:parametric_hyperboloid}.
 The Gaussian curvature of the surface is then given by \cite{ONeill1983}
 \begin{equation}
@@ -244,10 +244,19 @@ The Gaussian curvature of the surface is then given by \cite{ONeill1983}
 with \(\varepsilon_1 = \sgn{E}\), \(\varepsilon_2 = \sgn{G}\), \(e = \sqrt{\abs{E}}\) and \(G = \sqrt{\abs{G}}\).
 Performing these calculations on \cref{eq:parametric_hyperboloid} yields indeed that \(k = -1/p^2\), confirming that the one-sheet hyperboloid embedded in three-dimensional \emph{Lorentz} space indeed has the same curvature as the pseudosphere\footnote{Some authors even refer to the hyperboloid as `pseudosphere' as well, e.g. \citet{Balazs1986}. However, this is deemed confusing in the context of the larger discussion presented here, the author refrained from using it here.}.
 
-\subsubsection{Relation with Poincaré disk}
-\towrite{TODO}
+In the hyperboloid model, geodesics are formed by intersections between the hyperboloid and planes that intersect the origin. As mentioned in \cref{chap:relativity}, the restricted Lorentz group $\text{SO}^+(1, 2)$ is the isometry (distance-preserving) group for the hyperboloid in the Lorentzian space\footnote{Technically, an inversion of spatial orientations is allowed in this case, so the complete isometry group of the hyperboloid model are the ortochronous Lorentz transformations, both proper and improper, denoted by $\text{O}^+(1, 2)$}. An action from the isometry group always maps geodesics to geodesics; as such, the Lorentz transformations preserve the geodesics of the hyperboloid model.
 
-\lsymb{\(H^2\)}{Two-sheeted hyperboloid embedded in three-dimensional Lorentz space.}
-\lsymb{\(H^2_+\)}{Positive hyperboloid sheet embedded in three-dimensional Lorentz space.}
-\lsymb{\(\real\)}{Real numbers}
-\lsymb{\(\complex\)}{Complex numbers}
+\subsubsection{Relation with Poincaré disk}
+There exists a compelling relation between the Poincaré disk model of the hyperbolic plane and the hyperboloid model. As described by \citet{Balazs1986}, the Poincaré disk can be obtained by stereographically projecting the hyperboloid on the unit disk with respect to the base point $(0, 0, -1)$. This is demonstrated in \cref{fig:hyperboloid_disk}. A point on the hyperboloid with coordinates
+$$ (\cosh(\zeta), \sinh(\zeta)\cos(\phi), \sinh(\zeta)\sin(\phi)) $$
+will then be have the following polar coordinates in the disk:
+$$ r = \tanh(\frac{\zeta}{2});$$
+the angle $\phi$ remains identical. 
+\begin{figure}[ht]
+    \centering
+    \includegraphics{media/vector/hyperboloid_projection.eps}
+    \caption{The Poincaré disk and the hyperboloid model are related through stereographic projection. Illustration adapted from \citet{Balazs1986}.}
+    \label{fig:hyperboloid_disk}
+\end{figure}
+
+\section*{Chapter summary}

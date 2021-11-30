@@ -176,47 +176,15 @@ The current interpretation in economic engineering is that credit corresponds to
     \item The sign of the interest rate does not determine the sign (i.e. direction) of the angular momentum; the former has to do with either discounting/appreciation while the latter denotes the direction of the contract (e.g. debit vs. credit).
     \item The interpretation of the elasticity as the mass moment of inertia (because it determines the relation between the amount of credit and the interest rate) has not been consistently applied. In the past, the mass moment of inertia has been put on equal footing with the \emph{duration} of a financial contract, but more recent works have pointed out that duration is a part of the valuation and is therefore associated with frequency domain analysis \cite{Krabbenborg2021}.
 \end{itemize}
-The resolution of these problems is one of the main goals of this research.
+%The resolution of these problems is one of the main goals of this research.
 
-\section{Lorentzian vector spaces}
-\label{sec:lorentz_metric}
-\index{Lorentz!metric}
-\index{Lorentz!norm}
-\index{Lorentz!product}
-If investments are represented in the capital-yield plane, they are accompanied by a special notion of `distance', which determines the radius of the hyperbola that they are positioned on. This distance is different from the traditional Euclidean distance; rather, it is a \emph{Lorentzian} distance. This makes the capital-yield plane a \emph{Lorentzian vector space}. In order to make this formal, the definition of the Lorentzian inner (or Lorentz) product is required:\footnote{In literature (both physics and mathematics) many variations on the so-called `metric signature' of the Lorentz product make their appearance. In terms of \(\real^4\), these variations come down to \((+,-,-,-)\), \((-,-,-,+)\), \((-,+,+,+)\) and \((+,+,+,-)\), where the first one coincides with the definition used here, in accordance with the magnificent work of \citet{Landau1971}. Luckily, this is just a matter of convention and its influence on the mathematical machinery at hand is limited to the switching of some signs.}
-
-\begin{thmblock}{Lorentz product}
-    Let \(\vec{u}, \vec{v}\) be vectors in \(\real^n\). The \emph{Lorentzian inner product} of \(\vec{u}\) and \(\vec{v}\) is defined to be the real number
-    \begin{equation}
-        \vec{u} \bullet \vec{v} = u_1v_1 - u_2v_2 - \ldots - u_nv_n.
-        \label{eq:lorentz_product}
-    \end{equation}
-\end{thmblock}
-The Lorentz product is an inner product, which means that it takes two elements from a vector space and returns a scalar value, while satisfying two (or three) conditions: (i) bilinearity, (ii) symmetry, and (iii) nondegeneracy \cite{Ratcliffe2019}.
-
-In some literature, the condition of nondegeneracy is replaced by a stronger notion of positive definiteness, which means that an inner product of a vector with itself is always nonnegative and zero if and only if the vector is the zero vector. However, this condition does not apply to the Lorentz product --- this fact has rather far-reaching ramifications, as will become clear with the next definition. 
-
-Based on the Lorentz inner product it is natural to define also a corresponding \emph{Lorentzian norm} \(\lnorm{\cdot}\):
-    \[
-     \lnorm{\vec{v}} = \qty(\vec{v}\bullet\vec{v})^\frac{1}{2}
-\]
-Because the Lorentz product is not positive definite but rather indefinite, the result of \(\vec{v}\bullet\vec{v}\) is not guaranteed to be a positive number. As such, \(\lnorm{\vec{v}} \in \complex\), in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a non-negative real number.
-
-The norm provides a notion of length for a vector. Based on this length, a \emph{metric} yields a distance between two points, i.e. the distance between \(\vec{u}\) and \(\vec{v}\) is equal to 
-\[
-     d_L(\vec{v}, \vec{u}) \triangleq \lnorm{\vec{v} - \vec{u}}
-\] 
-Because the norm is not positive definite but `only' nondegenerate, it is called a \emph{pseudo-Euclidean metric}, and the vector space it is associated with a \emph{pseudo-Euclidean space}. A vector space equipped with this pseudometric (in more general terms, a bilinear nondegenerate form) is called a Lorentz space. The particular case for \(\real^4\) sets the stage for the theory of special relativity (with one `special' dimension for time and three spatial dimensions) and is called the Minkowski space, after the German physicist Hermann Minkowski \cite{Catoni2008}. Sometimes the two-dimensional plane that is discovered here is also called the Minkowski plane, because this is what he used to explain his ideas, being unable to draw anything like four-dimensional space. However, this text will adhere to the more mathematically inclined tradition and call it `Lorentz(ian) space' which applies to any dimension larger than one \cite{Ratcliffe2019}. The theory of special relativity, and especially the role of the Lorentz metric will be discussed in \cref{chap:relativity}.
-
-The sign of the Lorentz norm gives rise to an equivalence relation \(\sim_L\) defined to be \(a \sim_L b \iff \sgn{\norm{a}} = \sgn{\norm{b}}\).\footnote{An equivalence relation is a binary relation that is symmetric, reflexive and transitive.} Therefore, the quotient set of all the points in the plane \(\real / \sim_L \) contains three elements \(\qty{-1, 0, 1}\), these equivalence classes are given the respective names \(\qty{\text{\texttt{spacelike}},\, \text{\texttt{lightlike}},\, \text{\texttt{timelike}}}\) based on the terminology from special relativity \cite{Landau1971}. The difference between timelike, spacelike and lightlike vectors is illustrated in \cref{fig:lightlike_spacelike}.
-
-\begin{figure}[ht]
-    \centering
-    \input{media/tikz/lightlike_spacelike}
-    \caption{Overview of the three `types' of vectors in the Lorentz-Minkowski plane: spacelike (\(\lnorm{\vec{v}} < 0\)), lightlike (\(\lnorm{\vec{v}} = 0\)) and timelike (\(\lnorm{\vec{v}} > 0\)). The lines \(y = x\) and \(y = -x\) containing all the lightlike vectors form the so-called light cone or null cone. The hyperbola of in the spacelike region (dark gray) obey the equation \(y^2 - x^2 = K^2\), they will be referred to the hyperbolic branches II (\(y > 0\)) and IV (\(y < 0\)). In contrast, the timelike hyperbolic branches with equation \(x^2 - y^2 = K^2\) (light gray region) are referred to as I (\(x > 0\)) and III (\(x < 0\)).}
-    \label{fig:lightlike_spacelike}
-\end{figure}
-The financial interpretation of the lightlike vectors is all the capital-yield combinations that are attainable, which is why spacelike vectors are fictitious in this regard if only the action of compound interest is considered. However, when one looks at velocities in this vector space; i.e. how fast a position vector is changing, the velocity vector can be spacelike due to capital injections that change the `arm' of the investment. 
+\section{Interest in the Lorentz-Minkowski plane}
+\begin{itemize}
+    \item Polar coordinates
+    \item Cartesian coordinates
+    \item Hyperbolae
+    \item Timelike spacelike
+\end{itemize}
 
 \section{Hyperbolic numbers}
 \label{sec:hyperbolic_numbers}
@@ -244,7 +212,7 @@ which can be evaluated using the Taylor expansion of the exponential \(\exp\):
 \[
      z = K\exp(\zeta \jj) = K \sum^\infty_{k = 0} \frac{(\zeta \jj)^k}{k!} =  K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k}}{(2k)!} + K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k+1}}{(2k + 1)!} = K\cosh(\zeta) + K\jj\sinh(\zeta)
 \]
-when the hyperbolic angle \(\zeta\) is associated with hyperbolic branches I and III. Clearly, the polar form of the hyperbolic numbers reflects precisely the two different representations for investments: using principal and return (polar form), or capital and yield (`cartesian' form). For the spacelike branches II and IV, one essentially has to consider \(z = K\jj\exp(\zeta\jj)\) or
+when the hyperbolic angle \(\zeta\) is associated with hyperbolic branches I and III. Clearly, the polar form of the hyperbolic numbers reflects precisely the two different representations for investments: using principal and return (polar form), or capital and yield (`Cartesian' form). For the spacelike branches II and IV, one essentially has to consider \(z = K\jj\exp(\zeta\jj)\) or
 \[
      z = K\sinh(\zeta) + K\jj\cosh(\zeta)
 \]
@@ -289,3 +257,4 @@ The idempotent axis system is interesting because it returns the total amount co
 
 To summarize, it has been established that the hyperbolic numbers can be used to represent the rotational investment analogy, and that all the important concepts attached to it (inner product, cross product, total value, etc) are naturally incorporated in their algebra.
 
+\section*{Chapter summary}

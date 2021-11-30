@@ -1,8 +1,8 @@
 \chapter{Special Relativity}
 \label{chap:relativity}
-This chapter gives a basic outline of the theory of special relativity. It is by no means meant to be a comprehensive overview, for which many other excellent resources exist such as \citet{Misner1970}, \citet{Taylor1992}, \citet{Landau1971}, or \citet{Penrose1978} for a shorter, less technical introduction. Instead, the goal of this section is to give a physical context for the concept of Lorentz geometry and the associated Lorentz space and metric, as well as their connection with hyperbolic geometry and Möbius transforms which will be introduced in \cref{chap:hyperbolic_geometry} and \cref{chap:moebius_transforms}.
+This chapter gives a basic outline of the theory of special relativity. It is by no means meant to be a comprehensive overview, for which many other excellent resources exist such as \citet{Misner1970}, \citet{Taylor1992}, \citet{Landau1971}, or \citet{Penrose1978} for a shorter, less technical introduction. Instead, the goal of this section is to give a physical context for the concept of Lorentz geometry and the associated Lorentz space and metric, as well as their connection with hyperbolic geometry discussed in \cref{chap:relativity}, and Möbius transforms which will be introduced in \cref{chap:moebius_transforms}.
 
-Before the advent of the theory of special relativity, developed by i.a. Poincaré, Minkowski, Lorentz and Einstein, so-called `Galilean relativity' was the norm. Galilean relativity entails the definition of Galilean transformations which links reference frames that move relative to each other at a constant linear speed. The laws of physics should be invariant between these inertial reference frames. However, a problem presented itself in the form of the famous Maxwell equations that pose the governing laws in electromagnetism. A consequence from Maxwell's laws is the finite propagation speed of light and therefore all possible interactions between particles in the universe. It is not hard to imagine that the Galilean invariance breaks down as a result of the introduction of a `special' speed - indeed, the Galilean transform proclaims a complete independence between the physical laws and the constant velocity of the frame in which they are applied. But, as a direct consequence from Maxwell's equations, the laws of physics in a moving reference frame \emph{will} depend on the speed of that particular reference frame: a major inconsistency with the traditional train of thought.
+Before the advent of the theory of special relativity, developed by i.a. Poincaré, Minkowski, Lorentz and Einstein, so-called `Galilean relativity' was the norm. Galilean relativity entails the definition of Galilean transformations which links reference frames that move relative to each other at a constant linear velocity. The laws of physics should be invariant between these inertial reference frames. However, a problem presented itself in the form of the famous Maxwell equations that pose the governing laws in electromagnetism. A consequence from Maxwell's laws is the finite propagation speed of light and therefore all possible interactions between particles in the universe. It is not hard to imagine that the Galilean invariance breaks down as a result of the introduction of a `special' speed - indeed, the Galilean transform proclaims a complete independence between the physical laws and the constant velocity of the frame in which they are applied. But, as a direct consequence from Maxwell's equations, the laws of physics in a moving reference frame \emph{will} depend on the velocity of that particular reference frame: a major inconsistency with the traditional train of thought.
 
 The new principle of relativity that brought reconciliation with Maxwell's ideas not only required space to be relative (i.e. dependent on a frame of reference), but also views \emph{time as a relative concept} whereas it had always been assumed to be absolute in classical mechanics. As such, the notion of time is dependent on the choice of reference frame too. This has the immediate consequence that the traditional three-dimensional setting of classical mechanics (often with Cartesian coordinates \(x, y, z\)) will not suffice for the description of special relativity: a fourth coordinate four time is indispensable to incorporate the relativity of time. Points in the four-dimensional \emph{spacetime} are called \emph{world points}, their associated trajectories are \emph{world lines} \cite{Landau1971}.
 \index{world line}
@@ -36,8 +36,64 @@ Now, one can ask the question what the actual time is that an observer would exp
 \end{equation}
 Clearly, if the velocity makes up a larger fraction of the speed of light, the proper time is lower; that is: moving clocks run slower than a clock at rest (hypothetical clocks traveling at the speed of light do not register the passage of time whatsoever).
 
+\section{Lorentzian vector spaces}
+\label{sec:lorentz_metric}
+The concept of the spacetime interval introduced in the previous section gives rise to a different notion of `distance' in four-dimensional spacetime. This distance is different from the traditional Euclidean distance; rather, it is a \emph{Lorentzian} distance. This different notion of distance is captured by the definition of the \emph{Lorentz(ian) product}\footnote{In literature (both physics and mathematics) many variations on the so-called `metric signature' of the Lorentz product make their appearance. In terms of \(\real^4\), these variations come down to \((+,-,-,-)\), \((-,-,-,+)\), \((-,+,+,+)\) and \((+,+,+,-)\), where the first one coincides with the definition used here, in accordance with the magnificent work of \citet{Landau1971}. Luckily, this is just a matter of convention and its influence on the mathematical machinery at hand is limited to the switching of some signs.}.
+
+\begin{thmblock}{Lorentz product}
+    Let \(\vec{u}, \vec{v}\) be vectors in \(\real^n\). The \emph{Lorentzian inner product} of \(\vec{u}\) and \(\vec{v}\) is defined to be the real number
+    \begin{equation}
+        \vec{u} \bullet \vec{v} = u_1v_1 - u_2v_2 - \ldots - u_nv_n.
+        \label{eq:lorentz_product}
+    \end{equation}
+\end{thmblock}
+%The Lorentz product is an inner product, which means that it takes two elements from a vector space and returns a scalar value, while satisfying two (or three) conditions: (i) bilinearity, (ii) symmetry, and (iii) nondegeneracy 
+The Lorentz product resembles the `normal'  inner product, with the exception of the minus signs before every but the first term. These minus signs are the reason why the Lorentz product is an indefinite product; that is, it fails to be positive definite. An inner product satisfies (i) bilinearity, (ii) symmetry and (iii) positive definiteness. As discussed in the previous section, the inner product of a spacelike vector with itself will \emph{not} return a positive number;  lightlike vector will produce 0. As such, the Lorentz product is indefinite, which is why it is called a \emph{pseudo-inner product} \cite{Ratcliffe2019,Schuller2014}. The weaker condition that is imposed for pseudo-inner products is that it must be nondegenerate, which means that there exists no non-zero vector for which its inner product with any other vector is zero.
+
+Based on the Lorentz inner product it is natural to define also a corresponding \emph{Lorentzian norm} \(\lnorm{\cdot}\):
+    \[
+     \lnorm{\vec{v}} = \qty(\vec{v}\bullet\vec{v})^\frac{1}{2}
+\]
+Because the Lorentz product is not positive definite but indefinite, the result of \(\vec{v}\bullet\vec{v}\) is not guaranteed to be a positive number. As such, \(\lnorm{\vec{v}} \in \complex\), in stark contrast with the familiar Euclidean norm which \emph{is} positive definite and will therefore always return a non-negative real number.
+
+The norm provides a notion of length for a vector. Based on this length, a \emph{metric} yields a distance between two points, i.e. the distance between \(\vec{u}\) and \(\vec{v}\) is equal to 
+\[
+     d_L(\vec{v}, \vec{u}) \triangleq \lnorm{\vec{v} - \vec{u}}
+\] 
+Because the norm is not positive definite but `only' nondegenerate, it is called a \emph{pseudo-Euclidean metric}, and the vector space it is associated with a \emph{pseudo-Euclidean space}. A vector space equipped with this pseudometric (in more general terms, a bilinear nondegenerate form) is called a Lorentz space. The particular case for \(\real^4\) sets the stage for the theory of special relativity (with one `special' dimension for time and three spatial dimensions) and is called the Minkowski space, after the German physicist Hermann Minkowski \cite{Catoni2008}. Elements of the Minkowski space are denoted by \emph{four-vectors}. Often, Lorentzian spaces are denoted in short by $\real^{p,q}$ where the combination $p,q$ indicates the metric signature. $p$ and $q$ respectively denote the number of plus and minus signs in the Lorentzian product. The total dimension of the space is then $p + q$. As such, the Minkowski space is denoted by $\real^{1,3}$. However, there are other Lorentzian spaces as well; in \cref{ssec:hyperboloid} the discussion involves a three-dimensional Lorentzian space (with two spatial directions and one `time') $\real^{1,2}$. Likewise, concepts in spatial relativity are usually illustrated using the Lorentz-Minkowski plane, which is basically a two-dimensional representation referring to $\real^{1,1}$. This Lorentzian space will play an important role in \cref{chap:finance_rotation}.
+%Sometimes the two-dimensional plane that is discovered here is also called the Minkowski plane, because this is what he used to explain his ideas, being unable to draw anything like four-dimensional space. However, this text will adhere to the more mathematically inclined tradition and call it `Lorentz(ian) space' which applies to any dimension larger than one \cite{Ratcliffe2019}. The theory of special relativity, and especially the role of the Lorentz metric will be discussed in \cref{chap:relativity}.
+
+The sign of the Lorentz norm gives rise to an equivalence relation\footnote{An equivalence relation is a binary relation that is symmetric, reflexive and transitive.}  \(\sim_L\) defined to be 
+$$a \sim_L b \iff \sgn{\norm{a}} = \sgn{\norm{b}}.$$
+Therefore, the quotient set of all the points in the plane \(\real / \sim_L \) contains three elements \(\qty{-1, 0, 1}\), these equivalence classes are given the respective names \(\qty{\text{\texttt{spacelike}},\, \text{\texttt{lightlike}},\, \text{\texttt{timelike}}}\) analogous to the terminology for the spacetime intervals from the previous section \cite{Landau1971}. The difference between timelike, spacelike and lightlike vectors is illustrated for the Lorentz-Minkowski plane in \cref{fig:lightlike_spacelike}.
+
+\begin{figure}[ht]
+    \centering
+    \input{media/tikz/lightlike_spacelike}
+    \caption{Overview of the three `types' of vectors in the Lorentz-Minkowski plane: spacelike (\(\lnorm{\vec{v}} < 0\)), lightlike (\(\lnorm{\vec{v}} = 0\)) and timelike (\(\lnorm{\vec{v}} > 0\)). The lines \(ct = x\) and \(ct = -x\) containing all the lightlike vectors form the so-called light cone or null cone. Points with vectors with identical length trace out hyperbolae, as they obey the equation $c^2t^2 - x^2 = K^2$.} %The hyperbola of in the spacelike region (dark gray) obey the equation \(ct^2 - x^2 = K^2\), they will be referred to the hyperbolic branches II (\(y > 0\)) and IV (\(y < 0\)). In contrast, the timelike hyperbolic branches with equation \(x^2 - y^2 = K^2\) (light gray region) are referred to as I (\(x > 0\)) and III (\(x < 0\)).}
+    \label{fig:lightlike_spacelike}
+\end{figure}
+%The financial interpretation of the lightlike vectors is all the capital-yield combinations that are attainable, which is why spacelike vectors are fictitious in this regard if only the action of compound interest is considered. However, when one looks at velocities in this vector space; i.e. how fast a position vector is changing, the velocity vector can be spacelike due to capital injections that change the `arm' of the investment. 
+
+%Instead of the usual three-vectors that are common in classical mechanics, points in spacetime may be regarded as elements in a four-dimensional vector space instead:
+%\begin{equation}
+%    A^0 = ct\qquad A^1 = x \qquad A^2 = y \qquad A^3 = z;
+%    \label{eq:four-vector}
+%\end{equation}
+%where the superscript indices indicate \emph{contravariant} (vector) components. However, the 
+%These can be converted to covariant indices by virtue of the metric tensor \tens{g}
+%\index{metric tensor}
+%\begin{equation}
+%    g_{ij} = g^{ij} = \mqty(\dmat[0]{1, -1, -1, -1}).
+%    \label{eq:lorentz_metric}
+%\end{equation}
+%Using \tens{g}, indices can then be lowered (or raised) like so
+%\[ A^0 = A_0\qquad A^1 = -A_1 \qquad A^2 = -A_2 \qquad A^3 = -A_3; \]
+%such that the spacetime interval may be expressed in tensor notation (observing the Einstein summation convention) as
+%\[ s^2 = A^i A_i = c^2t^2 - x^2 - y^2 - z^2.\]
+
 \section{Lorentz transformations}
-As mentioned, special relativity corrects the flaw of the Galilean transforms, which represent the classical view of inertial reference systems: for example, if one coordinate system moves at constant velocity with respect to the other in \(x\)-direction (the coordinate directions are assumed to coincide for simplicity), the Galilean transform takes the form:
+As mentioned, special relativity corrects for a flaw of the Galilean transforms, which represent the classical view of inertial reference systems: for example, if one coordinate system moves at constant velocity with respect to the other in \(x\)-direction (the coordinate directions are assumed to coincide for simplicity), the Galilean transform takes the form:
 \begin{equation}
     x = x' + Vt, \quad y = y', \quad z = z',\quad t = t'.
     \label{eq:galilean_transform}
@@ -62,7 +118,7 @@ which means that the argument of the hyperbolic rotation purely depends on the r
     \item Clearly, \(V\) cannot be larger than \(c\); there is no real \(\zeta\) for which this could be true. This again reaffirms the statement that there can be no motions with velocities larger than the speed of light.
     \item Secondly, this transform keeps \(c^2t^2 - x^2\) unaffected (of course, \(z\) and \(y\) keep their value for obvious reasons); all points in the \(tx\)-plane that remain invariant under this type of transformations lie on the same hyperbola. This underlines the connection with the capital-yield plane discussed in the previous sections: in that analogy, the accumulated interest corresponds to the Lorentz boost \(\zeta\).
     \item In the limit for \(c \to \infty\), the original Galilean transform is recovered; as such, the original laws still function as an approximation when \(V\) is of negligible size with respect to \(c\).
-    \item Due to the multiplication factor in the transform, two points \(x_1\) and \(x_2\) are closer together when travelling at speed than when they are at rest. A length measured in a rest frame are called \emph{proper} \index{proper length}, and contracts when in a moving frame: this phenomenon is called \emph{Lorentz contraction} \index{Lorentz!contraction} \cite{Landau1971}.
+    \item Due to the multiplication factor in the transform, two points \(x_1\) and \(x_2\) are closer together when traveling at speed than when they are at rest. A length measured in a rest frame are called \emph{proper} \index{proper length}, and contracts when in a moving frame: this phenomenon is called \emph{Lorentz contraction} \index{Lorentz!contraction} \cite{Landau1971}.
     \item In contrast to Galilean transforms, Lorentz transforms are generally not commutative: just like regular three-dimensional rotations, they depend on the order in which they are applied.
 \end{itemize}
 \paragraph{Velocity transform} The Lorentz transform described by \cref{eq:lorentz_transform_hyp,eq:lorentz_transform_sqrt} shows how to transform coordinates from one frame to another. However, because the transform affects both \(x\) and \(t\), a velocity measured in the frame (not to be confused with the relative velocity between the frames \(V\)) \(\vec{v}\) with components will see not only its \(x\)-component affected, but the other two components \(v_x\) and \(v_z\) as well. The transformation of \(\vec{v}\) to \(\vec{v}'\) is then: \cite{Landau1971}
@@ -75,20 +131,6 @@ which means that the argument of the hyperbolic rotation purely depends on the r
     \label{eq:lorentz_transform_vel}
 \end{equation}
 
-\paragraph{Four-vectors}
-\index{four-vector}
-Instead of the usual three-vectors that are common in classical mechanics, the points in four-dimensional spacetime may be regarded as elements in a four-dimensional vector space instead:
-\begin{equation}
-    A^0 = ct\qquad A^1 = x \qquad A^2 = y \qquad A^3 = z;
-    \label{eq:four-vector}
-\end{equation}
-where the superscript indices indicate \emph{contravariant} (vector) components. These can be converted to covariant indices by virtue of the metric tensor \tens{g}
-\index{metric tensor}
-\[g_{ij} = g^{ij} = \mqty(\dmat[0]{1, -1, -1, -1}).\]
-Using \tens{g}, indices can then be lowered (or raised) like so
-\[ A^0 = A_0\qquad A^1 = -A_1 \qquad A^2 = -A_2 \qquad A^3 = -A_3; \]
-such that the spacetime interval may be expressed in tensor notation (observing the Einstein summation convention) as
-\[ s^2 = A^i A_i = c^2t^2 - x^2 - y^2 - z^2.\]
 Much like position, velocities have a four-dimensional spacetime counterpart as well; these objects are called \emph{four-velocities}, they are defined as \cite{Landau1971}\index{four-velocity}
 \[ u^i = \dv{x^i}{s} \qquad \text{ with } \dd{s} = c\dd{t} \sqrt{1 - \qty(\frac{v}{c})},\]
 \(v\) being the three-dimensional velocity of the particle. The components of the four-velocity are then
@@ -100,5 +142,22 @@ u^0 = \largefrac{1}{\sqrt{1 - \qty(\frac{v}{c})^2}}
 \]
 which are all dimensionless quantities. Clearly, any four-velocity squared amounts to one; or \(u^i u_i = 1\). This is analogous to the statement that all four-velocities live on a four-dimensional \emph{unit hyperboloid} (due to the nature of the metric tensor); this means that the four-velocities \emph{do not} form a vector space; the sum of two four-velocities does not generally yield another four-velocity. Instead, four-velocities exhibit a special type of geometry called \emph{hyperbolic geometry}, an important concept to which \cref{chap:hyperbolic_geometry} is entirely devoted.
 
-\paragraph{The Lorentz group} All the Lorentz transformations form a Lie group called the Lorentz group $\text{Lor}$. When applied to the four-dimensional Lorentzian vector space, i.e. $\real^4$ equipped with the Lorentz product, they can be regarded as the special orthogonal group for this space.
+\paragraph{The Lorentz group} The space of four-vectors from the previous section allow to view the Lorentz transformations as actions of the Lorentz group `$\text{Lor}$'. The Lorentz group is a Lie group that can be represented by $4\times4$ matrices. In the previous section, it was argued that the Lorentz transformations encompass $\binom{2}{4} = 6$ `possible' rotations: three that are purely spatial and an additional three that involve the time dimension as well. To be precise, this discussion will be limited to the \emph{restricted Lorentz group}: these are the transformations that (i) preserve the direction of time (ortochronous transformations) and (ii) preserve orientation (i.e. they only involve proper rotations) \cite{Tung1985}. The restricted Lorentz group is often considered in place of the `bigger' Lorentz group because it is most relevant for physics.
 
+The restricted Lorentz group can be represented by matrices in the four-vector spaces. Because Lorentz transformations preserve the `Lorentzian length' of vectors as dictated by the Lorentz product \cref{eq:lorentz_product}, they are an \emph{orthogonal group}. As such, the general Lorentz group is also denoted $\text{O}(1,3)$, where `1,3' denotes the metric signature of the quadratic form that is preserved by the group. In terms of matrices, $\text{O}(1,3)$ is the following set: \cite{Baker1967}
+$$ \text{O}(1, 3) = \qty{A \in \text{GL}(4) \mid A^\top G A = G} \qquad \text{with}\quad G = \mqty(\dmat[0]{1,-1,-1,-1}). $$
+Then, the proper Lorentz transformations (that preserve orientation) are given by the corresponding \emph{special orthogonal group}:
+$$ \text{SO}(1, 3) = \qty{A \in \text{O}(1, 3) \mid \det A = 1}.$$
+The restricted Lorentz group must also be ortochronous, for which an additional restriction is required: they must map the positive sheet $H^+$ of the four-dimensional hyperboloid determined by the quadratic form 
+$$ c^2t^2 - x^2 - y^2 - z^2 $$
+to itself; the same holds for the negative sheet $H^-$. Then, one obtains the restricted Lorentz group: \cite{Baker1967}
+$$ \text{SO}^+(1, 3) = \qty{A \in \text{SO}(1, 3) \mid AH^{\pm} = H^{\pm}}, $$
+which is equivalent to impose the restriction that $\trace A > 0$ \cite{Balazs1986}.
+
+Fundamentally, the restricted Lorentz group consists of four types of `generators' (or \emph{conjugate classes} in the terminology of groups): elliptic, hyperbolic, loxodromic and parabolic. The elliptic transforms are spatial rotations, while the hyperbolic transforms are Lorentz boosts: they are the rotations that involve time. Loxodromic transforms consist of a simultaneous boost and spatial rotation. Finally, the parabolic Lorentz transforms are the `null rotations' which do not have a completely intuitive meaning; but in Minkowski spacetime they describe a parabolic trajectory that arises from the intersection of the hyperboloid with a null plane. As will be discussed in \cref{chap:moebius_transforms}, the restricted Lorentz group is isomorphic to the Möbius group, which shares the same distinction between hyperbolic, elliptic, parabolic and loxodromic elements \cite{Needham2021}.
+
+Finally, although `the' Lorentz group is most often referred to as the one that acts on four-dimensional Minkowski spacetime, similar groups can be defined for other numbers of dimensions as well. For example, $\text{SO}(1, 1)$ is the special orthogonal group for the 1,1 Lorentz space that will play an important role in \cref{chap:finance_rotation}. The one-dimensional Lorentz group is simply described by matrices of the form
+$$ \mqty(\cosh(\zeta) & \sinh(\zeta)\\\sinh(\zeta)&\cosh(\zeta)) $$
+which are called \emph{squeeze mappings} (in this case, there are no spatial rotations possible) or hyperbolic rotations of the plane. Again, the `1,1' or `3,1' refer to the metric signature of the space they act on, similar to the notation of Lorentzian vector spaces.
+
+\section*{Chapter summary}

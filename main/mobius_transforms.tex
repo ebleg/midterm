@@ -3,54 +3,58 @@
 \index{Möbius transformation}
 
 \section{Definition and basic properties}
-Many of the transforms and mappings discussed in the preceding chapters may be expressed as a Möbius transformation. These are mappings of the form \cite{Needham1997}
-\begin{equation}
-    \mathfrak{M}(z) = \frac{az + b}{cz + d}
-    \label{eq:mobius}
-\end{equation}
-where \(a, b, c, d \in \complex \) are constants. Möbius transformations carry a deep connection with hyperbolic geometry (and non-Euclidean in general) and Einstein's theory of relativity. As such, the connection with the financial interpretation of the Lorentz plane can be readily made. As stated by \citet{Needham1997}, the complex mappings that correspond to a Lorentz transformation are Möbius transformations and vice versa --- every Möbius transform corresponds to a unique Lorentz transformation.
+Many of the transforms and mappings discussed in the preceding chapters may be expressed as a Möbius transformation. 
+\begin{thmblock}{Möbius transformations}
+    Möbius transformations are mappings of the form \cite{Needham1997} 
+        \begin{equation}
+            \mathfrak{M}(z) = \frac{az + b}{cz + d} \label{eq:mobius}
+        \end{equation}
+    where \(a, b, c, d \in \complex \) are constants.
+\end{thmblock}
+Möbius transformations carry a deep connection with hyperbolic geometry (and non-Euclidean in general) and Einstein's theory of relativity. As stated by \citet{Needham1997}, the complex mappings that correspond to a Lorentz transformation are Möbius transformations and vice versa --- every Möbius transformation corresponds to a unique Lorentz transformation.
 
 The Möbius transformation \(\mathfrak{M}\) is called \emph{singular} if \(ad - bc = 0\), which maps every point to the same image \(a/c\). In general, any Möbius transformation can be decomposed into four elementary transformations:
 \begin{enumerate}
-    \item A translation \(z \mapsto z + \frac{d}{c}\)
+    \item A first translation \(z \mapsto z + \frac{d}{c}\)
     \item A \emph{complex inversion} \(z \mapsto \frac{1}{z}\)
     \item An expansion and rotation \(z \mapsto -\frac{ad - bc}{c^2}z\)
-    \item A translation \(z + \frac{a}{c}\)
+    \item A second translation \(z + \frac{a}{c}\)
 \end{enumerate}
-Each of these transformations is conformal and preserves circles which is why general Möbius transformations inherit these vital properties as well. 
+Each of these transformations is conformal and preserves circles, which is why general Möbius transformations inherit these properties as well. 
 
 It is quite clear from \cref{eq:mobius} that multiplication of both the denominator and the numerator by the same constant \(k\) will not affect the result of the mapping. Therefore, a Möbius transformation is uniquely determined by only three quantities \(a/b, b/c\) and \(c/d\). This ambiguity allows for the notion of \emph{normalized transformations}, for which \(ad - bc = 1\). 
 
-If \(\mathfrak{M}\) is nonsingular, the transformation is bijective; the inverse transformation is then given by \cite{Needham1997}
-\[ \mathfrak{M}^{-1}(z) = \frac{dz - b}{-cz + a} \]
+If \(\mathfrak{M}\) is nonsingular, the Möbius transformation is bijective; the inverse transformation is then given by \cite{Needham1997}
+\begin{equation}
+    \mathfrak{M}^{-1}(z) = \frac{dz - b}{-cz + a}.
+    \label{eq:invmoebius}
+\end{equation}
 
 \section{Group structure}
-It is neither surprising nor hard to show that the nonsingular Möbius transformations form a group under composition; the identity mapping is a Möbius transformation, the inverse transformation is also a Möbius transformation as illustrated by the expression for \(\mathfrak{M}^{-1}\) stated above and that the composition of two transformations \(\mathfrak{M}_2 \circ \mathfrak{M}_1\) again yields a member of the class of Möbius transformations \cite{Needham1997}. 
+The nonsingular Möbius transformations form a group under composition; the identity mapping is a Möbius transformation, the inverse transformation is also a Möbius transformation as illustrated by the expression for \(\mathfrak{M}^{-1}\) in \cref{eq:invmoebius}, and that the composition of two transformations \(\mathfrak{M}_2 \circ \mathfrak{M}_1\) again yields a member of the class of Möbius transformations \cite{Needham1997}. The group of nonsingular Möbius transforms is called the Möbius group, denoted by `\moebiusgroup'.
 
 \subsection{The Riemann sphere}
-The Möbius group \moebiusgroup is the automorphism group of the Riemann sphere. Being the simplest compact Riemann surface, the Riemann sphere is a special representation of the extended complex plane\footnote{The complex plane combined with a value for infinity `\(\infty\)'.} \(\hat{\complex}\) in three-dimensional space: it can be visualized by placing the complex plane horizontally and considering a unit sphere centered around the origin, such that its intersection coincides with the unit disk of the complex plane. To map the plane to the sphere, a stereographic projection is used from the `north pole' of the sphere. As such, anything inside the unit disk is mapped to the southern hemisphere, everything on the unit disk is mapped onto itself (since it lies at the intersection) and everything outside the unit disk lies on the northern hemisphere. The north pole of the Riemann sphere then coincides with the distinctive feature of the extended complex plane, namely the point at infinity \(\infty\) \cite{Needham1997}. Stated more formally:
+The Möbius group \moebiusgroup is the automorphism group of the Riemann sphere. Being the simplest compact Riemann surface, the Riemann sphere is a special representation of the extended complex plane\footnote{The complex plane combined with a value for infinity `\(\infty\)'.} \(\hat{\complex}\) in three-dimensional space: it can be visualized by placing the complex plane horizontally and considering a unit sphere centered around the origin, such that its intersection coincides with the unit disk of the complex plane. To map the plane to the sphere, a stereographic projection is used from the `north pole' of the sphere. As such, anything inside the unit disk is mapped to the southern hemisphere, everything on the unit disk is mapped onto itself (since it lies at the intersection) and everything outside the unit disk lies on the northern hemisphere. The north pole of the Riemann sphere then coincides with the distinctive feature of the extended complex plane, namely the point at infinity \cite{Needham1997}. Stated more formally:
 \[ \moebiusgroup = \automorphgroup{\hat{\complex}} \quad \hat{\complex} = \complex \cup \{\infty\}.\]
 \index{automorphism group}
 \index{Riemann sphere}
 \index{extended complex plane}
 
-In order to turn towards the computational aspect of the Riemann sphere, one must consider a different coordinate system for the complex plane; namely the \emph{homogeneous} or \emph{projective} coordinates. These consist of an ordered pair of complex numbers\footnote{In physics, these objects are also called \emph{2-spinors} which are also fundamentally connected with the theory of relativity, as demonstrated by \cite{Penrose1984}.} , i.e. an element of \(\complex^2/\left\{[0, 0]\right\}\),  denoted as \(\qty[\mathfrak{z}_1, \mathfrak{z}_2]\). These two complex numbers are subject to an equivalence relation that makes them projective coordinates, in that \[\qty[\mathfrak{z}_1, \mathfrak{z}_2] \sim \qty[\mathfrak{w}_1, \mathfrak{w}_2] \iff \mathfrak{w}_1 = \lambda \mathfrak{z}_1 \text{ and } \mathfrak{w_2} = \lambda \mathfrak{z}_2\]
-with \(\lambda\) any nonzero complex number. The projective space is then formed by the quotient set of the complex 2-space (excluding the origin) and this equivalence relation. Every equivalence class can be uniquely identified with a point \([1, \sfrac{\mathfrak{z}_2}{\mathfrak{z}_1}]\), which then corresponds to a point on the Riemann sphere (or equivalently on the extended complex plane). The only point where this mapping breaks down is the point \([0, 1]\), which can be associated with the north pole on the Riemann sphere, or the infinity point. In technical terms, this is called a one-point compactification of a plane into a sphere, with the desirable property that the infinity point \emph{has no special meaning on the sphere}, which it inevitably has in a plane. The Riemann sphere is therefore equal to the one-dimensional complex projective space \(\mathbb{CP}^1\) \cite{Thurston1997}. 
+In order to see how the Riemann sphere relates to the transformations of the form \cref{eq:mobius}, one must consider a different coordinate system for the complex plane; namely the \emph{homogeneous} or \emph{projective} coordinates. These consist of an ordered pair of complex numbers\footnote{In physics, these objects are also called \emph{2-spinors}; they are also fundamentally connected with the theory of relativity, as demonstrated by \cite{Penrose1984}.} , i.e. an element of \(\complex^2/\left\{[0, 0]\right\}\),  denoted as \(\qty[\mathfrak{z}_1, \mathfrak{z}_2]\). These two complex numbers are subject to an equivalence relation that makes them projective coordinates, in that \[\qty[\mathfrak{z}_1, \mathfrak{z}_2] \sim \qty[\mathfrak{w}_1, \mathfrak{w}_2] \iff \mathfrak{w}_1 = \lambda \mathfrak{z}_1 \text{ and } \mathfrak{w_2} = \lambda \mathfrak{z}_2\]
+with \(\lambda\) any nonzero complex number. The projective space is then formed by the quotient set of the complex 2-space (excluding the origin) and this equivalence relation. Every equivalence class can be uniquely identified with a point \([1, \mathfrak{z}_2/\mathfrak{z}_1]\), which then corresponds to a point on the Riemann sphere (or equivalently on the extended complex plane). The only point where this mapping breaks down is the point \([0, 1]\), which can be associated with the north pole on the Riemann sphere, or the infinity point. In technical terms, this is called a one-point compactification of a plane into a sphere, with the desirable property that the infinity point \emph{has no special meaning on the sphere}, which it inevitably has in a plane. The Riemann sphere is therefore equal to the one-dimensional complex projective space \(\mathbb{CP}^1\) \cite{Thurston1997}. The compactification arises from the fact that in the complex plane, one can venture in any arbitrary direction to obtain the `same' infinity point, in contrast to the signed infinities $\pm \infty$ that are associated with the real line. This single infinity point essentially zips the edges of the plane together into a compact manifold.
 \index{compactification}
 
 \subsection{Matrix representation}
-A very powerful property of Möbius transforms is that they can each be associated to a \(2\times 2\) complex matrix like so:
+Möbius transforms is that they can each be conveniently associated to a \(2\times 2\) complex matrix like so:
 \[ \frac{az + b}{cz + d} \corresponds \mqty(a & b \\ c & d).\] 
 Because the transformations are only defined up to the multiplication of a constant, so is the associated matrix. However, one can assume to have the transformation normalized, i.e. \(ad - bc = 1\) which is equivalent to restricting the matrix to have a unit determinant.  When normalized, there are precisely two matrices corresponding to every Möbius transform, since multiplying the entire matrix with -1 would still yield the same result. Now, how can one actually effect a Möbius transformation using this matrix representation? This is where the projective coordinates come into play. As it turns out, 
 \[ 
     \mqty(a & b\\ c & d)\mqty(\mathfrak{z}_1\\\mathfrak{z}_2)
     = \mqty(a\mathfrak{z}_1 + b\mathfrak{z}_2\\c\mathfrak{z}_1 + d\mathfrak{z}_2)
-    =\mqty(a(\mathfrak{z}_1/\mathfrak{z}_2) + b\\c(\mathfrak{z}_1/\mathfrak{z}_2) + d)
+    =\mqty(a(\mathfrak{z}_1/\mathfrak{z}_2) + b\\c(\mathfrak{z}_1/\mathfrak{z}_2) + d);
 \]
-which are exactly the homogeneous coordinates of the image of \(z\) under this Möbius transform. This allows calculating the result of any Möbius transformation also by means of matrix multiplication.
-
-The correspondence with matrices goes even deeper than this simple computational trick: the composition of two Möbius transforms  can simply be obtained by multiplying their corresponding matrices (denoted by \(M_1\) and \(M_2\)), that is
-\[\mathfrak{M}_1 \circ \mathfrak{M}_2 \to M_1 M_2,\]
+which are exactly the homogeneous coordinates of the image of \(z\) under this Möbius transform. This allows calculating the result of any Möbius transformation also by means of matrix multiplication. Furthermore, the composition of two Möbius transforms  can simply be obtained by multiplying their corresponding matrices (denoted by \(M_1\) and \(M_2\)), that is
+\[\mathfrak{M}_2 \circ \mathfrak{M}_1 \to M_2 M_1,\]
 and furthermore, the inverse Möbius transformation \(\mathfrak{M}^{-1}\) corresponds to the inverse of the matrix \(M^{-1}\) \cite{Needham2021}.
 
 \index{Möbius group}
@@ -58,21 +62,20 @@ and furthermore, the inverse Möbius transformation \(\mathfrak{M}^{-1}\) corres
 \index{projective coordinates}
 \index{complex projective line}
 
-\subsection{The Möbius group} 
-The link with the matrices already hints at a very important fact about Möbius transforms: they form a group under composition --- the Möbius group \moebiusgroup. This fact is actually immediately clear from the correspondence between matrix multiplication and composition of the transformation: a composition of two transforms is again a transform. Additionally, matrix multiplication is associative and they are assumed to be nonsingular, so inverses always exist. As such, all the group axioms are satisfied (of course, all these results could have been obtained directly from the definition of the Möbius transform, but the reasoning based on the matrices is particularly straightforward). Perhaps not very surprising is that the identity Möbius transformation \(E(z)\) corresponds to the \(2\times 2\) identity matrix.
-
-Based on the matrix analogy, one can state that \moebiusgroup is the group of linear\footnote{It is misleading to call the Möbius transforms `linear' in general --- they are definitely nonlinear in the complex plane! However, when using the homogeneous coordinates, they become linear transforms.} transformations on vector space \(\complex^2\) --- as projective coordinates. This is the same as saying that the Möbius group is isomorphic to the group of linear transformations \emph{modulo} the nonzero scaling operation on \(\complex^2\): the resulting quotient group is the \emph{projective linear group} \pglgroup{2}{\complex}.
+\subsection{The Möbius group as PGL(2,\complex)} 
+%The link with the matrices already hints at a very important fact about Möbius transforms: they form a group under composition --- the Möbius group \moebiusgroup. This fact is actually immediately clear from the correspondence between matrix multiplication and composition of the transformation: a composition of two transforms is again a transform. Additionally, matrix multiplication is associative and they are assumed to be nonsingular, so inverses always exist. As such, all the group axioms are satisfied (of course, all these results could have been obtained directly from the definition of the Möbius transform, but the reasoning based on the matrices is particularly straightforward). Perhaps not very surprising is that the identity Möbius transformation \(E(z)\) corresponds to the \(2\times 2\) identity matrix.
+Based on the matrix analogy, one can state that \moebiusgroup is the group of linear\footnote{It is misleading to call the Möbius transforms `linear' in general --- they are definitely nonlinear in the complex plane! However, when using the homogeneous coordinates, they become linear transforms.} transformations on vector space \(\complex^2\) --- as projective coordinates. This is the same as saying that the Möbius group is isomorphic to the group of linear transformations \emph{modulo} the nonzero scaling operation on \(\complex^2\): the resulting quotient group is the \emph{projective linear group} \pglgroup{2}{\complex}. It was mentioned before that that the Möbius group is the automorphism group of the Riemann sphere; the fact that $\moebiusgroup \cong \pglgroup{2}{\complex}$ is simply because the Riemann sphere `is' the projective complex line: it consists of all directions in the complex 2-space.
 
 An interesting fact from group theory arises here as well: it has already been established that Möbius transforms are only unique up to multiplication by a scalar --- as such, they can be normalized (with unit determinant) without loss of generalization. This suggests that \moebiusgroup is really the action of the \emph{special} linear group modulo scalar multiplication, resulting in the \emph{projective special linear group}. Luckily, this fact is also reconciled within group theory: the groups \pglgroup{n}{\field} and \pslgroup{n}{\field} over the field \field are isomorphic as long as every element of \field has an \(n\)th root within \field. The fact that it is true for \(\field = \complex\) is probably the most fundamental property of the complex numbers. To summarize, the Möbius group \moebiusgroup is equal to the projective linear group and the special projective group (over the field of complex numbers), which are isomorphic to each other in this particular case.
 \index{projective linear group}
 \index{special projective linear group}
 
-\section{Classification of Möbius transforms}
-In the preceding discussion about the matrix representation of Möbius transforms, one important aspect has not yet been addressed: what about the eigenvalues and eigenvectors of \(M\)? Eigenvectors are vectors that remain invariant (up to scaling) under the multiplication of a particular matrix. Of course, one should bear in mind that the vector, in this case, contains projective coordinates, so that even when scaled, its coordinate representation remains identical. As such, the eigenvectors of the matrix \(M\) are the \emph{fixed points} of the Möbius transform \(\mathfrak{M}\); any Möbius transform has two at most. This is even more perspicuous by solving the equation \(z_0 = \mathfrak{M}(z^*)\), which has solutions
+\section{Classification of Möbius transformations}
+The analogy between Möbius transformations and matrix multiplication begs the question which role of eigenvalues and eigenvectors of the corresponding matrix play. Eigenvectors are vectors that remain invariant (up to scaling) under the multiplication of a particular matrix. In this case, the vector contains projective coordinates, so even when it is scaled, its coordinate representation remains identical. As such, the eigenvectors of the matrix \(M\) are the \emph{fixed points} of the Möbius transformation \(\mathfrak{M}\); any Möbius transformation has two at most. This is demonstrated by solving \(z_0 = \mathfrak{M}(z^*)\), which has solutions
 \[ z_0 = \frac{(a - d) \pm \sqrt{(a + d)^2 - 4}}{2c}.\]
-When converted to projective coordinates, the two solutions for \(z^*\) then coincide with the eigenvectors of \(M\). In the degenerate case for which \(a + d = \pm2\), the argument of the square root amounts to zero, which means that there is only one unique fixed point. These transforms are called \emph{parabolic}, more will become clear about them later \cite{Needham1997}.
+When converted to projective coordinates, the two solutions for \(z^*\) then coincide with the eigenvectors of \(M\). In the degenerate case for which \(a + d = \pm2\), the argument of the square root amounts to zero, which means that there is only one unique fixed point. These transformations are called \emph{parabolic}, more will become clear about them later \cite{Needham1997}.
 
-Now, it remains to analyse the significance of the eigenvalues. Of course, since eigenvalues are sensitive to scaling of the matrix, it is important to stress again that \(M\) must be normalized (have a unit determinant) in order for the following to hold. A well known fact in linear algebra states that if \(\lambda_1, \lambda_2\) are eigenvalues of \(M\), then
+Now, it remains to analyze the significance of the eigenvalues. Since eigenvalues are sensitive to scaling of the matrix, it is important to stress again that \(M\) must be normalized (have a unit determinant) in order for the following to hold. A well known fact in linear algebra states that if \(\lambda_1, \lambda_2\) are eigenvalues of \(M\), then
 \[ \trace{M} = \lambda_1 + \lambda_2 \quad\text{and}\quad \det M  = \lambda_1 \lambda_2.\]
 Because the matrix is normalized, these two results can be combined into:
 \begin{equation}
@@ -84,11 +87,11 @@ It can be shown that every non-parabolic Möbius transform is conjugate\footnote
 where \(k\) is called the \emph{multiplier} of this Möbius transform, and consequently all the transforms that are conjugate to it. The matrix \(J\) that coincides with this transform necessarily must have the form (the letter \(J\) is used to denote this transform because it is equal to the Jordan form of the transformation matrix \(M\)) \cite{Needham1997}
 \[J = \mqty(\dmat[0]{\sqrt{k}, \frac{1}{\sqrt{k}}}), \]
 \index{Jordan form}
-because then of course \(\mathfrak{J}(z) = \frac{\sqrt{k}z}{1/\sqrt{k}} = kz\). Because conjugacy translates to a similarity transform in the matrix analogy, it leaves the eigenvalues of the matrix unaffected. But, for \(J\) is a diagonal matrix, its eigenvalues are exactly on the main diagonal. As a result, \emph{the multiplier of a Möbius transform is equal to the square of its eigenvalue}, or \(k = \lambda^2\). Strictly speaking, every Möbius transform has of course two eigenvalues and two multipliers, but since they are both each other\ reciprocal, they do not have to be considered separately. With this result, \cref{eq:moebius_eigvals} can then also be restated in terms of the multiplier \(k\) instead of the eigenvalues:
+because then of course \(\mathfrak{J}(z) = \frac{\sqrt{k}z}{1/\sqrt{k}} = kz\). Because conjugacy translates to a similarity transform in the matrix analogy, it leaves the eigenvalues of the matrix unaffected. But, since \(J\) is a diagonal matrix, its eigenvalues are exactly on the main diagonal. As a result, \emph{the multiplier of a Möbius transform is equal to the square of its eigenvalue}, or \(k = \lambda^2\). Strictly speaking, every Möbius transform has two eigenvalues and two multipliers, but since they are both each other's reciprocal, they do not have to be considered separately. With this result, \cref{eq:moebius_eigvals} can then also be restated in terms of the multiplier \(k\) instead of the eigenvalues:
     \[\sqrt{k} + \frac{1}{\sqrt{k}} = a + d = \trace{M}.\]
 Solving \cref{eq:moebius_eigvals}, one obtains
  \[ \lambda^2 - (a + d)\lambda + 1 = 0\]
- which is a quadratic equation with discriminant \(\Delta = (a + d)^2 - 4\): from the sign of \(\Delta\) one can then distinguish three possible cases:
+ which is a quadratic equation with discriminant \(\Delta = (a + d)^2 - 4\). From the sign of \(\Delta\) one can then distinguish three possible cases:
 \begin{enumerate}
     \item \(\Delta < 0\) or \((a + d)^2 < 4\): there are two complex solutions for \(\lambda\). It is easy to show that the solution will then be equal to 
         \[\frac{a + d}{2} \pm \frac{\ii}{2}\sqrt{4 - (a + d)^2}.\] 
@@ -119,7 +122,7 @@ Solving \cref{eq:moebius_eigvals}, one obtains
         Similarly to the elliptic case, this matrix can also be expressed in terms of hyperbolic functions, completing the analogy that was already established in \cref{chap:finance_rotation}:
         \[ M = \mqty(\cosh(\zeta/2) & -\sinh(\zeta/2)\\ 
                      \sinh(\zeta/2) & \cosh(\zeta/2)). \]
-        As such, these transforms are akin to hyperbolic rotations, which is why they are also classified as \emph{hyperbolic}. The hyperbolic transforms are also part of the class of loxodromic transforms, together with the aforementioned class where \(\lambda\) is complex. They do however deserve their own subclass because, apart from frequently encountered, they also represent a particular part of the special linear group over the reals \slgroup{n}{\real}, as will be discussed later.
+        As such, these transforms are akin to hyperbolic rotations, which is why they are also classified as \emph{hyperbolic}. The hyperbolic transforms are also part of the class of loxodromic transforms, together with the aforementioned class where \(\lambda\) is complex. They do, however, deserve their own subclass because, apart from frequently encountered, they also represent a particular component of the special linear group over the reals \slgroup{n}{\real}.
 \end{enumerate}
 \index{Möbius transform!elliptic}
 \index{Möbius transform!hyperbolic}
@@ -138,7 +141,7 @@ To summarize, there are five different classes of Möbius transform: circular, e
 \begin{figure}
     \centering
     \input{media/tikz/mobius_transforms}
-    \caption{Overview of the four classes of Möbius transform and their typical action on the Riemann sphere. The curves shown on the Riemann sphere are the \emph{invariant curves} of the transformation, i.e. these curves as a whole remain invariant under the transformation. Clearly, the elliptic, hyperbolic and loxodromic transformations have the North and South pole, or \(\infty\) and 0 as fixed points, whereas the parabolic transformation only has a single fixed point at the North pole. The loxodromic transformations borrow their name from loxodromes, which are spiral-like trajectories on the Earth with constant bearing --- a ship that taking a loxodromic path would maintain a constant angle with respect to true North. Illustration reprinted from \citet[p. 78]{Needham2021}.}
+    \caption{Overview of the four classes of Möbius transform and their typical action on the Riemann sphere. The curves shown on the Riemann sphere are the \emph{invariant curves} of the transformation, i.e. these curves as a whole remain invariant under the transformation. The elliptic, hyperbolic and loxodromic transformations have the North and South pole, or \(\infty\) and 0 as fixed points, whereas the parabolic transformation only has a single fixed point at the North pole. The loxodromic transformations borrow their name from loxodromes, which are spiral-like trajectories on the Earth with constant bearing --- a ship that taking a loxodromic path would maintain a constant angle with respect to true North. Illustration reprinted from \citet[p. 78]{Needham2021}.}
     \label{fig:riemann_transforms}
 \end{figure}
 
@@ -167,14 +170,15 @@ To summarize, there are five different classes of Möbius transform: circular, e
 \end{table}
 
 \section{Subgroups}
-Apart from the classification considered in the preceding chapter, there are also several subgroups of the Möbius group that can be distinguished. It is compelling to observe that each of these subgroups can each be identified with one of the `geometry types' that were considered in \cref{chap:hyperbolic_geometry}: those of positive (spherical), zero (Euclidean) and negative (hyperbolic) geometry. For every geometry type, a specific subgroup of the Möbius group will play the role of the direct isometry group in a particular `map' \cite{Needham2021}.
+\label{sec:subgroups}
+Apart from the classification considered in the preceding chapter, there are also several subgroups of the Möbius group that can be distinguished. A compelling observation is that each of these subgroups can each be identified with one of the `geometry types' that were considered in \cref{chap:hyperbolic_geometry}: those of positive (spherical), zero (Euclidean) and negative (hyperbolic) geometry. For every geometry type, a specific subgroup of the Möbius group will play the role of the direct isometry group in a particular `map' \cite{Needham2021}.
 
 \subsection{Euclidean geometry}
 The direct isometries in the Euclidean plane consist simply of translations and rotations. Clearly, a rotation in the complex plane (around the origin) can be represented simply by \(z \mapsto e^{\ii \theta}\), while a translation is \(z \mapsto z + b\) with \(b \in \complex\). Hence, the entire direct isometry group of the Euclidean plane is given by
     \[ \mathfrak{E}(z) = e^{\ii\theta} + b. \]
 This group is also called the Euclidean group of dimension two.
 \subsection{Spherical geometry}
-One of the most prevalent applications of group theory is are the representation of rotations in three-dimensional Euclidean space. Of course, the group associated with these rotations is the special orthogonal group \(\sogroup\). This group is diffeomorphic to the three-dimensional real projective space \(\mathbb{RP}^3\) (intuitively, this space consists of three `directions'). The rotations in \(\real^3\) can also be parameterized by \emph{unit quaternions} (also called \emph{versors}): these represent points on the 3-sphere \(\sphere{3}\). The difference between the 3-sphere and the real projective space is that the latter identifies the \emph{antipodal} parts that are present on the sphere. As such, any rotation in \(\real^3\) corresponds precisely to two points on the 3-sphere (or two unit quaternions) --- the group of unit quaternions therefore is a double cover of \sogroup. 
+One of the most prevalent applications of group theory is are the representation of rotations in three-dimensional Euclidean space. The group associated with these rotations is the special orthogonal group \(\sogroup\). This group is diffeomorphic to the three-dimensional real projective space \(\mathbb{RP}^3\) (intuitively, this space consists of three `directions'). The rotations in \(\real^3\) can also be parameterized by \emph{unit quaternions} (also called \emph{versors}): these represent points on the 3-sphere \(\sphere{3}\). The difference between the 3-sphere and the real projective space is that the latter identifies the \emph{antipodal} parts that are present on the sphere. As such, any rotation in \(\real^3\) corresponds precisely to two points on the 3-sphere (or two unit quaternions) --- the group of unit quaternions therefore is a double cover of \sogroup. 
 
 Quaternions can also be represented as complex matrices: \cite{Stillwell2008}
 \[ q = \quat{m}{n}{o}{p} \in \quaternions \corresponds Q = \mqty(m + \ii p & -n - \ii o\\n - \ii o & m - \ii p),\]
@@ -190,26 +194,35 @@ the latter equivalent then enforces that \(\det Q = 1\). There are always two qu
 \subsection{Hyperbolic geometry}
 As described by \citet{Rovenski2010}, the isometries of the Poincaré half-plane are any (composition) of the following types of transformations, i.e. they leave distances according to the Poincaré metric unaffected:
 \begin{itemize}
-    \item horizontal translations: \((x, y)\mapsto(x + a, y)\) where \(x, y, a \in real\);
+    \item horizontal translations: \((x, y)\mapsto(x + a, y)\) where \(x, y, a \in \real\);
     \item reflection around the vertical axis: \((x, y) \mapsto (-x, y)\);
     \item dilations centered around the origin: \((x, y) \mapsto (ax, ay)\);
-    \item inversions with respect to the unit circle \((x, y)\mapsto\qty(\frac{x}{x^2 + y^2}, \frac{y}{x^2 + y^2})\).
+    \item inversions with respect to the unit circle \(\displaystyle (x, y)\mapsto\qty(\frac{x}{x^2 + y^2},\;\frac{y}{x^2 + y^2})\).
 \end{itemize}
 The group of all these transformations is precisely \pslgroup{2}{\real}, or the Möbius tranforms with real parameters:
 \[\mathfrak{H}(z) = \frac{az + b}{cz + d}\qquad a, b, c, d \in \real \quad ad - bc = 1;\]
 these are the isometries of the Poincaré half-plane \cite{Needham2021}. Recall from \cref{ssec:poincare_halfplane} that there are two types of geodesics in the half-plane: semicircles centered at the origin and straight (from Euclidean perspective) vertical lines. These are precisely invariant curves for the transformations listed --- isometries take geodesics to geodesics \cite{Lee1997}.
 
 \section{Relation with other groups}
+It has been established that the Möbius group as the automorphism group of the Riemann sphere is `trivially' isomorphic to the projective linear group over the complex numbers $\pglgroup{2}{\complex}$, which for this case is identical to the projective special linear group over the complex numbers $\pslgroup{2}{\complex}$. This triviality is due to the fact that the Riemann sphere is equal to the complex projective line. Furthermore, it was alluded in \cref{chap:relativity} that the Möbius group is isomorphic to the restricted Lorentz group $\text{SO}^+(1,3)$. As described by \citet{Needham2021}, the four-vectors from special relativity may be associated with the projective coordinates as follows:
+$$
+    \mqty(t + z & x + \ii y\\ x - \ii y & t - z) = 2 \mqty(\mathfrak{z}_1 \\ \mathfrak{z}_2)\mqty(\mathfrak{z}_1 \\ \mathfrak{z}_2)^H,
+$$
+this is the \emph{spinorial representation} of four-vectors. One can also see this as a parameterization of any vector in the future (positive direction of time) light cone in terms of two complex numbers. The determinant of this matrix coincides with the spacetime interval, which is the quadratic form that the Lorentz transformations must preserve. As such, a Möbius transformation effected on the projective coordinates will preserve this interval as well. It can be shown that this parameterization yields an isomorphism between the Möbius group and the restricted Lorentz group \cite{Penrose1984}. Furthermore, as discussed in \cref{chap:relativity}, the classification of Möbius transformations carries over to the Lorentz transformations as well, where hyperbolic elements are Lorentz boosts and elliptic elements are spatial rotations.
+
 Another classic Lie group is the special linear group \slgroup{n}{\field}, which are the volume-preserving transformations on a vector space --- this property turns out to be quite important. The special linear group over the complex numbers (2-dimensional) \slgroup{2}{\complex} can be represented as the group of all the complex \(2\times2\) matrices with unit determinant. It has been mentioned previously that any such matrix coincides with a Möbius transform, albeit surjectively: for every Möbius transform, there are two such matrices. As such, \slgroup{2}{\complex} is a \emph{double cover} of \moebiusgroup.
 
-Arguably more interesting than \slgroup{2}{\complex} is the special linear group over the reals \slgroup{2}{\real}, i.e. every invertible \(2 \times 2\) matrix with real entries and a unit determinant; they form a subgroup of \slgroup{2}{\complex} as well. It has been mentioned before that for the normalized Möbius transforms, the eigenvalues should be complex inverses of each other. For matrices with real entries, the eigenvalues are either both real or complex conjugates of each other. When not on the real axis, the only way eigenvalues can be complex inverses and complex conjugate is to be located on the unit circle. As can be seen on \cref{fig:multiplier_regions}, that means that the matrices with real entries contain exactly the hyperbolic (both real), elliptic (unit circle), and parabolic classes. The remaining part consists of the loxodromic transforms which have a nonreal trace.
+Arguably more interesting than \slgroup{2}{\complex} is the special linear group over the reals \slgroup{2}{\real}, i.e. every invertible \(2 \times 2\) matrix with real entries and a unit determinant; they form a subgroup of \slgroup{2}{\complex} as well. It has been mentioned before that for the normalized Möbius transforms, the eigenvalues should be complex inverses of each other. For matrices with real entries, the eigenvalues are either both real or complex conjugates of each other. When not on the real axis, the only way eigenvalues can be complex inverses and complex conjugate is to be located on the unit circle. As can be seen on \cref{fig:multiplier_regions}, that means that the matrices with real entries contain exactly the hyperbolic (both real), elliptic (unit circle), and parabolic classes. The remaining part consists of the loxodromic transforms which have a nonreal trace. $\slgroup{2}{\real}$ is in turn isomorphic to two other important groups: the two-dimensional symplectic group $\spgroup{2}$ and the special unitary group $\sugroup{1,1}$.
 
-\towrite{TODO}
+Finally, the isomorphisms of the subgroups of the Möbius transforms have been discussed in \cref{sec:subgroups}. Three subgroups can be identified, denoted by $\mathfrak{S}$, $\mathfrak{E}$ and $\mathfrak{H}$, which are respectively isomorphic to the two-dimensional Euclidean group, the three-dimensional rotations ($\sogroup$ covered by the quaternions in $\sugroup{2}$) and the special linear group $\slgroup{2}{\real}$ which also represents the isometries of the Poincaré half-plane.
+
+The relations between the groups are visualized in \cref{fig:group_relations}.
 
 \begin{figure}
     \centering
     \input{media/tikz/mobius_group}
-    \caption{Schematic of the relation of the Möbius group with other important groups such as the special orthogonal group, special unitary group, Lorentz group etc.}
+    \caption{Schematic of the relation of the Möbius group with other important groups such as the special orthogonal group, special unitary group, Lorentz group etc. Double lines represent isomorphisms, double covers and subgroups are indicated.}
+    \label{fig:group_relations}
 \end{figure}
 
-'s
+\section*{Chapter summary}
