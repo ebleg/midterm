@@ -2,8 +2,8 @@
 \label{chap:finance_rotation}
 In this chapter, 
 
-\section{Terminology}
-The aim of this research is to refine the way that economic engineering currently deals with financial instruments, primarily fixed-interest assets, but also marketable equity (stocks), derivatives, etc. All of these can be regarded as `investments', for lack of a better word, because they require a \emph{principal}, that is the amount invested, and a certain return that is proportional to the principal. This is why the return is usually expressed as a percentage of the principal, which in the case of debt is the interest rate. The latter contains the word `rate', because it has an inherent timely aspect: interest rates (and returns of investments in general) are associated with a certain `term' or duration over which the return is realized. As such, any type of investment is characterized by three components:
+\section{Interest terminology}
+The aim of this research is to refine the way that economic engineering currently deals with financial instruments, primarily fixed-interest assets, but also marketable equity (stocks), derivatives, etc. All of these can be regarded as `investments', for lack of a better word, because they require a \emph{principal}, that is the amount invested, and a certain return that is proportional to the principal. This is why the return is usually expressed as a percentage of the principal, which in the case of debt is the interest rate. The latter contains the word `rate' because it has an inherent timely aspect: interest rates (and returns of investments in general) are associated with a certain `term' or duration over which the return is realized. As such, any type of investment is characterized by three components:
 \begin{itemize}
     \item a \emph{principal}, something that is originally invested;
     \item a \emph{return} proportional to the principal;
@@ -21,32 +21,32 @@ After the end of the investment period, the investor has two options: either he 
 \end{figure}
 This reinvestment of earnings is the driving force behind compound interest: without this step, the investor would end up with \emph{simple interest}, which sees its relative returns essentially decreasing over time. One should, however, be cautious to associate this process exclusively with financial investments; for example, a farmer could use the earnings from his land to buy more land, increase his earnings, use those again to buy even more land, and so forth --- this will again give rise to exponential growth. The farming example makes it quite clear that the object that `generates' the return (capital) is of a very different nature than the return itself (yield). They can be connected through the usage of money as both a unit of account and a medium of exchange, which makes the whole process work \cite{Mankiw2017}. 
 
-Financial investments are arguably the culmination of this concept, since money itself earns money that can be reinvested again instantaneously. Still, the capital-yield distinction remains relevant: for example, companies pay dividends to their shareholders in proportion to the amount of stock they own; the shareholders could then choose to reinvest these earnings in more stock of that (or another) company, increasing their `capital'. An additional example here is stock dividends, which are stocks with dividends that are paid as additional stock --- essentially taking the role of money out of the equation.
+Financial investments are arguably the culmination of this concept since money itself earns money that can be reinvested again instantaneously. Still, the capital-yield distinction remains relevant: for example, companies pay dividends to their shareholders in proportion to the amount of stock they own; the shareholders could then choose to reinvest these earnings in more stock of that (or another) company, increasing their `capital'. An additional example here is stock dividends, which are stocks with dividends that are paid as additional stock --- essentially taking the role of money out of the equation.
 
 \section{The hyperbolic shape of compound interest}
 If the numbers from the example in \cref{fig:compound_interest} are plotted against each other, with capital on the horizontal axis and yield on the vertical axis, a hyperbolic shape appears, shown in \cref{fig:hyperbolic_compounding}. Hyperbolae are characterized by the implicit equation 
 \begin{equation}
-    X^2 - Y^2 = K^2
+    x^2 - y^2 = K^2
     \label{eq:hyperbola}
 \end{equation}
-where \lsymb{$K$}{Original investment} represents the `radius' of the hyperbola, which coincides with the principal amount of the investment. The amount of capital and yield accumulated at a certain time is then on the \lsymb{$X$}{Capital} and \lsymb{$Y$}{Yield}-axis respectively. However, as \cref{fig:hyperbolic_compounding} demonstrates, the shape arising from the example is not quite hyperbolic, since it essentially lags behind the real hyperbola of that radius.
+where \lsymb{$K$}{Original investment} represents the `radius' of the hyperbola, which coincides with the principal amount of the investment. The amount of capital and yield accumulated at a certain time is then on the \lsymb{$x$}{Capital} and \lsymb{$y$}{Yield}-axis respectively. However, as \cref{fig:hyperbolic_compounding} demonstrates, the shape arising from the example is not quite hyperbolic, since it essentially lags behind the real hyperbola of that radius.
 \begin{figure}[h!]
     \centering
     \input{media/tikz/hyperbolic_compounding}
-    \caption{Plot of the numbers from the example in \cref{fig:compound_interest}. The `ideal' hyperbola with the same radius, given by the equation $X^2 - Y^2 = K^2$ is shown as well.}
+    \caption{Plot of the numbers from the example in \cref{fig:compound_interest}. The `ideal' hyperbola with the same radius, given by the equation $x^2 - y^2 = K^2$ is shown as well.}
     \label{fig:hyperbolic_compounding}
 \end{figure}
 The reason why the `perfect' hyperbola is not recovered in the example is demonstrated as follows. The capital-yield evolution can be modeled as a second-dimensional difference equation like so:
-$$ \mqty(X(k+1)\\Y(k+1)) = \mqty(1& r \\ r & 1)\mqty(X(k)\\Y(k))\qq{with }X(0) = K,\, Y(0) = 0 $$
-where $X$ denotes capital, $Y$ denotes yield and $r$ is the interest rate. The solution of this autonomous system is given by:
-$$ \mqty(X(k)\\Y(k)) = \mqty(1& r \\ r & 1)^k\mqty(\ininv\\0). $$
-One can then write $X(k)^2 - Y(k)^2$ in terms of this solution:
-$$ X(k)^2 - Y(k)^2 = \mqty(K & 0)\mqty(1& r \\ r & 1)^k\mqty(1 & 0\\0 & -1)\mqty(1& r \\ r & 1)^k\mqty(K\\0).$$
+$$ \mqty(x(k+1)\\y(k+1)) = \mqty(1& r \\ r & 1)\mqty(x(k)\\y(k))\qq{with }x(0) = K,\, y(0) = 0 $$
+where $x$ denotes capital, $y$ denotes yield and $r$ is the interest rate. The solution of this autonomous system is given by:
+$$ \mqty(x(k)\\y(k)) = \mqty(1& r \\ r & 1)^k\mqty(\ininv\\0). $$
+One can then write $x(k)^2 - y(k)^2$ in terms of this solution:
+$$ x(k)^2 - y(k)^2 = \mqty(K & 0)\mqty(1& r \\ r & 1)^k\mqty(1 & 0\\0 & -1)\mqty(1& r \\ r & 1)^k\mqty(K\\0).$$
 In order to easily evaluate the matrix powers, one can use the eigenvalue decomposition:
 with
 $$ \mqty(1 & r \\  r & 1)^k = V\Lambda^k V^{-1} \qq{with } V = \mqty(-1 & 1 \\ 1 & 1) \quad \Lambda = \mqty(1 - r & 0\\0 & 1 + r). $$
 Straightforward computations then yield:
-$$ X(k)^2 - Y(k)^2 = K^2\qty(1 - r^2)^k, $$
+$$ x(k)^2 - y(k)^2 = K^2\qty(1 - r^2)^k, $$
 which suggests that for reasonably small values of $r$, the compounding process approximates the equation for the hyperbola. One way to achieve this is to compound faster, i.e. to use more periods with a smaller interest, such that $r \mapsto r/n$ and $k \mapsto kn$ for $n \to \infty$. Indeed, 
 $$ \lim_{n\to\infty} K^2\qty(1 - \qty(\frac{r}{n})^2)^{kn} = K^2. $$
 That is, for infinitely fast compounding, the capital-yield decomposition of compound interest follows a hyperbolic shape.
@@ -77,7 +77,7 @@ Clearly, hyperbolic sectors are entirely analogous to their `traditional' circul
 \begin{thmblock}{Hyperbolic angle}
 A hyperbolic angle corresponding to a point \(A\) is defined as twice the area of the hyperbolic sector based on the point \(A\) and the intersection point of the unit hyperbola and the \(x\)-axis \((K, 0)\).
 \end{thmblock}
-\Cref{fig:hyperbolic_angle} visualizes the concept of a hyperbolic angle: the angle $\zeta$ is defined in terms of the unit hyperbola $X^2 - Y^2 = 1$, or the hyperbola with `radius' 1. 
+\Cref{fig:hyperbolic_angle} visualizes the concept of a hyperbolic angle: the angle $\zeta$ is defined in terms of the unit hyperbola $x^2 - y^2 = 1$, or the hyperbola with `radius' 1. 
 Just like for circles, the hyperbolic angle is defined on the unit hyperbola, but using a special (polar) coordinate set points can be expressed in terms of a radius $K$ and an angle $\zeta$. By allowing the radius \(K\) to be negative, all the points in the disconnected open set bounded by \(y = x\) and \(y = -x\) can be identified with a unique radius \(K\) and hyperbolic angle \(\zeta\). This is somewhat similar to polar coordinates, which is why these coordinates will be referred to as `hyperbolic polar coordinates'. These coordinates are interesting because they allow to express investments in a very natural way in terms of their principal and realized return. 
 \begin{figure}[ht!]
     \centering
@@ -188,7 +188,7 @@ The current interpretation in economic engineering is that credit corresponds to
 
 \section{Hyperbolic numbers}
 \label{sec:hyperbolic_numbers}
-An alternative way to view hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, \(\jj\) will be used, though in literature also \(\mathrm{u}\) (for unipotent) and \(\mathrm{h}\) (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit \(\jj\) with the defining unipotence property \(\jj^2 = 1\), where \(\jj \notin \real\). Like complex numbers, hyperbolic numbers can have a real and a hyperbolic part
+An alternative way to view hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, the name `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, \(\jj\) will be used, though in literature also \(\mathrm{u}\) (for unipotent) and \(\mathrm{h}\) (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit \(\jj\) with the defining unipotence property \(\jj^2 = 1\), where \(\jj \notin \real\). Like complex numbers, hyperbolic numbers can have a real and a hyperbolic part
 \[
      z = x + y\jj \quad x, y \in \real.
 \]
@@ -247,7 +247,7 @@ Previously it was already mentioned that the hyperbola can be viewed convenientl
 \]
 The term `idempotent' is a testament to the fact that \(\jjp^2 = \jjp\) and \(\jjp^2 = \jjp\). As such, a given hyperbolic number \(z = x + y\jj\) in idempotent coordinates is 
 \[
-     \underbrace{\qty(x + y)}_{z_{_+}}\jj_{_+} + \underbrace{\qty(x - y)}_{z_{_-}}\jjp
+     \underbrace{\qty(X + Y)}_{z_{_+}}\jj_{_+} + \underbrace{\qty(X - Y)}_{z_{_-}}\jjp
 \]
 Furthermore, the idempotent basis is mutually annihilating, i.e. \(\jjp \jjm = 0\), which is why they possess a projective property: \cite{Sobczyk1995}
 \[

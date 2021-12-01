@@ -5,13 +5,13 @@ Economic engineering is built on analogies between (macro)economic theory and co
 
 Analytical mechanics, more specifically \emph{Lagrangian} and \emph{Hamiltonian} mechanics, are established around the definition of special state functions, respectively called the Lagrangian \(\lag\) and the Hamiltonian \(\ham\). As per usual, Lagrangian mechanics will be introduced first, for it has the most intuitive explanation. Then, a more formal approach allows (Legendre) transform the discussion into one of Hamiltonian mechanics. 
 
-In this chapter, frequent analogies will be made between mechanics and economics; as such, the idea is to have the `normal text' pertain mostly to the discussion of classical mechanics, and to provide the analogies in special `boxes' like so:
+In this chapter, frequent analogies will be made between mechanics and economics; as such, the idea is to have the `normal text' pertain mostly to the discussion of classical mechanics and to provide the analogies in special `boxes' like so:
 \begin{econ}{Example}
     An analogy between economics and classical mechanics.
 \end{econ}
 The reason for this particular choice of layout is twofold: first, it allows to make a sharp distinction between the older, extremely rigorous theory of classical mechanics and the novel approach of economic engineering: many ideas and propositions are still tentative (especially in the realm of classical mechanics) as the field of economic engineering matures. Secondly, it allows for easier reference as to not obscure the economic analogies (which are arguably the most important aspects of this chapter) with the highly theoretical discussion of analytical mechanics.
-\section{Economic engineering}
-The discipline of `economic engineering' is a very new one. The theoretical foundations have been developed over the past years at the Delft Center of Systems and Control primarily by prof. em. dr. ir. Mendel, combined with the contributions of several theses that have been recently written about the subject. The purpose of economic engineering is to use tools from various engineering disciplines and physics to improve the predictive power of (macro)economic models. The core idea is to extend `domain neutral modeling techniques such as bond graph modeling \cite{Karnopp2012} that are built on analogiesween mechanical, electrical,,,,, hydraulic, ... systems to economic systems as well. Hence, one attempts to give an economic interpretation to a generalized mass (I-element), generalized spring (C-element) and generalized damper (R-element). The idea is that this consistent engineering approach leads to actual \emph{predictive} models that provide much richer insights than the `stylized facts' from macroeconomy or, on the other end of the spectrum, the `black-box' econometric models that have lost all interpretative value. Indeed, applied economic engineering pursues \emph{gray-box} modeling instead, as is most common in traditional engineering models \cite{Kruimer2021}. Some analogies between mechanical, electrical and economic systems are listed in \cref{tab:analogies} to merely for the sake of illustration; a thorough motivation for each of them will be given in the following section. \Cref{tab:analogies} provides some examples of the analogies that are used within economic engineering. In general, their meaning is not as specific as given here and this table applies only to the most elementary cases. 
+\section{Introduction to economic engineering}
+The discipline of `economic engineering' is a very new one. The theoretical foundations have been developed over the past years at the Delft Center of Systems and Control primarily by prof. em. dr. ir. Mendel, combined with the contributions of several theses that have been recently written about the subject. The purpose of economic engineering is to use tools from various engineering disciplines and physics to improve the predictive power of (macro)economic models. The core idea is to extend `domain neutral modeling techniques such as bond graph modeling \cite{Karnopp2012} that are built on analogies between mechanical, electrical,,,,, hydraulic, ... systems to economic systems as well. Hence, one attempts to give an economic interpretation to a generalized mass (I-element), generalized spring (C-element) and generalized damper (R-element). The idea is that this consistent engineering approach leads to actual \emph{predictive} models that provide much richer insights than the `stylized facts' from macroeconomics or, on the other end of the spectrum, the `black-box' econometric models that have lost all interpretative value. Indeed, applied economic engineering pursues \emph{gray-box} modeling instead, as is most common in traditional engineering models \cite{Kruimer2021}. Some analogies between mechanical, electrical and economic systems are listed in \cref{tab:analogies} merely for the sake of illustration; a thorough motivation for each of them will be given in the following section. \Cref{tab:analogies} provides some examples of the analogies that are used within economic engineering. In general, their meaning is not as specific as given here and this table applies only to the most elementary cases. 
 \begin{table}[h]
     \centering
     \caption{Some examples of the analogies that are used in the application of economic engineering. The theory behind bond-graph modeling defines a generalization of the mechanical concepts of displacement, velocity, momentum, and effort and applies these to electrical, thermodynamic, hydraulic, ... systems too \cite{Karnopp2012}.}
@@ -110,7 +110,7 @@ This yields a total of \(n\) second-order differential equations, or equivalentl
     \begin{quote}
         \textbf{Hamilton's principle in economic engineering}\\ Economic agents try  to maximize their convenience yield (the utility of the goods they possess) by sacrificing as little  economic surplus as possible
     \end{quote}
-    As described by \citet{Feynman2010}, this is not only a global trajectory, but also a local one at every (infinitesimal) piece of the trajectory: one can see this as a formal restatement of the rational behavior of economic agents, which is a crucial assumption in may economic theories \cite{Mankiw2017}.
+    As described by \citet{Feynman2010}, this is not only a global trajectory but also a local one at every (infinitesimal) piece of the trajectory: one can see this as a formal restatement of the rational behavior of economic agents, which is a crucial assumption in may economic theories \cite{Mankiw2017}.
 \end{econ}
 
 \subsection{Kinetic energy}
@@ -158,7 +158,7 @@ $$ \text{kinetic energy } \ekin = \int \frac{p}{m}\dd{p} = \frac{p^2}{2m}\qquad
         \text{total surplus}\: =\: \sum_{i = 1}^{i^m} p_i \Delta v \qquad \text{consumer's surplus} \:=\: \sum p_i \Delta v - \underbrace{\sum p_m \Delta v}_{\text{amount paid}}
     \label{eq:surplus}
     \end{equation}
-    with $p$ the price and $v$ the amount of tea sold per year. Hence, the summations happen over a set of prices between two points: a `reference' price (in this case, \$20), and the market price $p_m$; of course, the value of the consumer's surplus depends on the choice for these prices. Naturally, the market price may be quite undisputed, but the reference price is just that, and its choice is arbitrary. In this simple example, it happens to coincide with the reservation price for the first pound of tea, but that need not be the case at all.
+    with $p$ the price and $v$ the amount of tea sold per year. Hence, the summations happen over a set of prices between two points: a `reference' price (in this case, \$20), and the market price $p_m$; of course, the value of the consumer's surplus depends on the choice for these prices. Naturally, the market price may be undisputed, but the reference price is just that, and its choice is arbitrary. In this simple example, it happens to coincide with the reservation price for the first pound of tea, but that need not be the case at all.
 
    By virtue of the foregoing discussion, it is established that \emph{the trade utility measured at a given price is the (consumer's) surplus}. The Lagrangian represents an exchange of `trade utility' (dependent on the flow of goods) and the `product utility', dependent on stock levels. To establish the analogy with mechanics, observe that the part of the mechanical Lagrangian that depends on the generalized velocities is the kinetic energy. This connection is the foundation of the following economic engineering principle:
     \begin{quote}
@@ -173,7 +173,7 @@ $$ \text{kinetic energy } \ekin = \int \frac{p}{m}\dd{p} = \frac{p^2}{2m}\qquad
         \text{total utility} = \int p\dd{v} \qquad 
         \text{consumer's surplus} = \int p\dd{v} - p_1\int \dd{v}
     $$ 
-    i.e. the total utility and consumer's surplus only differ by a choice of reference frame. With the consumer's surplus being analogous to kinetic energy, one can say that
+    i.e. the total utility and consumer surplus only differ by a choice of reference frame. With the consumer's surplus being analogous to kinetic energy, one can say that
     \begin{quote}
         \textbf{Price is analogous to momentum.}
     \end{quote}
@@ -196,7 +196,7 @@ $$ \vec{F} = -\pdv{U}{\gpos}. $$
 \begin{econ}{Potential energy}
     While in `regular physics' potential energy arises due to the presence of elastic, electric, gravitational ... forces, its interpretation in economic engineering is related to the utility gained from the possession of goods; i.e. it is a function that has units of cash flow (just like surplus) that depends only on the stock levels (possibly in terms of generalized coordinates).\\
 
-    The simplest example is the economic analogue of a spring: just like a spring, a restoring `force' (i.e. an economic want) occurs whenever the spring is elongated or stretched with respect to a certain reference distance. For economics agents, this means either being long or short on stock levels, again with respect to a certain reference $q_0$ (although important for practical interpretations, this reference does not really contribute on a conceptual level, which is why it is omitted in the theoretical discussion, just like the reference momentum for the kinetic energy). Hence, there is a `potential utility in either being long or short, in the sense that it can be exchanged for `market utility' or economic surplus, because it requires an exchange of goods. The continuous reciprocity between kinetic energy and 
+    The simplest example is the economic analog of a spring: just like a spring, a restoring `force' (i.e. an economic want) occurs whenever the spring is elongated or stretched with respect to a certain reference distance. For economics agents, this means either being long or short on stock levels, again with respect to a certain reference $q_0$ (although important for practical interpretations, this reference does not really contribute on a conceptual level, which is why it is omitted in the theoretical discussion, just like the reference momentum for the kinetic energy). Hence, there is a `potential utility in either being long or short, in the sense that it can be exchanged for `market utility' or economic surplus because it requires an exchange of goods. The continuous reciprocity between kinetic energy and 
     potential energy is a central theme in mechanics, and it is henceforth been given a succinct economic interpretation as well.
 \end{econ}
 The stereotypical example in mechanics that contains a single storage element of kinetic energy (a mass) and a single storage  element of potential energy (a spring) is the mass-spring system, which also arises as the linearization of a multitude of undamped nonlinear systems (i.e. the pendulum); the result is a second-order scalar autonomous differential equation:
@@ -212,7 +212,7 @@ with $k$ being the spring constant; this immediately results in Newton's second 
     \label{fig:mass_spring}
 \end{figure}
 
-The distinction between energy and co-energy exists for potential energy too. Again, the potential energy itself is defined in terms of work: the integral of force over a distance. Comparable between the bijective simple linear relation between velocity and momentum, for simple linear springs the force $F$ and displacement $q$ are related by $F = kq$. Again, in this case, the distinction may seem a bit pointless; but, when this relation is nonlinear (as it is the real world often is), the potential energy and co-energy are no longer the same. 
+The distinction between energy and co-energy exists for potential energy too. Again, the potential energy itself is defined in terms of work: the integral of force over a distance. Comparable between the bijective simple linear relation between velocity and momentum, for simple linear springs the force $F$ and displacement $q$ are related by $F = kq$. Again, in this case, the distinction may seem a bit pointless; but, when this relation is nonlinear (as it in the real world often is), the potential energy and co-energy are no longer the same. 
 $$ \text{potential energy } \epot = \int F \dd{q} \qquad \text{potential co-energy } \ecopot = \int q \dd{F} $$
 which for in the case of the simple spring turn out to be
 $$ \epot = \frac{kq^2}{2} \qquad \ecopot = \frac{f^2}{2k}. $$
@@ -223,7 +223,7 @@ In the case of potential energy, the familiar equation really \emph{is} the one 
     \caption{The distinction between potential energy and co-energy in terms of the relation between force and displacement. Figure courtesy of B. \citet{Krabbenborg2021}.}
     \label{fig:potential_energy}
 \end{figure}
-The solution of the simple mass-spring system is a sinusoid that continues indefinitely in time. These `perfect' sinusoids are not often encountered in real economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex interconnected nature of society. This makes the theoretical achievement that are the basic foundations of economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path-dependent forces in the system. 
+The solution of the simple mass-spring system is a sinusoid that continues indefinitely in time. These `perfect' sinusoids are not often encountered in real economic systems. One must, however, bear in mind that (i) the perfect mass-spring system does not exist in mechanics either, and (ii) that economic systems are much harder to `decouple' from their surroundings due to the complex interconnected nature of society. This makes the theoretical achievement that is the basic foundations of economic engineering perhaps even more admirable. Because of these external factors, \cref{eq:mass_spring} will in practice usually contain external inputs in the form of forcing terms in lieu of the 0 after the equality sign, and \emph{dissipative terms} which indicate path-dependent forces in the system. 
 
 \section{Hamiltonian mechanics}
 
@@ -254,10 +254,11 @@ The Legendre transform is involutive; that is, the $\ham$ and $\lag$ are the Leg
 \begin{econ}{The Legendre transform in economics}
     In economics, the Lagrangian measures the exchange between market surplus and convenience yield. This exchange has the units of $\qty[\frac{\$}{\text{yr}}]$, and is in economic engineering sometimes named `cost' for short, although a definition in terms of utility would probably be more appropriate. The term $\gmom\gvel$ has a very clear interpretation in economics: it is the \emph{revenue} associated with the flow of goods and their prices. The Legendre transform then maximizes the difference between revenue and the Lagrangian `cost' with respect to the number of goods exchanged; $\gvel$. The optimality is guaranteed by the price representing the change of utility with respect to a change in the flow of goods.
 
-    Because the Hamiltonian is equal to a difference between revenue and costs, its said to be analogous to earnings.
+    Because the Hamiltonian is equal to a difference between revenue and costs, it is said to be analogous to earnings.
 \end{econ}
 
 \subsection{Hamilton's equations}
+\label{sec:hamilton_eqs}
 \Cref{eq:diff_hamiltonian} provides an expression for the total differential of the Hamiltonian, $\dd{\ham}$. By definition, this differential is equal to:
 $$ \dd{\ham}(\gpos, \gmom, t) = \pdv{\ham}{\gpos}\dd{\gpos} + \pdv{\ham}{\gmom}\dd{\gmom} + \pdv{\ham}{t}\dd{t}. $$
 Then, \cref{eq:diff_hamiltonian} gives rise to the following equalities:
@@ -354,6 +355,7 @@ where $\gamma_1, \ldots, \gamma_n$ form a \emph{basis} for the one-dimensional c
 \end{econ}
 
 \subsection{Noether's theorem}
+\label{ssec:noether}
 Conservation principles play a vital role in physics and mechanics. Notable examples are the conservation of energy, linear momentum, angular momentum and charge. A surprising result in physics is that all of the mentioned conservation laws are a consequence of the same theorem, attributed to Emmy Noether. This theorem essentially looks at the nature of the Lagrangian of the system, and sees whether it is `ignorant' with respect to a certain group of transformations. As defined by \citet{Arnold1989}, the theorem is as follows:
 
 \begin{thmblock}{Noether's theorem}
@@ -393,4 +395,4 @@ Conservation of angular momentum often appears in the presence of so-called \emp
     Admittedly, all of these interpretations are arguably rather straightforward, since they mostly rely on either the presence of cyclic coordinates or the direct correspondence of total energy and energy of the system. However, the discussion does prove that Noether's theorem has very tangible interpretations in economics. Its real power will, though, appear with more sophisticated symmetries that are present in complex economic systems. The idea is that the Lagrangian and Noether's theorem permit the extraction of `stylized facts' from these types of systems that would otherwise be concealed by their complexity. 
 \end{econ}
 
-\section*{Chapter summary}
+\section*{Chapter summary} 

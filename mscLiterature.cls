@@ -1227,12 +1227,15 @@
                 \begin{minipage}[t]{0.9\textwidth}%
                     \Huge{\fontfamily{pbk}\selectfont%
                     \setlength{\baselineskip}{1.3\baselineskip}%
-                    \color{white}\msctitle}%
+                    \color{white} Applications of Hyperbolic\\Rotations}%
+                    %\color{white}\msctitle}%
                     
-                    \vspace{2mm}%
+                    % % TITLE HARDCODED !!!!!!!
+                    \vspace{4mm}%
                     \Large{\fontfamily{pbk}\selectfont%
                     \setlength{\baselineskip}{1.3\baselineskip}%
-                    \color{white}\mscsubtitle}%
+                    %\color{white}\mscsubtitle}%
+                    \color{white} Towards a Consistent Interpretation of Financial\\Instruments in Economic Engineering}%
                 \end{minipage}%
             }%
             % Author text (cyan)
@@ -1262,7 +1265,7 @@
     \pdfbookmark[0]{Title Page}{title_anchor}
     %
     \begin{center}
-        \Huge{\textbf{\textsf{\msctitle}}}\\ \Large{\textbf{\textsf{\mscsubtitle}}} \\[1cm]
+        \Huge{\textbf{\textsf{\msctitle}}}\\[0.5cm] \Large{\textbf{\textsf{\mscsubtitle}}} \\[1cm]
         \Large{\textsc{Literature Survey}}\\[7cm]%[2cm]
 %       \Large{For the degree of Master of Science in \mscprogram\ at Delft University of Technology}\\[5cm]
         \Large{\mscname}\\[1cm]
