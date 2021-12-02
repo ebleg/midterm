@@ -196,7 +196,7 @@ The Poincaré disk arises naturally from the Poincaré half-plane by virtue of t
     \label{eq:cayley_transform}
 \end{equation}
 which maps the entire half-plane to the unit disk. Furthermore, 
-\begin{itemize}
+\begin{itemize}[itemsep=0.2ex,topsep=0.2ex]
     \item the horizon coincides with the rim of the disk,
     \item the points \(\pm1\) are invariant,
     \item \(\ii\) maps to the origin, 
@@ -204,7 +204,7 @@ which maps the entire half-plane to the unit disk. Furthermore,
 \end{itemize}
 As will become clear in \cref{chap:moebius_transforms}, \cref{eq:cayley_transform} belongs to the class of Möbius transforms, which means that it also must be conformal. Therefore, angles on the pseudosphere, half-plane, and disk will all look alike. Since the horizon containing the ideal points is now the rim of the unit disk, it makes sense that the pullback metric based on \cref{eq:hp_metric} will have the $y$ replaced by the distance from the rim of the unit disk, which is $1 - x^2 - y^2$. Indeed, the half-plane metric can be written as in terms of the complex variable $z$, using the mapping \cref{eq:cayley_transform} the metric in the disk turns out to be \cite{Needham1997}
 \[
-    \dd{s} = \frac{\abs{\dd{z}}}{\imaginary(z)} = \frac{2\abs{\dd{\tilde{z}}}}{1 - \abs{z}^2} \qquad \text{with }\ \tilde{z} = D(z).
+    \dd{s} = \frac{\abs{\dd{z}}}{\imaginary(z)} = \frac{2\,\abs{\dd{\tilde{z}}}}{1 - \abs{z}^2} \qquad \text{with }\ \tilde{z} = D(z).
 \]
 In \(x-y\) coordinates, this metric is
 \begin{equation}
@@ -227,7 +227,7 @@ Hilbert's theorem about the embedding of a hyperbolic surface in Euclidean space
 Now, why would one find any solace in the Lorentz space specifically? Recall that the curvature of a surface can be expressed in terms of its local radius, i.e. \(1/p^2\). A negative curvature, therefore, implies that \(p\) is somehow not a real but imaginary number. Obviously, this can never make any sense in a Euclidean space, but the Lorentzian space perfectly allows this kind of odd witchcraft, as illustrated by \cref{fig:lightlike_spacelike} \cite{Ratcliffe2019}. The complete hyperboloid consists of two sheets, a positive sheet, and a negative sheet, implicitly described by the following set: 
 \[ H^2 = \qty{\vec{x} \in \real^3 \mid \lnorm{\vec{x}} = p}. \]
 However, on account of the positive and the negative sheet, this set is clearly \emph{disconnected}\footnote{A space is called connected if it is impossible to find two open sets whose union is equal to that space; which in this case clearly is not the case (the open sets are the positive and negative sheet of the hyperboloid).}. It is therefore common to discard the negative sheet of \(H^2\), the hyperboloid model of the hyperbolic 2-space is then \cite{Ratcliffe2019}
-\[ H^2_+ = \qty{\vec{x} \in \real^3 \mid \lnorm{\vec{x}} = p,\ x_1 > 0}. \]
+\[ H^2_+ = \qty{\vec{x} \in \real^3\;\mid\;\lnorm{\vec{x}} = p,\ x_1 > 0}. \]
 A parametric representation of \(H^2_+\) is the following
 \begin{equation}
     \vec{r} = \mqty(p\cosh(u)\\p\cos(v)\sinh(u)\\p\sin(v)\sinh(u)).
@@ -248,7 +248,7 @@ In the hyperboloid model, geodesics are formed by intersections between the hype
 
 \subsubsection{Relation with Poincaré disk}
 There exists a compelling relation between the Poincaré disk model of the hyperbolic plane and the hyperboloid model. As described by \citet{Balazs1986}, the Poincaré disk can be obtained by stereographically projecting the hyperboloid on the unit disk with respect to the base point $(0, 0, -1)$. This is demonstrated in \cref{fig:hyperboloid_disk}. A point on the hyperboloid with coordinates
-$$ (\cosh(\zeta), \sinh(\zeta)\cos(\phi), \sinh(\zeta)\sin(\phi)) $$
+$$ (\cosh(\zeta),\;\sinh(\zeta)\cos(\phi),\;\sinh(\zeta)\sin(\phi)) $$
 will then be have the following polar coordinates in the disk:
 $$ r = \tanh(\frac{\zeta}{2});$$
 the angle $\phi$ remains identical. 

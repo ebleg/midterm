@@ -201,10 +201,10 @@ $$ \vec{F} = -\pdv{U}{\gpos}. $$
 \end{econ}
 The stereotypical example in mechanics that contains a single storage element of kinetic energy (a mass) and a single storage  element of potential energy (a spring) is the mass-spring system, which also arises as the linearization of a multitude of undamped nonlinear systems (i.e. the pendulum); the result is a second-order scalar autonomous differential equation:
 \begin{equation}
-    m\ddot{q} + \pdv{U}{q} = 0, \quad \text{with} U = \frac{kq^2}{2}
+    m\ddot{q} + \pdv{U}{q} = 0 \quad \text{with} \quad U = \frac{kq^2}{2}
     \label{eq:mass_spring}
 \end{equation}
-with $k$ being the spring constant; this immediately results in Newton's second law of motion. A simple mass-spring system is shown in \cref{fig:mass_spring}.
+where $k$ represents the spring constant; this immediately results in Newton's second law of motion. A simple mass-spring system is shown in \cref{fig:mass_spring}.
 \begin{figure}[ht]
     \centering
     \input{media/tikz/mass_spring}
@@ -234,7 +234,7 @@ The total differential of the Lagrangian is
 $$ \dd{\lag} = \pdv{\lag}{\gpos}\dd{\gpos} + \pdv{\lag}{\gvel}\dd{\gvel} + \pdv{\lag}{t}\dd{t}. $$
 Two observations can be made: first, by definition, $\gmom = \pdv{\lag}{\gvel}$; and secondly, the Euler-Lagrange equations dictate that $\dv{\gmom}{t} = \pdv{\lag}{\gpos}$. As such, the total differential of the Lagrangian may be rewritten as: \cite{Landau1960}
 $$ \dd{\lag} = \dot{\gmom}\dd{\gpos} + \gmom \dd{\gvel} + \pdv{\lag}{t}\dd{t}.$$
-By means of the product rule $\dd{(\gmom \gvel)} = \gmom\dd{\gvel} + \gvel\dd{\gmom}$, the above can be rewritten as: 
+By virtue of the product rule $\dd{(\gmom \gvel)} = \gmom\dd{\gvel} + \gvel\dd{\gmom}$, the above can be expressed as follows: 
 \begin{equation}
     \dd{\underbrace{(\gmom\gvel - \lag)}_{\ham}} = \gvel\dd{\gmom} - \dot{\gmom}\dd{\gpos} - \pdv{\lag}{t}\dd{t}.
     \label{eq:diff_hamiltonian}

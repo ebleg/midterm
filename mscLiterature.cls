@@ -1227,8 +1227,7 @@
                 \begin{minipage}[t]{0.9\textwidth}%
                     \Huge{\fontfamily{pbk}\selectfont%
                     \setlength{\baselineskip}{1.3\baselineskip}%
-                    \color{white} Applications of Hyperbolic\\Rotations}%
-                    %\color{white}\msctitle}%
+                    \color{white}\msctitle}%
                     
                     % % TITLE HARDCODED !!!!!!!
                     \vspace{4mm}%
