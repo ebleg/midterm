@@ -1078,7 +1078,7 @@
 \newcommand{\supers}[2]%
            {\nomenclature[e ]{$ ^{#1} $}{\MakeUppercase#2}}
 \newcommand{\others}[2]%
-           {\nomenclature[f ]{#1}{\MakeUppercase#2}}
+           {#1\nomenclature[f ]{#1}{\MakeUppercase#2}}
 \renewcommand{\nomgroup}[1]{%
   \ifthenelse{\equal{#1}{A}}{%
     \medskip\item[\large\textbf{\textsf{Abbreviations}}]\medskip}{%

@@ -1,32 +1,43 @@
 \chapter{Hyperbolic geometry}
 \label{chap:hyperbolic_geometry}
-\section{Axioms of hyperbolic geometry}
-Hyperbolic geometry, sometimes called Lobachevskian geometry\footnote{After the Russian mathematician Nikolai Lobachevsky (1832) who first published about this subject \cite{Needham1997}.} is the geometry on the hyperbolic plane. This type of geometry is called non-Euclidean, because it does not satisfy all of Euclid's axioms that form the building blocks of traditional  geometry. More specifically, the fifth axiom, called the parallel axiom, states that \cite{Needham1997}
+This chapter provides an introduction to hyperbolic geometry, which is related to both the Lorentzian vector spaces from \cref{chap:relativity} and the Möbius transformations in \cref{chap:moebius_transforms}. In \cref{sec:non-euclidean}, the reader is introduced to the two alternatives to Euclidean geometry: spherical geometry and hyperbolic geometry. Surfaces exhibit one of these geometry types depending on their Gaussian curvature; a central concept in differential (Riemannian) geometry which is discussed in \cref{sec:curvature}. Then, \cref{sec:hyperbolic_models} proceeds by outlining three representations of the hyperbolic plane.
+
+\section{Non-Euclidean geometry}
+\label{sec:non-euclidean}
+Hyperbolic geometry, sometimes called Lobachevskian geometry\footnote{After the Russian mathematician Nikolai Lobachevsky (1832), who first published about this subject \cite{Needham1997}.} is the geometry on the hyperbolic plane. This type of geometry is called non-Euclidean, because it does not satisfy all of Euclid's axioms that form the building blocks of traditional  geometry. More specifically, the fifth axiom, called the parallel axiom, states that \cite{Needham1997}
 \begin{quote}
-    Through any point \(p\) not on the line \(L\) there exists precisely one line \(L'\) that does not meet \(L\).
+    through any point \(P\) not on the line \(\ell\) there exists precisely one line \(\ell'\) that does not meet \(\ell\).
 \end{quote}
-Logic dictates that if this axiom is not true, two possible alternatives arise. Given again the point \(p\) and the line \(L\), 
-\begin{itemize}
-    \item there exists \emph{no} line through \(p\) that does not meet \(L\), or
-    \item there exist \emph{at least two} lines through \(p\) that do not meet \(L\).
+Logic dictates that if this axiom is not true, two possible alternatives arise. Given again the point \(P\) and the line \(\ell\), it is either the case that
+\begin{itemize}[itemsep=0.3ex,topsep=0.3ex]
+    \item there exists \emph{no} line through \(P\) that does not meet \(\ell\), or
+    \item there exist \emph{at least two} lines through \(P\) that do not meet \(\ell\).
 \end{itemize}
-The first statement corresponds to what is called \emph{spherical geometry}, while the latter is the defining axiom for \emph{hyperbolic geometry}. It does not take too much imagination to realize that the parallel axiom is equivalent to another basic fact in Euclidean geometry: the sum of the angles of a triangle is equal to \(\pic\). As such, for both types of non-Euclidean geometry this will not be the case; let \(\mathscr{E}(T)\) denote the \emph{angular excess} of a triangle \(T\) in a certain geometry.
-\begin{itemize}
-    \item Naturally, for Euclidean geometry \(\mathscr{E}(T) = 0\),
-    \item in spherical geometry, \(\mathscr{E}(T) > 0\),
-    \item in hyperbolic geometry, \(\mathscr{E}(T) < 0\).
+The first statement corresponds to what is called \emph{spherical geometry}, while the latter is the defining axiom for \emph{hyperbolic geometry}. The parallel axiom is equivalent to another fundamental principle in Euclidean geometry: the sum of the angles of a triangle is equal to \(\pic\). As such, for both types of non-Euclidean geometry this will not be the case; let 
+\lsymb{\(\mathscr{E}(T)\)}{Angular excess of a triangle} denote the \emph{angular excess} of a triangle \(T\), i.e. the difference between the sum of the angles of a triangle and $\pic$. Three cases possible arise:
+\begin{itemize}[topsep=0.3ex,itemsep=0.3ex]
+    \item for Euclidean geometry \(\mathscr{E}(T) = 0\),
+    \item for spherical geometry, \(\mathscr{E}(T) > 0\),
+    \item for hyperbolic geometry, \(\mathscr{E}(T) < 0\).
 \end{itemize}
-It may come as a surprise that the angular excess can be related to the size of the triangle (more specifically, its area) like so \cite{Needham1997}
+\index{hyperbolic geometry}
+\index{Euclidean geometry}
+\index{Spherical geometry}
+As a consequence of the Gauss-Bonnet theorem, the angular excess can be related to its area \lsymb{$\mathscr{A}$}{Area (of a triangle)} \cite{Needham1997}
 \begin{equation}
-    \mathscr{E}(T) = k\mathscr{A}(T)
+    \mathscr{E}(T) = k\mathscr{A}(T),
     \label{eq:angular_excess} 
 \end{equation}
-\lsymb{\(k\)}{Gaussian curvature}
-where \(k = 0\) for Euclidean geometry, \(k < 0\) for hyperbolic geometry and \(\mathscr{K} > 0\) for spherical geometry. This hints at the fact that spherical geometry and hyperbolic geometry are somehow `larger' classes of geometry than Euclidean geometry, since they exist for a whole range of values for \(k\), be it positive or negative. There is indeed a `different' geometry for every value of \(k\), and only one of those values corresponds to the traditional concept of Euclidean geometry that most people are familiar with. Another consequence of \cref{eq:angular_excess} is that similar triangles cannot exist in non-Euclidean geometry; since apart from the trivial case where the triangles are also congruent, they must differ in area, which yields a different angular excess. The value of \(k\) is, as it turns out, equal to the \emph{Gaussian curvature} of the surface: a negatively curved surface has an angular deficiency while a positively curved surface has an angular excess; only for a surface with zero curvature the sum of the angles of a triangle will be precisely equal to \(\pic\).
+where \lsymb{\(k\)}{Gaussian curvature} is a constant. For Euclidean geometry, \(k = 0\), for hyperbolic geometry, \(k < 0\), and for spherical geometry \(k > 0\). This reveals the fact that spherical geometry and hyperbolic geometry are somehow `larger' classes of geometry than Euclidean geometry, since they exist for a whole range of values for \(k\), be it positive or negative. There is indeed a `different' geometry for every value of \(k\), and only one of those values corresponds to the traditional concept of Euclidean geometry that most people are familiar with. Another consequence of \cref{eq:angular_excess} is that similar triangles cannot exist in non-Euclidean geometry. Apart from the trivial case where the triangles are also congruent, they must differ in area, which yields a different angular excess. 
+
+The value of \(k\) is, as it turns out, equal to the \emph{Gaussian curvature} of the surface: a negatively curved surface has an angular deficiency while a positively curved surface has an angular excess; only for a surface with zero curvature the sum of the angles of a triangle will be precisely equal to \(\pic\).
+\index{angular excess}
+\index{Gaussian curvature}
 
 \section{Surface curvature}
 \label{sec:curvature}
 Perhaps one of the most remarkable results attributed to Carl Friedrich Gauss is his \emph{Theorema Egregium}\footnote{Loosely translated by John M. \citet{Lee1997} as the \emph{Totally Awesome Theorem}.} about the (Gaussian) curvature of surfaces. The theorem states that curvature is an \emph{intrinsic} property, which means that it remains preserved when the surface is transformed by `bending without stretching'. Curvature can be positive, negative, or zero. Positively curved surfaces `bend away' from their tangent plane in any direction (local convexity) and negatively curved surfaces intersect their tangent plane like a saddle. For surfaces with zero curvature, there is always at least one straight line that lies in the tangent plane; examples are a cylinder (always one straight line) and a plane (straight lines in two directions). If a coordinate system is defined such that the point at issue is at the origin and the tangent plane to the surface described by \(f(x, y)\) coincides with the horizontal, the Gaussian curvature can be computed by means of the determinant of the Hessian \cite{Thurston1997, ONeill2006}
+\index{Theorema Egregium (Gauss)}
 \[ 
     k = \det 
     \begin{pmatrix}
@@ -34,33 +45,39 @@ Perhaps one of the most remarkable results attributed to Carl Friedrich Gauss is
             f_{yx} & f_{yy}
     \end{pmatrix}.
 \]
-    Surface curvature can be approached more rigorously from the perspective of Riemannian geometry. The core concept behind Riemannian geometry is the eponymous manifold: these are manifolds equipped with a positive definite inner product\footnote{In contrast to \cref{sec:lorentz_metric}, the positive definiteness of the inner product is essential for Riemannian geometry. When the inner product is not positive definite but nondegenerate, as the Lorentz product, the manifold is called \emph{pseudo-Riemannian}.} on their tangent space, hence providing a \emph{metric (tensor)} that allows determining lengths, angles, and curvature. The metric on a parametric surface \(\vec{r}(u, v)\) can be written in terms of the so-called \emph{first fundamental form}\footnote{Unfortunately, the first (and second) fundamental forms are not forms in the modern mathematical sense of the word; this terminology is merely inherited from older works \cite{Spivak1999b}.} $\firstff$. 
+    Surface curvature can be approached more rigorously from the perspective of Riemannian geometry. The core concept behind Riemannian geometry is the eponymous manifold: a smooth manifold equipped with a positive definite inner product%\footnote{In contrast to \cref{sec:lorentz_metric}, the positive definiteness of the inner product is essential for Riemannian geometry. When the inner product is not positive definite but nondegenerate, as the Lorentz product, the manifold is called \emph{pseudo-Riemannian}.} 
+    on its tangent space, hence providing a \emph{metric (tensor)} that allows determining lengths, angles, and curvature. The metric on a parametric surface \(\vec{r}(u, v)\) can be written in terms of the so-called \emph{first fundamental form}\footnote{Unfortunately, the first (and second) fundamental forms are not forms in the modern mathematical sense of the word; this terminology is merely inherited from older works \cite{Spivak1999b}.} \others{$\firstff$}{First fundamental form}. 
+    \index{First fundamental form}
+    \index{Riemannian!geometry}
+    \index{Riemannian!manifold}
+    \index{Riemannian!metric}
     
     \begin{thmblock}{First fundamental form} 
-        The first fundamental form $\firstff$ of a surface parameterized by $\vec{r}$ is a (0, 2)-tensor defined as the inner product of two tangent vectors to the surface. It is characterized by three coefficients \lsymb{\(E\)}{First component of the first fundamental form}, \lsymb{\(F\)}{Second component of the first fundamental form} and \lsymb{\(G\)}{Third component of the first fundamental form}:
+        The first fundamental form $\firstff$ of a surface parameterized by \lsymb{$\vec{r}$}{Position vector in three-dimensional space}(\lsymb{$u,v$}{Surface parameters}) is a (0, 2)-tensor defined as the inner product of two tangent vectors to the surface. It is characterized by three coefficients \lsymb{\(E,\,F,\,G\)}{Components of the first fundamental form}:
         \begin{equation}
-                E = \inner{\vec{r}_u}{\vec{r}_u} \qquad F = \inner{\vec{r}_u}{\vec{r}_v} \qquad G = \inner{\vec{r}_v}{\vec{r}_v}\\
+                E = \inner{\vec{r}_u}{\vec{r}_u} \qquad F = \inner{\vec{r}_u}{\vec{r}_v} \qquad G = \inner{\vec{r}_v}{\vec{r}_v},\\
             \label{eq:first_fform}
         \end{equation}
         with $\displaystyle\vec{r}_u = \pdv{\vec{r}}{u}$ and $\displaystyle\vec{r}_v = \pdv{\vec{r}}{v}$.
     \end{thmblock}
-The components of the metric tensor \(\mathtens{g}\) coincide with the components of the first fundamental form: \(g_{11} = E\), \(g_{12} = g_{21}= F\) and \(g_{22} = G\). Therefore, the first fundamental form determines the length of curves lying in the surface.
+The components of the metric tensor \(\mathtens{g}\) coincide with the components of the first fundamental form: \(g_{11} = E\), \(g_{12} = g_{21}= F\) and \(g_{22} = G\). Therefore, the first fundamental form determines the length of curves embedded in the surface.
 
-In contrast, the \emph{second fundamental form} $\secondff$ provides information on the curvature or shape of the embedded surface, more specifically the rate of change of the tangent planes in any direction. 
-
+In contrast, the \emph{second fundamental form} \others{$\secondff$}{Second fundamental form} provides information on the curvature or shape of the embedded surface, more specifically the rate of change of the tangent planes in any direction. 
+\index{second fundamental form}
 \begin{thmblock}{Second fundamental form}
-    The second fundamental form $\secondff$, is a (0,2)-tensor that is defined by
+    The second fundamental form $\secondff$ of a surface parameterized by $\vec{r}(u,v)$ is a (0,2)-tensor that is formally defined by
     $$ \secondff(v_p, w_p) = -\inner{\dd{\nu(v_p)}}{w_p}, $$
-    where $\dd{\nu}$ is called the \emph{Weingarten map} --- it is the differential of the Gauss map $\nu$ that assigns a unit vector to every point of the manifold \cite{Spivak1999b}. The second fundamental form is characterized by three coefficients:
+    where \gsymb{$\dd{\nu}$}{Weingarten map} is called the \emph{Weingarten map} --- it is the differential of the Gauss map \gsymb{$\nu$}{Gauss map} that assigns a unit vector to every point of the manifold \cite{Spivak1999b}. The second fundamental form is characterized by three coefficients \lsymb{$e,\,f,\,g$}{Coefficients of the second fundamental form}:
     \[ e\dd{u}^2 + 2f\dd{u}\dd{v} + g\dd{v}^2. \]
-    These coefficients may be computed in three-dimensional Euclidean space using the surface unit normal vector 
+    These coefficients can be determined using the unit normal vector \lsymb{$\vec{n}$}{Normal vector},
     \begin{equation}
-        \vec{n} =  \frac{\vec{r}_u \cross \vec{r}_v}{\norm{\vec{r}_u \cross \vec{r}_v}},
+        \vec{n} =  \frac{\vec{r}_u \cross \vec{r}_v}{\norm{\vec{r}_u \cross \vec{r}_v}}.
         \label{eq:unit_normal}
     \end{equation}
-    the coefficients are then given by
+    The coefficients are then given in terms of $\vec{r}$ and $\vec{n}$:
     \begin{equation}
-            e = \vec{r}_{uu} \cdot \vec{n}\qquad f = \vec{r}_{uv} \cdot \vec{n} \qquad g = \vec{r}_{vv} \cdot \vec{n}
+            e = \inner{\vec{r}_{uu}}{\vec{n}}
+            \qquad f = \inner{\vec{r}_{uv}}{\vec{n}} \qquad g = \inner{\vec{r}_{vv}}{\vec{n}},
         \label{eq:second_fform}
     \end{equation}
     with $\displaystyle \vec{r}_{uu} = \pdv[2]{\vec{r}}{u}$ etc.
@@ -72,103 +89,117 @@ The first and second fundamental form can then be used to determine the Gaussian
     \label{eq:gaussian_curv}
 \end{equation}
 
-To summarize, the connection between hyperbolic geometry and Gaussian curvature is concisely stated again below.
-\begin{enumerate}
-    \item Hyperbolic geometry is the geometry with an alternative parallel axiom, where there are always at least two parallel lines for a given line through a point.
-    \item The former fact is equivalent to stating that the angular excess \(\mathscr{E}\) is characterized by the negative constant \(k\) (constant over the entire hyperbolic plane).
+To summarize, the connection between hyperbolic geometry and Gaussian curvature is concisely stated again below:
+\begin{enumerate}[itemsep=0.3ex,topsep=0.3ex]
+    \item Hyperbolic geometry is the geometry defined by an alternative parallel axiom, where there are always at least two parallel lines for a given line through a point.
+    \item The former fact is equivalent to stating that the angular excess \(\mathscr{E}\) is proportional to the area of a triangle by the negative factor \(k\) (constant over the entire hyperbolic plane).
     \item The Gauss-Bonnet theorem states that the constant \(k\) is given by the Gaussian curvature.
 \end{enumerate}
-Therefore, in order to represent hyperbolic geometry, one wishes to find a surface that exhibits constant negative Gaussian curvature. Some candidates exist for this criterion, the simplest of which is the so-called \emph{pseudosphere}.
+Therefore, in order to represent hyperbolic geometry, one wishes to find a surface that exhibits constant negative Gaussian curvature. Some candidates exist that meet this criterion, the simplest of which is the so-called \emph{pseudosphere}.
 
 \section{The pseudosphere}
-Pseudospherical surfaces are surfaces of constant negative curvature, in that sense exhibiting a certain duality to a sphere which is a surface of constant positive curvature. The most notable example is the eponymous \emph{pseudosphere}; which is the surface of revolution of a tractrix --- another name for the pseudosphere is a \emph{tractricoid}. A tractrix is a curve defined by the property that the segment of the tangent from the point to the axis has constant length \(p\). \Cref{fig:tractrix} shows an example of such a curve. A parametric representation of the tractrix \(\gamma\) is given by 
+\label{sec:pseudosphere}
+Pseudospherical surfaces are surfaces of constant negative curvature, in that sense exhibiting a certain duality to a sphere, which is a surface of constant positive curvature. The most notable example is the \emph{pseudosphere}; which is the surface of revolution for a tractrix --- another name for the pseudosphere is a \emph{tractricoid}. A tractrix is a curve defined by the property that the segment of the tangent from the point to its axis has constant length \(\rho\). \Cref{fig:tractrix} shows an example of such a curve. A parametric representation of the tractrix \(\gamma\) is given by 
+\index{pseudosphere}
+\index{tractrix}
+\index{tractricoid|see {pseudosphere}}
 \begin{equation} 
-        \gamma: u \mapsto \qty(p\sech(u),\ p(u - \tanh(u))) \quad u \in \real^+.
+        \gamma: u \mapsto \qty(\rho\sech(u),\ \rho(u - \tanh(u))) \quad u \in \real^+.
     \label{eq:tractrix}
 \end{equation}
 A parameterization of the pseudosphere in terms of \(u\) and \(v\) is then easily obtained by introducing a second parameter \(v\) that indicates the angle of rotation around the vertical axis:
 \begin{equation}
     \vec{r}(u, v) = 
     \mqty(
-        p\sech(u)\cos(v)\\
-        p\sech(u)\sin(v)\\
-        p\qty(u - \tanh(u))) 
+        \rho\sech(u)\cos(v)\\
+        \rho\sech(u)\sin(v)\\
+        \rho\qty(u - \tanh(u))) 
     \quad u \in \real^+,\ v \in [0, 2\pic).
     \label{eq:pseudosphere}
 \end{equation}
-A pseudosphere is visualized by \cref{fig:pseudosphere}; the mesh on the surface represents consists of the isoparametric curves for \(u\) and \(v\).
+A pseudosphere is visualized by \cref{fig:pseudosphere}; the mesh on the surface consists of the isoparametric curves for \(u\) and \(v\).
 \begin{figure}[ht]  
+    \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \input{media/tikz/tractrix}
         \caption{The tractrix - the line segments defined on the tangent to the curve between the curve and the intersection with the vertical axis all have the same length \(R\).}
         \label{fig:tractrix}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \input{media/tikz/pseudosphere}
-        \caption{The pseudosphere - the horizontal lines maintain a constant value for \(v\), while the vertical lines are for a constant \(u\).}
+        \caption{The pseudosphere is generated by rotating the tractrix around the vertical axis.\\~\\~\\~}
         \label{fig:pseudosphere}
     \end{subfigure}
     \caption{}
 \end{figure}
 
 \subsubsection{Curvature of the pseudosphere}
-As explained in \cref{sec:curvature}, the Gaussian curvature of a parametric surface may be calculated using the first and second fundamental form. The pseudosphere has a constant negative Gaussian curvature, this fact will be formally shown in this section. 
-Let the pseudosphere be parameterized as \cref{eq:pseudosphere}. Then, by virtue of \cref{eq:first_fform}, the coefficients of the first fundamental form \(E\), \(F\) and \(G\) are
+As explained in \cref{sec:curvature}, the Gaussian curvature of a parametric surface may be calculated using the first and second fundamental form. The constant negative curvature of the pseudosphere  will be formally demonstrated in this section. 
+Let the pseudosphere be parameterized as in \cref{eq:pseudosphere}. Then, by virtue of \cref{eq:first_fform}, the coefficients of the first fundamental form \(E\), \(F\) and \(G\) are
 \[
     \begin{split}
-        E & = p^4\tanh[2](u) \\
-        F & = 0 \\
-        G & = p^4\sech[2](u) \\
+        E & = \rho^2\tanh[2](u), \\
+        F & = 0, \\
+        G & = \rho^2\sech[2](u). \\
     \end{split}
 \]
-From \cref{eq:unit_normal}, the unit normal vector is
+From \cref{eq:unit_normal}, the unit normal vector to the pseudosphere is
 \[
     \vec{n} 
     = \mqty(
         -\cos(v)\tanh[-1](u) \\
         -\sin(v)\tanh(u)\\
         -\cosh[-1](u)\\
-    )
+    ).
 \]
-and, consequently, the coefficients of the second fundamental form are
+Consequently, the coefficients of the second fundamental form are
 \begin{equation*}
     \begin{split}
-        e &= -p\sech(u)\tanh(u)\\
-        f &= 0\\
-        g &= p\sech(u)\tanh(u)\\
+        e &= -\rho\sech(u)\tanh(u),\\
+        f &= 0,\\
+        g &= \rho\sech(u)\tanh(u),\\
     \end{split}
 \end{equation*}
-using \cref{eq:second_fform}. 
-The Gaussian curvature can then be computed to be \cite{ONeill2006}
+using \cref{eq:second_fform}.
+The Gaussian curvature can then be computed as follows \cite{ONeill2006}
 \begin{equation}
     k = \frac{\det(\secondff)}{\det(\firstff)} = \frac{eg - f^2}{EG - F^2} 
-    = \frac{-p^2\sech[2](u)\tanh[2](u)}{p^4\sech[2](u)\tanh[2](u)} = -\frac{1}{p^2}.
+    = \frac{-
+    rho^2\sech[2](u)\tanh[2](u)}{\rho^4\sech[2](u)\tanh[2](u)} = -\frac{1}{\rho^2}.
 \end{equation}
-As such, the pseudosphere is shown to have a constant negative curvature everywhere but on the rim (where differentiability is lost).
+As such, the pseudosphere is shown to have a constant negative curvature everywhere but on the rim, where it ceases to be differentiable.
 
-Because the pseudosphere has constant negative curvature, it shares many properties of the hyperbolic plane. For example, the angular excess equation \cref{eq:angular_excess} holds on the pseudosphere \cite{Needham1997}. But, whereas a sphere can serve as a `globe' for spherical geometry, the pseudosphere cannot be used as a representative for the entire hyperbolic plane. First of all, they are not homeomorphic (the pseudosphere is homeomorphic to a cylinder, which has a different fundamental group than the hyperbolic plane\footnote{Intuitively, one can see this as the number of different ways it is possible to draw loops on the surface which are distinct up to a homotopy. On the pseudosphere and the cylinder, loops can `wrap' around the vertical axis any integer number of times, while on the (hyperbolic) plane all loops are homotopic \cite{Lee2000}. This concept is defined more rigorously in terms of the \emph{fundamental group} \(\pi_1\), a heavily used invariant of topological spaces \cite{Schuller2014}.}). Secondly, the pseudosphere has a `rim' at the bottom which prevents any line segment from extending further downwards --- naturally, no such thing exists in the hyperbolic plane. As such, the pseudosphere can only serve as a model for finite regions of the hyperbolic plane, but not in its entirety. In technical terms, this means that the pseudosphere is \emph{locally isometric} to the hyperbolic plane \cite{Ghys2010}. This is why one must resort to models of the hyperbolic plane, they will be discussed in the next section.
+Because the pseudosphere exhibits constant negative curvature, it shares many properties of the hyperbolic plane. For example, the angular excess equation \cref{eq:angular_excess} holds on the pseudosphere \cite{Needham1997}. But, whereas a sphere can serve as a `globe' for spherical geometry, the pseudosphere cannot be used as a representative for the \emph{entire} hyperbolic plane. First of all, they are not homeomorphic (the pseudosphere is homeomorphic to a cylinder, which has a different fundamental group than the hyperbolic plane\footnote{Intuitively, one can see this as the number of different ways it is possible to draw loops on the surface, which are distinct up to a homotopy. On the pseudosphere and the cylinder, loops can `wrap' around the vertical axis any integer number of times, while on the (hyperbolic) plane all loops are homotopic \cite{Lee2000}. This concept is defined more rigorously in terms of the \emph{fundamental group} \(\pi_1\), a heavily used invariant of topological spaces \cite{Schuller2014}.}). Secondly, the pseudosphere has a `rim' at the bottom which prevents any line segment from extending further downwards --- naturally, no such thing exists in the hyperbolic plane. As such, the pseudosphere can only serve as a model for finite regions of the hyperbolic plane, but not in its entirety. In technical terms, this means that the pseudosphere is \emph{locally isometric} to the hyperbolic plane \cite{Ghys2010}. This is why one must resort to models of the hyperbolic plane, they will be the subject of the next section.
 
 \section{Models of the hyperbolic plane}
-The pseudosphere cannot serve as a model for the hyperbolic plane. In fact, a theorem attributed to David Hilbert shows that, \emph{in Euclidean three-space, there can be no complete smooth surface with the intrinsic geometry of the pseudosphere} \cite{Thurston1997}. This is the reason why there can only be models of the hyperbolic plane. One could say that this means `double trouble' for make-believe cartographers of the hyperbolic plane. Of course, there is the traditional problem that normal cartographers also face, in that the Earth can never be completely mapped on a flat surface, which is why either (i) a suitable projection method must be used or (ii) they must resort to an additional dimension an make a globe to obtain a completely faithful representation. Hilbert's theorem implies that even the additional dimension will be to no avail for the hyperbolic plane, as illustrated by the pseudosphere.
+\label{sec:hyperbolic_models}
+The pseudosphere cannot serve as a model for the hyperbolic plane. In fact, a theorem attributed to David Hilbert shows that, \emph{in Euclidean three-space, there can be no complete smooth surface with the intrinsic geometry of the pseudosphere} \cite{Thurston1997}. This is the reason why there can only be models of the hyperbolic plane. One could say that this means `double trouble' for make-believe cartographers of the hyperbolic plane. Of course, there is the traditional curvature-related problem that normal cartographers also face, in that the Earth can never be completely mapped on a flat surface, which is why either (i) a suitable projection method must be used or (ii) they must resort to an additional dimension and construct a `globe' to obtain a completely faithful representation. Hilbert's theorem implies that even the additional dimension will be to no avail for the hyperbolic plane, as illustrated by the pseudosphere.
+\index{Hilbert's theorem}
 
-Several models for the hyperbolic plane have been devised in the past, and they will provide a lot more mileage than the pseudosphere alone. The most popular models will be discussed in the following sections: there is a natural way to map the pseudosphere and the Poincaré half-plane, which will be discussed first. Then, via the so-called \emph{Cayley transformation}, the half-plane can be mapped to the Poincaré disk, perhaps the most illustrious model of them all. Using the disk model, one can naturally arrive at the Cayley-Klein disk and the hyperboloid model --- the latter will be the starting point in the financial analogy.
+Several models for the hyperbolic plane have been devised in the past, and they will provide a lot more mileage than the pseudosphere alone. The most popular models will be discussed in the following sections: there is a natural way to map the pseudosphere and the Poincaré half-plane, which is introduced in \cref{ssec:poincare_halfplane}. In \cref{ssec:poincare_disk}, the Cayley transform is used to map the Poincaré half plane to the Poincaré disk. Finally, the hyperboloid model, treated in \cref{ssec:hyperboloid}, embeds the hyperbolic plane in a three-dimensional Lorentzian space (cf. \cref{chap:relativity}).
 
-\subsection{Poincaré half-plane}
+\subsection{The Poincaré half-plane}
 \label{ssec:poincare_halfplane}
-It has been pointed out that there are essentially two incompatibility problems with the pseudosphere that prevent one from devising a mapping between it and the complete hyperbolic plane (also, Hilbert's theorem immediately shatters any aspiration to find one): first, it is homeomorphic to the cylinder and secondly, it has an edge. This section will describe a conformal mapping between the surface of the pseudosphere and a `half-plane', which can serve as a global model for the hyperbolic plane. However, the theorem by Hilbert already hints at the fact that this plane will have some `weird' properties, more specifically, a different notion of distance. 
+It has been pointed out that there are essentially two incompatibility problems with the pseudosphere that prevent one from devising a mapping between it and the complete hyperbolic plane (also, Hilbert's theorem immediately shatters any aspiration to find one): first, it is homeomorphic to the cylinder, and secondly, it has an edge. This section will describe a conformal mapping between the surface of the unit pseudosphere ($\rho = 1$) and a `half-plane', which can serve as a global model for the hyperbolic plane. However, the theorem by Hilbert already hints at the fact that this plane will have some `weird' properties, more specifically, a different notion of distance.
+\index{conformal}
+\index{Poincaré!half-plane}
 
-As described by \citet{Needham1997}, one can imagine the pseudosphere to be cut open along any tractrix; the resulting surface can then be `unfolded' in the horizontal direction as if it were a treasure map on a table. The edges that were cut can be extended towards infinity by recognizing the periodicity that exists naturally on the pseudosphere itself; a particle traveling horizontally would wrap once around the pseudosphere every distance of \(2\pic\) traveled. Consequently, the circles on the pseudosphere that arise for constant values of \(z\) will be mapped to horizontal lines in the half-plane. Formally, this simply means that the horizontal axis of the half-plane \(\tilde{x}\) is equal to the angle \(u\). It has already been mentioned that the mapping between the pseudosphere and the half-plane is \emph{conformal}, i.e. it locally preserves angles. Therefore, since the tractrix lines are everywhere perpendicular on the pseudosphere to the circles for constant \(z\), they must map to vertical lines in order to maintain this orthogonality. A horizontal movement in the half-plane \(\dd{\tilde{x}}\) therefore corresponds on the pseudosphere with a traveled distance of \( \dd{\tilde{s}} = \sech(v) = \sech(v)\dd{v}\), because of the radius of the circle at that particular height. Because the mapping is conformal, a movement along a tractrix \(\dd{\sigma}\) must be scaled by the same factor:
+As described by \citet{Needham1997}, one can imagine the pseudosphere to be cut along any tractrix; the resulting surface can then be `unfolded' in the horizontal direction as if it were a treasure map on a table. The edges that were cut can be extended towards infinity by recognizing the periodicity that exists naturally on the pseudosphere itself; a particle traveling horizontally would wrap once around the pseudosphere every distance of \(2\pic\) traveled for $v$. Consequently, the circles on the pseudosphere that arise for constant values of \(z\) will be mapped to horizontal lines in the half-plane. Formally, this simply means that the horizontal axis of the half-plane \(\tilde{x}\) corresponds the angle \(v\). 
+
+It has already been mentioned that the mapping between the pseudosphere and the half-plane is \emph{conformal}, i.e. it locally preserves angles. Therefore, since the tractrix lines are everywhere perpendicular on the pseudosphere to the circles for constant \(z\), they must map to vertical lines in order to maintain this orthogonality. A horizontal movement in the half-plane \(\dd{x}\) therefore corresponds on the pseudosphere with a traveled distance of \( \dd{s} = \sech(v)\dd{v}\), because of the radius of the circle at that particular height. Let $\sigma$ denote the distance traveled $\emph{along}$ any tractrix. Because the mapping is conformal, a movement \(\dd{\sigma}\) along a tractrix must be scaled by the same factor:
 \[ \dd{\sigma} = \sech(u)\dd{y}. \]
-Subsequently, the movement along the tractrix can be written in terms of \(u\) and \(v\) using the parameterization:
-\[ \dd{\sigma} = \norm{\pdv{\vec{r}}{u}\dd{u}} = \sqrt{\dd{u}^2 - \sech[2](u)\dd{u}^2} \]
+Subsequently, the movement along the tractrix can be written in terms of \(u\) using the parameterization:
+\[ \dd{\sigma} = \norm{\pdv{\vec{r}}{u}\dd{u}} = \sqrt{\dd{u}^2 - \sech[2](u)\dd{u}^2} = \tanh(u)\dd{u}. \]
 Combining this with the previous expression found for \(\dd{\sigma}\), one arrives at
-\begin{equation} 
+\begin{equation}
     \dd{y} = \sinh(u)\dd{u} \implies y = \cosh(u) + C.
     \label{eq:dy_halfplane}
 \end{equation}
-Thus, the conformality of the mapping imposes a restriction on the mapping for \(y\) up to a constant \(C\), which is usually taken to be 0 \cite{Needham1997}. Using this information, the metric of the Poincaré half-plane can also easily be deduced by \emph{pushing forward}\footnote{It must be clearly noted that the term \emph{pushforward metric} is not at all in place, and its usage here would in fact be quite pathological. The reason is as follows: the relation sketched here is not even strictly a mapping, as any point on the pseudosphere maps to an infinite amount of points on the half-plane. Beside this problem of the unique images, there is also the obvious fact that there is no preimage for the part of the half-plane where \(y < 1\) (non-surjective). As such, it would definitely make more sense to define the Poincaré metric first and then define the \emph{pullback metric} on the pseudosphere. However, since the pseudosphere exists in the familiar Euclidean space, it is more natural to introduce the pseudosphere first \cite{Schuller2014}.}
+Thus, the conformality of the mapping imposes a restriction on the mapping for \(y\) up to a constant \(C\), which is usually taken to be 0 \cite{Needham1997}. Using this information, the metric of the Poincaré half-plane can also easily be deduced by `pushing forward'
+%\footnote{It must be clearly noted that the term \emph{pushforward metric} is not at all in place, and its usage here would in fact be quite pathological. The reason is as follows: the relation sketched here is not even strictly a mapping, as any point on the pseudosphere maps to an infinite amount of points on the half-plane. Beside this problem of the unique images, there is also the obvious fact that there is no preimage for the part of the half-plane where \(y < 1\) (non-surjective). As such, it would definitely make more sense to define the Poincaré metric first and then define the \emph{pullback metric} on the pseudosphere. However, since the pseudosphere exists in the familiar Euclidean space, it is more natural to introduce the pseudosphere first \cite{Schuller2014}.}
  the Euclidean metric of the pseudosphere:
 \begin{equation} 
     \dd{s} = \norm{\pdv{\vec{r}}{u}\dd{u} + \pdv{\vec{r}}{v}\dd{v}}
@@ -176,30 +207,38 @@ Thus, the conformality of the mapping imposes a restriction on the mapping for \
     \label{eq:hp_metric}
 \end{equation}
 This metric is called the \emph{Poincaré metric}. \Cref{eq:dy_halfplane} already states that for \(u = 0\), i.e. the rim of the pseudosphere, maps to the horizontal line \(y = 1\). This suggests that the pseudosphere is covered by the region of the half-plane for which \(y \geq 1\).
+\index{Poincaré!metric}
+\index{geodesic!Poincaré half-plane}
 
+The Poincaré metric suggests that distances get larger and larger when traveling downwards in \(y\)-direction. At the line \(y=0\) they even become infinitely large. For someone living in the half-plane, this line would never be reachable, because they would have to travel for an infinite amount of time. The line $y=0$ is not part of the half-plane itself, which is why it is called the \emph{horizon}; points on the horizon are named \emph{ideal points} \cite{Needham1997}.
 
-The Poincaré metric suggests that distances get larger and larger when traveling downwards in \(y\)-direction. At the line \(y=0\) they even become infinitely large. For someone living in the half-plane, this line would never be reachable, because they would have to travel for an infinite amount of time. It is not part of the half-plane itself, which is why it is called the \emph{horizon}; points on the horizon are named \emph{ideal points} \cite{Needham1997}.
+A consequence of the Poincaré metric is that geodesics in the Poincaré half-plane are either 
+\begin{itemize}[itemsep=0.3ex,topsep=0.3ex]
+    \item straight vertical lines if the two points have the same \(x\)-coordinate, or
+    \item the arc defined by the portion of the circle going through each of the two points that also intersects the \(x\)-axis at a right angle \cite{Ramsay1995}.
+\end{itemize}
 
-Geodesics in the Poincaré half-plane connecting two points are either straight vertical lines if the two points have the same \(x\)-coordinate. Otherwise, the geodesic is the arc defined by the portion of the circle going through each of the two points that also intersects the \(x\)-axis at a right angle \cite{Ramsay1995}.
-
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \input{media/tikz/pseudosphere_halfplane}
     \caption{Comparison of various trajectories on the pseudosphere (left) and the Poincaré half-plane (right). Lines \(A\), \(B\) and \(C\) are geodesics. The endpoints of \(B\) are closer together because it covers a wider range on the \(x\)-axis --- if it would be larger than \(2\pic\), the curve would show an entire encirclement of the pseudosphere. Line \(D\) corresponds to the rim of the pseudosphere and the line \(y = 1\) in the pseudosphere.}
     \label{fig:pseudosphere_hp}
 \end{figure}
-\subsection{Poincaré disk}
-\index{Poincaré disk}
-The Poincaré disk arises naturally from the Poincaré half-plane by virtue of the Cayley transform. When the Poincaré half-plane is viewed `on top' of the complex plane, the Cayley transform is defined as
+\subsection{The Poincaré disk}
+\label{ssec:poincare_disk}
+\index{Poincaré!disk}
+\index{Cayley transformation}
+The Poincaré disk arises naturally from the Poincaré half-plane by virtue of the Cayley transformation
+. When the Poincaré half-plane is viewed `on top' of the complex plane, the Cayley transformation \lsymb{$\mathfrak{C}$}{Cayley transformation} is defined as
 \begin{equation}
-    D(z) = \frac{\ii z + 1}{z + \ii}\quad z \in \complex.
+    \mathfrak{C}(z) = \frac{\ii z + 1}{z + \ii}\quad z \in \complex,
     \label{eq:cayley_transform}
 \end{equation}
-which maps the entire half-plane to the unit disk. Furthermore, 
+which maps the entire half-plane to the unit disk. Furthermore, the following observations can be made:
 \begin{itemize}[itemsep=0.2ex,topsep=0.2ex]
-    \item the horizon coincides with the rim of the disk,
-    \item the points \(\pm1\) are invariant,
-    \item \(\ii\) maps to the origin, 
+    \item the horizon coincides with the rim of the disk
+    \item the points \(\pm1\) are invariant
+    \item \(\ii\) maps to the origin
     \item the origin corresponds to \(-\ii\)
 \end{itemize}
 As will become clear in \cref{chap:moebius_transforms}, \cref{eq:cayley_transform} belongs to the class of Möbius transforms, which means that it also must be conformal. Therefore, angles on the pseudosphere, half-plane, and disk will all look alike. Since the horizon containing the ideal points is now the rim of the unit disk, it makes sense that the pullback metric based on \cref{eq:hp_metric} will have the $y$ replaced by the distance from the rim of the unit disk, which is $1 - x^2 - y^2$. Indeed, the half-plane metric can be written as in terms of the complex variable $z$, using the mapping \cref{eq:cayley_transform} the metric in the disk turns out to be \cite{Needham1997}
@@ -210,53 +249,61 @@ In \(x-y\) coordinates, this metric is
 \begin{equation}
     \dd{s} = \frac{2\sqrt{\dd{x}^2 + \dd{y}^2}}{1 - x^2 - y^2}.
 \end{equation}
-It has been pointed out that the Cayley transform is a member of a larger class called Möbius transforms, which will be elaborated upon in \cref{chap:moebius_transforms}. Apart from being conformal, Möbius transforms also preserve circles (i.e. the result of a Möbius transform applied to a circle will again be a circle). The geodesics in the half-plane have either the shape of straight lines extending from the horizontal axis, or circles that cross the horizontal axis at a right angle. Consequently, it is straightforward to deduce that the geodesics in the Poincaré disk are also circles that `start' orthogonally to the rim of the unit disk. Additionally, all diameters of the Poincaré disk are geodesics as well: they can be interpreted as circles with an infinite radius that are obviously also orthogonal to the rim of the disk.
+It has been pointed out that the Cayley transformation is a member of a larger class called Möbius transforms, which will be elaborated upon in \cref{chap:moebius_transforms}. Apart from being conformal, Möbius transforms also preserve circles (i.e. the result of a Möbius transform applied to a circle will again be a circle). 
+
+The geodesics in the half-plane have either the shape of straight lines extending from the horizontal axis, or circles that cross the horizontal axis at a right angle. Consequently, it can be shown that the geodesics in the Poincaré disk are also circles that depart orthogonally from the rim of the unit disk. Additionally, all diameters of the Poincaré disk are geodesics as well: they can be interpreted as circles with an infinite radius. \Cref{fig:halfplane_disk} shows a comparison between some trajectories in the Poincaré half-plane and their mappings in the Poincaré disk through the Cayley transformation.
+\index{geodesic!Poincaré disk}
 
 \begin{figure}[ht]
     \centering
     \input{media/tikz/halfplane_disk}
     \label{fig:halfplane_disk}
-    \caption{Comparison between trajectories in the Poincaré half-plane (left) and the Poincaré disk (right). Several types of trajectories are shown: the solid lines \(A\) are `typical' geodesics, i.e. circles with finite radius in the half-plane. The dotted line \(B\) is also a geodesic but never reaches the horizon at its endpoint (which would take an infinite distance), this is also clearly visible in the disk. Clearly, the origin in the half-plane maps to \(-\ii\). The dash-dotted lines \(C\) are horocycles; they preserve their shape under the action of the Cayley transform. Dotted line \(D\) is a hypercycle; a circle that crosses the horizon at an oblique or acute angle.}
+    \caption{Comparison between trajectories in the Poincaré half-plane (left) and the Poincaré disk (right). Several types of trajectories are shown: the solid lines \(A\) are `typical' geodesics, i.e. circles with finite radius in the half-plane. The dotted line \(B\) is also a geodesic but never reaches the horizon at its endpoint (which would cover an infinite distance), this is also clearly visible in the disk. The origin in the half-plane maps to \(-\ii\). The dash-dotted lines \(C\) are horocycles; they preserve their shape under the action of the Cayley transformation. Dotted line \(D\) is a hypercycle; a circle that crosses the horizon at an oblique or acute angle.}
 \end{figure}
+\index{horocycle}
+\index{hypercycle}
 
 \subsection{Hyperboloid model}
 \label{ssec:hyperboloid}
 \index{Hyperboloid model}
-Hilbert's theorem about the embedding of a hyperbolic surface in Euclidean space eradicates any hope to find a `globe' for the hyperbolic space, like a regular sphere would be for an elliptic space. However, as strong as it may seem, Hilbert's theorem still leaves some room for other possibilities because it is very explicit about the nature of the space in question: it must be Euclidean. \Cref{chap:relativity} already introduced a possible alternative: the Lorentz space. It will probably not come as a surprise that the Lorentz space does allow for the embedding of a hyperbolic surface, which is known as the \emph{hyperboloid model}.
+Hilbert's theorem concerning the embedding of a hyperbolic surface in Euclidean space eradicates any hope to find a `globe' for the hyperbolic plane, like a regular sphere would be for a `spherical' plane (i.e. a plane exhibiting spherical geometry). However, as strong as it may seem, Hilbert's theorem still leaves some room for other possibilities, because it is very explicit about the nature of the surrounding space: it must be Euclidean. \Cref{chap:relativity} already introduced a possible alternative: the Lorentz space. It turns out that the Lorentz space does allow for the embedding of a hyperbolic surface, which is known as the \emph{hyperboloid model}.
 
-Now, why would one find any solace in the Lorentz space specifically? Recall that the curvature of a surface can be expressed in terms of its local radius, i.e. \(1/p^2\). A negative curvature, therefore, implies that \(p\) is somehow not a real but imaginary number. Obviously, this can never make any sense in a Euclidean space, but the Lorentzian space perfectly allows this kind of odd witchcraft, as illustrated by \cref{fig:lightlike_spacelike} \cite{Ratcliffe2019}. The complete hyperboloid consists of two sheets, a positive sheet, and a negative sheet, implicitly described by the following set: 
-\[ H^2 = \qty{\vec{x} \in \real^3 \mid \lnorm{\vec{x}} = p}. \]
-However, on account of the positive and the negative sheet, this set is clearly \emph{disconnected}\footnote{A space is called connected if it is impossible to find two open sets whose union is equal to that space; which in this case clearly is not the case (the open sets are the positive and negative sheet of the hyperboloid).}. It is therefore common to discard the negative sheet of \(H^2\), the hyperboloid model of the hyperbolic 2-space is then \cite{Ratcliffe2019}
-\[ H^2_+ = \qty{\vec{x} \in \real^3\;\mid\;\lnorm{\vec{x}} = p,\ x_1 > 0}. \]
+Now, why would one find any solace in the Lorentz space specifically? Recall that the curvature of a surface can be expressed in terms of its local radius, i.e. \(1/\rho^2\). A negative curvature, therefore, implies that \lsymb{\(\rho\)}{Radius of the pseudosphere} is somehow not a real but an imaginary number. This would not make any sense in a Euclidean space, but the Lorentzian space perfectly allows this kind of odd witchcraft, as illustrated by \cref{fig:lightlike_spacelike} \cite{Ratcliffe2019}. One can think of the hyperboloid as a `sphere' with constant imaginary radius embedded in the Lorentz space. The complete hyperboloid consists of two sheets: a positive sheet and a negative sheet, implicitly described by the following set: 
+\[ H^2 = \qty{\vec{x} \in \real^3\;\mid\;\lnorm{\vec{x}} = \rho}. \]
+However, on account of the positive and the negative sheet, this set is clearly \emph{disconnected}\footnote{A space is called connected if it is impossible to find two open sets whose union is equal to that space; which in this case clearly is not the case (the open sets are the positive and negative sheet of the hyperboloid).}. It is therefore common to discard the negative sheet \(H^2_-\) (cf. the sheets of the higher-dimensional hyperbola in \cref{sec:lorentz_transformations}). The hyperboloid model of the hyperbolic 2-space is then \cite{Ratcliffe2019}
+\[ H^2_+ = \qty{\vec{r} \in \real^3\;\mid\;\lnorm{\vec{r}} = \rho,\ r_0 > 0} \quad \rho \in \real^+_0. \]
 A parametric representation of \(H^2_+\) is the following
 \begin{equation}
-    \vec{r} = \mqty(p\cosh(u)\\p\cos(v)\sinh(u)\\p\sin(v)\sinh(u)).
+    \vec{r} = \mqty(\rho\cosh(u)\\\rho\cos(v)\sinh(u)\\\rho\sin(v)\sinh(u)).
     \label{eq:parametric_hyperboloid}
 \end{equation}
-To show that this surface has indeed a constant negative Gaussian curvature, a slightly more general approach must be followed than for the pseudosphere, since the calculations with the second fundamental form are restricted to a Euclidean space. As described by \citet{ONeill1983}
-\[ E = \partial_u \bullet \partial_v \quad F = \partial_u \bullet \partial_v \quad G = \partial_u \bullet \partial_v \]
-which correspond to the components of the first fundamental form, generalized to the Lorentz product. The coordinate system \(u, v\) is called orthogonal if \(F\) vanishes, which is indeed the case for the parametrization given by \cref{eq:parametric_hyperboloid}.
+To show that this surface has indeed a constant negative Gaussian curvature, a slightly more general approach must be followed as for the pseudosphere, since the calculations with the second fundamental form are restricted to a Euclidean space. As described by \citet{ONeill1983},
+\[ E = \partial_u \bullet \partial_v \quad F = \partial_u \bullet \partial_v \quad G = \partial_u \bullet \partial_v, \]
+correspond to the components of the first fundamental form generalized to the Lorentz product. The coordinate system \(u, v\) is called orthogonal if \(F\) vanishes, which is indeed the case for the parametrization given by \cref{eq:parametric_hyperboloid}.
 The Gaussian curvature of the surface is then given by \cite{ONeill1983}
 \begin{equation}
-    k = \frac{-1}{eg}\left[\varepsilon_1\qty(\frac{g_u}{e})_u + \varepsilon_2\qty(\frac{e_v}{g})_v\right]
+    k = \frac{-1}{eg}
+    \left(\varepsilon_1\,\qty(\frac{g_u}{e})_u + \varepsilon_2\,\qty(\frac{e_v}{g})_v\right)
     \label{eq:orthogonal_gaussian_curvature}
 \end{equation}
-with \(\varepsilon_1 = \sgn{E}\), \(\varepsilon_2 = \sgn{G}\), \(e = \sqrt{\abs{E}}\) and \(G = \sqrt{\abs{G}}\).
-Performing these calculations on \cref{eq:parametric_hyperboloid} yields indeed that \(k = -1/p^2\), confirming that the one-sheet hyperboloid embedded in three-dimensional \emph{Lorentz} space indeed has the same curvature as the pseudosphere\footnote{Some authors even refer to the hyperboloid as `pseudosphere' as well, e.g. \citet{Balazs1986}. However, this is deemed confusing in the context of the larger discussion presented here, the author refrained from using it here.}.
+with \(\varepsilon_1 = \sgn{E}\), \(\varepsilon_2 = \sgn{G}\), \(e = \sqrt{\abs{E}}\) and \(g = \sqrt{\abs{G}}\).
+Performing these calculations on \cref{eq:parametric_hyperboloid} yields indeed that \(k = -1/\rho^2\), confirming that the one-sheet hyperboloid embedded in three-dimensional \emph{Lorentz} space $\real^{1,2}$ indeed has the same curvature as the pseudosphere\footnote{Some authors even refer to the hyperboloid as `pseudosphere' as well, e.g. \citet{Balazs1986}. However, this is deemed confusing in the context of the larger discussion presented here, which is why the author refrained from using it here.}.
 
-In the hyperboloid model, geodesics are formed by intersections between the hyperboloid and planes that intersect the origin. As mentioned in \cref{chap:relativity}, the restricted Lorentz group $\text{SO}^+(1, 2)$ is the isometry (distance-preserving) group for the hyperboloid in the Lorentzian space\footnote{Technically, an inversion of spatial orientations is allowed in this case, so the complete isometry group of the hyperboloid model comprises the ortochronous Lorentz transformations, both proper and improper, denoted by $\text{O}^+(1, 2)$}. An action from the isometry group always maps geodesics to geodesics; as such, the Lorentz transformations preserve the geodesics of the hyperboloid model.
+In the hyperboloid model, geodesics are formed by intersections between the hyperboloid and planes that intersect the origin. As mentioned in \cref{chap:relativity}, the restricted Lorentz group $\text{SO}^+(1, 2)$ is the isometry (distance-preserving) group for the hyperboloid in the Lorentzian space\footnote{Technically, an inversion of spatial orientations is allowed in this case, so the complete isometry group of the hyperboloid model comprises the ortochronous Lorentz transformations, both proper and improper, denoted by $\text{O}^+(1, 2)$.}. An action from the isometry group always maps geodesics to geodesics; as such, the Lorentz transformations preserve the geodesics of the hyperboloid model.
+\index{geodesic!hyperboloid}
 
 \subsubsection{Relation with Poincaré disk}
-There exists a compelling relation between the Poincaré disk model of the hyperbolic plane and the hyperboloid model. As described by \citet{Balazs1986}, the Poincaré disk can be obtained by stereographically projecting the hyperboloid on the unit disk with respect to the base point $(0, 0, -1)$. This is demonstrated in \cref{fig:hyperboloid_disk}. A point on the hyperboloid with coordinates
-$$ (\cosh(\zeta),\;\sinh(\zeta)\cos(\phi),\;\sinh(\zeta)\sin(\phi)) $$
-will then be have the following polar coordinates in the disk:
-$$ r = \tanh(\frac{\zeta}{2});$$
-the angle $\phi$ remains identical. 
+There exists a compelling relation between the Poincaré disk model of the hyperbolic plane and the hyperboloid model. As described by \citet{Balazs1986}, the Poincaré disk can be obtained by projecting the hyperboloid stereographically on the unit disk with respect to the base point $(0, 0, -1)$. This is demonstrated in \cref{fig:hyperboloid_disk}. A point on the unit hyperboloid with coordinates
+$$ \qty(\cosh(u),\;\sinh(u)\cos(v),\;\sinh(u)\sin(v)), $$
+will then have the following polar coordinates in the disk:
+$$ r = \tanh(\frac{u}{2}) \qquad \phi = v.$$
 \begin{figure}[ht]
     \centering
     \includegraphics{media/vector/hyperboloid_projection.eps}
-    \caption{The Poincaré disk and the hyperboloid model are related through stereographic projection. Illustration adapted from \citet{Balazs1986}.}
+    \caption{The Poincaré disk and the hyperboloid model are related through stereographic projection. A geodesic of the on the hyperboloid model is shown as well, its projected image in the Poincaré disk (also a geodesic) is part of a circle that intersects the boundary of the disk at right angles. Illustration adapted from \citet{Balazs1986}.}
     \label{fig:hyperboloid_disk}
 \end{figure}
+\index{Stereographic projection}
 
 \section*{Chapter summary}
+Non-Euclidean geometry arises when the parallel axiom is `removed' from Euclidean geometry; this leads to two other geometry types: spherical geometry and hyperbolic geometry. The validity of the parallel axiom and the type of geometry  are related to the Gaussian curvature of the surface on which they are applied. Hyperbolic geometry is the geometry of surfaces with constant negative Gaussian curvature. The pseudosphere is an object that exhibits constant negative curvature embedded in three-dimensional Euclidean space, but it is not globally isometric to the hyperbolic plane. Alternatively, there are models of the hyperbolic plane that do manage to capture its entirety: the Poincaré half-plane, the Poincaré disk and the hyperboloid model. The latter consists of the unit hyperboloid embedded in three-dimensional Lorentz space; its isometry group is the Lorentz group acting on that space. From the hyperboloid model, the Poincaré disk can be obtained through stereographic projection on the unit disk. A particular Möbius transformation, called the Cayley transformation, provides the mapping between the Poincaré disk and the Poincaré half-plane.
