@@ -22,7 +22,7 @@ The first statement corresponds to what is called \emph{spherical geometry}, whi
 \end{itemize}
 \index{hyperbolic geometry}
 \index{Euclidean geometry}
-\index{Spherical geometry}
+\index{spherical geometry}
 As a consequence of the Gauss-Bonnet theorem, the angular excess can be related to its area \lsymb{$\mathscr{A}$}{Area (of a triangle)} \cite{Needham1997}
 \begin{equation}
     \mathscr{E}(T) = k\mathscr{A}(T),
@@ -47,7 +47,7 @@ Perhaps one of the most remarkable results attributed to Carl Friedrich Gauss is
 \]
     Surface curvature can be approached more rigorously from the perspective of Riemannian geometry. The core concept behind Riemannian geometry is the eponymous manifold: a smooth manifold equipped with a positive definite inner product%\footnote{In contrast to \cref{sec:lorentz_metric}, the positive definiteness of the inner product is essential for Riemannian geometry. When the inner product is not positive definite but nondegenerate, as the Lorentz product, the manifold is called \emph{pseudo-Riemannian}.} 
     on its tangent space, hence providing a \emph{metric (tensor)} that allows determining lengths, angles, and curvature. The metric on a parametric surface \(\vec{r}(u, v)\) can be written in terms of the so-called \emph{first fundamental form}\footnote{Unfortunately, the first (and second) fundamental forms are not forms in the modern mathematical sense of the word; this terminology is merely inherited from older works \cite{Spivak1999b}.} \others{$\firstff$}{First fundamental form}. 
-    \index{First fundamental form}
+    \index{first fundamental form}
     \index{Riemannian!geometry}
     \index{Riemannian!manifold}
     \index{Riemannian!metric}
@@ -263,7 +263,7 @@ The geodesics in the half-plane have either the shape of straight lines extendin
 \index{horocycle}
 \index{hypercycle}
 
-\subsection{Hyperboloid model}
+\subsection{The hyperboloid model}
 \label{ssec:hyperboloid}
 \index{Hyperboloid model}
 Hilbert's theorem concerning the embedding of a hyperbolic surface in Euclidean space eradicates any hope to find a `globe' for the hyperbolic plane, like a regular sphere would be for a `spherical' plane (i.e. a plane exhibiting spherical geometry). However, as strong as it may seem, Hilbert's theorem still leaves some room for other possibilities, because it is very explicit about the nature of the surrounding space: it must be Euclidean. \Cref{chap:relativity} already introduced a possible alternative: the Lorentz space. It turns out that the Lorentz space does allow for the embedding of a hyperbolic surface, which is known as the \emph{hyperboloid model}.
@@ -292,7 +292,7 @@ Performing these calculations on \cref{eq:parametric_hyperboloid} yields indeed 
 In the hyperboloid model, geodesics are formed by intersections between the hyperboloid and planes that intersect the origin. As mentioned in \cref{chap:relativity}, the restricted Lorentz group $\text{SO}^+(1, 2)$ is the isometry (distance-preserving) group for the hyperboloid in the Lorentzian space\footnote{Technically, an inversion of spatial orientations is allowed in this case, so the complete isometry group of the hyperboloid model comprises the ortochronous Lorentz transformations, both proper and improper, denoted by $\text{O}^+(1, 2)$.}. An action from the isometry group always maps geodesics to geodesics; as such, the Lorentz transformations preserve the geodesics of the hyperboloid model.
 \index{geodesic!hyperboloid}
 
-\subsubsection{Relation with Poincaré disk}
+\subsubsection{Relation with the Poincaré disk}
 There exists a compelling relation between the Poincaré disk model of the hyperbolic plane and the hyperboloid model. As described by \citet{Balazs1986}, the Poincaré disk can be obtained by projecting the hyperboloid stereographically on the unit disk with respect to the base point $(0, 0, -1)$. This is demonstrated in \cref{fig:hyperboloid_disk}. A point on the unit hyperboloid with coordinates
 $$ \qty(\cosh(u),\;\sinh(u)\cos(v),\;\sinh(u)\sin(v)), $$
 will then have the following polar coordinates in the disk:
@@ -303,7 +303,7 @@ $$ r = \tanh(\frac{u}{2}) \qquad \phi = v.$$
     \caption{The Poincaré disk and the hyperboloid model are related through stereographic projection. A geodesic of the on the hyperboloid model is shown as well, its projected image in the Poincaré disk (also a geodesic) is part of a circle that intersects the boundary of the disk at right angles. Illustration adapted from \citet{Balazs1986}.}
     \label{fig:hyperboloid_disk}
 \end{figure}
-\index{Stereographic projection}
+\index{stereographic projection}
 
 \section*{Chapter summary}
 Non-Euclidean geometry arises when the parallel axiom is `removed' from Euclidean geometry; this leads to two other geometry types: spherical geometry and hyperbolic geometry. The validity of the parallel axiom and the type of geometry  are related to the Gaussian curvature of the surface on which they are applied. Hyperbolic geometry is the geometry of surfaces with constant negative Gaussian curvature. The pseudosphere is an object that exhibits constant negative curvature embedded in three-dimensional Euclidean space, but it is not globally isometric to the hyperbolic plane. Alternatively, there are models of the hyperbolic plane that do manage to capture its entirety: the Poincaré half-plane, the Poincaré disk and the hyperboloid model. The latter consists of the unit hyperboloid embedded in three-dimensional Lorentz space; its isometry group is the Lorentz group acting on that space. From the hyperboloid model, the Poincaré disk can be obtained through stereographic projection on the unit disk. A particular Möbius transformation, called the Cayley transformation, provides the mapping between the Poincaré disk and the Poincaré half-plane.
