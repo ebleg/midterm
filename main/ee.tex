@@ -367,7 +367,7 @@ One of the great advantages of Hamiltonian mechanics is that it admits a much wi
 \index{canonical transformations}
 \index{symplectomorphisms}
 
-\paragraph{Action-angle coordinates} A special choice of canonical coordinates arises for conservative systems, called the \emph{action-angle coordinates}. These are pairs of coordinates of the form $(\vec{I}, \vec{\phi})$, where $\vec{I}$ consists of the action coordinates, and $\vec{\phi}$ are the angle coordinates. The reason why this set of coordinates exists in the first place is found in Liouville's theorem, which states that when a system with $n$ degrees of freedom has $n$ independent first integrals \lsymb{$\vec{F}$}{First integrals of a Hamiltonian system}, then the level set of these first integrals is diffeomorphic to the the $n$-dimensional torus \lsymb{$\mathbb{T}^n$}{torus of dimension $n$}. This torus is completely parameterized by the $n$ action variables, while the angle coordinates determine the position on the torus. \Cref{fig:action_angle} visualizes the action-angle coordinates for the simple case of a system with one degree of freedom.
+\paragraph{Action-angle coordinates} A special choice of canonical coordinates arises for conservative systems, called the \emph{action-angle coordinates}. These are pairs of coordinates of the form $(\vec{I}, \vec{\phi})$, where $\vec{I}$ consists of the action coordinates, and $\vec{\phi}$ are the angle coordinates. The reason why this set of coordinates exists in the first place is found in Liouville's theorem, which states that when a system with $n$ degrees of freedom has $n$ independent first integrals \lsymb{$\vec{F}$}{First integrals of a Hamiltonian system}, then the level set of these first integrals is diffeomorphic to the the $n$-dimensional torus \lsymb{$\mathbb{T}^n$}{Torus of dimension $n$}. This torus is completely parameterized by the $n$ action variables, while the angle coordinates determine the position on the torus. \Cref{fig:action_angle} visualizes the action-angle coordinates for the simple case of a system with one degree of freedom.
 \index{action-angle coordinates}
 \index{Liouville's theorem}
 \index{first integral}
@@ -406,18 +406,18 @@ Conservation principles play a vital role in physics and mechanics. Notable exam
 \index{symmetry group}
 
 \begin{thmblock}{Noether's theorem}
-    If the Lagrangian system $(M, \lag)$ admits the one-parameter group of transformations $h^s: M \to M, s \in \real$, then the Lagrangian system of equations corresponding to $\lag$ has a first integral: $I: TM \to \real$. In local coordinates $q$ on $M$, the integral $F$ is written in the form \cite{Arnold1989}
-    $$ \left. F(\gpos, \gvel, t) = \pdv{\lag}{\gvel}\dv{h^s(\gpos)}{s}\right |_{s = 0} $$
+    If the Lagrangian system $(M, \lag)$ admits the one-parameter group of transformations $h^s: M \to M, s \in \real$, then the Lagrangian system of equations corresponding to $\lag$ has a first integral: $F: TM \to \real$. In local coordinates $q$ on $M$, the integral $F$ is written in the form: \cite{Arnold1989}
+    $$ \left. F(\gpos, \gvel, t) = \pdv{\lag}{\gvel}\dv{h^s(\gpos)}{s}\right |_{s = 0}. $$
 \end{thmblock}
-The word `admits' here means that the Lagrangian is invariant with respect to the transformation $h$; that is, the $\lag$ exhibits a \emph{symmetry} in that regard. A perspicuous consequence of this theorem is that when the Lagrangian has a cyclic coordinate (that is, it does not depend on some $q_i$), then the conjugate momentum of that coordinate is conserved, for the conjugate momentum of a coordinate $q_i$ is $\pdv{\lag}{\dot{q}_i}$.
+The word `admits' here means that the Lagrangian is invariant with respect to the transformation $h$; that is, the $\lag$ exhibits a \emph{symmetry} in that regard. A perspicuous consequence of this theorem is that when the Lagrangian has a cyclic coordinate (that is, it does not depend on some $q_i$), then the conjugate momentum of that coordinate is conserved, for the conjugate momentum of a coordinate $q_i$ is $\displaystyle\pdv{\lag}{\dot{q}_i}$.
 \index{cyclic coordinates}
 
 \paragraph{Energy conservation} When the Lagrangian is time-invariant, one can define $h^s: (\gpos, t) \mapsto (\gpos, t + s)$ as translation in time. To find the conserved quantity, the Lagrangian has to be extended to consider the time $t$ as an explicit generalized coordinate, i.e. define
 $$ \tilde{\lag}\qty(\gpos, t, \dv{\gpos}{\tau}, \dv{t}{\tau}) \triangleq \lag\qty(\gpos, \frac{\dv*{\gpos}{\tau}}{\dv*{t}{\tau}}, t)\dv{t}{\tau},$$
-where $\tau$ now plays the role of the independent variable. This definition ensures that the action integral for $\tilde{\lag}$ and $\lag$ are identical, which is why Noether's theorem can be applied to $\tilde{\lag}$ instead. Of course, $\dv{h}{s}$ equal to 1 for the time coordinate; so there is one first integral
+where $\tau$ now plays the role of the independent variable. This definition ensures that the action integrals for $\tilde{\lag}$ and $\lag$ are identical, which is why Noether's theorem can be applied to $\tilde{\lag}$ instead. Of course, $\dv{h}{s}$ is equal to 1 for the time coordinate; so there is one first integral:
 \begin{equation*}
     \begin{split}
-        I = \pdv{\tilde{\lag}}{(t')} 
+        F = \pdv{\tilde{\lag}}{(t')} 
         &= \lag + \pdv{}{t'}\qty(\lag\qty(\gpos, \frac{
         \gpos'}{t'}, t))t'\\
         &= \lag + \pdv{\lag}{\gvel}\pdv{}{t'}\qty(\frac{
@@ -425,11 +425,11 @@ where $\tau$ now plays the role of the independent variable. This definition ens
         &= \lag - \pdv{\lag}{\gvel}\gvel
     \end{split}
 \end{equation*}
-with $t' = \dv{t}{\tau}$ and $\gpos' = \dv{\gpos}{\tau}$. This is the negative of the Legendre transformation of the Lagrangian, or the negative of the Hamiltonian; $I = -H$. Therefore, the total energy of the system is conserved. 
+with $t' = \dv{t}{\tau}$ and $\gpos' = \dv{\gpos}{\tau}$. This is the negative of the Legendre transformation of the Lagrangian, or the negative of the Hamiltonian; $F = -\ham$. Therefore, the total energy of the system is conserved. 
 
 \paragraph{(Angular) momentum conservation} The invariance of the Lagrangian in one or more coordinate directions implies the conservation of the associated conjugate momentum. 
 
-For example, a common assumption on Earth is that the gravitational force is constant and acts downwards. Therefore, only one coordinate appears in the potential energy expression, which is why the other coordinate directions (that is, the two `horizontal' directions, with proper choice of the coordinate system) are cyclic. Hence, by virtue of Noether's theorem, the linear momentum in those directions is conserved, for it is unaffected by any potential force.
+For example, a common assumption on Earth is that the gravitational force is constant and acts downwards. Therefore, only one coordinate appears in the potential energy expression; the other coordinate directions (that is, the two `horizontal' directions, with proper choice of the coordinate system) are cyclic. Hence, by virtue of Noether's theorem, the linear momentum in those directions is conserved, for it is unaffected by any potential force.
 
 Conservation of angular momentum often appears in the presence of so-called \emph{central} force fields, which means that the potential energy is a function of the \emph{distance} from a certain point: notable examples are Coulomb forces or gravitational forces in celestial mechanics. Because only distance matters, the orientation of the displacement vector between the origin of the force field and the body is of no importance; it will not appear in the Lagrangian either. Consequently, Noether's theorem dictates that these central force fields preserve angular momentum.
 
@@ -443,4 +443,10 @@ Conservation of angular momentum often appears in the presence of so-called \emp
     Admittedly, all of these interpretations are arguably rather straightforward, since they mostly rely on either the presence of cyclic coordinates or the direct correspondence of total energy and energy of the system. However, the discussion does prove that Noether's theorem has very tangible interpretations in economics. Its real power will, though, appear with more sophisticated symmetries that are present in complex economic systems. The idea is that the Lagrangian and Noether's theorem permit the extraction of `stylized facts' from these types of systems that would otherwise be concealed by their complexity. 
 \end{econ}
 
+\clearpage
 \section*{Chapter summary} 
+The basis for the Lagrangian formalism is the configuration manifold, which contains all the possible configurations of the system. The tangent bundle of the configuration manifold then comprises both the generalized positions and the associated velocities. The Lagrangian is a scalar-valued function on the tangent bundle; in classical mechanics, it amounts to the difference between the kinetic and potential energy of the system. The principle of stationary action states that motions of a Lagrangian system are trajectories for which the integral of the Lagrangian over time, the action integral, is stationary. This gives rise to an alternative formulation of Newtonian mechanics in the form of the Euler-Lagrange equations.
+
+From the Lagrangian, the Hamiltonian is obtained through the Legendre transformation, which interchanges the generalized velocities for  generalized momenta. Therefore, the Hamiltonian is defined on the cotangent bundle of the configuration manifold. The evolution of the system is given by a set of equations called Hamilton's equations. Hamiltonian systems admit a range of (canonical) coordinate transformations that preserve the symplectic structure of the phase space. For some systems, a particular coordinate transform can be used to arrive at the action-angle coordinates, which permit to integrate the system dynamics very easily.
+
+In economic engineering, the Lagrangian and Hamiltonian are defined in terms of utility. The generalized positions are stock levels in the economic space. By virtue of the utility Lagrangian, prices are said to live in the fiber attached to every point in the economic configuration space. As such, the economic space of prices and quantities is analogous to the cotangent bundle (or phase space) of classical mechanics, where the Hamiltonian corresponds to the total earnings in the system. This is motivated by the natural symplectic structure of the economic phase space.
