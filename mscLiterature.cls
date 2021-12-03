@@ -1074,9 +1074,9 @@
 \newcommand{\gsymb}[2]%
            {#1\nomenclature[b ]{#1}{\MakeUppercase#2}}
 \newcommand{\subs}[2]%
-           {\nomenclature[d ]{$ _{#1} $}{\MakeUppercase#2}}
+           {\nomenclature[d ]{$ \square_{#1} $}{\MakeUppercase#2}}
 \newcommand{\supers}[2]%
-           {\nomenclature[e ]{$ ^{#1} $}{\MakeUppercase#2}}
+           {\nomenclature[e ]{$ \square^{#1} $}{\MakeUppercase#2}}
 \newcommand{\others}[2]%
            {#1\nomenclature[f ]{#1}{\MakeUppercase#2}}
 \renewcommand{\nomgroup}[1]{%
