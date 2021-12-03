@@ -5,10 +5,10 @@
     \draw[scale=0.5, domain=0.25:4, smooth, variable=\x, black, thick, densely dashed] plot ({\x}, {1/\x}) node[anchor=south west] {$xy = 1$};
     \draw[scale=0.5, domain=-4:-0.25, smooth, variable=\x, black, thick, densely dashed] plot ({\x}, {1/\x});
     
-    \draw[scale=0.5, domain=-1.76:1.76, smooth, variable=\x, thick, black] plot ({cosh(\x)}, {sinh(\x)}) node[anchor=north west] {$x^2 - y^2 = 1$};
+    \draw[scale=0.5, domain=-1.76:1.76, smooth, variable=\x, thick, accent1] plot ({cosh(\x)}, {sinh(\x)}) node[anchor=north west] {$x^2 - y^2 = 1$};
     
-    \draw[scale=0.5, domain=-1.76:1.76, smooth, variable=\x, thick, black] plot ({-cosh(\x)}, {sinh(\x)});
+    \draw[scale=0.5, domain=-1.76:1.76, smooth, variable=\x, thick, accent1] plot ({-cosh(\x)}, {sinh(\x)});
     
-    \draw[->, gray!70] (-1.5, 1.5) -- (1.5, -1.5) node[anchor=north west] {$x'$};
-    \draw[->, gray!70] (-1.5, -1.5) -- (1.5, 1.5) node[anchor=south west] {$y'$};
+    \draw[->, accent2] (-1.5, 1.5) -- (1.5, -1.5) node[anchor=north west] {$x'$};
+    \draw[->, accent2] (-1.5, -1.5) -- (1.5, 1.5) node[anchor=south west] {$y'$};
 \end{tikzpicture}

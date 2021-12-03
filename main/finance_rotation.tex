@@ -1,8 +1,9 @@
 \chapter{Investment as a hyperbolic rotation}
 \label{chap:finance_rotation}
-In this chapter, 
+This chapter explains the connection between compound interest (and investments in general) and the hyperbolic rotations. To do so, \cref{sec:terminology} first explains in depth the underlying mechanism behind compound interest: the reinvestment of earnings. Secondly, it is shown in \cref{sec:hyperbolic_interest} that this mechanism represents a hyperbolic rotation in the plane. In \cref{sec:hyperbolic_rotations} hyperbolic angles are formally defined, analogous to `regular' circular angles. Subsequently, the rotational analogy from economic engineering is treated in \cref{sec:rotational_analogy}. Finally, an alternative representation of hyperbolic rotations is found in a special number system called the hyperbolic numbers; this is the subject of \cref{sec:hyperbolic_numbers}.
 
 \section{Interest terminology}
+\label{sec:terminology}
 The aim of this research is to refine the way that economic engineering currently deals with financial instruments, primarily fixed-interest assets, but also marketable equity (stocks), derivatives, etc. All of these can be regarded as `investments', for lack of a better word, because they require a \emph{principal}, that is the amount invested, and a certain return that is proportional to the principal. This is why the return is usually expressed as a percentage of the principal, which in the case of debt is the interest rate. The latter contains the word `rate' because it has an inherent temporal aspect: interest rates (and returns of investments in general) are associated with a certain `term' or duration over which the return is realized. As such, any type of investment is characterized by three components:
 \begin{itemize}[itemsep=0.3ex,topsep=0.3ex]
     \item a \emph{principal}, something that is originally invested;
@@ -29,6 +30,7 @@ This reinvestment of earnings is the driving force behind compound interest: wit
 Financial investments are arguably the culmination of this concept, since money itself earns money that can be reinvested again instantaneously. Still, the capital-yield distinction remains relevant: for example, companies pay dividends to their shareholders in proportion to the amount of stock they own; the shareholders could then choose to reinvest these earnings in more stock of that (or another) company, increasing their `capital'. %Again, additional example here is stock dividends, which are stocks with dividends that are paid as additional stock --- essentially taking the role of money out of the equation.
 
 \section{The hyperbolic shape of compound interest}
+\label{sec:hyperbolic_interest}
 If the values from the example in \cref{fig:compound_interest} are plotted against each other, with capital on the horizontal axis and yield on the vertical axis, a hyperbolic shape appears, shown in \cref{fig:hyperbolic_compounding}. Hyperbolae are characterized by the implicit equation 
 \begin{equation}
     x^2 - y^2 = K^2
@@ -66,6 +68,7 @@ This continuous-time state-transition matrix has eigenvalues $\log(1 + r)$ and $
 \index{eigenvalue decomposition}
 
 \section{Conic sections and hyperbolic rotations}
+\label{sec:hyperbolic_rotations}
 The implicit equation for a hyperbola \cref{eq:hyperbola} is remarkably similar to the equation of a circle, the only difference being the minus sign. Indeed, circles and hyperbola are both members of a larger family called conic sections, which play a prominent role in geometry. Conic sections are usually classified based on their eccentricity $e$, for which three general cases can be distinguished:
 \begin{itemize}[itemsep=0.3ex,topsep=0.3ex]
     \item $0 \leq e < 1$ are \emph{ellipses}, were the particular case for which $e = 0$ corresponds to a circle;
@@ -83,16 +86,19 @@ For both circles and hyperbolae, an angle refers to a certain region bounded by 
 \begin{thmblock}{Hyperbolic sector}
 A hyperbolic sector is a region bounded by two lines extending from the origin, each to a point on the (unit) hyperbola, and the graph of the hyperbola itself. 
 \end{thmblock}
-Hyperbolic sectors are entirely analogous to their `traditional' circular cousins. Fixing one of the rays to the \(x\)-axis, one can define the corresponding hyperbolic angle:
+Hyperbolic sectors are entirely analogous to their `traditional' circular cousins. Fixing one of the rays to the \(x\)-axis, one can define the corresponding hyperbolic angle.
 \begin{thmblock}{Hyperbolic angle}
 A hyperbolic angle corresponding to a point \(A\) is defined as twice the area of the hyperbolic sector based on the point \(A\) and the intersection point of the unit hyperbola and the \(x\)-axis \((K, 0)\).
 \end{thmblock}
 \Cref{fig:hyperbolic_angle} visualizes the concept of a hyperbolic angle: the angle $\zeta$ is defined in terms of the unit hyperbola $x^2 - y^2 = 1$, or the hyperbola with `radius' 1. 
-Just like for circles, the hyperbolic angle is defined on the unit hyperbola, but using a special (polar) coordinate set, points can be expressed in terms of a radius $K$ and an angle $\zeta$. By allowing the radius \(K\) to be negative, all the points in the disconnected open set bounded by \(y = x\) and \(y = -x\) can be identified with a unique radius \(K\) and hyperbolic angle \(\zeta\). This is somewhat similar to polar coordinates, which is why these coordinates will be referred to as `hyperbolic polar coordinates'. These coordinates are interesting because they allow to express investments in a very natural way in terms of their principal and realized return in the capital-yield plane. 
+By means of a special polar coordinate set, points can be expressed in terms of a radius $K$ and an angle $\zeta$. If the radius \(K\) is allowed to be negative, all the points in the disconnected open set bounded by \(y = x\) and \(y = -x\) can be uniquely identified with a radius \(K\) and hyperbolic angle \(\zeta\). This is similar to regular polar coordinates in terms of circular angles, which is why these coordinates will be referred to as `hyperbolic polar coordinates'. These coordinates are interesting because they allow to express investments in terms of their principal and realized return in the capital-yield plane.
+\index{hyperbolic functions}
+\index{hyperbolic polar coordinates}
+
 \begin{figure}[ht!]
     \centering
     \input{media/tikz/hyperbolic_angle}
-    \caption{Illustration of a hyperbolic angle along the unit hyperbola, with projection on the axes using the hyperbolic sine and cosine.}
+    \caption{Illustration of a hyperbolic angle defined on the unit hyperbola, with projection on the axes using the hyperbolic sine and cosine.}
     \label{fig:hyperbolic_angle}
 \end{figure}
 
@@ -105,7 +111,7 @@ The preceding discussion suggests that hyperbolic polar coordinates do \emph{not
 \end{figure}
 From a financial perspective, this limit signifies the maximal yield one can obtain for a given amount of capital, i.e. one can never obtain more yield than (re)invested capital at a given moment in time.
 
-\paragraph{Remark} A possible workaround for this problem from a mathematical perspective can be found in the so-called \emph{generalized trigonometry} as described by \citet{Harkin2004}: in this case, the notion of the hyperbolic angle itself is considered ambiguous and must be accompanied by the branch of the hyperbola that is associated with the angle. In this case, four hyperbolic branches are considered, so both branches of \(x^2 - y^2 = K^2\) combined with \(y^2 - x^2 = K^2\) which were disregarded up till now.\footnote{In fact, \citeauthor{Harkin2004} provide an even more general treatment, covering so-called generalized complex numbers of the form \(z = x + \iota y\quad x, y \in \real\) with \(\iota^2 = \iota q + p\quad p, q \in \real\). However, in this case \(p = 1\) and \(q = 0\), as will become clear later in the discussion about hyperbolic numbers.}
+\paragraph{Remark} A possible workaround for this problem from a mathematical perspective can be found in the so-called \emph{generalized trigonometry} as described by \citet{Harkin2004}: in this case, the notion of the hyperbolic angle itself is considered ambiguous and must be accompanied by the branch of the hyperbola that is associated with the angle. In this case, four hyperbolic branches are considered, so both branches of \(x^2 - y^2 = K^2\) combined with the other hyperbolic branches \(y^2 - x^2 = K^2\), which were disregarded up till now.\footnote{In fact, \citeauthor{Harkin2004} provide an even more general treatment, covering so-called generalized complex numbers of the form \(z = x + \iota y\quad x, y \in \real\) with \(\iota^2 = \iota q + p\quad p, q \in \real\). However, in this case \(p = 1\) and \(q = 0\), as will become clear later in the discussion about hyperbolic numbers.}
 \begin{equation}
     \zeta = 
     \begin{cases}
@@ -116,39 +122,40 @@ From a financial perspective, this limit signifies the maximal yield one can obt
 Although this extended definition brings the other two quadrants of the hyperbolic plane within reach of the polar form as well, there is still a particular set that even now cannot be represented this way: \(\qty{(x, y)\mid \abs{x} = \abs{y}}\), or the `light cone' from special relativity.
 
 \subsection{Hyperbolic functions}
-\Cref{fig:hyperbolic_angle} also shows that any point on a hyperbola may be projected on the capital and yield axis using a special set of functions, called \emph{hyperbolic functions}. These functions are akin to the trigonometric functions $\sin$ and $\cos$ for `circular' angles.
-
+\Cref{fig:hyperbolic_angle} also shows that any point on a hyperbola may be projected on the capital and yield axis using a special set of functions, called \emph{hyperbolic functions}. These functions are akin to the trigonometric functions $\sin$ and $\cos$ for `circular' angles. Capital and yield can be expressed in terms of $K$ and $\zeta$ using the hyperbolic analogs of the trigonometric functions, the so-called \emph{hyperbolic functions} $\sinh$ and $\cosh$:
+$$
+        x = K\cosh(\zeta) \qquad y = K\sinh(\zeta).
+$$
 This decomposition of an investment in capital and yield in terms of these functions is almost trivially encapsulated in the mathematical identity:
 \begin{equation}
     \exp(\zeta) = \cosh(\zeta) + \sinh(\zeta).
     \label{eq:hyperbolic_identity}
 \end{equation}
-The most intuitive way to interpret this identity is by inspection of the Taylor series of the functions appearing in \cref{eq:hyperbolic_identity}:
+This identity is easily verified by inspection of the Taylor series of the functions appearing in \cref{eq:hyperbolic_identity}:
 \begin{equation}
     \begin{split}
         \exp(x) &= \sum_{k = 0}^\infty \frac{x^k}{k!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots\\
         \cosh(x) &= \sum_{k = 0}^\infty \frac{x^{2k}}{(2k)!} = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \ldots\\
-        \sinh(x) &= \sum_{k = 0}^\infty \frac{x^{2k + 1}}{(2k + 1)!} = x + \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots\\
+        \sinh(x) &= \sum_{k = 0}^\infty \frac{x^{2k + 1}}{(2k + 1)!} = x + \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots.
     \end{split}
 \end{equation}
-Or, alternatively, via the definition of the hyperbolic functions
+Or, alternatively, via the definition of the hyperbolic functions,
 \begin{equation}
     \begin{split}
         \cosh(x) &\triangleq \frac{\exp(x) + \exp(-x)}{2}\\
-        \sinh(x) &\triangleq \frac{\exp(x) - \exp(-x)}{2}
+        \sinh(x) &\triangleq \frac{\exp(x) - \exp(-x)}{2}.
     \end{split}
 \end{equation}
 As such, the hyperbolic functions allow finding the associated capital and yield for a given accumulated interest $\zeta$ and initial investment $K$.
 
-Clearly, the \(\cosh\) and \(\sinh\) functions are constructed by isolating the even or the odd powers respectively from the Taylor expansion of the exponential. \Cref{eq:hyperbolic_identity} bears some resemblance to Euler's formula \(\exp(\ii x) = \cos(x) + \ii \sin(x)\); as described by \citet{Needham1997}, this connection can be generalized by recognizing that
+Clearly, the \(\cosh\) and \(\sinh\) functions are constructed by isolating respectively the even or odd powers from the Taylor expansion of the exponential. \Cref{eq:hyperbolic_identity} bears some resemblance to Euler's formula \(\exp(\ii x) = \cos(x) + \ii \sin(x)\); as described by \citet{Needham1997}, this connection can be generalized by recognizing that
 \begin{equation}
      \cos(\ii x) = \cosh(x) \qquad \sin(\ii x) = \ii\sinh(x).
      \label{eq:trig_functions}
 \end{equation}
-Hence, the \emph{hyperbolic rotation may be expressed as a `normal' circular rotation through the usage of complex angles}, which makes it possible to connect the hyperbolic rotations for investments to normal `circular' rotations in mechanics, as is the purpose of economic engineering.
+Hence, a \emph{hyperbolic rotation may be expressed as a `normal' circular rotation through the usage of complex angles}, which makes it possible to connect the hyperbolic rotations for investments to normal `circular' rotations in mechanics, as is the purpose of economic engineering.
 
 To make \cref{eq:trig_functions} more visual, the hyperbolic and trigonometric functions can all be represented by looking at the modular surface of \(|\sin(z)|\), shown in \cref{fig:modular_sine}: \(\sin\) and \(\cos\) only differ by a shift of \(\pic/2\) along the real line, and \(\cosh\) and \(\sinh\) exist at cross-sections into the complex at integer multiples of \(\pic/2\) and \(\pic\) respectively \cite{Needham1997}.
-
 \begin{figure}
     \centering
     \input{media/tikz/complex_sine}
@@ -156,13 +163,22 @@ To make \cref{eq:trig_functions} more visual, the hyperbolic and trigonometric f
     \label{fig:modular_sine}
 \end{figure}
 
+\subsection{Interest in the Lorentz-Minkowski plane}
+The growth of compound interest in terms of capital and yield can also be viewed as a Lorentz transformation in the Lorentz-Minkowski plane. These are actions of the Lorentz group $\text{SO}(1,1)$ in the plane. Observe that in this case, the transformations need not be ortochronous (indicated by the absence of the `+' in the group name). That is because the sign of $K$ may be switched as a result of the transform. In the financial application, this is equivalent to switching from debit to credit or vice versa.
+
+For a constant interest rate $\dot{\zeta}$, the accumulated interest itself is $\dot{\zeta}t$. The evolution of capital and yield can are then described by a continuously varying Lorentz transformation in the plane:
+$$ 
+    \mqty(x(t)\\y(t)) = \mqty(\cosh(\dot{\zeta}t) & \sinh(\dot{\zeta}t) \\ \sinh(\dot{\zeta}t) & \cosh({\zeta}t))\mqty(K\\0).
+$$
+In the analogy with special relativity, the `temporal' dimension is here reserved for capital, while the yield is the spatial dimension. 
+
 \section{The rotational analogy for economic engineering}
 \label{sec:rotational_analogy}
 It has now been established that investments can be represented using (hyperbolic) angles. Since economic engineering attempts to find analogies between traditional engineering disciplines and economics, the rotational nature of investments is a strong motivation to make the connection with \emph{rotational mechanics} and the associated concepts of rotational kinetic energy, angular momentum, angular velocity, etc.
 
 Some aspects of the analogy are already apparent from the foregoing discussion: the \emph{angle} corresponds to the accumulated interest or return gained on the investment, while the \emph{arm} or radius is analogous to the principal of the investment. Likewise, the time derivative of the angle $\dot{\zeta}$ is the angular velocity, i.e. the interest rate, which may itself be time-varying.
 
-The current interpretation in economic engineering is that credit corresponds to angular momentum. One reason for this is that the units of angular momentum are [\si{\newton \meter \second}], in economic engineering, this would be units of currency [\$]. Furthermore, the analogy can be supported by means of the Lagrangian as well, similar to the reasoning in \cref{chap:ee} connecting prices and momentum. If one assumes that the rotational kinetic energy is the `market surplus' gained from borrowing or lending money (or investing in general) based on a certain return rate $\dot{\zeta}$, the conjugate momentum of this form of kinetic energy is necessarily the angular momentum. In the case of investments, the market surplus is associated with a new type of elasticity that relates the amount invested $L$ with the return rate $\dot{\zeta}$, similar to the supply/demand curves for `regular' goods and services. In economics, this is called the \emph{curve of loanable funds}. Therefore, the `borrower' or `investor surplus' is well-defined: it is related to how much more the current return (or how much less the current interest) is than the minimal interest for which one is willing to invest or borrow. From this definition, the angular momentum must be analogous to the number of funds invested (or borrowed); being the partial derivative of this `market surplus' with respect to the return. 
+The current interpretation in economic engineering proclaims that credit corresponds to angular momentum. One reason for this is that the units of angular momentum are [\si{\newton \meter \second}], in economic engineering, this would be units of currency [\$]. Furthermore, the analogy can be supported by means of the Lagrangian as well, similar to the reasoning in \cref{chap:ee} connecting prices and momentum. If one assumes that the rotational kinetic energy is the `market surplus' gained from borrowing or lending money (or investing in general) based on a certain return rate $\dot{\zeta}$, the conjugate momentum of this form of kinetic energy is necessarily the angular momentum. In the case of investments, the market surplus is associated with a new type of elasticity that relates the amount invested $L$ with the return rate $\dot{\zeta}$, similar to the supply/demand curves for `regular' goods and services. In economics, this is called the \emph{curve of loanable funds}. Therefore, the `borrower' or `investor surplus' is well-defined: it is related to how much more the current return (or how much less the current interest) is than the minimal interest for which one is willing to invest or borrow. From this definition, the angular momentum must be analogous to the amount invested (or borrowed), being the partial derivative of this `market surplus' with respect to the return. 
 \begin{table}[h]
     \centering
     \caption{Overview of the analogies between rotational mechanics and economic engineering.}
@@ -186,85 +202,95 @@ The current interpretation in economic engineering is that credit corresponds to
     \item The sign of the interest rate does not determine the sign (i.e. direction) of the angular momentum; the former has to do with either discounting/appreciation while the latter denotes the direction of the contract (e.g. debit vs. credit).
     \item The interpretation of the elasticity as the mass moment of inertia (because it determines the relation between the amount of credit and the interest rate) has not been consistently applied. In the past, the mass moment of inertia has been put on equal footing with the \emph{duration} of a financial contract, but more recent works have pointed out that duration is a part of the valuation and is therefore associated with frequency domain analysis \cite{Krabbenborg2021}.
 \end{itemize}
-%The resolution of these problems is one of the main goals of this research.
-
-\section{Interest in the Lorentz-Minkowski plane}
-\begin{itemize}
-    \item Polar coordinates
-    \item Cartesian coordinates
-    \item Hyperbolae
-    \item Timelike spacelike
-\end{itemize}
+Besides, the rational analogy has been used in the context of bond graph modeling, where one simply needs two conjugate variables (interest and credit), and the corresponding C, R and I-elements. The underlying reasoning supported by the hyperbolic rotation that is compound interest was irrelevant for this application. In this context the rotational analogy is essentially, apart from terminology, completely equivalent to the action-angle approach used in other research.
+\index{rotational analogy}
+\index{angular momentum}
 
 \section{Hyperbolic numbers}
 \label{sec:hyperbolic_numbers}
-An alternative way to view hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, the name `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, \(\jj\) will be used, though in literature also \(\mathrm{u}\) (for unipotent) and \(\mathrm{h}\) (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit \(\jj\) with the defining unipotence property \(\jj^2 = 1\), where \(\jj \notin \real\). Like complex numbers, hyperbolic numbers can have a real and a hyperbolic part
+An alternative way to view hyperbolic motions is in terms of so-called hyperbolic numbers\footnote{The hyperbolic number system has been assigned a myriad of names, with different terminology and mathematical notation for almost every influential paper that has been published about them. Among others, hyperbolic numbers are referred to as split-complex numbers, double numbers, perplex numbers, algebraic motors, etc. In this text, the name `hyperbolic numbers' is chosen to highlight their connections with hyperbolae. For the choice of the hyperbolic unit, \lsymb{\(\jj\)}{Hyperbolic unit} will be used, though in literature also \(\mathrm{u}\) (for unipotent) and \(\mathrm{h}\) (for hallucinatory or hyperbolic) make their appearance \cite{Fjelstad1986, Sobczyk1995, Motter1998, Harkin2004}.}. These form an alternative number system similar to complex numbers, based on the `hyperbolic' unit \(\jj\) with the defining unipotence property \(\jj^2 = 1\), where \(\jj \notin \real\). Like complex numbers, hyperbolic numbers can have a real and a hyperbolic part
+\index{hyperbolic number}
+\index{hyperbolic unit}
+\index{split-complex number!see {hyperbolic number}}
 \[
      z = x + y\jj \quad x, y \in \real.
 \]
-Combined with addition and multiplication defined on them, the hyperbolic numbers form a commutative ring. Each hyperbolic number \(z\) is associated with its \emph{hyperbolic conjugate} \(z^* = x - y\jj\). The product of a hyperbolic number with its own hyperbolic conjugate creates a quadratic form \(zz^* = x^2 - y^2\), which always returns a real number and is equivalent Lorentzian metric. Again, three cases can be distinguished for \(z\):
-\begin{itemize}
-    \item \emph{timelike} when \(zz^* > 0\)
-    \item \emph{lightlike} when \(zz^* = 0\)
-    \item \emph{spacelike} when \(zz^* < 0\)
+Combined with addition and multiplication, the hyperbolic numbers form a commutative ring. Each hyperbolic number \(z\) is associated with its \emph{hyperbolic conjugate} \(\conj{z} = x - y\jj\). The product of a hyperbolic number with its own hyperbolic conjugate produces a quadratic form \(z\conj{z} = x^2 - y^2\), which always returns a real number; this quadratic form is equivalent to the Lorentzian metric. Again, three cases can be distinguished for \(z\):
+\index{commutative ring}
+\begin{itemize}[topsep=0.3ex,itemsep=0.3ex]
+    \item $z$ is \emph{timelike} when \(z\conj{z} > 0\);
+    \item $z$ is \emph{lightlike} when \(z\conj{z} = 0\);
+    \item $z$ is \emph{spacelike} when \(z\conj{z} < 0\).
 \end{itemize}
-However, in contrast to complex numbers (whose quadratic form would be \(x^2 + y^2\)), this quadratic form is \emph{isotropic}, which means that there exists a \(z \neq 0\) such that \(zz^* = 0\) --- this is precisely the case for all the \(z\) on the light cone in the hyperbolic plane. The \emph{hyperbolic modulus} therefore requires an absolute value in order like so
+However, in contrast to complex numbers (whose quadratic form would be \(x^2 + y^2\)), this quadratic form is \emph{isotropic}, which means that there exists a \(z \neq 0\) such that \(z\conj{z} = 0\) --- this is precisely the case for all the hyperbolic numbers on the light cone in the hyperbolic plane. The \emph{hyperbolic modulus} therefore requires an absolute value:
 \[
-     \abs{z} \triangleq \sqrt{\abs{zz^*}}
+    \abs{z} \triangleq \sqrt{\abs{z\conj{z}}},
 \]
 which is considered to be the hyperbolic distance from \(z\) to the origin \cite{Sobczyk1995}.
 
-Again, in correspondence with complex numbers, the hyperbolic numbers also have a  \emph{polar form}, i.e.
+Again, in correspondence with complex numbers, the hyperbolic numbers also have a \emph{polar form}, i.e.
 \[
-     z = K \exp(\zeta \jj)
+     z = K \exp(\zeta \jj),
 \]
 which can be evaluated using the Taylor expansion of the exponential \(\exp\):
 \[
-     z = K\exp(\zeta \jj) = K \sum^\infty_{k = 0} \frac{(\zeta \jj)^k}{k!} =  K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k}}{(2k)!} + K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k+1}}{(2k + 1)!} = K\cosh(\zeta) + K\jj\sinh(\zeta)
+     z = K\exp(\zeta \jj) = K \sum^\infty_{k = 0} \frac{(\zeta \jj)^k}{k!} =  K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k}}{(2k)!} + K \sum^\infty_{k = 0} \frac{(\zeta \jj)^{2k+1}}{(2k + 1)!} = K\cosh(\zeta) + K\jj\sinh(\zeta),
 \]
-when the hyperbolic angle \(\zeta\) is associated with hyperbolic branches I and III. Clearly, the polar form of the hyperbolic numbers reflects precisely the two different representations for investments: using principal and return (polar form), or capital and yield (`Cartesian' form). For the spacelike branches II and IV, one essentially has to consider \(z = K\jj\exp(\zeta\jj)\) or
+when the hyperbolic angle \(\zeta\) is associated with hyperbolic branches I and III. The polar form of the hyperbolic numbers reflects precisely the two different representations for investments: using principal and return (polar form), or capital and yield (`Cartesian' form). For the spacelike branches II and IV, the components are interchanged, such that \(z = K\jj\exp(\zeta\jj)\) or
+\index{polar form}
 \[
      z = K\sinh(\zeta) + K\jj\cosh(\zeta)
 \]
 
 Furthermore, consider the \emph{conjugate product} of two hyperbolic numbers \(z_1 = x_1 + y_1\jj\) and \(z_2 = x_2 + y_2\jj\):
+\index{conjugate product}
 \[
-     z_1^*z_2 = \underbrace{(x_1x_2 - y_1y_2)}_\text{inner product} 
-            + \underbrace{(x_1y_2 - x_2y_1)}_\text{outer product}\jj
+    \conj{z_1}z_2 = \underbrace{(x_1x_2 - y_1y_2)}_\text{inner product} 
+            + \underbrace{(x_1y_2 - x_2y_1)}_\text{outer product}\jj.
 \]
-of the resulting expression, the real part is called the inner product and the hyperbolic part the outer product. The inner product is equivalent to the Lorentz product while the outer product yields the directed area of the parallelogram spanned by \(z_1\) and \(z_2\) (or the determinant of \(\mqty(x_1 & x_2\\y_1&y_2)\). The outer product is the same as for regular complex numbers, while the inner product recovers the Lorentz inner product instead of the Euclidean inner product. This is why one can say that the hyperbolic number plane and the complex plane have an identical notion of area. Based on the inner product, one can recognize a different notion of orthogonality, i.e. \(z_1\) and \(z_2\) are \emph{hyperbolically orthogonal} if their hyperbolic inner product equals zero \cite{Needham1997, Sobczyk1995}.
+In the resulting expression, the real part is called the \emph{inner product} and the hyperbolic part the \emph{outer product}. The inner product is equivalent to the Lorentz product, while the outer product yields the directed area of the parallelogram spanned by \(z_1\) and \(z_2\) (or the determinant of \(\mqty(x_1 & x_2\\y_1&y_2)\). The outer product is the same as for regular complex numbers, while the inner product recovers the Lorentz inner product instead of the Euclidean inner product. Therefore, the hyperbolic number plane and the complex plane have an identical notion of area. Based on the inner product, one can recognize a `hyperbolic' notion of orthogonality, i.e. \(z_1\) and \(z_2\) are \emph{hyperbolically orthogonal} if their hyperbolic inner product equals zero \cite{Needham1997, Sobczyk1995}.
 
 The inner and outer product both have their financial interpretations: the inner product is related to the hyperbolic distance between two hyperbolic vectors, just like the Lorentz product in the previous section. The outer product is akin to the cross product, and is therefore used to rigorously define angular momentum in the Lorentzian space, which is an important component of the economic engineering analogy.
 
 \subsection{Matrix representation}
 For many algebraic structures (groups, rings, fields, ...) an isomorphism can be found in the realm of linear algebra, by identifying a specific class of matrices. For example, the complex number system \(a + b\ii\) is isomorphic to the matrices
 \[
-     \mqty(a & -b \\ b & a) \quad a, b \in \real.
+     a + b\ii \corresponds \mqty(a & -b \\ b & a) \quad a, b \in \real.
 \]
-Likewise, one can establish an isomorphism between the hyperbolic numbers and a certain class of matrices. The hyperbolic number system defined with addition and multiplication defined on it is ring-isomorphic to the matrix ring
+Likewise, one can establish an isomorphism between the hyperbolic numbers and a certain class of matrices. The hyperbolic number system is ring-isomorphic to the matrix ring
 \[
-     \mqty(X & Y \\ Y & X) \quad X, Y \in \real,
+     x + y\jj \corresponds \mqty(x & y \\ y & x) \quad x, y \in \real,
 \]
-under matrix addition and matrix multiplication. The determinant of the said matrix then recovers the Lorentz metric
+under matrix addition and multiplication. The determinant of the said matrix then recovers the Lorentz norm
 \[
-     \det \mqty(X & Y \\ Y & X) = X^2 - Y^2.
+     \det \mqty(x & y \\ y & x) = x^2 - y^2.
 \]
 
 \subsection{The idempotent basis}
-Previously it was already mentioned that the hyperbola can be viewed conveniently in two particular axis systems, the standard axis system, and the idempotent axis system, differing by a \ang{45} rotation. This basis can also be defined in terms of hyperbolic numbers; in terms of the standard basis \(\qty{1, \jj}\) the idempotent basis is \(\qty{\jjp, \jjm}\) with 
+\index{idempotent axis system}
+The hyperbola can be viewed conveniently in two particular axis systems, the standard axis system (i.e. the capital-yield axes), and the \emph{idempotent axis system}. The idempotent axis system is directed along the asympotes of the hyperbola, as illustrated in \cref{fig:hyperbola_comparison}.
+\begin{figure}[h!]
+    \centering
+    \input{media/tikz/hyperbola_comparison}
+    \caption{Comparison between the standard and idempotent axis system. The idempotent asix system is indicated in red; it is directed along the asymptotes of the standard hyperbola with equation $x^2 - y^2 = 1$.}
+    \label{fig:hyperbola_comparison}
+\end{figure}
+
+This basis can also be defined in terms of hyperbolic numbers. Instead of the standard basis \(\qty{1, \jj}\), the idempotent basis is \(\qty{\jjp, \jjm}\) with 
 \[
-     \jjp = \frac{1}{2}(1 + \jj) \qquad \jjm = \frac{1}{2}(1 - \jj)
+     \jjp = \frac{1}{2}(1 + \jj) \qquad \jjm = \frac{1}{2}(1 - \jj).
 \]
+
 The term `idempotent' is a testament to the fact that \(\jjp^2 = \jjp\) and \(\jjp^2 = \jjp\). As such, a given hyperbolic number \(z = x + y\jj\) in idempotent coordinates is 
 \[
-     \underbrace{\qty(X + Y)}_{z_{_+}}\jj_{_+} + \underbrace{\qty(X - Y)}_{z_{_-}}\jjp
+     \underbrace{\qty(x + y)}_{z_{_+}}\jj_{_+} + \underbrace{\qty(x - y)}_{z_{_-}}\jjp
 \]
-Furthermore, the idempotent basis is mutually annihilating, i.e. \(\jjp \jjm = 0\), which is why they possess a projective property: \cite{Sobczyk1995}
+Furthermore, the idempotent basis is mutually annihilating, i.e. \(\jjp \jjm = 0\), which is why it has a projective property: \cite{Sobczyk1995}
 \[
-     z\jjp = z_{_+}\jjp\quad\text{and}\quad z\jjm = z_{_-}\jjm
+     z\jjp = z_{_+}\jjp\quad\text{and}\quad z\jjm = z_{_-}\jjm.
 \]
-The idempotent axis system is interesting because it returns the total amount compounded or discounted over time; in contrast to the standard yield-capital decomposition.
-
-To summarize, it has been established that the hyperbolic numbers can be used to represent the rotational investment analogy, and that all the important concepts attached to it (inner product, cross product, total value, etc) are naturally incorporated in their algebra.
+The idempotent axis system is interesting because it returns the total amount compounded (the sum of capital and yield) or discounted over time; in contrast to the standard capital-yield decomposition.
 
 \section*{Chapter summary}
+An investment is characterized by a principal and a proportional return. The periodic reinvestment of earnings causes the total value of the investment to grow exponentially. This value can be decomposed in capital (what is invested) and yield (what is earned directly on the investement). For continuous compounding, the capital-yield decomposition follows a hyperbolic trajectory; it can be expressed in terms of a hyperbolic angle that is the accumulated return of the investment. The radius of the hyperbola represents the principal of the investment. The correspondence between rotations and compound interest is applied in economic engineering in the form of the rotational analogy: an analogy between rotational mechanical systems and financial instruments. Finally, the hyperbolic rotations can also conveniently be described in terms of the algebra of the hyperbolic number system.
+
