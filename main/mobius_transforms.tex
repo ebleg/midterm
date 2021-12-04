@@ -12,7 +12,7 @@ Möbius transformations, named after the German mathematician and astronomer Aug
         \begin{equation}
             \mathfrak{M}(z) = \frac{az + b}{cz + d} \label{eq:mobius}
         \end{equation}
-    where \lsymb{\(a, b, c, d\)}{Parameters of a Möbius transform} \(\in \complex \) are constants \cite{Needham1997}.
+    where \lsymb{\(a, b, c, d\)}{Parameters of a Möbius transformation} \(\in \complex \) are constants \cite{Needham1997}.
 \end{thmblock}
 These complex transformations carry a deep connection with hyperbolic geometry (and non-Euclidean in general) and Einstein's theory of relativity. As stated by \citet{Needham1997}, the complex mappings that correspond to a Lorentz transformation are Möbius transformations and vice versa --- every Möbius transformation corresponds to a unique Lorentz transformation.
 \index{Möbius!transformations}
@@ -92,7 +92,7 @@ It has already been established that Möbius transformations are only unique up 
 \label{sec:classification}
 The analogy between Möbius transformations and matrix multiplication begs the question  what role the eigenvalues and eigenvectors of the corresponding matrix play. Eigenvectors are vectors that remain invariant (up to scaling) under the multiplication of a particular matrix. In this case, the vector contains projective coordinates, so even when it is scaled, its coordinate representation remains identical. As such, the eigenvectors of the matrix \(M\) are the \emph{fixed points} of the Möbius transformation \(\mathfrak{M}\); any Möbius transformation has two at most. This is demonstrated by solving \(z_0 = \mathfrak{M}(z_0)\), which has solutions
 \[ z_0 = \frac{(a - d) \pm \sqrt{(a + d)^2 - 4}}{2c}.\]
-When converted to projective coordinates, the two solutions for \lsymb{\(z_0\)}{Fixed point of a Möbius transformation} then coincide with the eigenvectors of \(M\). In the degenerate case for which \(a + d = \pm2\), the argument of the square root amounts to zero, which means that there is only one unique fixed point. These transformations are called \emph{parabolic}, more will become clear about them later \cite{Needham1997}.
+When converted to projective coordinates, the two solutions for \lsymb{\(z_0\)}{Fixed point of a Möbius transformation} then coincide with the eigenvectors of \(M\). In the degenerate case for which \(a + d = \pm2\), the argument of the square root amounts to zero, which means that there is only one unique fixed point. These transformations are called \emph{parabolic} \cite{Needham1997}.
 
 Now, it remains to analyze the significance of the eigenvalues. Since eigenvalues are sensitive to scaling of the matrix, it is important to stress again that \(M\) must be normalized (have a unit determinant) in order for the following to hold. A well known fact in linear algebra states that if \(\lambda_1, \lambda_2\) are eigenvalues of \(M\), then
 \[ \trace{M} = \lambda_1 + \lambda_2 \quad\text{and}\quad \det M  = \lambda_1 \lambda_2.\]
